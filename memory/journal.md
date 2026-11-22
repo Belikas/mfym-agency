@@ -10,3 +10,4 @@
 - **Tests choisis** : exp-01 clipping (déjà en place, 0 €, on mesure les vrais paiements), exp-02 ComeUp n8n/IA (meilleur total à 0 €, avantage dev), exp-03 skills Claude Code sur Gumroad (0 €, compte Gumroad existant, presque tout faisable par agents). Primes bancaires gardées en réserve.
 - **Équipe** : embauche chercheur, critique, rédacteur, atelier (tous sonnet) ; le Directeur = run planifié (opus/sonnet).
 - **Installs** : pip jsonschema.
+- **Micro-entreprise reportée** (Baptiste, 22/11) : on la crée quand elle devient indispensable, c'est-à-dire quand une offre est prête à vendre (fiches ComeUp validées par le critique). Conséquence : on prépare tout pour publier le jour même ; les pistes sans statut (pré-vente, liste d'attente) passent avant.

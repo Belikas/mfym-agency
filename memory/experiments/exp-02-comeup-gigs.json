@@ -11,9 +11,13 @@
  "kill_date": "2026-12-20",
  "status": "blocked",
  "blocked_on": [
-  "T-01 contrat + SIRET",
-  "publication sous ton nom (approbation à venir)"
+  "micro-entreprise : créée quand les fiches sont prêtes (critique ≥4/5) — décision Baptiste 22/11"
  ],
- "results": [],
+ "results": [
+  {
+   "date": "2026-11-22",
+   "note": "Fiches S1/S2/S3 en passe 2 ; démos + couvertures en cours. Publication dès que le statut existe."
+  }
+ ],
  "owner_agent": "redacteur"
 }

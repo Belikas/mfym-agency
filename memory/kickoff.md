@@ -8,9 +8,9 @@ Tant qu'une case reste ouverte, chaque run avance le kickoff avant le business (
 | 2 | Un run planifié s'est lancé seul, a travaillé et journalisé, sans personne | ⏳ | Lanceur validé à la main (`logs/runs.jsonl` run 20261122-0921-test status ok). Attendu : MFYM-quotidien-1300 du 22/11 → ligne `goal: quotidien, status: ok` dans logs/runs.jsonl. |
 | 3 | Un run qui trouve le verrou pris sort proprement | ✅ 22/11 | `logs/runs.jsonl` : `{"status":"skipped_locked","holder":"37952","goal":"quotidien","ts":"2026-11-22T09:19:22"}`, code de sortie 0. |
 | 4 | Après un vrai redémarrage, planificateur, bot, dashboard, Tailscale reviennent seuls | ⏳ Baptiste | Mode admin à appliquer (T-03, `schedule.ps1` en admin), puis redémarrage ; preuve = ligne `startup:` tout à true dans logs/maint.log. |
-| 5 | Heartbeat healthchecks.io vert | ⏳ Baptiste | Tâche MFYM-heartbeat toutes les 5 min prête ; attend HC_PING_URL dans .env. |
+| 5 | Heartbeat healthchecks.io vert | ✅ 22/11 | `maint.py heartbeat` → HTTP 200 « OK » (22/11 ~09:25) ; tâche MFYM-heartbeat toutes les 5 min. |
 | 6 | Aller-retour Telegram complet : envoyé → tapé → enregistré → run déclenché → exécuté | ⏳ Baptiste | Bot en service (MFYM-bot) ; attend TELEGRAM_BOT_TOKEN + /start. |
-| 7 | Dashboard : activité live + business, sur PC et téléphone | 🔨 en cours | Construction par l'atelier ; puis `tailscale serve` port 8445, puis critique ≥4/5. |
+| 7 | Dashboard : activité live + business, sur PC et téléphone | 🔨 22/11 | PC : http://127.0.0.1:8700 affiche bureaux + activité live + cartes business (capture 375 px vérifiée). Tailnet : https://desktop-ava6s00.tailf6027f.ts.net:8445 sert /, app.js, style.css en 200. Reste : critique ≥4/5 + confirmation sur le téléphone de Baptiste (T-03). |
 | 8 | Sauvegarde quotidienne poussée sur GitHub | ⏳ Baptiste | MFYM-backup 03:00 prêt (commit local OK) ; attend GITHUB_REPO + GITHUB_TOKEN. |
 | 9 | pipeline.json : 30+ pistes notées avec sources | ✅ 22/11 | 35 pistes, 14 catégories, 5 types de sources ; `python scripts/validate.py` → OK. |
 | 10 | Premiers tests lancés ou prêts, avec kill dates | ✅ 22/11 | exp-01 clipping (kill 06/12, attend T-02), exp-02 ComeUp (kill 20/12, attend T-01), exp-03 skills Gumroad (en cours, kill 20/12). |

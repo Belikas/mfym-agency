@@ -161,7 +161,7 @@ def main():
             time.sleep(60)
             continue
         try:
-            if time.time() - last_push > 30:
+            if e.get("TELEGRAM_CHAT_ID") and time.time() - last_push > 30:
                 push_outbox()
                 maybe_launch()
                 last_push = time.time()

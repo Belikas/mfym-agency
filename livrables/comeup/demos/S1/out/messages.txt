@@ -1,0 +1,33 @@
+À : lucas.martin@example.com
+Objet : Votre commande CMD-1002 – point sur la livraison
+
+Bonjour Lucas,
+votre colis (TransporteurB, suivi TB200302) devait arriver le 17/11. Il connaît un retard (3 j de retard sur la date promise). Nous suivons le dossier auprès du transporteur et revenons vers vous sous 24 h.
+L'équipe boutique
+
+--------
+
+À : hugo.petit@example.com
+Objet : Votre commande CMD-1004 – point sur la livraison
+
+Bonjour Hugo,
+votre colis (TransporteurC, suivi TC300404) devait arriver le 19/11. Il connaît un retard (incident transporteur). Nous suivons le dossier auprès du transporteur et revenons vers vous sous 24 h.
+L'équipe boutique
+
+--------
+
+À : chloe.robert@example.com
+Objet : Votre commande CMD-1005 – point sur la livraison
+
+Bonjour Chloé,
+votre colis (TransporteurB, suivi TB200305) devait arriver le 19/11. Il connaît un retard (1 j de retard sur la date promise). Nous suivons le dossier auprès du transporteur et revenons vers vous sous 24 h.
+L'équipe boutique
+
+--------
+
+À : louis.simon@example.com
+Objet : Votre commande CMD-1008 – point sur la livraison
+
+Bonjour Louis,
+votre colis (TransporteurB, suivi TB200308) devait arriver le 21/11. Il connaît un retard (aucun scan depuis 3 j). Nous suivons le dossier auprès du transporteur et revenons vers vous sous 24 h.
+L'équipe boutique

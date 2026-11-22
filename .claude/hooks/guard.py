@@ -22,7 +22,7 @@ DESTRUCTIVE = [
     r"tailscale\s+funnel",
 ]
 SECRETS = [
-    r"(cat|type|more|less|head|tail|Get-Content|gc|bat|strings|xxd|od)\b[^|;&]*\.env\b",
+    r"(^|[;&|(]\s*|\bxargs\s+)(cat|type|more|less|head|tail|Get-Content|gc|bat|strings|xxd|od|grep|sed|awk)\s[^|;&]*\.env\b",
     r"^\s*(env|printenv|set)\s*$|\b(printenv|Get-ChildItem\s+env:|gci\s+env:|dir\s+env:)",
     r"ANTHROPIC_API_KEY\s*=",
     r"\$env:ANTHROPIC_API_KEY\s*=",

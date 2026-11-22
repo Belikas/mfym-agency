@@ -1,0 +1,35 @@
+{
+ "scores": {
+  "1_lisibilite_eclair": 4,
+  "2_fidelite_activite": 3,
+  "3_identite_agents": 3,
+  "4_clarte_business": 4,
+  "5_mobile": 4,
+  "6_detail_a_la_demande": 3,
+  "7_finition_visuelle": 4,
+  "8_robustesse": 4
+ },
+ "justifications": {
+  "1_lisibilite_eclair": "4 tuiles (revenu 0/1000, budget, Pour toi 4, Au travail 3/5) visibles sans defilement ; +1 : phrase d'etat unique (ex. 'Rien ne rapporte encore - 1 decision t'attend') et date cible des 1000 EUR.",
+  "2_fidelite_activite": "Pose/bulle liees aux vrais hooks, mais bulles = 'mcp__Claude_Browser__resize_window', chemin livrables/comeup/assets/S3-3-... tronque, 'Critique dashboard pass 1' ; +1 : mapper outil -> verbe FR (Lit un fichier, Navigue, Execute une commande) sans chemin ni nom MCP.",
+  "3_identite_agents": "Sprites distincts par cheveux/chemise mais noms/roles tronques et 5 agents mal alignes sur mobile ; +1 : role <=3 mots non tronque et signe distinctif par agent.",
+  "4_clarte_business": "Une carte par sujet avec valeur et fraicheur ; mais markdown brut dans Decisions, 'confiance low/med' en anglais, doublon revenu/budget ; +1 : rendre le markdown et franciser.",
+  "5_mobile": "Zero scroll horizontal (375/375), manifest + icones 200 ; mais bouton 'je dis oui' <44px et bureau decale ; +1 : cibles >=44px et grille reguliere.",
+  "6_detail_a_la_demande": "1 tap ouvre un tiroir propre pour tests/cartes (hypothese, seuil, echeance) ; tiroir agent = config et powershell brut, sessions vides ; +1 : rapport agent lisible (derniers livrables, erreurs comptees).",
+  "7_finition_visuelle": "Palette sombre coherente, pixel net, salles lisibles ; contraste faible des petites lignes, desktop non optimise ; +1 : AA sur textes secondaires, mise en page large.",
+  "8_robustesse": "SSE + reconnexion, polling coupe si onglet cache, etats vides clairs ('Aucun revenu', 'absent', JSON illisible) ; +1 : bandeau hors ligne visible a la perte du flux."
+ },
+ "gaps": [
+  "Bulles non glanceables : noms bruts d'outils MCP, chemins tronques, sous-titre carte Critique idem. Mapper outil -> verbe FR + icone, sans chemin.",
+  "Tiroir agent : champs de config (Mesure, Entrees, Sorties, Modele, Fichier .claude/agents/atelier.md) et evenements = commandes powershell brutes avec 'echec Bash'. Remplacer par : action en cours, 3 dernieres actions en francais, dernier livrable, nb d'erreurs ; replier la config.",
+  "Bureau mobile : 5 agents sur 4 salles decalees (Direction/Recherche cote a cote, Qualite seule centree, Atelier a defiler) ; bulles recouvrent les voisins. Grille reguliere 2 colonnes, bulle 1 ligne ou icone d'outil.",
+  "Noms/roles tronques sous les sprites ('Orchestre les runs : de...') ; Chercheur 'pas encore vu / prochain 10:00' sans dire que c'est normal. Statut explicite (dort / attend 10:00 / travaille), role <=3 mots.",
+  "Equipe affiche 'actif' pour 5 agents alors que Chercheur dort : incoherence avec le bureau ; revenu/budget dupliques en haut et en bas.",
+  "Cartes : titres coupes en '...', bouton 'je dis oui' ~28px, 'confiance low/med' en anglais ; titres sur 2 lignes, boutons >=44px.",
+  "Decisions recentes : markdown brut ('**Structure** :'); Runs recents melangent test/locktest/'verrou pris' ; sessions vides ('sessions/ absent'). Rendre le markdown, masquer les runs de test.",
+  "Identite : differences surtout cheveux/chemise, couleurs de nom peu discriminantes ; accessoire ou couleur propre par agent reprise dans Equipe/Runs.",
+  "Desktop : tiroir recouvre la moitie de la page sans voile, pas de mise en page large.",
+  "Contraste : sous-lignes grises ~10px sur violet sombre ; viser >=12px et AA."
+ ],
+ "verdict": "corriger"
+}

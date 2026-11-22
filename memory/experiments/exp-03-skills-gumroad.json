@@ -1,10 +1,10 @@
 {
  "id": "exp-03-skills-gumroad",
  "lead_id": "claude-skills-bundle",
- "title": "Gumroad : bundle de skills Claude Code de niche",
- "hypothesis": "Un bundle de skills Claude Code de niche à 29 €, posté dans 3 communautés, fait ≥5 ventes en 14 jours.",
- "metric": "ventes Gumroad",
- "threshold": "≥5 ventes en 14 jours après publication ; tuer sous 2",
+ "title": "Gumroad : pré-vente d'un pack de skills Claude Code de niche",
+ "hypothesis": "Une page de pré-vente (pack n8n métier FR ou logistique, 29 €) postée dans 3 communautés obtient ≥3 précommandes ou ≥30 inscrits en 14 jours ; sinon on ne construit pas.",
+ "metric": "précommandes + inscrits",
+ "threshold": "≥3 précommandes ou ≥30 inscrits en 14 jours après publication ; tuer sous ce seuil",
  "cost_eur": 0,
  "hours_budget": 2,
  "start": "2026-11-22",
@@ -15,6 +15,10 @@
   {
    "date": "2026-11-22",
    "note": "Lancé : benchmark puis construction par l'atelier. Publication soumise à approbation."
+  },
+  {
+   "date": "2026-11-22",
+   "note": "Benchmark (memory/benchmarks/skills-gumroad.md) : aucun pack payant avec ventes vérifiables, le généraliste est saturé par le gratuit (jusqu'à 330 k stars). On passe en pré-vente avant de produire."
   }
  ],
  "owner_agent": "atelier"

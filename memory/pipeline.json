@@ -280,6 +280,12 @@
      "kind": "article",
      "financial_interest": true,
      "finding": "~200 $/mois pour 3 skills"
+    },
+    {
+     "url": "memory/benchmarks/skills-gumroad.md",
+     "kind": "marketplace",
+     "financial_interest": false,
+     "finding": "7 pages payantes ouvertes (9-99 $) : 0 vente vérifiable ; gratuit dominant (mattpocock/skills 330 k, anthropics/skills 199 k stars)"
     }
    ],
    "confidence": "low",
@@ -287,13 +293,13 @@
    "scores": {
     "time_to_first_euro": 3,
     "evidence": 2,
-    "monthly_revenue": 2,
+    "monthly_revenue": 1,
     "startup_cost": 5,
     "baptiste_hours": 4,
     "automation": 4,
     "risk": 4
    },
-   "total": 29,
+   "total": 28,
    "est_monthly_eur": 150,
    "startup_cost_eur": 0,
    "first_euro_days": 14,

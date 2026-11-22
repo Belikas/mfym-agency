@@ -1,0 +1,93 @@
+{
+  "S1": {
+    "scores": {
+      "1_clarte_offre": 4,
+      "2_livrables_verifiables": 4,
+      "3_preuve_demo": 3,
+      "4_structure_lisibilite": 4,
+      "5_honnetete_garde_fous": 4,
+      "6_prix_paliers": 4,
+      "7_visuels": 4,
+      "8_referencement_conversion": 4
+    },
+    "justifications": {
+      "1_clarte_offre": "Vertical nomme (logistique/e-commerce) et resultat concret; +1: remplacer 'noeuds' et 'declencheur' par un exemple en clair dans la ligne Essentiel et expliquer 'n8n' en 5 mots dans l'accroche.",
+      "2_livrables_verifiables": "Tableau 3 paliers chiffre, 'teste' defini (3 executions); +1: definir 'etape IA' (ce qu'elle fait en Standard vs 2 en Premium) et chiffrer l'estimation du cout API avant commande.",
+      "3_preuve_demo": "3 captures honnetes mais aucune ne montre n8n ni l'IA (terminal 'python run.py', CSV bruts), pas de video, 0 realisation; +1: enregistrer la video 60-90 s d'un vrai workflow n8n sur donnees fictives (ou une capture de l'editeur n8n) et la mettre en galerie 1.",
+      "4_structure_lisibilite": "Hook, livrables, exemples, processus, exclusions, FAQ de 7 questions; +1: supprimer l'appel 'Ecrivez-moi avant de commander' en double (derniere question FAQ + paragraphe final).",
+      "5_honnetete_garde_fous": "'exemples illustratifs, pas des realisations passees', prototype annonce, exclusions, propriete des acces; +1: dire dans le texte colle (pas seulement dans Preuves) que le prototype est un script Python et non un workflow n8n.",
+      "6_prix_paliers": "49 euros dans la mediane 33-55, options alignees sur l'ecart Standard-Premium (215 vs 200); +1: Premium 14 j = 4 workflows + Supabase + installation pour 349 euros est sous-evalue pour le temps reel de Baptiste: chiffrer les heures ou plafonner a 3 workflows.",
+      "7_visuels": "Couverture tres lisible a 200 px (titre en 2 lignes, schema 3 blocs); +1: S1-1 est tronquee (ligne TC300407 coupee) et S1-2 a la moitie vide: recadrer a la hauteur du contenu.",
+      "8_referencement_conversion": "n8n, logistique, e-commerce, IA, suivi colis dans titre/accroche/tags; +1: ajouter 'Shopify' ou 'WooCommerce' dans le titre ou 1er paragraphe pour capter la recherche e-commerce."
+    },
+    "gaps": [
+      "Preuve: aucune image ne montre n8n ni l'etape IA; 'python run.py' en galerie peut faire douter l'acheteur; video non faite (a faire par Baptiste).",
+      "Texte colle ne dit pas que le prototype est en Python et non en n8n (seulement dans la section Preuves, non collee).",
+      "Appel a ecrire avant commande en double en fin de description.",
+      "S1-1-donnees-entree.png tronquee en bas; S1-2-execution.png moitie vide.",
+      "Premium potentiellement sous-evalue vs temps reel (4 workflows + Supabase + install en 14 j).",
+      "Mapping Essentiel/Standard/Premium sur le formulaire reel ComeUp (offre de base + options) non verifie."
+    ]
+  },
+  "S2": {
+    "scores": {
+      "1_clarte_offre": 4,
+      "2_livrables_verifiables": 3,
+      "3_preuve_demo": 2,
+      "4_structure_lisibilite": 4,
+      "5_honnetete_garde_fous": 3,
+      "6_prix_paliers": 3,
+      "7_visuels": 3,
+      "8_referencement_conversion": 4
+    },
+    "justifications": {
+      "1_clarte_offre": "Titre clair (chatbot IA, clients, vos documents); +1: preciser 'pour boutique en ligne' dans le titre pour porter le vertical comme S1.",
+      "2_livrables_verifiables": "Paliers clairs mais 'document' non defini (1 page? 200 pages?), 'limite de cout API reglee' et 'integration agenda ou CRM' flous; +1: definir un document (ex. 1 PDF <= 20 pages ou 1 page web) et nommer les integrations supportees.",
+      "3_preuve_demo": "Les captures sont une recherche par mots-cles dans une FAQ fictive: aucune IA ni generation visible, S2-1 est contenue dans S2-2 (doublon), pas de video ni de widget test public; +1: produire une vraie reponse generee par Claude sur la FAQ fictive (capture) et fusionner S2-1/S2-2 en une seule image.",
+      "4_structure_lisibilite": "Hook, livrables, exemple, cout, processus, exclusions, FAQ de 8 questions; +1: retirer le bloc hebergement duplique (tableau et description) pour tenir ~800 mots.",
+      "5_honnetete_garde_fous": "Garde-fous, RGPD, cout tiers tres bien; mais le texte colle ne dit pas que la demo n'utilise pas l'IA, la legende 'repond a partir de votre document' evoque un vrai assistant IA, et les couts 5-25 euros/mois sont signales non verifies mais colles tels quels; +1: ajouter 'la demo est une recherche dans une FAQ fictive, sans IA' dans le texte colle et verifier les tarifs n8n/Supabase.",
+      "6_prix_paliers": "Essentiel 59 euros > mediane 33-55 de la grille (la page ecrit 'en haut de la mediane'); la somme d'options annoncee ~190 est en fait 171 (49+39+58+25); n8n + Supabase + widget + test en 4 j pour 59 euros est sous-evalue; +1: viser Essentiel <= 55 en reduisant le perimetre (retirer la base Supabase du palier) et corriger l'arithmetique.",
+      "7_visuels": "Couverture lisible mais ecrit 'Votre assistant IA repond' alors que le brief et le titre disent 'Chatbot IA' (mot-cle absent), bulles qui se chevauchent maladroitement; S2-3 au style different (fond blanc, tableau nu); +1: remplacer le texte par 'Chatbot IA pour votre site' comme le brief, aligner S2-3 sur le style des deux autres.",
+      "8_referencement_conversion": "chatbot IA, assistant IA, service client en titre et tags; +1: ajouter 'e-commerce' ou 'boutique' dans les tags et l'appel final avec question simple a poser en message."
+    },
+    "gaps": [
+      "Preuve la plus faible des 3: prototype sans IA, 2 captures quasi identiques (S2-1 incluse dans S2-2), pas de video ni de lien de test.",
+      "Honnetete: texte colle muet sur le fait que la demo est une recherche par mots-cles; legende 'votre document' ambigue; tarifs tiers non verifies.",
+      "Prix: Essentiel 59 euros hors mediane de la grille; somme d'options 171 vs 190 annonce; Essentiel (n8n + Supabase + widget + test de 20 questions en 4 j) trop dense.",
+      "Livrables: 'document', 'limite de cout API', 'integration' non definis.",
+      "Couverture incoherente avec le brief et le titre (pas de mot 'Chatbot'); S2-3 hors charte.",
+      "Mise en place WhatsApp/email en options (+149, +99) sans preuve de faisabilite: a garder en 'sur devis' uniquement."
+    ]
+  },
+  "S3": {
+    "scores": {
+      "1_clarte_offre": 4,
+      "2_livrables_verifiables": 4,
+      "3_preuve_demo": 3,
+      "4_structure_lisibilite": 4,
+      "5_honnetete_garde_fous": 4,
+      "6_prix_paliers": 4,
+      "7_visuels": 4,
+      "8_referencement_conversion": 4
+    },
+    "justifications": {
+      "1_clarte_offre": "Resultat et formats (factures, BL, CMR vers Excel) comprehensibles en 5 s; +1: reformuler le titre en francais naturel ('Je vais transformer vos factures PDF en tableau Excel avec n8n et l'IA').",
+      "2_livrables_verifiables": "Definitions de 'type de document', 'cas douteux' et 'taux de lecture' = meilleur du lot; +1: preciser l'hebergement de n8n (qui l'installe, a quel cout) car S1 facture +49 euros et S3 dit 'je vous guide' sans l'inscrire dans un palier.",
+      "3_preuve_demo": "S3-3 (HT+TVA different de TTC, cas douteux signale) est une vraie preuve de controle, mais c'est un script a regles fixes: pas d'IA, pas de n8n, pas de scan, pas de taux de lecture montre, pas de video; +1: ajouter une capture d'un vrai appel IA sur une facture scannee fictive avec taux de lecture mesure sur 10 documents, plus la video.",
+      "4_structure_lisibilite": "Hook, livrables, exemple pas a pas, exclusions, FAQ de 8 questions; +1: ne pas repeter la definition des cas douteux deux fois (description + FAQ renvoie deja a elle).",
+      "5_honnetete_garde_fous": "Aucune precision promise, cas douteux jamais corriges en silence, confidentialite et cout API annonces; +1: la FAQ 'Quels documents sont lus' promet scans et photos alors que rien n'est demontre: ecrire 'selon test sur vos documents'.",
+      "6_prix_paliers": "49/169/429 euros coherents, Essentiel dans la mediane, options alignees; +1: Premium (5 types x 20 docs relus champ par champ) est sous-evalue: reduire a 20 documents au total ou passer le palier a ~490 euros.",
+      "7_visuels": "Couverture lisible a 200 px, tableau a droite coherent avec les captures; +1: formats numeriques incoherents en galerie (369.6 vs 163,20) et grand vide sous la facture en S3-1: formater en francais et recadrer.",
+      "8_referencement_conversion": "extraction de donnees, saisie de factures, PDF vers Excel, n8n, OCR IA dans titre/tags/accroche; +1: ajouter 'comptabilite' ou 'bon de livraison' dans le titre pour la cible logistique."
+    },
+    "gaps": [
+      "Preuve: script deterministe sans IA ni n8n; aucun taux de lecture reel demontre; video non faite.",
+      "Hebergement/installation n8n non chiffre alors que S1 le facture 49 euros: incoherence entre fiches.",
+      "FAQ promet PDF scannes et photos sans demonstration.",
+      "Premium (5 types, 20 docs par type, validation humaine, flux complet) tres charge pour 429 euros.",
+      "Formats numeriques non francises (369.6, 73.92) dans S3-2; couverture montre en 'OK' la facture 064 que S3-3 marque a verifier (612,00): detail a aligner.",
+      "Titre grammaticalement lourd ('votre automatisation factures PDF vers Excel')."
+    ]
+  },
+  "verdict": "corriger"
+}

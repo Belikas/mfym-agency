@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12101f">
+<meta name="color-scheme" content="dark">
+<title>Agence MFYM</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="coin" aria-hidden="true"></span>Agence <b>MFYM</b></div>
+  <div class="live" id="live" role="status"><span class="dot"></span><span id="live-txt">connexion…</span></div>
+</header>
+
+<div id="offline" class="offline" role="alert" hidden></div>
+<p id="headline" class="headline"></p>
+
+<section class="strip" aria-label="En bref">
+  <a class="tile" href="#card-revenu" id="t-rev">
+    <span class="lbl">Revenu du mois</span>
+    <span class="val"><b id="rev-val">–</b><small> / 1 000 €</small></span>
+    <span class="bar"><i id="rev-bar"></i></span>
+    <span class="sub" id="rev-sub">&nbsp;</span>
+  </a>
+  <a class="tile" href="#card-budget" id="t-bud">
+    <span class="lbl">Budget dépensé</span>
+    <span class="val"><b id="bud-val">–</b><small id="bud-of"> / 60 €</small></span>
+    <span class="bar"><i id="bud-bar"></i></span>
+    <span class="sub" id="bud-sub">&nbsp;</span>
+  </a>
+  <a class="tile" href="#card-valider" id="t-you">
+    <span class="lbl">Pour toi</span>
+    <span class="val"><b id="you-val">–</b><small id="you-unit"></small></span>
+    <span class="sub" id="you-sub">&nbsp;</span>
+  </a>
+  <a class="tile" href="#office" id="t-work">
+    <span class="lbl">Au travail</span>
+    <span class="val"><b id="work-val">–</b><small id="work-of"></small></span>
+    <span class="sub" id="work-sub">&nbsp;</span>
+  </a>
+</section>
+
+<main>
+  <section id="office" class="office" aria-label="Le bureau"></section>
+  <section id="cards" class="cards"></section>
+</main>
+
+<dialog id="drawer" aria-labelledby="dr-title">
+  <div class="dr-head">
+    <h2 id="dr-title"></h2>
+    <button class="dr-close" id="dr-close" aria-label="Fermer">×</button>
+  </div>
+  <div class="dr-body" id="dr-body"></div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

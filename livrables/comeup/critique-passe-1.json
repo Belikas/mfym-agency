@@ -1,0 +1,91 @@
+{
+  "S1": {
+    "scores": {
+      "1_clarte": 4,
+      "2_livrables": 4,
+      "3_preuve_demo": 2,
+      "4_structure": 4,
+      "5_honnetete": 4,
+      "6_prix_paliers": 4,
+      "7_visuels": 2,
+      "8_referencement_conversion": 4
+    },
+    "justifications": {
+      "1_clarte": "Vertical, outil et résultat dans le titre, aucun jargon ; +1 : ajouter dès la 1re ligne de description un exemple chiffré-neutre du livrable (ex. 'alerte Telegram quand un colis reste 48 h sans mouvement').",
+      "2_livrables": "Tableau net mais flou résiduel : Standard 'mail, Slack ou Telegram' (1 ou 3 canaux ?), Premium 'installation guidée' (tableau) vs 'installation à votre nom' (texte palier), 'test sur vos données' non défini ; +1 : fixer le nombre de canaux par palier, un seul libellé d'installation, et écrire ce que 'testé' veut dire (nombre d'exécutions réussies).",
+      "3_preuve_demo": "Aucune vidéo ni capture, seulement un enchaînement 'illustratif' en texte ; sans avis, c'est le point faible décisif ; +1 (puis +2) : produire la vidéo 60-90 s et 3 captures annotées (workflow, alerte Telegram, tableau) sur données fictives marquées 'exemple'.",
+      "4_structure": "Hook, livrables, exemple, 5 étapes, exclusions, FAQ 7 questions, appel au contact : complet ; +1 : vérifier le rendu dans l'éditeur ComeUp (le gras '**' et les flèches '->' peuvent s'afficher en brut) et passer les 5 étapes en liste numérotée native ; supprimer le bloc 'Exemples de flux' redondant avec l'enchaînement.",
+      "5_honnetete": "Exclusions, coûts tiers, erreur IA, propriété, aucune promesse chiffrée ; mais 'Exemples de flux que je réalise' suggère un passé de réalisations inexistant ; +1 : écrire 'que je peux construire' et remplacer 'je vous réponds sous 24 h' par un engagement que Baptiste confirme tenir (il a un emploi à temps plein).",
+      "6_prix_paliers": "Essentiel 49 € dans la médiane 33-55, options cohérentes, Premium 349 € justifié ; +1 : vérifier que 4 workflows + Supabase + installation en 14 j tient dans le temps réel de Baptiste, et aligner le prix des options avec le Premium (2 workflows en plus = 78 € d'options vs écart Standard-Premium de 200 €).",
+      "7_visuels": "Brief seulement, aucune image produite ni jugeable ; texte annoncé '5 mots' mais 'Automatisez votre logistique' en fait 3 ; +1 : produire la vignette réelle, la tester à 200 px de large et corriger l'incohérence du brief.",
+      "8_referencement_conversion": "n8n, automatisation, IA, logistique, e-commerce dans titre, 1re ligne et tags ; +1 : ajouter 'suivi de colis' et 'n8n' dans les 2 premières phrases de la description et remplacer le tag 'IA' (trop large) par 'alerte retard colis'."
+    },
+    "gaps": [
+      "Preuve : vidéo de démo et 3 captures annotées absentes (bloquant).",
+      "Visuels : couverture non produite, brief à corriger (nombre de mots).",
+      "Livrables : canaux de notification par palier et libellé d'installation n8n incohérents.",
+      "Honnêteté : 'flux que je réalise' laisse croire à des réalisations passées ; délai de réponse 24 h à confirmer.",
+      "Format ComeUp : balisage Markdown (gras, flèches) à tester dans l'éditeur ; limite de titre non vérifiée."
+    ]
+  },
+  "S2": {
+    "scores": {
+      "1_clarte": 4,
+      "2_livrables": 3,
+      "3_preuve_demo": 2,
+      "4_structure": 4,
+      "5_honnetete": 4,
+      "6_prix_paliers": 3,
+      "7_visuels": 2,
+      "8_referencement_conversion": 3
+    },
+    "justifications": {
+      "1_clarte": "Résultat et source (vos documents) clairs, mais aucun vertical ni cible nommés : proche des fiches génériques ; +1 : cibler dans le titre ou la 1re ligne (ex. 'boutiques en ligne') au lieu de 'vos clients' seul.",
+      "2_livrables": "Incohérence directe : la FAQ promet un guide de mise à jour 'Standard et Premium' alors que le tableau le réserve au Premium ; l'hébergement (n8n, widget, base) n'est dit nulle part et le widget 'à coller' suppose un serveur ; +1 : corriger la FAQ ou le tableau, et ajouter une ligne 'où tourne l'assistant, qui l'héberge, à qui sont les comptes' par palier.",
+      "3_preuve_demo": "Aucune démo ; pour un chatbot, la preuve par la démo est l'argument n°1 ; +1 : widget en ligne sur une page de test (lien public) + vidéo montrant une bonne réponse, un 'je ne sais pas' et un transfert humain.",
+      "4_structure": "Structure complète, FAQ 7 questions ; l'exemple d'enchaînement cite n8n/Supabase/Claude, jargon pour un commerçant ; +1 : reformuler l'exemple en termes acheteur (question, réponse, ce qui se passe sinon) et déplacer le détail technique en fin.",
+      "5_honnetete": "Erreurs IA reconnues, pas de 100 % autonome, WhatsApp exclu, RGPD à charge du client, coûts API annoncés ; +1 : préciser le traitement des données clients (conversations envoyées au fournisseur d'IA) dans la FAQ comme S3 le fait.",
+      "6_prix_paliers": "Essentiel 99 € bien au-dessus de la médiane 33-55 € du benchmark pour une fiche sans avis (les chatbots à 110-220 € ont des avis) ; incohérence d'options (transfert humain +49 € alors que Standard seul coûte +150 €) ; +1 : Essentiel à 59-69 € limité à 10 documents, ou documenter pourquoi 99 € se vend sans avis, et recaler les options sur l'écart de palier.",
+      "7_visuels": "Brief seulement, rien à juger ; 'Votre assistant IA répond' compte 4 mots, pas 5 ; +1 : produire la vignette et la tester à 200 px.",
+      "8_referencement_conversion": "'chatbot' absent du titre et de la description (seulement en tag), alors que c'est le mot recherché ; +1 : intégrer 'chatbot IA' dans la 1re phrase de description et un tag 'chatbot site web'."
+    },
+    "gaps": [
+      "Livrables : contradiction FAQ/tableau sur le guide de mise à jour ; hébergement et propriété des comptes non précisés.",
+      "Prix : Essentiel 99 € au-dessus de la médiane sans avis ; options non alignées sur l'écart des paliers.",
+      "Preuve : aucune démo ni lien de test public (bloquant pour un chatbot).",
+      "SEO : 'chatbot' hors titre et description.",
+      "Visuels : couverture non produite ; jargon technique dans l'exemple."
+    ]
+  },
+  "S3": {
+    "scores": {
+      "1_clarte": 4,
+      "2_livrables": 4,
+      "3_preuve_demo": 2,
+      "4_structure": 4,
+      "5_honnetete": 4,
+      "6_prix_paliers": 3,
+      "7_visuels": 2,
+      "8_referencement_conversion": 3
+    },
+    "justifications": {
+      "1_clarte": "Cible (factures, BL, PDF) et résultat dans le titre, aucun jargon ; +1 : nommer 'vers Excel / Google Sheets' dans le titre ou la 1re ligne pour que la destination soit comprise en 5 s.",
+      "2_livrables": "Types, destination, 20 documents testés, taux mesuré, exclusions par palier : bon ; +1 : définir 'cas douteux' (seuil de confiance ou règle) et préciser ce qu'est un 'type' de document (un fournisseur ou un format ?) pour éviter les litiges.",
+      "3_preuve_demo": "Aucune démo ; la preuve naturelle ici est un avant/après sur un document fictif ; +1 : vidéo facture fictive -> ligne Sheets avec un cas 'à relire', plus capture avant/après marquée 'exemple'.",
+      "4_structure": "Structure complète, FAQ 7 questions, exemple lisible ; titre à 80 caractères exacts (limite non vérifiée) ; +1 : raccourcir le titre sous 70 caractères et tester le rendu du balisage dans l'éditeur ComeUp.",
+      "5_honnetete": "Très bon : pas de 100 %, coût API, confidentialité, annulation ; mais contradiction : 'je ne promets aucun pourcentage' vs 'taux de lecture convenu au départ' ; +1 : écrire que le taux est mesuré puis que l'acheteur décide de continuer, sans seuil promis, et dire si l'annulation passe par la procédure ComeUp.",
+      "6_prix_paliers": "Essentiel 59 € au-dessus du plafond de médiane (55) sans avis, alors que le test de 20 documents avec mesure champ par champ représente un vrai travail ; +1 : ramener l'Essentiel à 49 € (ou 10 documents de test) pour les premiers avis et relever ensuite.",
+      "7_visuels": "Brief seulement, rien produit ; +1 : produire la vignette (document stylisé vers tableur), tester à 200 px, vérifier qu'aucune donnée réelle n'apparaît.",
+      "8_referencement_conversion": "'n8n' et 'logistique' absents du titre, un acheteur qui cherche 'automatisation' ne trouve que les tags ; la niche n'est pas confirmée par recherche ComeUp ; +1 : ajouter 'automatisation' dans la 1re phrase de description, utiliser 'saisie de factures' (terme de recherche courant), et vérifier la catégorie Saisie/Data par recherche directe."
+    },
+    "gaps": [
+      "Preuve : démo et avant/après absents (bloquant).",
+      "Prix : Essentiel 59 € au-dessus de la médiane sans avis.",
+      "SEO : titre sans n8n ni automatisation ; niche non vérifiée sur ComeUp.",
+      "Honnêteté : contradiction entre 'aucun pourcentage promis' et 'taux convenu au départ'.",
+      "Livrables : 'cas douteux' et 'type de document' non définis ; titre au maximum de longueur supposé.",
+      "Visuels : couverture non produite."
+    ]
+  },
+  "verdict": "corriger"
+}

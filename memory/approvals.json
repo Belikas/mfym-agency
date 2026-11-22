@@ -1,4 +1,18 @@
 {
- "updated": "2026-11-22T09:15:00+01:00",
- "approvals": []
+ "updated": "2026-11-22T09:34:29+01:00",
+ "approvals": [
+  {
+   "id": "A-01",
+   "question": "Créer ta micro-entreprise aujourd'hui (gratuit, en ligne, ~30 min) pour pouvoir vendre services et produits ?",
+   "recommendation": "yes",
+   "reason": "Sans statut, rien ne se facture : ComeUp exige un SIRET et les ventes Gumroad régulières aussi. Déclarer aujourd'hui permet de démarrer légalement dès la date déclarée ; le SIRET arrive en 1 à 4 semaines.",
+   "cost_eur": 0,
+   "status": "no",
+   "created": "2026-11-22T09:25:39+01:00",
+   "telegram_message_id": 5,
+   "answered_at": "2026-11-22T09:34:29+01:00",
+   "acted_on": true,
+   "acted_note": "Reporté par Baptiste (terminal, 22/11) : on crée la micro-entreprise quand elle devient indispensable (1re vente prête). On prépare tout le reste d'ici là."
+  }
+ ]
 }

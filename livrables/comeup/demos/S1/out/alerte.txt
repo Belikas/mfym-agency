@@ -1,0 +1,5 @@
+ALERTE LOGISTIQUE – 20/11/2026 – 4 colis à risque sur 10
+- CMD-1002 | TransporteurB | Lucas Martin | 3 j de retard sur la date promise
+- CMD-1004 | TransporteurC | Hugo Petit | incident transporteur
+- CMD-1005 | TransporteurB | Chloé Robert | 1 j de retard sur la date promise
+- CMD-1008 | TransporteurB | Louis Simon | aucun scan depuis 3 j

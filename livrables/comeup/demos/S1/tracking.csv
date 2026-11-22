@@ -1,0 +1,11 @@
+tracking,status,last_scan
+TA100201,delivered,2026-11-15
+TB200302,in_transit,2026-11-14
+TA100203,delivered,2026-11-17
+TC300404,exception,2026-11-17
+TB200305,in_transit,2026-11-19
+TA100206,in_transit,2026-11-18
+TC300407,in_transit,2026-11-19
+TB200308,in_transit,2026-11-17
+TA100209,in_transit,2026-11-19
+TC300410,in_transit,2026-11-19
