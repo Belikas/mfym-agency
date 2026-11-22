@@ -1,0 +1,19 @@
+{
+ "id": "exp-02-comeup-gigs",
+ "lead_id": "comeup-n8n-gigs",
+ "title": "ComeUp : 3 services d'automatisation IA",
+ "hypothesis": "Trois services n8n/IA benchmarkés (critique ≥4) obtiennent ≥3 contacts et ≥1 vente en 21 jours.",
+ "metric": "contacts, ventes",
+ "threshold": "≥1 vente et ≥3 contacts dans les 21 jours suivant la publication",
+ "cost_eur": 0,
+ "hours_budget": 4,
+ "start": "",
+ "kill_date": "2026-12-20",
+ "status": "blocked",
+ "blocked_on": [
+  "T-01 contrat + SIRET",
+  "publication sous ton nom (approbation à venir)"
+ ],
+ "results": [],
+ "owner_agent": "redacteur"
+}

@@ -1,0 +1,21 @@
+{
+ "id": "exp-03-skills-gumroad",
+ "lead_id": "claude-skills-bundle",
+ "title": "Gumroad : bundle de skills Claude Code de niche",
+ "hypothesis": "Un bundle de skills Claude Code de niche à 29 €, posté dans 3 communautés, fait ≥5 ventes en 14 jours.",
+ "metric": "ventes Gumroad",
+ "threshold": "≥5 ventes en 14 jours après publication ; tuer sous 2",
+ "cost_eur": 0,
+ "hours_budget": 2,
+ "start": "2026-11-22",
+ "kill_date": "2026-12-20",
+ "status": "running",
+ "blocked_on": [],
+ "results": [
+  {
+   "date": "2026-11-22",
+   "note": "Lancé : benchmark puis construction par l'atelier. Publication soumise à approbation."
+  }
+ ],
+ "owner_agent": "atelier"
+}

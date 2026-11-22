@@ -1,0 +1,43 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "inbox line",
+ "type": "object",
+ "properties": {
+  "ts": {
+   "type": "string"
+  },
+  "type": {
+   "type": "string",
+   "enum": [
+    "text",
+    "file",
+    "photo",
+    "command",
+    "callback"
+   ]
+  },
+  "text": {
+   "type": "string"
+  },
+  "file_path": {
+   "type": "string"
+  },
+  "task_id": {
+   "type": "string"
+  },
+  "approval_id": {
+   "type": "string"
+  },
+  "message_id": {
+   "type": "integer"
+  },
+  "processed": {
+   "type": "boolean"
+  }
+ },
+ "required": [
+  "ts",
+  "type"
+ ],
+ "additionalProperties": true
+}

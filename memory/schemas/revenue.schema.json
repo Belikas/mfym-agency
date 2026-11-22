@@ -1,0 +1,52 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "revenue",
+ "type": "object",
+ "properties": {
+  "updated": {
+   "type": "string"
+  },
+  "entries": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "date": {
+      "type": "string"
+     },
+     "source": {
+      "type": "string"
+     },
+     "lead_id": {
+      "type": "string"
+     },
+     "gross_eur": {
+      "type": "number"
+     },
+     "fees_eur": {
+      "type": "number"
+     },
+     "net_eur": {
+      "type": "number"
+     },
+     "ref": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "date",
+     "source",
+     "gross_eur",
+     "fees_eur",
+     "net_eur"
+    ],
+    "additionalProperties": true
+   }
+  }
+ },
+ "required": [
+  "updated",
+  "entries"
+ ],
+ "additionalProperties": true
+}

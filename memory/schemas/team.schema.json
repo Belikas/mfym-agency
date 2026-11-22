@@ -1,0 +1,102 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "team",
+ "type": "object",
+ "properties": {
+  "updated": {
+   "type": "string"
+  },
+  "agents": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "role": {
+      "type": "string"
+     },
+     "room": {
+      "type": "string"
+     },
+     "inputs": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "outputs": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "metric": {
+      "type": "string"
+     },
+     "model": {
+      "type": "string"
+     },
+     "schedule": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "active",
+       "paused",
+       "fired"
+      ]
+     },
+     "hired": {
+      "type": "string"
+     },
+     "fired": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     },
+     "file": {
+      "type": "string"
+     },
+     "last_run": {
+      "type": "string"
+     },
+     "next_run": {
+      "type": "string"
+     },
+     "current_task": {
+      "type": "string"
+     },
+     "last_result": {
+      "type": "string"
+     },
+     "avg_critic_score": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "id",
+     "name",
+     "role",
+     "room",
+     "model",
+     "schedule",
+     "status",
+     "hired"
+    ],
+    "additionalProperties": true
+   }
+  }
+ },
+ "required": [
+  "updated",
+  "agents"
+ ],
+ "additionalProperties": true
+}

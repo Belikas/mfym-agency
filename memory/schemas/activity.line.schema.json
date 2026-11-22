@@ -1,0 +1,41 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "activity line",
+ "type": "object",
+ "properties": {
+  "ts": {
+   "type": "string"
+  },
+  "session_id": {
+   "type": "string"
+  },
+  "run_id": {
+   "type": "string"
+  },
+  "agent": {
+   "type": "string"
+  },
+  "agent_id": {
+   "type": "string"
+  },
+  "event": {
+   "type": "string"
+  },
+  "tool": {
+   "type": "string"
+  },
+  "summary": {
+   "type": "string"
+  },
+  "status": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "ts",
+  "agent",
+  "event",
+  "summary"
+ ],
+ "additionalProperties": true
+}

@@ -1,0 +1,113 @@
+{
+  "env": {
+    "CLAUDE_CODE_GIT_BASH_PATH": "C:\\Program Files\\Git\bin\bash.exe",
+    "DISABLE_AUTOUPDATER": "1"
+  },
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Bash(tailscale funnel *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell|Write|Edit|MultiEdit|NotebookEdit|Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard.py\"",
+            "onFailure": "block",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Baptiste/miniconda3/python.exe\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/activity.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

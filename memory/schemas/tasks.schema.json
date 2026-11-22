@@ -1,0 +1,87 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "tasks",
+ "type": "object",
+ "properties": {
+  "updated": {
+   "type": "string"
+  },
+  "tasks": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "purpose": {
+      "type": "string"
+     },
+     "steps": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "est_minutes": {
+      "type": "number"
+     },
+     "deliverable": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "open",
+       "done",
+       "cancelled"
+      ]
+     },
+     "created": {
+      "type": "string"
+     },
+     "done_at": {
+      "type": "string"
+     },
+     "actual_minutes": {
+      "type": "number"
+     },
+     "reply": {
+      "type": "string"
+     },
+     "telegram_message_id": {
+      "type": [
+       "integer",
+       "null"
+      ]
+     },
+     "blocks": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "required": [
+     "id",
+     "title",
+     "purpose",
+     "steps",
+     "est_minutes",
+     "deliverable",
+     "status",
+     "created"
+    ],
+    "additionalProperties": true
+   }
+  }
+ },
+ "required": [
+  "updated",
+  "tasks"
+ ],
+ "additionalProperties": true
+}

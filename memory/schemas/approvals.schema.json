@@ -1,0 +1,78 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "approvals",
+ "type": "object",
+ "properties": {
+  "updated": {
+   "type": "string"
+  },
+  "approvals": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "question": {
+      "type": "string"
+     },
+     "recommendation": {
+      "type": "string",
+      "enum": [
+       "yes",
+       "no"
+      ]
+     },
+     "reason": {
+      "type": "string"
+     },
+     "cost_eur": {
+      "type": "number"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "pending",
+       "yes",
+       "no"
+      ]
+     },
+     "created": {
+      "type": "string"
+     },
+     "answered_at": {
+      "type": "string"
+     },
+     "telegram_message_id": {
+      "type": [
+       "integer",
+       "null"
+      ]
+     },
+     "acted_on": {
+      "type": "boolean"
+     },
+     "acted_note": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "id",
+     "question",
+     "recommendation",
+     "reason",
+     "cost_eur",
+     "status",
+     "created"
+    ],
+    "additionalProperties": true
+   }
+  }
+ },
+ "required": [
+  "updated",
+  "approvals"
+ ],
+ "additionalProperties": true
+}

@@ -1,0 +1,94 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "experiment",
+ "type": "object",
+ "properties": {
+  "id": {
+   "type": "string"
+  },
+  "lead_id": {
+   "type": "string"
+  },
+  "title": {
+   "type": "string"
+  },
+  "hypothesis": {
+   "type": "string"
+  },
+  "metric": {
+   "type": "string"
+  },
+  "threshold": {
+   "type": "string"
+  },
+  "cost_eur": {
+   "type": "number"
+  },
+  "hours_budget": {
+   "type": "number"
+  },
+  "start": {
+   "type": "string"
+  },
+  "kill_date": {
+   "type": "string"
+  },
+  "status": {
+   "type": "string",
+   "enum": [
+    "ready",
+    "running",
+    "blocked",
+    "scaled",
+    "adjusted",
+    "killed"
+   ]
+  },
+  "blocked_on": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "results": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "date": {
+      "type": "string"
+     },
+     "value": {},
+     "note": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "date",
+     "note"
+    ],
+    "additionalProperties": true
+   }
+  },
+  "decision": {
+   "type": "string"
+  },
+  "decided_at": {
+   "type": "string"
+  },
+  "owner_agent": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "id",
+  "lead_id",
+  "title",
+  "hypothesis",
+  "metric",
+  "threshold",
+  "kill_date",
+  "status"
+ ],
+ "additionalProperties": true
+}

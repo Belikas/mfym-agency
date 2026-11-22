@@ -1,0 +1,48 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "expenses",
+ "type": "object",
+ "properties": {
+  "updated": {
+   "type": "string"
+  },
+  "entries": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "date": {
+      "type": "string"
+     },
+     "item": {
+      "type": "string"
+     },
+     "amount_eur": {
+      "type": "number"
+     },
+     "approval_id": {
+      "type": "string"
+     },
+     "recurring": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "date",
+     "item",
+     "amount_eur",
+     "approval_id"
+    ],
+    "additionalProperties": true
+   }
+  },
+  "budget_monthly_eur": {
+   "type": "number"
+  }
+ },
+ "required": [
+  "updated",
+  "entries"
+ ],
+ "additionalProperties": true
+}

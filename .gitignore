@@ -1,0 +1,10 @@
+.env
+memory/activity.jsonl
+memory/activity*.jsonl
+logs/
+run/
+__pycache__/
+node_modules/
+dashboard/node_modules/
+dashboard/dist/
+memory/inbox_files/

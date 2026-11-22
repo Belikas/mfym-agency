@@ -1,0 +1,1433 @@
+{
+ "updated": "2026-11-22T10:00:00+01:00",
+ "scoring": "total = 2×délai + 2×preuve + revenu + coût + heures + automatisation + risque (max 45)",
+ "leads": [
+  {
+   "id": "parking-idf",
+   "name": "Location place de parking (si possédée)",
+   "category": "location-actifs",
+   "description": "Yespark/PAP.",
+   "edge": "Seulement si Baptiste a une place",
+   "sources": [
+    {
+     "url": "https://www.yespark.fr/prix-parking?d=94&k=car",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "Val-de-Marne ~74 €/mois"
+    },
+    {
+     "url": "https://www.pap.fr/annonce/locations-parking-ile-de-france-g471",
+     "kind": "marketplace",
+     "financial_interest": false,
+     "finding": "70-230 € dans Paris"
+    }
+   ],
+   "confidence": "med",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 4,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 5,
+    "automation": 5,
+    "risk": 4
+   },
+   "total": 34,
+   "est_monthly_eur": 75,
+   "startup_cost_eur": 0,
+   "first_euro_days": 14,
+   "legal_notes": "Micro-foncier ; copropriété",
+   "first_test": "Conditionnel : demander s'il a une place",
+   "status": "parked",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "comeup-n8n-gigs",
+   "name": "Gigs n8n/IA sur ComeUp",
+   "category": "freelance-dev-ia",
+   "description": "Workflows n8n/IA en forfaits fixes pour TPE francophones.",
+   "edge": "Dev fort + agents qui livrent vite ; 0 avis au départ",
+   "sources": [
+    {
+     "url": "https://comeup.com/fr/service/524736/configurer-et-automatiser-vos-workflows-n8n-sur-mesure",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "n8n à 165 € base, vendeur 470 ventes (mix)"
+    },
+    {
+     "url": "https://comeup.com/fr/service/467396/creer-et-gerer-vos-workflows-dautomatisation-avec-n8n",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "106 ventes, 85 avis, depuis 2022, dès 72 €"
+    },
+    {
+     "url": "https://comeup.com/fr/service/549446/automatiser-vos-devis-et-vos-relances-avec-n8n",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "~20 services n8n/Make par page, entrées 20-40 $, plusieurs à 0 vente"
+    }
+   ],
+   "confidence": "med",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 3,
+    "monthly_revenue": 3,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 3,
+    "risk": 4
+   },
+   "total": 30,
+   "est_monthly_eur": 350,
+   "startup_cost_eur": 0,
+   "first_euro_days": 14,
+   "legal_notes": "Micro-entreprise avant 1er paiement ; compte à son nom = approbation",
+   "first_test": "3 gigs (60/150/300 €) ; seuil ≥1 vente et ≥3 contacts en 21 j",
+   "status": "testing",
+   "updated": "2026-11-22",
+   "experiment_id": "exp-02-comeup-gigs"
+  },
+  {
+   "id": "gbp-optimisation",
+   "name": "Optimisation fiche Google Business (artisans)",
+   "category": "services-tpe",
+   "description": "Audit + optimisation GBP, puis gestion mensuelle.",
+   "edge": "80 % automatisable par agent",
+   "sources": [
+    {
+     "url": "https://comeup.com/fr/service/551766/optimiser-votre-fiche-google-business-profile-pour-ameliorer-votre-visibilite-locale",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "≥19 offres GBP, 28-57 $ ponctuel, ~100 $/mois gestion"
+    },
+    {
+     "url": "https://comeup.com/fr/service/532452/gerer-vos-avis-google-et-booster-votre-e-reputation-locale-sur-votre-fiche-google-business",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "Top : 72 avis, 120 ventes ; beaucoup à 5 ventes"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 3,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 4,
+    "risk": 4
+   },
+   "total": 30,
+   "est_monthly_eur": 250,
+   "startup_cost_eur": 0,
+   "first_euro_days": 14,
+   "legal_notes": "Micro-entreprise ; accès manager officiel ; pas de faux avis",
+   "first_test": "3 gigs (30/60/100 €/mois) ; seuil ≥3 ventes en 30 j",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "side-weekend-logistics",
+   "name": "Intérim week-end préparation de commandes",
+   "category": "gig-local",
+   "description": "Samedis en entrepôt via Side/Randstad.",
+   "edge": "Expérience logistique — conflit employeur probable",
+   "sources": [
+    {
+     "url": "https://www.hellowork.com/fr-fr/emplois/82068937.html",
+     "kind": "job_board",
+     "financial_interest": false,
+     "finding": "Side : 12,31 €/h brut"
+    },
+    {
+     "url": "https://www.randstad.fr/offre/001-dth-0000033_01l/preparateur_de_commandes_etudiant_f_h_-_le_samedi",
+     "kind": "job_board",
+     "financial_interest": false,
+     "finding": "Postes samedi toute l'année"
+    }
+   ],
+   "confidence": "high",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 4,
+    "evidence": 4,
+    "monthly_revenue": 3,
+    "startup_cost": 5,
+    "baptiste_hours": 1,
+    "automation": 1,
+    "risk": 4
+   },
+   "total": 30,
+   "est_monthly_eur": 320,
+   "startup_cost_eur": 0,
+   "first_euro_days": 10,
+   "legal_notes": "Salariat ; cumul d'emploi, 48 h max ; à éviter si employeur logistique",
+   "first_test": "Écarté : conflit employeur + plafond bas",
+   "status": "parked",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "clipping-whop",
+   "name": "Clipping payé à la vue (Whop Content Rewards)",
+   "category": "contenu",
+   "description": "Clips courts sur campagnes payées au 1000 vues ; SixShots déjà en service.",
+   "edge": "Installé depuis le 18/11, agents pour couper/poster",
+   "sources": [
+    {
+     "url": "https://digiday.com/media/wtf-is-clipping-the-low-lift-creator-strategy-grabbing-advertisers-attention",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "1-5 $/1000 vues, Whop prend 10 %, aucune stat publique de gains"
+    },
+    {
+     "url": "https://openclip.app/clipping/campaign-budget-and-payout-risk.md",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Cagnottes premier arrivé ; vues après épuisement non payées"
+    },
+    {
+     "url": "https://www.opus.pro/blog/whop-content-rewards",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "0,20-6 $/1000, moyenne ~1 $ : 1000 €/mois ≈ 1 M vues"
+    }
+   ],
+   "confidence": "med",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 4,
+    "evidence": 3,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 3,
+    "risk": 3
+   },
+   "total": 30,
+   "est_monthly_eur": 250,
+   "startup_cost_eur": 0,
+   "first_euro_days": 14,
+   "legal_notes": "Micro-entreprise si régulier ; règles par campagne",
+   "first_test": "14 j de suivi : ≥15 € payés et ≥70 % clips approuvés",
+   "status": "testing",
+   "updated": "2026-11-22",
+   "experiment_id": "exp-01-clipping-mesure"
+  },
+  {
+   "id": "codeur-n8n-ai-projects",
+   "name": "Appels d'offres Codeur.com (n8n, chatbot, agent IA)",
+   "category": "freelance-dev-ia",
+   "description": "Répondre aux projets automatisation/chatbot de clients français.",
+   "edge": "Livraison rapide + démo vidéo",
+   "sources": [
+    {
+     "url": "https://www.codeur.com/projects/491706-automatisation-ia",
+     "kind": "job_board",
+     "financial_interest": false,
+     "finding": "10 k€+, 86 devis : très concurrentiel"
+    },
+    {
+     "url": "https://www.codeur.com/projects/453585-chatbot-n8n-ia",
+     "kind": "job_board",
+     "financial_interest": false,
+     "finding": "Chatbot n8n 500-1000 €, 22 offres"
+    },
+    {
+     "url": "https://www.codeur.com/projects/482078-automatisation-ia",
+     "kind": "job_board",
+     "financial_interest": false,
+     "finding": "~20 annonces n8n/WhatsApp récentes, <500-1000 €"
+    }
+   ],
+   "confidence": "med",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 4,
+    "monthly_revenue": 3,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 2,
+    "risk": 4
+   },
+   "total": 29,
+   "est_monthly_eur": 500,
+   "startup_cost_eur": 0,
+   "first_euro_days": 21,
+   "legal_notes": "Micro-entreprise ; commission Codeur",
+   "first_test": "15 devis <1000 € en 2 sem ; seuil ≥2 shortlists, ≥1 mission",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "claude-skills-bundle",
+   "name": "Bundles skills/agents Claude Code (Gumroad)",
+   "category": "produits-numeriques",
+   "description": "Skills/MCP de niche à 29-99 €.",
+   "edge": "Utilisateur intensif + équipe d'agents",
+   "sources": [
+    {
+     "url": "https://www.indiehackers.com/post/i-made-57-in-48-hours-selling-claude-cheat-codes-here-s-what-worked-and-what-didn-t-01d7f1f61c",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "57 $ en 48 h via Reddit"
+    },
+    {
+     "url": "https://dev.to/manja316/how-to-build-a-claude-code-skill-that-actually-sells-on-gumroad-4kdm",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "~200 $/mois pour 3 skills"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 4,
+    "automation": 4,
+    "risk": 4
+   },
+   "total": 29,
+   "est_monthly_eur": 150,
+   "startup_cost_eur": 0,
+   "first_euro_days": 14,
+   "legal_notes": "Gumroad gère la TVA ; beaucoup de gratuit",
+   "first_test": "1 bundle niche à 29 € ; seuil ≥5 ventes en 14 j",
+   "status": "testing",
+   "updated": "2026-11-22",
+   "experiment_id": "exp-03-skills-gumroad"
+  },
+  {
+   "id": "notion-templates-fr",
+   "name": "Templates Notion/Excel niche FR",
+   "category": "produits-numeriques",
+   "description": "Templates pour public FR précis.",
+   "edge": "Niche FR",
+   "sources": [
+    {
+     "url": "https://www.notion.com/fr/help/selling-on-marketplace",
+     "kind": "official",
+     "financial_interest": false,
+     "finding": "Liste d'attente + approbation Notion"
+    },
+    {
+     "url": "https://kupkaike.com/blog/notion-templates-passive-income-how-much-can-you-earn",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Médiane Gumroad ~72 $/mois"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 4,
+    "automation": 3,
+    "risk": 5
+   },
+   "total": 28,
+   "est_monthly_eur": 80,
+   "startup_cost_eur": 0,
+   "first_euro_days": 21,
+   "legal_notes": "Plateformes gèrent la TVA",
+   "first_test": "5 templates ; seuil 3 ventes",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "primes-bancaires",
+   "name": "Primes de bienvenue bancaires (one-off)",
+   "category": "primes",
+   "description": "Monabanq, Fortuneo, Hello bank! : 80-330 € chacune sous conditions.",
+   "edge": "Aucun ; légal, plafonné",
+   "sources": [
+    {
+     "url": "https://banque.meilleurtaux.com/banque-en-ligne/meilleures-primes-bienvenue-ouverture-compte-bancaire.html",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Monabanq 280 € sans condition de revenu, Hello bank! 330 €"
+    },
+    {
+     "url": "https://culture-financiere.com/primes-parrainage-cashback-cache-generosite-banques-en-ligne/",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "Offres 80-150 € typiques, conditions durcies"
+    },
+    {
+     "url": "https://www.plus.transformation.gouv.fr/experiences/6146287_impossible-davoir-une-reponse-du-service-des-impots",
+     "kind": "official",
+     "financial_interest": false,
+     "finding": "SIP : primes à déclarer"
+    }
+   ],
+   "confidence": "med",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 3,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 4,
+    "automation": 1,
+    "risk": 4
+   },
+   "total": 28,
+   "est_monthly_eur": 170,
+   "startup_cost_eur": 0,
+   "first_euro_days": 30,
+   "legal_notes": "Imposable (~70 % net) ; reprise si clôture <12 mois ; Hello bank! expire 08/12",
+   "first_test": "1 compte Monabanq ; seuil ≥80 € crédités sous 60 j",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "cashback",
+   "name": "Cashback sur achats prévus",
+   "category": "primes",
+   "description": "iGraal & co, 1-10 %.",
+   "edge": "Aucun",
+   "sources": [
+    {
+     "url": "https://culture-financiere.com/primes-parrainage-cashback-cache-generosite-banques-en-ligne/",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "100-200 €/an"
+    },
+    {
+     "url": "https://www.plus.transformation.gouv.fr/experiences/6146287_impossible-davoir-une-reponse-du-service-des-impots",
+     "kind": "official",
+     "financial_interest": false,
+     "finding": "À déclarer"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 4,
+    "evidence": 3,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 1,
+    "risk": 4
+   },
+   "total": 28,
+   "est_monthly_eur": 12,
+   "startup_cost_eur": 0,
+   "first_euro_days": 15,
+   "legal_notes": "Négligeable",
+   "first_test": "1 achat prévu",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "chrome-extension-niche",
+   "name": "Extension Chrome IA de niche (freemium)",
+   "category": "micro-saas",
+   "description": "Extension à usage précis, Pro 5-15 €/mois.",
+   "edge": "Dev rapide",
+   "sources": [
+    {
+     "url": "https://www.indiehackers.com/post/ive-been-working-on-my-first-saas-chrome-extension-for-2-years-and-reached-36-mrr-de06d0000e",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "36 $ MRR après 2 ans"
+    },
+    {
+     "url": "https://bigideasdb.com/how-to-monetize-a-chrome-extension",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "57 % à 0 $/mois, 6 % >1000 $"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 3,
+    "monthly_revenue": 3,
+    "startup_cost": 4,
+    "baptiste_hours": 3,
+    "automation": 4,
+    "risk": 4
+   },
+   "total": 28,
+   "est_monthly_eur": 300,
+   "startup_cost_eur": 5,
+   "first_euro_days": 45,
+   "legal_notes": "Merchant of record pour TVA",
+   "first_test": "≥100 installs et 1 payant en 14 j",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "superprof-code",
+   "name": "Cours programmation/IA (Superprof)",
+   "category": "gig-local",
+   "description": "Cours Python/automatisation IA en visio le soir.",
+   "edge": "Dev pro",
+   "sources": [
+    {
+     "url": "https://www.superprof.fr/cours/programmation/paris/",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "Moyenne Paris 31 €/h, 9 à 79 €/h"
+    },
+    {
+     "url": "https://www.superprof.fr/cours/python/paris-12/",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "27-35 €/h par arrondissement"
+    }
+   ],
+   "confidence": "med",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 3,
+    "monthly_revenue": 3,
+    "startup_cost": 5,
+    "baptiste_hours": 1,
+    "automation": 1,
+    "risk": 5
+   },
+   "total": 27,
+   "est_monthly_eur": 350,
+   "startup_cost_eur": 0,
+   "first_euro_days": 14,
+   "legal_notes": "Micro-entreprise BNC",
+   "first_test": "Annonce 40 €/h ; seuil ≥2 élèves en 3 sem",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "prolific",
+   "name": "Prolific — études rémunérées",
+   "category": "micro-travail-ia",
+   "description": "Études académiques payées.",
+   "edge": "Aucun",
+   "sources": [
+    {
+     "url": "https://sidehustleschool.com/reviews/prolific/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Min 6 £/h, typique 8-15 $/h"
+    },
+    {
+     "url": "https://dev.to/remmy_lennon_5071aba9e7dc/micro-jobs-in-2026-what-the-research-actually-shows-2nj3",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "Réaliste 30-85 $/mois"
+    }
+   ],
+   "confidence": "med",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 4,
+    "evidence": 3,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 1,
+    "risk": 4
+   },
+   "total": 27,
+   "est_monthly_eur": 80,
+   "startup_cost_eur": 0,
+   "first_euro_days": 7,
+   "legal_notes": "Revenus à déclarer",
+   "first_test": "1 sem ; seuil ≥8 €/h",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "n8n-productized-service",
+   "name": "Automatisation n8n/Claude productisée (template + installation)",
+   "category": "services-tpe",
+   "description": "Offre à prix fixe dans une niche, livrée avec installation.",
+   "edge": "Dev IA + logistique",
+   "sources": [
+    {
+     "url": "https://community.n8n.io/t/do-people-actually-pay-for-n8n-templates-or-only-for-someone-to-set-them-up/326627",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Templates seuls ne se vendent pas ; l'installation oui"
+    },
+    {
+     "url": "https://learnwithhasan.com/digital-product-ideas/n8n-workflow-templates/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Chiffres non sourcés"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 3,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 3,
+    "risk": 4
+   },
+   "total": 27,
+   "est_monthly_eur": 500,
+   "startup_cost_eur": 0,
+   "first_euro_days": 21,
+   "legal_notes": "Micro-entreprise ; pas de données employeur",
+   "first_test": "2 offres 150-300 € + 30 messages ; seuil 1 commande",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "n8n-creator-hub",
+   "name": "Templates payants n8n Creator Hub",
+   "category": "produits-numeriques",
+   "description": "Templates sur la bibliothèque officielle n8n.",
+   "edge": "Agents produisent vite",
+   "sources": [
+    {
+     "url": "https://docs.n8n.io/contribute/create-templates",
+     "kind": "official",
+     "financial_interest": false,
+     "finding": "Payant après 3 templates approuvés"
+    },
+    {
+     "url": "https://community.n8n.io/t/do-people-actually-pay-for-n8n-templates-or-only-for-someone-to-set-them-up/326627",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "0 vente rapportée"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 4,
+    "automation": 4,
+    "risk": 4
+   },
+   "total": 26,
+   "est_monthly_eur": 50,
+   "startup_cost_eur": 0,
+   "first_euro_days": 45,
+   "legal_notes": "Conditions de partage non vérifiées",
+   "first_test": "3 templates gratuits approuvés = source de leads",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "kdp-low-content",
+   "name": "Livres low-content IA sur KDP",
+   "category": "edition",
+   "description": "Carnets/planners assistés par IA.",
+   "edge": "Expérience KDP (sans revenus)",
+   "sources": [
+    {
+     "url": "https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors/",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "Livres IA : 20 % du catalogue, 11 % du CA"
+    },
+    {
+     "url": "https://www.inkfluenceai.com/blog/low-content-book-income-2026",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "1,5-3,5 $/vente"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 5,
+    "automation": 5,
+    "risk": 2
+   },
+   "total": 26,
+   "est_monthly_eur": 50,
+   "startup_cost_eur": 0,
+   "first_euro_days": 40,
+   "legal_notes": "Risque pour le compte KDP existant",
+   "first_test": "Déconseillé : risque compte",
+   "status": "parked",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "tests-ux",
+   "name": "Tests utilisateurs rémunérés",
+   "category": "micro-travail-ia",
+   "description": "Testapic, Userlytics : 5-50 €/test.",
+   "edge": "Profil technique",
+   "sources": [
+    {
+     "url": "https://www.european-funding-guide.eu/fr/devenir-testeur-de-produits",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Testapic ~7 €/15 min"
+    },
+    {
+     "url": "https://www.panelplace.com/reviews/testingtime-france/1740",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Un seul avis"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 4,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 1,
+    "risk": 5
+   },
+   "total": 26,
+   "est_monthly_eur": 50,
+   "startup_cost_eur": 0,
+   "first_euro_days": 14,
+   "legal_notes": "À déclarer",
+   "first_test": "3 plateformes ; seuil ≥14 € en 14 j",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "etsy-sheets-fr",
+   "name": "Tableurs Excel/Sheets sur Etsy FR",
+   "category": "produits-numeriques",
+   "description": "Budget, stock, facturation en FR.",
+   "edge": "Variantes rapides",
+   "sources": [
+    {
+     "url": "https://templett.com/blog/the-etsy-template-saturation-myth/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Niches OK, génériques saturés"
+    },
+    {
+     "url": "https://www.sellerapp.com/blog/sell-digital-downloads-on-etsy/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Templates métier se vendent mieux"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 4,
+    "baptiste_hours": 4,
+    "automation": 3,
+    "risk": 4
+   },
+   "total": 26,
+   "est_monthly_eur": 60,
+   "startup_cost_eur": 3,
+   "first_euro_days": 25,
+   "legal_notes": "0,20 $/annonce ; règles IA Etsy",
+   "first_test": "10 tableurs ; seuil 3 ventes",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "ai-receptionist-tpe-idf",
+   "name": "Assistant IA (appels manqués/WhatsApp) pour artisans IdF",
+   "category": "services-tpe",
+   "description": "Agent n8n+Claude qui répond et prend RDV, abonnement mensuel.",
+   "edge": "Dev + récurrent",
+   "sources": [
+    {
+     "url": "https://community.n8n.io/t/looking-for-advice-how-did-you-find-your-first-n8n-client/200705",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Conseil : réseau perso / prospection locale ; beaucoup de débutants sans client"
+    },
+    {
+     "url": "https://comeup.com/fr/service/534668/integrer-un-chatbot-ia-sur-votre-site-pour-repondre-a-vos-clients",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "Chatbot dès 55 € + 28 €/mois, vendeur à 0 vente"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 4,
+    "startup_cost": 4,
+    "baptiste_hours": 3,
+    "automation": 4,
+    "risk": 3
+   },
+   "total": 26,
+   "est_monthly_eur": 600,
+   "startup_cost_eur": 10,
+   "first_euro_days": 30,
+   "legal_notes": "RGPD prospection B2B ; pas de scraping Google Maps",
+   "first_test": "40 artisans démarchés + démo 24 h ; seuil 1 abonnement ≥80 €/mois en 30 j",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "malt-ai-automation-profile",
+   "name": "Profil Malt agents IA / automatisation",
+   "category": "freelance-dev-ia",
+   "description": "Missions courtes n8n, Claude API, RAG.",
+   "edge": "Stack exacte demandée",
+   "sources": [
+    {
+     "url": "https://www.malt.fr/profile/n8n",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "TJM affichés 350-600 €, offres de lancement 300-400 €"
+    },
+    {
+     "url": "https://www.malt.fr/profile/antoinedebronac",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "≥20 profils n8n/agents IA indexés : offre abondante"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 4,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 2,
+    "risk": 4
+   },
+   "total": 25,
+   "est_monthly_eur": 800,
+   "startup_cost_eur": 0,
+   "first_euro_days": 30,
+   "legal_notes": "SIRET obligatoire pour Malt ; vérifier contrat",
+   "first_test": "Profil + 5 propositions/sem, 3 sem ; seuil 1 mission ≥500 €",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "lego-eol",
+   "name": "LEGO fin de vie : achat promo, revente",
+   "category": "revente",
+   "description": "Sets retirés revendus 12-24 mois après.",
+   "edge": "Alertes bons plans",
+   "sources": [
+    {
+     "url": "https://brickfact.com/fr-fr/blog/recherche/prix-lego-apres-eol",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "+22 % médian à 12 mois, frais non déduits"
+    },
+    {
+     "url": "https://www.dealabs.com/groupe/lego-commentes",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Valeur monte après retrait"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": true,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 3,
+    "monthly_revenue": 2,
+    "startup_cost": 3,
+    "baptiste_hours": 4,
+    "automation": 3,
+    "risk": 3
+   },
+   "total": 25,
+   "est_monthly_eur": 120,
+   "startup_cost_eur": 0,
+   "first_euro_days": 60,
+   "legal_notes": "Capital immobilisé ; DAC7 30 ventes/2000 €",
+   "first_test": "3 sets déjà retirés sous cote ; seuil ≥20 % net",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "algora-bounties",
+   "name": "Bounties open source Algora",
+   "category": "bounties",
+   "description": "Issues GitHub à 100-5000 $.",
+   "edge": "Agents Claude Code pour les PR",
+   "sources": [
+    {
+     "url": "https://dev.to/tatelyman/how-i-earn-money-from-open-source-bounties-on-algora-f5e",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Bounties 100-5000 $, auteur sans paiement prouvé"
+    },
+    {
+     "url": "https://news.ycombinator.com/item?id=37769595",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "~600 $/dev en moyenne, modèle contesté"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 3,
+    "risk": 3
+   },
+   "total": 24,
+   "est_monthly_eur": 200,
+   "startup_cost_eur": 0,
+   "first_euro_days": 28,
+   "legal_notes": "Règles anti-PR IA des projets",
+   "first_test": "4 PR 100-500 $ ; seuil 1 paiement en 4 sem",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "faceless-youtube-fr",
+   "name": "Chaîne YouTube sans visage FR",
+   "category": "contenu",
+   "description": "Vidéos narrées automatisées.",
+   "edge": "Agents scriptent/montent",
+   "sources": [
+    {
+     "url": "https://digitiz.fr/blog/monetisation-youtube/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "RPM FR ~2,3 $"
+    },
+    {
+     "url": "https://www.blogdumoderateur.com/youtube-durcit-regles-monetisation-ce-qui-change-createurs/",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "Seuils doublés en 2027"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 1,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 4,
+    "automation": 4,
+    "risk": 3
+   },
+   "total": 23,
+   "est_monthly_eur": 30,
+   "startup_cost_eur": 0,
+   "first_euro_days": 90,
+   "legal_notes": "Seuils YPP doublés au 01/02/2027",
+   "first_test": "Hors objectif 30 j",
+   "status": "parked",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "pokemon-tcg",
+   "name": "Cartes Pokémon : lots et revente",
+   "category": "revente",
+   "description": "Lots LBC/Vinted triés, revente Cardmarket.",
+   "edge": "Faible",
+   "sources": [
+    {
+     "url": "https://margeoapp.com/niches/revente-cartes-pokemon-tcg-2026",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "40-100 % marge ETB, 10-25 % faux"
+    },
+    {
+     "url": "https://www.24matins.fr/cartes-pokemon-et-one-piece-la-speculation-agace-les-fans-1421719",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "Spéculation contestée"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 3,
+    "startup_cost": 3,
+    "baptiste_hours": 2,
+    "automation": 3,
+    "risk": 2
+   },
+   "total": 23,
+   "est_monthly_eur": 150,
+   "startup_cost_eur": 0,
+   "first_euro_days": 30,
+   "legal_notes": "Contrefaçons ; DAC7",
+   "first_test": "1 lot 30-50 € ; seuil ×1,3",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "book-flip",
+   "name": "Arbitrage livres d'occasion",
+   "category": "revente",
+   "description": "Scan ISBN, Momox/Recyclivre/Vinted.",
+   "edge": "Scan automatisable",
+   "sources": [
+    {
+     "url": "https://margeoapp.com/blog/combien-rapporte-revente-livres-occasion",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Rachat 0,25-2 €"
+    },
+    {
+     "url": "https://gowork.fr/recyclivre-paris",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Litiges Recyclivre"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 4,
+    "baptiste_hours": 1,
+    "automation": 3,
+    "risk": 4
+   },
+   "total": 23,
+   "est_monthly_eur": 60,
+   "startup_cost_eur": 0,
+   "first_euro_days": 21,
+   "legal_notes": "Marges faibles",
+   "first_test": "20 livres perso ; seuil >1,5 €/livre",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "lbc-vinted-alerts",
+   "name": "Arbitrage LBC/Vinted (alertes natives seulement)",
+   "category": "revente",
+   "description": "Repérer les annonces sous-évaluées.",
+   "edge": "Scraping interdit : alertes natives",
+   "sources": [
+    {
+     "url": "https://www.leboncoin.fr/robots.txt",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "Robots interdits"
+    },
+    {
+     "url": "https://cms.law/en/fra/news-information/arret-leboncoin-web-scraping-droit-sui-generis-sur-les-bases-de-donnees",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "CA Paris 2021 : base protégée"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 3,
+    "startup_cost": 4,
+    "baptiste_hours": 3,
+    "automation": 2,
+    "risk": 1
+   },
+   "total": 23,
+   "est_monthly_eur": 0,
+   "startup_cost_eur": 0,
+   "first_euro_days": 30,
+   "legal_notes": "Scraping LBC contraire CGU + droit des bases ; ban Vinted",
+   "first_test": "Alertes natives 5 requêtes ; seuil ≥3 deals",
+   "status": "parked",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "client-mystere",
+   "name": "Client mystère",
+   "category": "services-locaux",
+   "description": "Missions 10-100 € en magasin.",
+   "edge": "Aucun",
+   "sources": [
+    {
+     "url": "https://www.legalplace.fr/guides/devenir-client-mystere/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "10-100 €/mission"
+    },
+    {
+     "url": "https://info.fr/forum/insolite-buzz/comment-devenir-client-mystere/",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Commissions 15-25 %"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 1,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 1,
+    "risk": 4
+   },
+   "total": 23,
+   "est_monthly_eur": 60,
+   "startup_cost_eur": 0,
+   "first_euro_days": 30,
+   "legal_notes": "Souvent payé en bons",
+   "first_test": "2 panels ; seuil 3 missions",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "parrainage-bancaire",
+   "name": "Parrainage bancaire à grande échelle",
+   "category": "primes",
+   "description": "Diffuser un code parrain.",
+   "edge": "Pas d'audience",
+   "sources": [
+    {
+     "url": "https://www.francetransactions.com/actus/news-banques/boursobank-bloque-toutes-les-primes.html",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "BoursoBank suspendu 02/2026"
+    },
+    {
+     "url": "https://culture-financiere.com/primes-parrainage-cashback-cache-generosite-banques-en-ligne/",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "80 €/filleul, max 20/an"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 2,
+    "risk": 3
+   },
+   "total": 23,
+   "est_monthly_eur": 40,
+   "startup_cost_eur": 0,
+   "first_euro_days": 45,
+   "legal_notes": "À déclarer",
+   "first_test": "5 proches ; seuil 2 filleuls",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "micro-saas-logistique",
+   "name": "Micro-SaaS logistique pour PME",
+   "category": "micro-saas",
+   "description": "Outil web payant 10-30 €/mois.",
+   "edge": "Savoir logistique — attention non-concurrence",
+   "sources": [
+    {
+     "url": "https://www.indiehackers.com/post/how-we-struggled-our-way-to-our-first-100-mrr-and-what-we-learned-c1849f7abd",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Premier 100 $ MRR difficile"
+    },
+    {
+     "url": "https://www.indiehackers.com/post/ive-been-working-on-my-first-saas-chrome-extension-for-2-years-and-reached-36-mrr-de06d0000e",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "36 $ MRR après 2 ans"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 1,
+    "evidence": 2,
+    "monthly_revenue": 3,
+    "startup_cost": 4,
+    "baptiste_hours": 2,
+    "automation": 4,
+    "risk": 4
+   },
+   "total": 23,
+   "est_monthly_eur": 300,
+   "startup_cost_eur": 10,
+   "first_euro_days": 60,
+   "legal_notes": "Pas de données employeur ; vérifier non-concurrence",
+   "first_test": "10 interviews + 3 précommandes",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "affiliation-amazon",
+   "name": "Site affilié niche FR",
+   "category": "affiliation",
+   "description": "Comparateur Amazon Partenaires.",
+   "edge": "Dev + contenu auto",
+   "sources": [
+    {
+     "url": "https://www.leptidigital.fr/e-commerce/affiliation-amazon-modification-taux-affiliation-77438/",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "1-4 % ; 1000 €/mois ≈ 33 k€ de ventes"
+    },
+    {
+     "url": "https://www.formalive.fr/affiliation-amazon-guide/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Taux divergents"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 1,
+    "evidence": 2,
+    "monthly_revenue": 2,
+    "startup_cost": 4,
+    "baptiste_hours": 3,
+    "automation": 5,
+    "risk": 3
+   },
+   "total": 23,
+   "est_monthly_eur": 30,
+   "startup_cost_eur": 15,
+   "first_euro_days": 90,
+   "legal_notes": "Mention affiliation ; SEO",
+   "first_test": "Benchmark 5 sites avant tout",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "outlier-fr",
+   "name": "Outlier — entraîneur IA francophone",
+   "category": "micro-travail-ia",
+   "description": "Évaluation/conversations FR pour entraîner des modèles.",
+   "edge": "Français natif + technique",
+   "sources": [
+    {
+     "url": "https://outlier.ai/languages/fr-fr",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "Jusqu'à 25 $/h, France listée"
+    },
+    {
+     "url": "https://fr.indeed.com/cmp/Dataannotation/reviews",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Flux de tâches irrégulier sur plateformes similaires"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 3,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 1,
+    "risk": 3
+   },
+   "total": 22,
+   "est_monthly_eur": 300,
+   "startup_cost_eur": 0,
+   "first_euro_days": 21,
+   "legal_notes": "Micro-entreprise ; interdiction de faire faire par IA",
+   "first_test": "Éval + 10 h ; tuer si <15 $/h net",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "dataannotation-code",
+   "name": "DataAnnotation (tâches code)",
+   "category": "micro-travail-ia",
+   "description": "Tâches IA payées à l'heure, code mieux payé.",
+   "edge": "Profil dev",
+   "sources": [
+    {
+     "url": "https://fr.glassdoor.ca/Avis/avis-employé-DataAnnotation-E8605843-RVW104392050.htm",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Avis mitigés, flux instable"
+    },
+    {
+     "url": "https://dataannotation.tech/blog/dataannotation-alternatives",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "20-45 $/h estimés"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 3,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 1,
+    "risk": 3
+   },
+   "total": 22,
+   "est_monthly_eur": 300,
+   "startup_cost_eur": 0,
+   "first_euro_days": 21,
+   "legal_notes": "Éligibilité France à vérifier",
+   "first_test": "Vérifier éligibilité + test ; seuil 10 h payées en 3 sem",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "yeswehack",
+   "name": "Bug bounty YesWeHack",
+   "category": "bounties",
+   "description": "Programmes publics français.",
+   "edge": "Aucune expérience sécu",
+   "sources": [
+    {
+     "url": "https://yeswehack.com/programs/sante-publique-france-bugbounty-public-program",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "50-1500 € selon sévérité"
+    },
+    {
+     "url": "https://www.yeswehack.com/news/lehack-yeswehack-live-bug-bounty-with-red-cross-and-les-mousquetaires",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Pas de donnée débutant"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 1,
+    "evidence": 2,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 3,
+    "automation": 3,
+    "risk": 3
+   },
+   "total": 22,
+   "est_monthly_eur": 150,
+   "startup_cost_eur": 0,
+   "first_euro_days": 45,
+   "legal_notes": "Périmètre strict",
+   "first_test": "1 mois, seuil 1 rapport accepté",
+   "status": "parked",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "yoojo",
+   "name": "Montage de meubles (Yoojo)",
+   "category": "services-locaux",
+   "description": "Petits travaux soirs/week-ends.",
+   "edge": "Aucun",
+   "sources": [
+    {
+     "url": "https://gowork.fr/yoojo-ex-youpijob-paris",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Note 1,3/5, tarifs bas"
+    },
+    {
+     "url": "https://blog.iambeezy.app/fr/yoojo-proposer-services-gagner-argent-france-2026/",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Commission 15-20 %"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 3,
+    "evidence": 2,
+    "monthly_revenue": 3,
+    "startup_cost": 4,
+    "baptiste_hours": 1,
+    "automation": 1,
+    "risk": 3
+   },
+   "total": 22,
+   "est_monthly_eur": 300,
+   "startup_cost_eur": 0,
+   "first_euro_days": 21,
+   "legal_notes": "Micro-entreprise",
+   "first_test": "3 missions ; seuil ≥18 €/h net",
+   "status": "scored",
+   "updated": "2026-11-22"
+  },
+  {
+   "id": "rover",
+   "name": "Garde d'animaux (Rover)",
+   "category": "services-locaux",
+   "description": "Garde/promenade de chiens.",
+   "edge": "Aucun",
+   "sources": [
+    {
+     "url": "https://www.santevet.com/?p=34376",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Max théorique 500 €/sem"
+    },
+    {
+     "url": "https://www.rover.com/fr/paris--ile-de-france--home-sitting",
+     "kind": "marketplace",
+     "financial_interest": true,
+     "finding": "Frais 11 %"
+    }
+   ],
+   "confidence": "low",
+   "evidenced": false,
+   "scores": {
+    "time_to_first_euro": 2,
+    "evidence": 2,
+    "monthly_revenue": 2,
+    "startup_cost": 5,
+    "baptiste_hours": 2,
+    "automation": 1,
+    "risk": 3
+   },
+   "total": 21,
+   "est_monthly_eur": 150,
+   "startup_cost_eur": 0,
+   "first_euro_days": 30,
+   "legal_notes": "Micro-entreprise si régulier",
+   "first_test": "Profil ; seuil 2 réservations en 21 j",
+   "status": "scored",
+   "updated": "2026-11-22"
+  }
+ ]
+}

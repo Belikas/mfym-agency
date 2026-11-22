@@ -1,0 +1,18 @@
+{
+ "id": "exp-01-clipping-mesure",
+ "lead_id": "clipping-whop",
+ "title": "Clipping : mesurer les vrais paiements",
+ "hypothesis": "SixShots peut produire ≥15 € réellement payés en 14 jours avec ≥70 % de clips approuvés.",
+ "metric": "€ payés par Whop + taux d'approbation",
+ "threshold": "≥15 € payés et ≥70 % approuvés au 06/12",
+ "cost_eur": 0,
+ "hours_budget": 5,
+ "start": "2026-11-22",
+ "kill_date": "2026-12-06",
+ "status": "blocked",
+ "blocked_on": [
+  "T-02 : capture des gains Whop chaque dimanche"
+ ],
+ "results": [],
+ "owner_agent": "directeur"
+}

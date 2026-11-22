@@ -1,0 +1,100 @@
+{
+ "updated": "2026-11-22T10:30:00+01:00",
+ "agents": [
+  {
+   "id": "directeur",
+   "name": "Directeur",
+   "role": "Orchestre les runs : décide, délègue, met à jour memory/",
+   "room": "direction",
+   "inputs": [
+    "memory/*"
+   ],
+   "outputs": [
+    "décisions",
+    "journal.md",
+    "sessions/"
+   ],
+   "metric": "€ net/mois vs 1000",
+   "model": "opus",
+   "schedule": "07:30, 13:00, 19:00 + hebdo dim. 10:00",
+   "status": "active",
+   "hired": "2026-11-22",
+   "file": "CLAUDE.md"
+  },
+  {
+   "id": "chercheur",
+   "name": "Chercheur",
+   "role": "Recherche large et preuves des pistes",
+   "room": "recherche",
+   "inputs": [
+    "pipeline.json"
+   ],
+   "outputs": [
+    "pipeline.json"
+   ],
+   "metric": "pistes prouvées/semaine",
+   "model": "sonnet",
+   "schedule": "hebdo dim. 10:00 + à la demande",
+   "status": "active",
+   "hired": "2026-11-22",
+   "file": ".claude/agents/chercheur.md",
+   "last_run": "2026-11-22T09:10:00+01:00",
+   "last_result": "35 pistes notées, 14 catégories"
+  },
+  {
+   "id": "critique",
+   "name": "Critique",
+   "role": "Note les livrables contre la grille (jamais son propre travail)",
+   "room": "qualite",
+   "inputs": [
+    "livrable",
+    "benchmarks/"
+   ],
+   "outputs": [
+    "notes 1-5"
+   ],
+   "metric": "écart note critique / résultat réel",
+   "model": "sonnet",
+   "schedule": "à chaque livrable public",
+   "status": "active",
+   "hired": "2026-11-22",
+   "file": ".claude/agents/critique.md"
+  },
+  {
+   "id": "redacteur",
+   "name": "Rédacteur",
+   "role": "Fiches de service, pages produit, prospection",
+   "room": "atelier",
+   "inputs": [
+    "benchmarks/"
+   ],
+   "outputs": [
+    "textes"
+   ],
+   "metric": "note critique ≥4 ; conversion",
+   "model": "sonnet",
+   "schedule": "à la demande",
+   "status": "active",
+   "hired": "2026-11-22",
+   "file": ".claude/agents/redacteur.md"
+  },
+  {
+   "id": "atelier",
+   "name": "Atelier",
+   "role": "Construit produits, outils, dashboard",
+   "room": "atelier",
+   "inputs": [
+    "specs"
+   ],
+   "outputs": [
+    "code testé"
+   ],
+   "metric": "livrables testés/semaine",
+   "model": "sonnet",
+   "schedule": "à la demande",
+   "status": "active",
+   "hired": "2026-11-22",
+   "file": ".claude/agents/atelier.md"
+  }
+ ]
+}

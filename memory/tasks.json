@@ -1,0 +1,63 @@
+{
+ "updated": "2026-11-22T10:30:00+01:00",
+ "tasks": [
+  {
+   "id": "T-01",
+   "title": "Contrat de travail + statut micro-entreprise",
+   "purpose": "Débloque exp-02 (ComeUp) et toute vente de service : rien ne se facture sans statut ni sans savoir ce que permet ton contrat.",
+   "steps": [
+    "Ouvre ton contrat : cherche « exclusivité » et « non-concurrence »",
+    "Note le secteur de ton employeur",
+    "Dis si tu as déjà un SIRET (micro-entreprise), et si tes ventes de livres passent par lui",
+    "Dis si tu as une place de parking inutilisée (oui/non)"
+   ],
+   "est_minutes": 15,
+   "deliverable": "4 réponses courtes en réponse à ce message",
+   "status": "open",
+   "created": "2026-11-22T10:30:00+01:00",
+   "telegram_message_id": null,
+   "blocks": [
+    "exp-02-comeup-gigs"
+   ]
+  },
+  {
+   "id": "T-02",
+   "title": "Capture des gains Whop (clipping)",
+   "purpose": "Mesure exp-01 : on ne garde le clipping que s'il paie vraiment.",
+   "steps": [
+    "Whop > Content Rewards > gains",
+    "Capture d'écran des gains et des clips approuvés/refusés"
+   ],
+   "est_minutes": 5,
+   "deliverable": "une capture d'écran chaque dimanche jusqu'au 06/12",
+   "status": "open",
+   "created": "2026-11-22T10:30:00+01:00",
+   "telegram_message_id": null,
+   "blocks": [
+    "exp-01-clipping-mesure"
+   ]
+  },
+  {
+   "id": "T-03",
+   "title": "Mise en route (liste du 22/11 dans le terminal)",
+   "purpose": "Fait tourner l'agence seule : bot, runs sans surveillance, sauvegarde, alerte si le PC tombe.",
+   "steps": [
+    "Bot Telegram via @BotFather, token dans .env, puis /start au bot",
+    "claude setup-token, token dans .env",
+    "Veille « Jamais » sur secteur + heures d'activité Windows Update",
+    "BIOS : Restore on AC Power Loss = Power On",
+    "Dépôt GitHub privé mfym-agency + token fine-grained dans .env",
+    "healthchecks.io : check « PC agence », URL de ping dans .env",
+    "PowerShell en administrateur (clic droit, Executer en tant qu administrateur), colle : & \"C:\\Users\\Baptiste\\Desktop\\CLAUDE CODE\\MAKE FUCK YOU MONEY INC\\scripts\\schedule.ps1\" puis redemarre le PC"
+   ],
+   "est_minutes": 50,
+   "deliverable": "réponds « fait »",
+   "status": "open",
+   "created": "2026-11-22T10:30:00+01:00",
+   "telegram_message_id": null,
+   "blocks": [
+    "kickoff"
+   ]
+  }
+ ]
+}

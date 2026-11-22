@@ -1,0 +1,172 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "pipeline",
+ "type": "object",
+ "properties": {
+  "updated": {
+   "type": "string"
+  },
+  "leads": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "category": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "edge": {
+      "type": "string"
+     },
+     "sources": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "url": {
+         "type": "string"
+        },
+        "kind": {
+         "type": "string"
+        },
+        "financial_interest": {
+         "type": "boolean"
+        },
+        "finding": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "url",
+        "kind",
+        "financial_interest",
+        "finding"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "confidence": {
+      "type": "string",
+      "enum": [
+       "low",
+       "med",
+       "high"
+      ]
+     },
+     "evidenced": {
+      "type": "boolean"
+     },
+     "scores": {
+      "type": "object",
+      "properties": {
+       "time_to_first_euro": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "evidence": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "monthly_revenue": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "startup_cost": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "baptiste_hours": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "automation": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "risk": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       }
+      },
+      "required": [
+       "time_to_first_euro",
+       "evidence",
+       "monthly_revenue",
+       "startup_cost",
+       "baptiste_hours",
+       "automation",
+       "risk"
+      ],
+      "additionalProperties": false
+     },
+     "total": {
+      "type": "number"
+     },
+     "est_monthly_eur": {
+      "type": "number"
+     },
+     "startup_cost_eur": {
+      "type": "number"
+     },
+     "first_euro_days": {
+      "type": "number"
+     },
+     "legal_notes": {
+      "type": "string"
+     },
+     "first_test": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "new",
+       "scored",
+       "testing",
+       "parked",
+       "killed",
+       "scaling"
+      ]
+     },
+     "experiment_id": {
+      "type": "string"
+     },
+     "updated": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "id",
+     "name",
+     "category",
+     "sources",
+     "confidence",
+     "scores",
+     "total",
+     "status"
+    ],
+    "additionalProperties": true
+   }
+  }
+ },
+ "required": [
+  "updated",
+  "leads"
+ ],
+ "additionalProperties": true
+}
