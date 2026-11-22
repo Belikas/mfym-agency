@@ -1,4 +1,4 @@
-# État de l'agence — mis à jour le 22/11/2026 ~12:25 (kickoff, session 1)
+# État de l'agence — mis à jour le 22/11/2026 ~13:25 (run quotidien 1300)
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -6,22 +6,23 @@
 - **Date cible 1 000 €/mois : 31/03/2027** (hypothèse : services d'automatisation IA ~500 € + produits numériques + clipping). Revue chaque dimanche.
 
 ## Priorités
-1. Kickoff 10/11 : reste le run planifié autonome (13:00 du 22/11). Puis message Telegram de fin de kickoff.
-2. exp-03 : pivot pré-vente (benchmark : 0 vente vérifiable chez les concurrents payants). Prochain : page de pré-vente niche n8n métier FR ou logistique, puis approbation de publication. Pas de statut requis pour une liste d'attente.
-3. exp-02 ComeUp : 3 fiches prêtes (livrables/comeup/, critique passe 3 min 3/5 = preuve vidéo). Publication = micro-entreprise (reportée par Baptiste jusqu'à indispensable) + T-04 vidéos.
-4. exp-01 clipping : mesure seulement (le projet SixShots vit dans `Desktop/CLAUDE CODE/CLIPPING MONEY`, on n'y touche pas).
+1. exp-03 Gumroad logistique : page de pré-vente prête (livrables/gumroad/presell-logistique.md), critique 4-5/5 sur les 8 critères (2 passes). **Approbation A-03 envoyée** : publier = créer la micro-entreprise maintenant (le moment "indispensable"). 4 communautés de diffusion trouvées (chartes vérifiées) : forum.gestconseil.com (seule à toucher le persona logistique, activité à vérifier), cc-france.org, devw.ai, rucheia.fr (ces 3 dernières = audience dev/Claude Code, pas logistique — bon pour feedback produit, pas pour le persona cible).
+2. exp-02 ComeUp : 3 fiches prêtes (livrables/comeup/, critique passe 3 min 3/5 = preuve vidéo). Publication = même décision micro-entreprise + T-04 vidéos.
+3. exp-01 clipping : mesure seulement (le projet SixShots vit dans `Desktop/CLAUDE CODE/CLIPPING MONEY`, on n'y touche pas).
+4. Kickoff : 10/11 cochés. Point #2 (run planifié autonome sans supervision) se vérifie par le lanceur après la fin du run 20261122-1300 — à cocher au prochain run si logs/runs.jsonl confirme.
 
 ## Tests (max 3)
 | id | statut | kill date | bloqué par |
 |---|---|---|---|
 | exp-01-clipping-mesure | bloqué | 06/12 | T-02 capture Whop |
-| exp-02-comeup-gigs | bloqué | 20/12 | T-01 contrat + SIRET, approbation de publication |
-| exp-03-skills-gumroad | en cours | 20/12 | — |
+| exp-02-comeup-gigs | bloqué | 20/12 | décision micro-entreprise (A-03) + T-04 vidéos |
+| exp-03-skills-gumroad | prêt à publier | 20/12 | décision micro-entreprise (A-03) |
 Suivant si un test meurt : primes-bancaires (28, 0 €) ou gbp-optimisation (30, à fusionner avec exp-02).
 
 ## En attente de Baptiste
+- **A-03** (Telegram) : publier exp-03 maintenant (= créer la micro-entreprise) ?
 - T-01 : place de parking oui/non (1 min). T-02 capture Whop (dimanche). T-04 vidéos (le jour de la publication).
-- T-03 fait (BIOS reporté). Contrat : aucune clause bloquante. Pas de SIRET ; micro-entreprise reportée.
+- T-03 fait (BIOS reporté). Contrat : aucune clause bloquante. Pas de SIRET ; micro-entreprise reportée jusqu'à A-03.
 
 ## Technique
 - Runs : MFYM-quotidien 07:30 (opus) / 13:00 / 19:00 (sonnet), hebdo dim. 10:00, digest 20:30, backup 03:00, heartbeat 5 min. Tâches en S4U (tournent sans session) ; redémarrage validé 22/11 12:06.

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T09:45:02+01:00",
+ "updated": "2026-11-22T13:09:48+01:00",
  "approvals": [
   {
    "id": "A-01",
@@ -26,6 +26,17 @@
    "answered_at": "2026-11-22T09:45:02+01:00",
    "acted_on": true,
    "acted_note": "Vérifié dans scripts/schedule.ps1 : 07:30 opus, 13:00 et 19:00 sonnet, hebdo dim. opus. Rien à changer. Si quota atteint, run.ps1 journalise 'quota' et je repasse tout en sonnet."
+  },
+  {
+   "id": "A-03",
+   "question": "La page de pré-vente logistique (exp-03, Gumroad, précommande 19 € remboursable) est prête et validée par le critique (4-5/5 sur les 8 critères, 2 passes de correction faites). On publie maintenant ? Ça veut dire créer la micro-entreprise avant d'encaisser un paiement — c'est le moment \"indispensable\" que tu avais fixé toi-même le 22/11.",
+   "recommendation": "yes",
+   "reason": "Seuil de l'exp-03 : ≥3 précommandes ou ≥30 inscrits avant le 20/12, sinon on tue le test. Chaque jour sans publication raccourcit la fenêtre de mesure. Texte conforme au benchmark skills-gumroad.md, honnête (aucune preuve inventée, remboursement garanti).",
+   "cost_eur": 0,
+   "status": "pending",
+   "created": "2026-11-22T13:20:00+01:00",
+   "telegram_message_id": 13,
+   "acted_on": false
   }
  ]
 }

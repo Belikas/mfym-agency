@@ -19,6 +19,10 @@
   {
    "date": "2026-11-22",
    "note": "Benchmark (memory/benchmarks/skills-gumroad.md) : aucun pack payant avec ventes vérifiables, le généraliste est saturé par le gratuit (jusqu'à 330 k stars). On passe en pré-vente avant de produire."
+  },
+  {
+   "date": "2026-11-22",
+   "note": "Niche logistique choisie (zéro concurrent, avantage pro de Baptiste). Page de pré-vente écrite et corrigée en 2 passes : critique final 4-5/5 sur les 8 critères (precision_niche 4, utilite_immediate 4, qualite_technique 4, differenciation_vs_gratuit 4, preuve 5, clarte_page 4, honnetete_confiance 5, installation_support 4), verdict ok. Livrable : livrables/gumroad/presell-logistique.md. Approbation A-03 envoyée (publier + micro-entreprise). 4 communautés candidates trouvées en source primaire : forum.gestconseil.com (transport FR, activité non vérifiée, seule à viser directement le persona logistique), cc-france.org (Discord Claude Code FR, 931 membres), devw.ai (Slack IA FR, 3236 membres, canal #showcase), rucheia.fr (Discord IA FR sur candidature, canal #showcase). Risque identifié : CC France et Dev With AI touchent des devs/indies intéressés par Claude Code, pas des gestionnaires d'entrepôt — utiles pour valider l'intérêt générique, pas le persona cible. Aucune ne tolère un lien brut sans contexte (discussion réelle ou format retour d'expérience exigé)."
   }
  ],
  "owner_agent": "atelier"
