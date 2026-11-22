@@ -21,7 +21,7 @@ Programmation & Tech > Automatisation (alternative : Chatbot / IA si une catégo
 | Chatbot sur votre site (widget) | 1 | 1 | 1 |
 | Documents / FAQ intégrés (1 document = 1 PDF ou page de 20 pages maximum) | jusqu'à 10 | jusqu'à 50 | jusqu'à 100 |
 | Règles de ton et de contenu | oui | oui | oui |
-| Test avec 20 questions | oui | oui | oui |
+| Test avec des questions réelles | 10 questions | 20 questions | 20 questions |
 | "Je ne sais pas" paramétré | oui | oui | oui |
 | Transfert à un humain par email | non (option +49 €) | oui | oui |
 | Historique des conversations (nécessite une base Supabase) | non (option +39 €) | oui | oui |
@@ -49,10 +49,10 @@ Logique de prix : l'Essentiel à 55 € (10 documents, sans base Supabase) reste
 ## Texte à coller par palier
 ====
 Essentiel (55 € / 5 jours) :
-1 chatbot IA en widget sur votre site, basé sur jusqu'à 10 de vos documents ou FAQ (1 document = 1 PDF ou page de 20 pages maximum), avec règles de ton, réponse "je ne sais pas" quand l'information manque, test avec 20 questions, documentation d'1 page. 1 correction.
+1 chatbot IA en widget sur votre site, basé sur jusqu'à 10 de vos documents ou FAQ (1 document = 1 PDF ou page de 20 pages maximum), avec règles de ton, réponse "je ne sais pas" quand l'information manque, test avec 10 questions, documentation d'1 page. 1 correction.
 ====
 Standard (249 € / 10 jours) :
-Essentiel + jusqu'à 50 documents, transfert à un humain par email, historique des conversations (base Supabase à votre nom), un plafond mensuel de dépense API réglé pour vous, documentation d'exploitation + guide de mise à jour de vos documents. 2 corrections.
+Essentiel + test porté à 20 questions, jusqu'à 50 documents, transfert à un humain par email, historique des conversations (base Supabase à votre nom), un plafond mensuel de dépense API réglé pour vous, documentation d'exploitation + guide de mise à jour de vos documents. 2 corrections.
 ====
 Premium (549 € / 18 jours) :
 Standard + jusqu'à 100 documents, 1 intégration au choix (Google Calendar/Calendly pour un agenda, ou un CRM avec API comme HubSpot), tableau des questions sans réponse, 14 jours de réglages. 3 corrections.
@@ -60,21 +60,21 @@ Standard + jusqu'à 100 documents, 1 intégration au choix (Google Calendar/Cale
 
 ## Description (à coller)
 ====
-Vos clients posent chaque jour les mêmes questions (délais, retours, tarifs, fonctionnement) et vous y répondez à la main. Je crée un chatbot IA pour votre boutique en ligne ou votre site : il répond à partir de VOS documents et vous passe le relais quand il ne sait pas.
+Vos clients posent chaque jour les mêmes questions (délais, retours, tarifs, fonctionnement) et vous y répondez à la main. Je crée un chatbot IA pour votre boutique en ligne ou votre site : il répond à partir de VOS documents (il peut se tromper : voir les limites plus bas) et, à partir du palier Standard, vous passe le relais quand il ne sait pas.
 
-Je suis développeur avec une expérience professionnelle de la logistique, donc habitué aux questions de livraison, de retour et de suivi. Je crée un chatbot sur mesure, intégré à votre site, qui répond uniquement à partir des documents que vous me fournissez.
+Je suis développeur avec une expérience professionnelle de la logistique, donc habitué aux questions de livraison, de retour et de suivi. Le chatbot est intégré à votre site et s'appuie sur les documents que vous me fournissez.
 
 CE QUE VOUS RECEVEZ
 - Un chatbot en widget à intégrer sur votre site (une ligne de code à coller).
 - Une base de connaissances construite à partir de vos documents (FAQ, CGV, fiches produits, procédures) : un document compte pour 1 PDF ou 1 page de 20 pages maximum ; au-delà, il compte pour plusieurs, au prorata.
 - Un ton réglé selon vos consignes (vouvoiement, style, ce qu'il ne doit jamais dire).
-- Un test avec 20 questions réelles, avec les réponses relues ensemble.
+- Un test avec vos questions réelles (10 en Essentiel, 20 en Standard et Premium), avec les réponses relues ensemble.
 - Selon le palier : transfert à un humain par email, historique des conversations, plafond de dépense API réglé, tableau des questions sans réponse, guide de mise à jour.
 
-Les captures de la galerie montrent la logique (réponse sourcée, "je ne sais pas", journal des questions) sur un prototype qui fait une recherche par mots-clés dans une FAQ fictive, sans IA générative ; chez vous, le chatbot est construit dans n8n avec l'IA (API Claude) qui rédige la réponse à partir de vos documents.
+Les captures de la galerie viennent d'un prototype en Python sur une FAQ fictive : il retrouve le passage utile, puis Claude (IA) rédige la réponse à partir de ce seul passage, en citant la source, et répond "je ne sais pas" hors périmètre ; la question sans réponse est seulement enregistrée dans un journal (pas d'e-mail envoyé dans la démo). Ce prototype n'est pas un workflow n8n ; chez vous, le chatbot est construit dans n8n avec l'API Claude.
 
 EXEMPLE (illustratif, pas un résultat client)
-Une cliente écrit sur votre boutique : "Je peux retourner une robe achetée il y a trois semaines ?" Le chatbot retrouve la règle dans vos conditions de retour et répond avec cette règle, en citant votre politique. Si la réponse n'est pas dans vos documents, il répond "Je n'ai pas cette information" et vous envoie la question par email, avec les coordonnées laissées par la cliente (palier Standard et au-dessus).
+Une cliente écrit sur votre boutique : "Je peux retourner une robe achetée il y a trois semaines ?" Le chatbot retrouve la règle dans vos conditions de retour et répond avec cette règle, en citant votre politique. Si la réponse n'est pas dans vos documents, il répond "Je n'ai pas cette information" et, à partir du Standard, vous envoie la question par email, avec les coordonnées laissées par la cliente (palier Standard et au-dessus).
 Côté technique, pour les curieux : n8n, base Supabase et API Claude (Anthropic).
 
 OÙ TOURNE VOTRE CHATBOT ET CE QUE ÇA COÛTE
@@ -86,7 +86,7 @@ COMMENT ÇA SE PASSE
 1. Vous répondez aux questions de commande et m'envoyez vos documents.
 2. Je prépare la base de connaissances et définis avec vous les règles de ton et de contenu.
 3. Je construis le chatbot et le widget.
-4. Test avec 20 questions : nous relisons les réponses, j'ajuste.
+4. Test avec vos questions (10 ou 20 selon le palier) : nous relisons les réponses, j'ajuste.
 5. Je livre le code, la documentation et vos accès. Corrections selon les révisions du palier.
 
 CE QUI N'EST PAS INCLUS
@@ -98,7 +98,7 @@ CE QUI N'EST PAS INCLUS
 
 FAQ
 Le chatbot peut-il inventer des réponses ?
-Il est limité à vos documents et paramétré pour dire "je ne sais pas" quand l'information manque. Le risque d'erreur n'est pas nul : c'est pourquoi on teste avec 20 questions avant la livraison.
+Il est limité à vos documents et paramétré pour dire "je ne sais pas" quand l'information manque. Le risque d'erreur n'est pas nul : c'est pourquoi on teste avec vos questions réelles avant la livraison.
 
 Quels documents puis-je fournir ?
 PDF, Word, pages web, FAQ en texte, tableaux simples.
@@ -138,17 +138,16 @@ chatbot IA, chatbot site web, assistant IA, e-commerce, service client
 
 ## Brief image de couverture
 - Format : paysage 16:9, vignette claire type YouTube, même gabarit que S1 et S3.
-- Texte sur l'image (5 mots) : "Chatbot IA pour votre site", en gros, 2 lignes, police grasse sans empattement, lisible à 200 px.
-- Fond : dégradé violet sombre (#2E1065) vers violet (#6D28D9) ; texte blanc, "Chatbot" en jaune (#FACC15).
-- Visuel : à droite, une bulle de chat avec question courte fictive ("Délai de retour ?") et une réponse ; à gauche, une pile de documents qui alimente la bulle (flèche). Pas de vraie donnée client.
+- Texte sur l'image, aligné sur la couverture livrée : "Votre assistant IA répond", en gros, 2 lignes, police grasse sans empattement, lisible à 200 px (le mot "chatbot" reste dans le titre de l'annonce).
+- Fond : dégradé violet sombre (#2E1065) vers violet (#6D28D9) ; texte blanc, accent jaune (#FACC15).
+- Visuel : à droite, une bulle de chat avec une question fictive et une réponse (la bulle "30 jours après réception" n'apparaît dans aucune capture de la galerie : illustration, pas une réponse démontrée) ; à gauche, une pile de documents qui alimente la bulle (flèche). Pas de vraie donnée client.
 - Pas de visage, pas de logos de tiers, pas de faux avis, de notes en étoiles ni de badge.
 - À tester à 200 px de large avant publication.
 
 ## Preuves (à joindre)
-Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - données fictives". Les captures montrent la logique sur un prototype en Python local (code réel, données fictives) : elles ne montrent ni n8n ni IA générative. Chez le client, la logique est construite dans n8n avec l'IA (API Claude) pour formuler la réponse à partir de vos documents. Ne jamais présenter ces captures comme un workflow n8n livré.
-Le prototype est une recherche par mots-clés dans une FAQ fictive, avec sources et "je ne sais pas" ; il ne montre pas de génération de réponse par IA.
-- livrables/comeup/assets/S2-couverture.png : couverture 1280x720 (le mot "IA" désigne l'offre, pas la démo).
-- livrables/comeup/assets/S2-1-reponse-sourcee.png. Légende : "L'assistant répond à partir de votre document et cite la section source."
-- livrables/comeup/assets/S2-2-hors-perimetre.png. Légende : "Hors périmètre : il dit qu'il ne sait pas et transmet la question à l'équipe."
+Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - données fictives". Les captures viennent d'un prototype en Python local (code réel, FAQ fictive) avec une vraie étape IA : la recherche retrouve le passage, puis Claude rédige la réponse à partir de ce seul passage ; la source est citée et, hors périmètre, la réponse est "je ne sais pas" et la question est enregistrée dans un journal (aucun e-mail envoyé). Le prototype n'est pas un workflow n8n (chez le client, la logique est construite dans n8n avec l'API Claude) et n'a pas été testé sur de vrais documents clients. Ne jamais présenter ces captures comme un chatbot livré.
+- livrables/comeup/assets/S2-couverture.png : couverture 1280x720.
+- livrables/comeup/assets/S2-1-reponse-sourcee.png. Légende : "Réponses rédigées par Claude à partir du passage de la FAQ, avec la source citée (données fictives)."
+- livrables/comeup/assets/S2-2-hors-perimetre.png. Légende : "Hors périmètre : il dit qu'il ne sait pas ; la question est enregistrée dans le journal de l'équipe (aucun e-mail envoyé dans cette démo). Le transfert à un humain par e-mail est inclus à partir du palier Standard, non démontré ici."
 - livrables/comeup/assets/S2-3-questions-sans-reponse.png. Légende : "Journal des questions sans réponse, pour compléter la FAQ."
-- Vidéo de démo 60-90 s + lien public vers une page de test du widget (version réelle avec IA) : à produire par Baptiste, hors atelier.
+- Vidéo de démo 60-90 s : à enregistrer avant publication (avec un lien public vers une page de test du widget, par Baptiste, hors atelier).

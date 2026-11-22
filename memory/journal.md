@@ -11,3 +11,6 @@
 - **Équipe** : embauche chercheur, critique, rédacteur, atelier (tous sonnet) ; le Directeur = run planifié (opus/sonnet).
 - **Installs** : pip jsonschema.
 - **Micro-entreprise reportée** (Baptiste, 22/11) : on la crée quand elle devient indispensable, c'est-à-dire quand une offre est prête à vendre (fiches ComeUp validées par le critique). Conséquence : on prépare tout pour publier le jour même ; les pistes sans statut (pré-vente, liste d'attente) passent avant.
+- **Fiches ComeUp arrêtées après 4 passes** (critique 3 : min 3/5, preuve vidéo manquante). Écart d'honnêteté repéré par le critique (image d'un workflow jamais exécuté présentée comme la démo) : image retirée. Règle retenue : une capture ne montre que ce qui a réellement tourné.
+- **exp-03 pivote en pré-vente** : le benchmark ne trouve aucune vente vérifiable de packs de skills payants ; on ne construit qu'après ≥3 précommandes ou ≥30 inscrits.
+- **Run `reponses` raccourci** (le 1er a atteint 30 min en faisant du travail business) ; la revue hebdo sautée à 10:00 est rattrapée à 14:00.

@@ -13,7 +13,7 @@ form{display:flex;gap:8px;padding:12px;border-top:1px solid #e5e7eb}input{flex:1
 const log=document.getElementById('log');
 async function send(q){ if(!q)return; add('u',q);
  const r=await (await fetch('/ask?q='+encodeURIComponent(q))).json();
- add('b'+(r.source?'':' nok'),r.answer,r.source?'Source : '+r.source:'');}
+ add('b'+(r.source?'':' nok'),r.answer,r.source?(r.gen?'Réponse rédigée par Claude à partir du passage cité · ':'')+'Source : '+r.source:'');}
 function add(c,t,s){const d=document.createElement('div');d.className='m '+c;d.textContent=t;
  if(s){const e=document.createElement('div');e.className='src';e.textContent=s;d.appendChild(e)}log.appendChild(d)}
 f.onsubmit=e=>{e.preventDefault();send(q.value);q.value=''};

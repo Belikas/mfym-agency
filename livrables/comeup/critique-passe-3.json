@@ -1,0 +1,93 @@
+{
+  "S1": {
+    "scores": {
+      "1_clarte": 4,
+      "2_livrables": 4,
+      "3_preuve_demo": 3,
+      "4_structure": 4,
+      "5_honnetete": 3,
+      "6_prix": 4,
+      "7_visuels": 4,
+      "8_seo_conversion": 4
+    },
+    "justifications": {
+      "1_clarte": "Vertical nomme (logistique/e-commerce), outil et resultat clairs ; 5 exigerait zero mot vague (\"flux\").",
+      "2_livrables": "Tableau 3 paliers precis, 'teste' defini ; manque 1 ligne chiffrant les corrections/revisions vs options pour 5.",
+      "3_preuve_demo": "S1-2 est une vraie execution n8n (preuve forte), mais pas de video, aucune etape IA executee, S1-4 non execute : sous les n1-3 qui ont video + captures annotees.",
+      "4_structure": "Hook, livrables, exemples, processus, exclusions, FAQ de 7 questions, appel a ecrire ; propre.",
+      "5_honnetete": "Legende S1-4 'schema du workflow reel utilise pour la demo' est fausse : l'image montre un autre workflow (8 noeuds, 'Classer l'urgence (IA)', 'palier Standard, demo', non execute) alors que l'execution S1-2 a 7 noeuds sans IA.",
+      "6_prix": "Essentiel 49 EUR proche mediane, calcul d'options explicite ; faisabilite Premium 14 j encore a confirmer par Baptiste.",
+      "7_visuels": "Couverture lisible a 200 px, gabarit commun ; galerie hybride (2 captures sombres n8n minuscules + 2 pages claires), S1-2 et S1-4 sans badge 'Exemple'.",
+      "8_seo_conversion": "n8n, IA, logistique, e-commerce, suivi colis dans titre, debut de description et tags ; categorie non confirmee."
+    },
+    "gaps": [
+      "Corriger la legende S1-4 (page + captions.md) : 'Schema du palier Standard (demo), non execute ; l'etape IA n'est pas demontree' OU relancer ce workflow dans n8n et capturer une execution reussie incluant le noeud IA. Aujourd'hui captions.md dit 'pas d'etape IA montree' et 'pas une capture de l'editeur' : les deux contredisent l'image (capture d'editeur avec noeud IA).",
+      "La page affirme 'Toutes les images portent la mention Exemple - donnees fictives' : faux pour S1-2 et S1-4 (aucun badge ; seul le titre du workflow dit 'donnees fictives' sur S1-2). Ajouter le badge ou reformuler.",
+      "Brief de couverture obsolete : demande une capture n8n floutee en fond et 3 mots ; la couverture livree n'a pas de capture. Aligner le brief sur l'image.",
+      "Enregistrer la video 60-90 s (execution reelle S1-2) : seul manque majeur de preuve ; sans elle le critere 3 plafonne a 3.",
+      "Texte descriptif trop technique pour un acheteur boutique ('script Python', 'CLI n8n') : deplacer en note interne, garder 'demo sur donnees fictives, executee dans n8n'.",
+      "Ajouter une annotation (fleche/encadre) sur S1-2 : texte de 8 px illisible en vignette."
+    ]
+  },
+  "S2": {
+    "scores": {
+      "1_clarte": 4,
+      "2_livrables": 4,
+      "3_preuve_demo": 3,
+      "4_structure": 4,
+      "5_honnetete": 4,
+      "6_prix": 4,
+      "7_visuels": 4,
+      "8_seo_conversion": 4
+    },
+    "justifications": {
+      "1_clarte": "Titre explicite (chatbot IA, boutique en ligne, depuis vos documents) ; la couverture 'Votre assistant IA repond' est plus vague que le titre.",
+      "2_livrables": "Paliers chiffres (10/50/100 docs, 10/20 questions), 'document' defini, hebergement et couts tiers explicites.",
+      "3_preuve_demo": "3 captures vraies (reponse redigee par Claude avec source, hors perimetre, journal) mais prototype Python hors n8n, sans video ni page de test publique : en dessous des references.",
+      "4_structure": "Structure complete, FAQ de 9 questions ; deux paragraphes d'ouverture redondants ('Je cree un chatbot...' deux fois).",
+      "5_honnetete": "Exclusions, RGPD, Anthropic nomme, cout mensuel donne ; reste 'repond uniquement a partir de vos documents' un peu trop absolu et la legende S2-2 dit 'transmet' alors que la demo ecrit seulement dans un journal.",
+      "6_prix": "55 EUR d'entree, Standard 249 sous la fourchette chatbots notes, options justifiees (171 EUR sur 194).",
+      "7_visuels": "Couverture lisible en vignette, meme gabarit ; la bulle '30 jours apres reception' n'apparait dans aucune capture ; brief texte different de l'image livree.",
+      "8_seo_conversion": "'chatbot IA', 'boutique en ligne', 'site web' dans titre/debut/tags ; mots 'n8n' et 'automatisation' absents du titre, categorie incertaine."
+    },
+    "gaps": [
+      "Legende S2-2 : remplacer 'transmet la question a l'equipe' par 'la question est enregistree (journal) ; l'envoi par email fait partie du palier Standard, non demontre ici'. L'image dit 'vous repondra par e-mail sous 24 h' alors qu'aucun email n'est envoye et que l'Essentiel n'inclut pas le transfert.",
+      "Remplacer 'repond uniquement a partir des documents que vous me fournissez' par une formulation qui admet l'erreur (deja dite plus bas).",
+      "Supprimer le doublon des paragraphes 1-2 de la description (-60 mots) au profit d'un exemple chiffre.",
+      "Brief de couverture a mettre a jour (texte 'Chatbot IA pour votre site' vs image 'Votre assistant IA repond') ou regenerer la couverture avec 'chatbot' pour coller au titre et au SEO.",
+      "Fournir une video 60-90 s et une page de test publique du widget, indispensables pour passer a 4 en preuve avec 0 avis.",
+      "Montrer dans une capture la question de la couverture ('Delai de retour ?') ou changer la bulle pour une question reellement demontree (livraison express 9,90 EUR)."
+    ]
+  },
+  "S3": {
+    "scores": {
+      "1_clarte": 4,
+      "2_livrables": 3,
+      "3_preuve_demo": 3,
+      "4_structure": 4,
+      "5_honnetete": 4,
+      "6_prix": 4,
+      "7_visuels": 4,
+      "8_seo_conversion": 3
+    },
+    "justifications": {
+      "1_clarte": "Resultat concret et immediat (factures/BL en Excel), definitions de 'type de document', 'cas douteux', 'taux de lecture' ; couverture claire.",
+      "2_livrables": "Incoherence : Premium = 5 types avec 60 documents au total (12 par type) alors que Standard teste 20 par type ; ecart Standard-Premium (260 EUR) non explique par les options, 'flux complet' n'a pas d'option.",
+      "3_preuve_demo": "Captures solides et coherentes (entree PDF, tableau 8 factures, incoherence HT+TVA) mais uniquement des factures ; BL/CMR du titre jamais montres ; pas de video ni de scan.",
+      "4_structure": "Hook, livrables, exemple, processus, exclusions, FAQ de 8 questions, appel a ecrire ; definitions utiles.",
+      "5_honnetete": "Limites tres claires (pas de scans, pas de %, prototype hors n8n, tests fictifs) ; manque de preciser que 4 des 8 factures sont des cas pieges volontaires, sinon '4 a verifier / accord 8/8' se lit comme une performance.",
+      "6_prix": "Essentiel 49 EUR dans la mediane, options coherentes ; la logique de prix ne chiffre pas le passage Standard-Premium comme S1 et S2.",
+      "7_visuels": "Couverture lisible, chiffres du tableau identiques aux captures (195,84 / 612,00 / 281,40) ; petit 'n8n' bas-droite a faible contraste ; la ligne 612,00 y est presentee comme normale alors qu'elle est signalee ailleurs.",
+      "8_seo_conversion": "Titre sans 'IA', 'extraction' ni 'automatisation' ; 'saisie de factures' et OCR IA seulement en debut de description et tags ; categorie Saisie/Data non tranchee."
+    },
+    "gaps": [
+      "Corriger la regle d'echantillon : Premium 'jusqu'a 60 par type' ou '12 documents minimum par type' ; ou baisser Standard a 10 par type. Ajouter la ligne de calcul Standard vers Premium (types +39, ecran +69, destination +25, flux complet a creer en option ou justifier).",
+      "Soit montrer un bon de livraison (une capture ou 1 PDF de BL fictif dans le tableau), soit retirer 'bons de livraison' du titre/couverture/FAQ ('CMR, tickets, releves') : la preuve ne couvre que des factures.",
+      "Ajouter dans la description et la legende S3-2 : '4 des 8 factures fictives contiennent volontairement une erreur ou un doublon pour montrer les controles' (et que accord 8/8 ne mesure pas la precision reelle).",
+      "Titre : integrer 'IA' (ex. 'Je vais automatiser la saisie de vos factures et bons de livraison en Excel avec l'IA', verifier la limite de caracteres) ; trancher la categorie.",
+      "Remplacer la ligne 612,00 de la couverture par une valeur non signalee ou ajouter un indicateur 'A verifier' pour rester coherent avec S3-2.",
+      "Enregistrer la video 60-90 s (facture fictive vers ligne Sheets, cas douteux marque) : requise pour que la preuve atteigne 4."
+    ]
+  },
+  "verdict": "corriger"
+}

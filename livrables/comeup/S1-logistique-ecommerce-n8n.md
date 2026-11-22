@@ -59,7 +59,7 @@ Un colis en retard, un client qui écrit "Où est ma commande ?", et vous qui re
 
 Je suis développeur et je connais la logistique de l'intérieur (préparation, expéditions, retards, litiges). Je construis des automatisations n8n pour votre boutique Shopify ou WooCommerce (et vos autres outils) qui font ce travail répétitif à votre place : vous êtes prévenu quand un colis est bloqué, le client reçoit son suivi sans que vous touchiez à rien, et vos commandes arrivent dans un tableau propre.
 
-Les captures de la galerie montrent d'abord la logique sur un script Python avec des données fictives, puis le même scénario rejoué comme un vrai workflow n8n (exécuté réellement, pas une simulation) ; chez vous, le workflow est adapté à vos outils, avec une étape IA selon le palier.
+Les captures de la galerie montrent la logique sur des données fictives, puis le même scénario exécuté dans n8n (démo sans étape IA) ; chez vous, le workflow est adapté à vos outils, avec une étape IA selon le palier.
 
 CE QUE VOUS RECEVEZ
 - Des workflows n8n prêts à importer (fichier JSON), connectés à vos outils, testés sur vos données (3 exécutions réussies de suite).
@@ -107,9 +107,7 @@ Et si ça ne marche pas ?
 Je corrige jusqu'à ce que le workflow fonctionne conformément au périmètre écrit, dans les révisions du palier. Un changement de périmètre fait l'objet d'une option.
 
 Je ne suis pas sûr de mon besoin, que faire ?
-Décrivez votre situation en message : je réponds sous 48 h ouvrées et je vous dis honnêtement si je suis la bonne personne.
-
-Écrivez-moi avant de commander en décrivant votre flux en 3 lignes : je vous dis le palier adapté et ce qui est faisable.
+Écrivez-moi avant de commander en décrivant votre flux en 3 lignes : je réponds sous 48 h ouvrées, je vous dis le palier adapté et, honnêtement, si je suis la bonne personne.
 ====
 
 ## Consignes à l'acheteur (questions à la commande)
@@ -126,18 +124,17 @@ n8n, automatisation logistique, e-commerce, suivi colis, alerte retard colis
 
 ## Brief image de couverture
 - Format : paysage 16:9, style vignette claire type YouTube.
-- Texte sur l'image (3 mots) : "Automatisez votre logistique", en gros, 2 lignes, police grasse sans empattement, lisible à 200 px de large.
+- Texte sur l'image : "Automatisez votre logistique", en gros, 2 lignes, police grasse sans empattement, lisible à 200 px de large.
 - Fond : dégradé bleu nuit (#0F172A) vers bleu (#1D4ED8) ; texte blanc, "logistique" en jaune (#FACC15).
-- Visuel : à gauche, schéma de 3 blocs reliés par des flèches (icône colis, puis nom "n8n", puis icône alerte). Capture réelle de l'éditeur n8n en arrière-plan flouté à 20 % d'opacité, SANS données de tiers.
+- Visuel : schéma de 3 blocs reliés par des flèches (icône colis, puis nom "n8n", puis icône alerte), sur fond dégradé uni. Pas de capture de l'éditeur n8n en arrière-plan (couverture livrée sans capture).
 - Pas de visage, pas de logos de transporteurs, pas de faux chiffres ni badge.
 - Même gabarit, même police et mêmes couleurs que S2 et S3 (seule la couleur d'accent change).
 - À tester à 200 px de large avant publication.
 
 ## Preuves (à joindre)
-Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - données fictives". Le prototype existe en deux versions sur les mêmes données fictives : d'abord un script Python (logique de détection), puis le même scénario rejoué comme un vrai workflow n8n (exécuté avec la CLI n8n, pas une simulation). S1-1 et S1-3 montrent la version script ; S1-2 et S1-4 montrent l'exécution réelle et le schéma de ce workflow n8n. Ne jamais présenter ces captures comme un workflow livré chez un client précis : c'est une démo sur données fictives.
+Galerie ComeUp, dans cet ordre. Seules la couverture, S1-1 et S1-3 portent un badge "Exemple - données fictives" ; S1-2 (capture de l'exécution) n'en a pas, mais le titre du workflow y indique "données fictives". Le prototype existe en deux versions sur les mêmes données fictives : d'abord un script Python (logique de détection), puis le même scénario rejoué comme un vrai workflow n8n de 7 nœuds, sans étape IA (exécuté avec la CLI n8n, pas une simulation). S1-1 et S1-3 montrent la version script ; S1-2 montre l'exécution réelle. L'étape IA des paliers Standard et Premium n'est pas démontrée par ces images. Ne jamais présenter ces captures comme un workflow livré chez un client précis : c'est une démo sur données fictives.
 - livrables/comeup/assets/S1-couverture.png : couverture 1280x720 (le texte "n8n" désigne l'offre, pas la démo).
 - livrables/comeup/assets/S1-1-donnees-entree.png. Légende : "Entrée : export commandes et statuts transporteur (données fictives)."
 - livrables/comeup/assets/S1-2-execution.png. Légende : "Exécution réelle du workflow n8n (CLI n8n) : 4 expéditions à risque détectées sur 10."
 - livrables/comeup/assets/S1-3-sorties.png. Légende : "Sortie : messages clients prêts à envoyer et résumé d'alerte (retard, incident, absence de scan)."
-- livrables/comeup/assets/S1-4-workflow-n8n.png. Légende : "Schéma du workflow n8n réel utilisé pour la démo (nœuds et connexions)."
-- Vidéo de démo 60-90 s (workflow n8n réel sur données fictives) : à enregistrer par Baptiste, hors atelier.
+- Vidéo de démo 60-90 s : à enregistrer avant publication (workflow n8n réel sur données fictives, par Baptiste, hors atelier).

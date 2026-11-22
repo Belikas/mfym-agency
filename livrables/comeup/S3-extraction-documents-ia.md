@@ -1,12 +1,12 @@
-# S3 - Automatisation de l'extraction de documents (factures, bons de livraison, PDF vers Excel)
+# S3 - Extraction de factures PDF vers Excel par IA (bons de livraison / CMR sur devis après test)
 
 Les blocs entre les lignes ==== sont à coller tels quels dans ComeUp : texte brut, sans Markdown (pas de ** ni de ->), listes avec "- " et numéros "1.".
 Prix = prix affiché acheteur (benchmark). À la création, saisir le prix vendeur qui donne ce prix affiché (~ prix / 1,102) et contrôler au checkout. Limite de titre ComeUp non vérifiée : titre gardé nettement sous 80 caractères.
 À confirmer par Baptiste avant publication : la niche (recherche ComeUp "saisie de factures" / "extraction de données") et la catégorie Saisie/Data si elle existe.
 
-## Titre (62 caractères)
-Je vais transformer vos factures et bons de livraison en Excel
-(ComeUp impose "Je vais" : saisir "transformer vos factures et bons de livraison en Excel")
+## Titre (70 caractères)
+Je vais automatiser l'extraction de vos factures PDF vers Excel par IA
+(ComeUp impose "Je vais" : saisir "automatiser l'extraction de vos factures PDF vers Excel par IA")
 
 ## Catégorie
 Programmation & Tech > Automatisation (à confirmer à la création ; alternative : Saisie / Data si la catégorie existe)
@@ -25,7 +25,7 @@ Programmation & Tech > Automatisation (à confirmer à la création ; alternativ
 | Révisions | 1 | 2 | 3 + 14 jours de support |
 | Types de documents | 1 | 3 | jusqu'à 5 |
 | Destination | 1 (Google Sheets, Excel ou CSV) | 1 | Google Sheets/Excel + base Supabase + export |
-| Test sur vos documents | 10 documents | 20 par type | jusqu'à 60 au total, répartis entre vos types |
+| Test sur vos documents | 10 documents | 20 par type (60 pour 3 types) | 20 par type (100 pour 5 types) |
 | Taux de lecture mesuré et communiqué | oui | oui | oui |
 | Contrôles de cohérence (totaux, doublons) | non | oui | oui |
 | Alerte sur les cas douteux | non (champs manquants seulement signalés) | oui | oui |
@@ -33,7 +33,7 @@ Programmation & Tech > Automatisation (à confirmer à la création ; alternativ
 | Validation humaine intégrée (écran de relecture) | non | non | oui |
 | Documentation | 1 page | 2-3 pages | complète |
 
-Logique de prix : Essentiel à 49 €, dans la médiane marché (33-55 €), avec un test de 10 documents pour rester tenable en temps ; niche sans concurrent vu ; upsell naturel vers les contrôles de cohérence puis le flux complet. Tarif de lancement à relever après les premiers avis (Baptiste décide). Le coût API par document n'est pas dans le prix : estimation donnée avant commande.
+Logique de prix : Essentiel à 49 €, dans la médiane marché (33-55 €), avec un test de 10 documents pour rester tenable en temps ; niche sans concurrent vu ; upsell naturel vers les contrôles de cohérence puis le flux complet. Écart Standard-Premium (260 €) : 2 types de documents en plus (2 x 39 = 78 €) + écran de validation humaine (69 €) + destination supplémentaire Supabase (25 €) + 40 documents de test en plus (4 x 15 = 60 €) = 232 € ; le reste (environ 28 €) correspond au flux complet (boîte mail ou dossier surveillé, extraction, base, export) et aux 14 jours de support. Tarif de lancement à relever après les premiers avis (Baptiste décide). Le coût API par document n'est pas dans le prix : estimation donnée avant commande.
 
 ## Options (extras)
 - Type de document supplémentaire : +39 €
@@ -57,24 +57,24 @@ Standard (169 € / 7 jours) :
 3 types de documents, contrôles de cohérence (totaux, doublons), alerte sur les cas douteux, test sur 20 documents par type, documentation de 2 à 3 pages. 2 corrections.
 ====
 Premium (429 € / 14 jours) :
-Flux complet : boîte mail ou dossier surveillé, extraction, base Supabase, export. Jusqu'à 5 types de documents, écran de validation humaine, test sur 60 documents au total (répartis entre vos types), 14 jours de support. 3 corrections.
+Flux complet : boîte mail ou dossier surveillé, extraction, base Supabase, export. Jusqu'à 5 types de documents, écran de validation humaine, test sur 20 documents par type (100 au total pour 5 types), 14 jours de support. 3 corrections.
 ====
 
 ## Description (à coller)
 ====
-Vous retapez à la main des factures, des bons de livraison ou des CMR dans un tableur : c'est long, ennuyeux et une faute de frappe passe vite. J'automatise cette saisie de factures et de documents PDF vers Excel ou Google Sheets avec n8n et l'IA, avec vos règles de contrôle.
+Vous retapez à la main des factures dans un tableur : c'est long, ennuyeux et une faute de frappe passe vite. J'automatise cette saisie de factures PDF vers Excel ou Google Sheets avec n8n et l'IA, avec vos règles de contrôle. Les bons de livraison, CMR et autres documents sont possibles sur devis, après un test sur vos exemples : ils ne sont pas démontrés dans la galerie.
 
-Je suis développeur avec une expérience professionnelle de la logistique : je connais ces documents (références, quantités, dates, numéros de commande, totaux) et leurs pièges. Je mets en place un flux n8n + IA qui lit vos PDF (texte en priorité ; scans et photos nettes possibles, selon le taux de lecture mesuré sur vos documents de test), en extrait les champs utiles et les range dans Google Sheets, Excel ou une base de données.
+Je suis développeur avec une expérience professionnelle de la logistique : je connais ces documents (références, quantités, dates, numéros de commande, totaux) et leurs pièges. Je mets en place un flux n8n + IA qui lit vos PDF (PDF texte, le cas démontré ; scans et photos : à évaluer sur vos documents de test, rien n'est promis d'avance), en extrait les champs utiles et les range dans Google Sheets, Excel ou une base de données.
 
 CE QUE VOUS RECEVEZ
 - Un workflow n8n prêt à l'emploi pour le ou les types de document du palier. Un type = une famille de documents aux mêmes champs (par exemple "factures fournisseurs"), quel que soit le fournisseur.
-- Un test sur vos vrais documents (10 en Essentiel, 20 par type en Standard, jusqu'à 60 au total en Premium), avec le taux de lecture correcte mesuré champ par champ et communiqué : vous voyez ce qui marche et ce qui ne marche pas.
+- Un test sur vos vrais documents (10 en Essentiel, 20 par type en Standard, 20 par type en Premium, soit 100 pour 5 types), avec le taux de lecture correcte mesuré champ par champ et communiqué : vous voyez ce qui marche et ce qui ne marche pas.
 - Selon le palier : contrôles de cohérence (le total correspond-il aux lignes ? doublon ?), alerte sur les cas douteux, base Supabase, écran de validation humaine.
 - Une documentation et vos accès à votre nom.
 
 Cas douteux : un document est marqué "à relire" si un champ obligatoire manque ou est illisible, si la somme des lignes ne correspond pas au total, si le numéro existe déjà, ou si l'IA signale qu'elle n'est pas sûre d'une valeur. Les règles sont écrites avec vous avant de construire.
 
-Les captures de la galerie montrent la logique (lecture de PDF, tableau, cas douteux signalé) sur un prototype avec des factures fictives ; chez vous, elle est construite dans n8n avec une étape IA pour les documents scannés ou mal structurés.
+Les captures de la galerie viennent d'un prototype en Python sur 8 factures PDF fictives, dont 4 contiennent volontairement une erreur ou un doublon pour montrer les contrôles (l'accord 8 sur 8 ne mesure donc pas une précision réelle) : des règles lisent les champs, Claude (IA) relit chaque facture en parallèle et les deux résultats sont comparés (accord sur 8 factures sur 8), puis les incohérences sont signalées. Ce prototype n'est pas un workflow n8n et n'a été testé que sur ces PDF fictifs au texte lisible ; chez vous, la logique est construite dans n8n avec l'API Claude.
 
 EXEMPLE (illustratif, pas un résultat client)
 Une facture PDF arrive dans une boîte Gmail ou un dossier Drive. n8n la récupère, l'IA (API Claude) lit le document et renvoie les champs : fournisseur, numéro de facture, date, lignes, total HT, TVA, total TTC. n8n vérifie que la somme des lignes égale le total et que le numéro n'existe pas déjà, puis ajoute la ligne dans Google Sheets. Si une vérification échoue, la ligne est marquée "à relire" et vous recevez un message.
@@ -95,7 +95,7 @@ CE QUI N'EST PAS INCLUS
 
 FAQ
 Quels documents sont lus ?
-Factures, bons de livraison, bons de commande, CMR, tickets, relevés, en PDF texte. Les PDF scannés et les photos nettes sont possibles mais non garantis d'avance : le taux de lecture se mesure sur vos documents de test (voir "Quelle précision ?"), et un prétraitement est proposé en option si la qualité est faible.
+Factures en PDF texte (cas démontré). Bons de livraison, bons de commande, CMR, tickets, relevés : sur devis, après un test sur vos exemples (non démontrés dans la galerie). Pour les PDF scannés et les photos, je ne promets rien d'avance : selon le test sur vos documents (voir "Quelle précision ?"), je vous dis si c'est lisible, et un prétraitement est proposé en option si la qualité est faible.
 
 Quelle précision ?
 Elle dépend de vos documents. On mesure ensemble le taux de lecture sur vos documents de test avant de valider ; pas de promesse chiffrée avant ce test. À l'issue du test, vous décidez de continuer ou non.
@@ -119,7 +119,7 @@ Je corrige dans les révisions du palier jusqu'à ce que le flux fonctionne conf
 ====
 
 ## Consignes à l'acheteur (questions à la commande)
-1. Quel(s) type(s) de document (factures, BL, CMR...) et en quel volume par mois ?
+1. Quel(s) type(s) de document (factures ; BL, CMR... sur devis) et en quel volume par mois ?
 2. Format : PDF texte, scans, photos de téléphone ?
 3. Quels champs voulez-vous extraire (liste précise) ?
 4. Où doivent aller les données (Google Sheets, Excel, base) et quelles colonnes ?
@@ -139,10 +139,9 @@ extraction de données, saisie de factures, OCR IA, n8n, automatisation
 - À tester à 200 px de large avant publication.
 
 ## Preuves (à joindre)
-Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - données fictives". Les captures montrent la logique sur un prototype en Python local (code réel, données fictives) : elles ne montrent ni n8n ni IA générative. Chez le client, la logique est construite dans n8n avec une étape IA pour les documents scannés ou mal structurés. Ne jamais présenter ces captures comme un workflow n8n livré.
-Le prototype lit le texte de PDF fictifs avec des règles fixes (extraction déterministe) ; l'étape IA n'est pas illustrée.
-- livrables/comeup/assets/S3-couverture.png : couverture 1280x720 (les mots "par IA" et "n8n" désignent l'offre, pas la démo).
-- livrables/comeup/assets/S3-1-pdf-entree.png. Légende : "Entrée : facture PDF fictive et champs lus."
-- livrables/comeup/assets/S3-2-tableau-extrait.png. Légende : "Sortie : 8 factures converties en tableau, 4 marquées à vérifier."
-- livrables/comeup/assets/S3-3-incoherence.png. Légende : "Cas douteux signalé : HT + TVA ne correspond pas au TTC. Aucune correction automatique."
-- Vidéo de démo 60-90 s (flux n8n réel, facture fictive vers ligne Sheets, cas douteux marqué) : à enregistrer par Baptiste, hors atelier.
+Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - données fictives". La preuve ne couvre que des factures. Les captures viennent d'un prototype en Python local (code réel, 8 factures PDF fictives au texte lisible, dont 4 pièges volontaires : erreur ou doublon) avec une vraie étape IA : des règles extraient les champs, Claude relit chaque facture, les deux résultats sont comparés (accord 8/8) et les incohérences de totaux, de TVA ou de doublon sont signalées sans correction. Le prototype n'est pas un workflow n8n, ne lit ni scans ni photos, et aucun taux de lecture sur de vrais documents n'est démontré. Ne jamais présenter ces captures comme un flux livré.
+- livrables/comeup/assets/S3-couverture.png : couverture 1280x720 (le mot "n8n" désigne l'offre, pas la démo).
+- livrables/comeup/assets/S3-1-pdf-entree.png. Légende : "Entrée : facture PDF fictive, champs lus par les règles et relus par Claude."
+- livrables/comeup/assets/S3-2-tableau-extrait.png. Légende : "Sortie : 8 factures fictives converties en tableau ; 4 contiennent volontairement une erreur ou un doublon pour montrer les contrôles (4 marquées à vérifier). Claude et les règles d'accord sur 8 sur 8, ce qui ne mesure pas la précision réelle."
+- livrables/comeup/assets/S3-3-incoherence.png. Légende : "Cas douteux signalé : HT + TVA (648,00 €) ne correspond pas au TTC (612,00 €). Aucune correction automatique."
+- Vidéo de démo 60-90 s : à enregistrer avant publication (flux n8n réel, facture fictive vers ligne Sheets, cas douteux marqué ; par Baptiste, hors atelier).

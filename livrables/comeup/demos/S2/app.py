@@ -21,13 +21,13 @@ def ask(q):
         dt = set(toks(t + " " + b)); sc = sum(math.log(1 + N/df[w]) for w in qt & dt)
         if sc > best[0] and len(qt & dt) / len(qt) >= COVERAGE: best = (sc, (t, b))  # une question dont la moitié des mots est inconnue de la FAQ est hors périmètre
     if best[0] < THRESHOLD: return unknown(q, best[0])
-    t, b = best[1]
+    t, b = best[1]; gen = bool(os.environ.get("S2_LLM"))
     if os.environ.get("S2_LLM"):  # RAG : Claude (CLI headless) rédige la réponse à partir du seul passage retrouvé
         b = llm.ask("Tu es l'assistant d'une boutique. Réponds en français, en 1 à 3 phrases, UNIQUEMENT à partir de l'extrait de FAQ ci-dessous. "
                     "Si l'extrait ne répond pas à la question, réponds exactement : Je ne sais pas."
                     f"\n\nExtrait ({t}) :\n{b}\n\nQuestion : {q}")
         if b.lower().startswith("je ne sais pas"): return unknown(q, best[0])
-    return {"answer": b, "source": f"FAQ Boutique Démo > {t}", "score": round(best[0], 2)}
+    return {"answer": b, "source": f"FAQ Boutique Démo > {t}", "score": round(best[0], 2), "gen": gen}
 def unknown(q, score):
     with open(here/"unanswered.log", "a", encoding="utf-8") as f: f.write(f"{datetime.datetime.now():%Y-%m-%d %H:%M}\t{q}\n")
     return {"answer": "Je ne sais pas : cette information n'est pas dans la FAQ. Je transmets votre question à l'équipe, qui vous répondra par e-mail sous 24 h ouvrées.", "source": None, "score": round(score, 2)}
