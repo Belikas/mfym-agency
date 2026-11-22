@@ -1,4 +1,4 @@
-# État de l'agence — mis à jour le 22/11/2026 ~13:25 (run quotidien 1300)
+# État de l'agence — mis à jour le 22/11/2026 ~19:10 (run quotidien 1900)
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -6,7 +6,7 @@
 - **Date cible 1 000 €/mois : 31/03/2027** (hypothèse : services d'automatisation IA ~500 € + produits numériques + clipping). Revue chaque dimanche.
 
 ## Priorités
-1. exp-03 Gumroad logistique : page de pré-vente prête (livrables/gumroad/presell-logistique.md), critique 4-5/5 sur les 8 critères (2 passes). **Approbation A-03 envoyée** : publier = créer la micro-entreprise maintenant (le moment "indispensable"). 4 communautés de diffusion trouvées (chartes vérifiées) : forum.gestconseil.com (seule à toucher le persona logistique, activité à vérifier), cc-france.org, devw.ai, rucheia.fr (ces 3 dernières = audience dev/Claude Code, pas logistique — bon pour feedback produit, pas pour le persona cible).
+1. exp-03 Gumroad logistique : page de pré-vente prête (livrables/gumroad/presell-logistique.md), critique 4-5/5 sur les 8 critères (2 passes). **Approbation A-03 toujours en attente** (envoyée 13:20, pas de réponse à 19h) : publier = créer la micro-entreprise maintenant. Diffusion à revoir : forum.gestconseil.com (seul candidat visant le persona logistique) confirmé **mort** (19 membres, 4 messages) ; aucune alternative forum FR transport trouvée. Reste cc-france.org/devw.ai/rucheia.fr (audience dev, pas logistique — bon pour feedback produit, pas le persona cible). **T-05 envoyée** à Baptiste : vérifier 2-3 groupes LinkedIn/Facebook transport FR (besoin de son compte).
 2. exp-02 ComeUp : 3 fiches prêtes (livrables/comeup/, critique passe 3 min 3/5 = preuve vidéo). Publication = même décision micro-entreprise + T-04 vidéos.
 3. exp-01 clipping : mesure seulement (le projet SixShots vit dans `Desktop/CLAUDE CODE/CLIPPING MONEY`, on n'y touche pas).
 4. Kickoff terminé (11/11, 22/11 13:20) : runs en mode business normal.
@@ -21,7 +21,7 @@ Suivant si un test meurt : primes-bancaires (28, 0 €) ou gbp-optimisation (30,
 
 ## En attente de Baptiste
 - **A-03** (Telegram) : publier exp-03 maintenant (= créer la micro-entreprise) ?
-- T-01 : place de parking oui/non (1 min). T-02 capture Whop (dimanche). T-04 vidéos (le jour de la publication).
+- T-01 : place de parking oui/non (1 min). T-02 capture Whop (dimanche). T-04 vidéos (le jour de la publication). T-05 : vérifier 2-3 groupes LinkedIn/Facebook transport FR (10 min).
 - T-03 fait (BIOS reporté). Contrat : aucune clause bloquante. Pas de SIRET ; micro-entreprise reportée jusqu'à A-03.
 
 ## Technique

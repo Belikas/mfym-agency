@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T12:19:40+01:00",
+ "updated": "2026-11-22T19:05:25+01:00",
  "tasks": [
   {
    "id": "T-01",
@@ -56,6 +56,24 @@
    ],
    "reply": "22/11 : bot créé, token Claude, veille/Update OK, healthchecks + dépôt GitHub créés. 22/11 : token GitHub OK, schedule.ps1 admin OK, redémarrage OK, dashboard téléphone OK. BIOS non fait (reporté).",
    "done_at": "2026-11-22T12:11:53+01:00"
+  },
+  {
+   "id": "T-05",
+   "title": "Vérifier 2-3 groupes LinkedIn/Facebook transport-logistique FR",
+   "purpose": "Diffusion exp-03 (pré-vente logistique) : le seul forum trouvé qui visait vraiment ce persona (forum.gestconseil.com) s'est révélé mort (19 membres, 4 messages). Il faut un canal réel pour mesurer le test ; ces groupes ne sont pas vérifiables sans compte.",
+   "steps": [
+    "LinkedIn : ouvre 1-2 groupes 'transport routier France' / 'gestionnaire logistique France' que tu connais ou trouves, regarde les 5 derniers posts (dates, nb de réactions)",
+    "Facebook : pareil sur le groupe 'Groupement de routiers français' ou équivalent",
+    "Dis-moi juste : actif ou mort (dernier post < 1 semaine = actif), et si tu penses pouvoir y poster un retour d'expérience sans que ça sonne comme de la pub"
+   ],
+   "est_minutes": 10,
+   "deliverable": "verdict actif/mort pour chaque groupe regardé, en réponse à ce message",
+   "status": "open",
+   "created": "2026-11-22T19:10:00+01:00",
+   "telegram_message_id": 15,
+   "blocks": [
+    "exp-03-skills-gumroad"
+   ]
   },
   {
    "id": "T-04",

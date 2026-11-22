@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T09:50:00+01:00",
+ "updated": "2026-11-22T19:10:00+01:00",
  "agents": [
   {
    "id": "directeur",
@@ -20,8 +20,8 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": "CLAUDE.md",
-   "current_task": "Terminé : exp-03 prêt (page + critique ok + A-03 envoyée) ; en attente de Baptiste",
-   "last_run": "2026-11-22T13:25:00+01:00"
+   "current_task": "exp-03 prêt, A-03 toujours en attente ; diffusion repensée (forum cible mort, T-05 envoyée)",
+   "last_run": "2026-11-22T19:10:00+01:00"
   },
   {
    "id": "chercheur",
@@ -40,8 +40,8 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/chercheur.md",
-   "last_run": "2026-11-22T13:20:00+01:00",
-   "last_result": "4 communautés de diffusion exp-03 vérifiées en source primaire (chartes lues)"
+   "last_run": "2026-11-22T19:05:00+01:00",
+   "last_result": "forum.gestconseil.com confirmé mort (19 membres, 4 messages) ; aucune alternative forum FR transport trouvée avec volume prouvé ; T-05 envoyée à Baptiste pour vérifier LinkedIn/Facebook"
   },
   {
    "id": "critique",

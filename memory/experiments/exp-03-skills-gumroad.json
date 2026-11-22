@@ -23,6 +23,10 @@
   {
    "date": "2026-11-22",
    "note": "Niche logistique choisie (zéro concurrent, avantage pro de Baptiste). Page de pré-vente écrite et corrigée en 2 passes : critique final 4-5/5 sur les 8 critères (precision_niche 4, utilite_immediate 4, qualite_technique 4, differenciation_vs_gratuit 4, preuve 5, clarte_page 4, honnetete_confiance 5, installation_support 4), verdict ok. Livrable : livrables/gumroad/presell-logistique.md. Approbation A-03 envoyée (publier + micro-entreprise). 4 communautés candidates trouvées en source primaire : forum.gestconseil.com (transport FR, activité non vérifiée, seule à viser directement le persona logistique), cc-france.org (Discord Claude Code FR, 931 membres), devw.ai (Slack IA FR, 3236 membres, canal #showcase), rucheia.fr (Discord IA FR sur candidature, canal #showcase). Risque identifié : CC France et Dev With AI touchent des devs/indies intéressés par Claude Code, pas des gestionnaires d'entrepôt — utiles pour valider l'intérêt générique, pas le persona cible. Aucune ne tolère un lien brut sans contexte (discussion réelle ou format retour d'expérience exigé)."
+  },
+  {
+   "date": "2026-11-22",
+   "note": "Vérification forum.gestconseil.com (run 19h) : mort — le miroir gestconseil.forumactif.com montre 19 membres, 4 messages au total (le site vitrine affichait de faux 'sujets récents'). C'était la seule communauté candidate à viser vraiment le persona logistique : elle ne vaut pas la diffusion. Alternatives cherchées : forum.logistiqueconseil.org (erreur serveur, abandonné), FNTR (syndicat, pas un forum ouvert), groupes LinkedIn/Facebook transport FR repérés mais invérifiables sans compte (auth bloque le scraping). Conséquence : aucun canal prouvé qui touche le persona cible pour l'instant ; cc-france.org/devw.ai/rucheia.fr restent les seuls canaux dispo mais ne touchent que des devs, pas des logisticiens. Tâche T-05 envoyée à Baptiste pour vérifier manuellement 2-3 groupes LinkedIn/Facebook transport FR."
   }
  ],
  "owner_agent": "atelier"
