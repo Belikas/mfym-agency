@@ -1,0 +1,32 @@
+{
+  "scores": {
+    "1_lisibilite_eclair": 4,
+    "2_fidelite_activite": 4,
+    "3_identite_agents": 4,
+    "4_clarte_business": 4,
+    "5_mobile": 4,
+    "6_detail_a_la_demande": 4,
+    "7_finition_visuelle": 4,
+    "8_robustesse": 4
+  },
+  "justifications": {
+    "1": "375px : revenu/objectif, Pour toi (3 taches, 18 min), au travail (1/5) visibles sans scroll ; mais le bandeau dit 'aucune decision en attente' alors que 3 taches attendent. +1 : la phrase du bandeau doit citer les taches ('3 taches pour toi, 18 min') et passer en couleur d'alerte quand il y en a.",
+    "2": "Pose/bulle viennent des hooks via SSE, repos par defaut, pas de fantome (la bulle 'Utilise le navigateur' du Critique correspondait a mon propre run). Non mesure : delai <=2 s. +1 : ajouter un test automatise (evenement hook injecte -> pose changee en <=2 s) et afficher l'age du dernier evenement sur la bulle.",
+    "3": "5 sprites distincts (cheveux, couleur de salle, bureau), nom + role + tache sans toucher ; mais meme gabarit de corps, et 8 agents jamais verifies (grille 2 colonnes, ~4 rangees = ~900 px de salles). +1 : un accessoire propre par role (lunettes, casque, casquette) et verifier a 8 agents en injectant 3 agents factices.",
+    "4": "Une carte par sujet (revenu, budget, tests avec J-15 et date, pistes /45, taches, equipe) avec 'maj il y a X min'. Revenu et budget vides = texte neutre. +1 : mettre la section Pour toi/A valider au-dessus des salles sur mobile et donner un etat vide actionnable pour Revenu ('premier euro vise : date').",
+    "5": "375px : scrollWidth=375, aucune cible <44 px (bureaux 172x215, lignes 62-86 px, bouton fermer OK), manifest + icones 192/512 + apple-touch-icon. Page de 3370 px longue. +1 : barre de navigation collante par ancres (Taches/Tests/Pistes) et service worker pour un vrai mode hors-ligne installable.",
+    "6": "1 tap : agent (derniers evenements), test (hypothese, seuil, J-15, bloque par), piste (scores, sources), tache ; 'Pour toi' fait defiler vers les taches. Session vide, runs vides. +1 : afficher le rapport de session dans le drawer d'agent et faire de 'Pour toi' un drawer unique plutot qu'un scroll.",
+    "7": "Palette sombre unique, sprites nets en pixel-art, salles teintees lisibles, reduced-motion gere. Mais sombre uniquement (pas de theme clair) et salles quasi identiques hors couleur. +1 : meubles/decor propres a chaque salle (bibliotheque pour Recherche, etc.) et comparer a pixel-agents sur capture.",
+    "8": "Sections serveur isolees par try/except, JSON casse -> 'JSON illisible', reconnexion SSE (watchdog 40 s), polling pause quand l'onglet est cache. Pas de mesure de CPU ni test d'echec reseau reel. +1 : mesurer le CPU au repos (<2 %) et afficher un bandeau 'hors ligne depuis X' quand SSE tombe."
+  },
+  "gaps": [
+    "Bandeau d'accueil : 'aucune decision en attente' contredit les 3 taches (18 min) en attente de Baptiste.",
+    "Latence hooks -> pose (<=2 s) non verifiee par un test.",
+    "Capacite 8 agents jamais testee (seulement 5 agents).",
+    "Pas de navigation par ancres : 3370 px de scroll sur mobile.",
+    "Pas de theme clair ; salles peu differenciees par le decor.",
+    "CPU au repos et panne reseau non mesures ; pas de service worker.",
+    "Sessions et Runs vides : etats vides non actionnables."
+  ],
+  "verdict": "ok"
+}

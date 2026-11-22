@@ -182,7 +182,7 @@ const lookOf = (id) => { const i = ((S && S.team && S.team.agents) || []).findIn
 function layout() {
   const box = $("office");
   const agents = deskAgents();
-  scale = box.clientWidth >= 900 ? 4 : 3;
+  scale = 3;
   const byRoom = new Map();
   agents.forEach((a) => { if (!byRoom.has(a.room)) byRoom.set(a.room, []); byRoom.get(a.room).push(a); });
   const key = scale + "|" + [...byRoom].map(([r, l]) => r + ":" + l.map((a) => a.id + (a.status || "") + (a.current_task || "") + (a.role || "")).join(",")).join(";") + "|" + !!(S && S.errors && S.errors.team);
@@ -199,14 +199,12 @@ function layout() {
     const pal = roomPal(id);
     const sec = document.createElement("section");
     sec.className = "room";
-    sec.style.setProperty("--n", list.length);
-    sec.innerHTML = `<h3 class="room-label">${esc(pal.name)}</h3><div class="desks"></div>`;
-    const grid = sec.querySelector(".desks");
+    const grid = sec;
     const desks = list.map((a, k) => {
       const b = document.createElement("button");
       b.className = "desk";
       b.style.setProperty("--ac", a.look.shirt);
-      b.innerHTML = `<span class="scene" style="background:${pal.f1}"><canvas width="${CW}" height="${CH}" style="width:${CW * scale}px;height:${CH * scale}px" aria-hidden="true"></canvas></span>` +
+      b.innerHTML = `<span class="scene" style="background:${pal.f1}"><i class="rl">${esc(pal.name)}</i><canvas width="${CW}" height="${CH}" style="width:${CW * scale}px;height:${CH * scale}px" aria-hidden="true"></canvas></span>` +
         `<b class="nm">${esc(a.name)}</b><span class="role">${esc(roleShort(a.role))}</span>` +
         (a.current_task ? `<span class="task">Tâche : ${esc(a.current_task)}</span>` : "") +
         `<span class="st"></span><span class="bubble"></span>`;
@@ -422,7 +420,7 @@ function renderStrip() {
   $("bud-bar").classList.toggle("over", !!xp && xp.month > xp.budget);
   $("bud-sub").textContent = xp ? `reste ${eur(xp.budget - xp.month)} · maj ${ago(S.mtimes["expenses.json"])}` : "expenses.json illisible";
   const tgt = ((S.state_md || "").match(/Date cible[^:]*:\s*\**\s*(\d{2}\/\d{2}\/\d{4})/) || [])[1];
-  $("headline").textContent = (rv && rv.month_net > 0 ? `${eur(rv.month_net)} net ce mois-ci` : "Rien ne rapporte encore") + " · " + (ap.length ? `${ap.length} décision${ap.length > 1 ? "s t'attendent" : " t'attend"}` : "aucune décision en attente") + (tgt ? ` · 1 000 €/mois visés le ${tgt}` : "");
+  $("headline").textContent = (rv && rv.month_net > 0 ? `${eur(rv.month_net)} net ce mois-ci` : "Rien ne rapporte encore") + " · " + (ap.length + tk.open.length ? `${ap.length + tk.open.length} chose${ap.length + tk.open.length > 1 ? "s t'attendent" : " t'attend"}` : "rien ne t'attend") + (tgt ? ` · 1 000 €/mois visés le ${tgt}` : "");
   const n = ap.length + tk.open.length;
   $("you-val").textContent = n;
   $("you-unit").textContent = n ? ` · ${hours(tk.est_hours)}` : "";
