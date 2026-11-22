@@ -48,13 +48,14 @@
    ],
    "est_minutes": 12,
    "deliverable": "réponds « fait »",
-   "status": "open",
+   "status": "done",
    "created": "2026-11-22T10:30:00+01:00",
    "telegram_message_id": 8,
    "blocks": [
     "kickoff"
    ],
-   "reply": "22/11 : bot créé, token Claude, veille/Update OK, healthchecks + dépôt GitHub créés."
+   "reply": "22/11 : bot créé, token Claude, veille/Update OK, healthchecks + dépôt GitHub créés. 22/11 : token GitHub OK, schedule.ps1 admin OK, redémarrage OK, dashboard téléphone OK. BIOS non fait (reporté).",
+   "done_at": "2026-11-22T12:11:53+01:00"
   }
  ]
 }
