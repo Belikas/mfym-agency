@@ -5,7 +5,7 @@ Tant qu'une case reste ouverte, chaque run avance le kickoff avant le business (
 | # | Critère | Statut | Preuve |
 |---|---|---|---|
 | 1 | Le hook garde-fou a bloqué les 3 commandes de test | ✅ 22/11 | `python scripts/tests/guard_cases.py` → « guard OK » (10 cas bloqués : rm -rf hors projet, Remove-Item -Recurse, écriture C:\Windows, cat .env, push --force…, 4 cas autorisés). En vrai run headless : `logs/test-run.txt` « guard: bloqué » (run 20261122-0921-test). |
-| 2 | Un run planifié s'est lancé seul, a travaillé et journalisé, sans personne | ⏳ | Lanceur validé à la main (`logs/runs.jsonl` run 20261122-0921-test status ok). Attendu : MFYM-quotidien-1300 du 22/11 → ligne `goal: quotidien, status: ok` dans logs/runs.jsonl. |
+| 2 | Un run planifié s'est lancé seul, a travaillé et journalisé, sans personne | ✅ 22/11 | logs/runs.jsonl : `{"exit":0,"ts":"2026-11-22T13:14:35","goal":"quotidien","minutes":14.6,"run_id":"20261122-1300-quotidien","status":"ok"}` ; résumé memory/sessions/2026-11-22-1300.md ; commit 330fc62 (page de pré-vente exp-03 + A-03). |
 | 3 | Un run qui trouve le verrou pris sort proprement | ✅ 22/11 | `logs/runs.jsonl` : `{"status":"skipped_locked","holder":"37952","goal":"quotidien","ts":"2026-11-22T09:19:22"}`, code de sortie 0. |
 | 4 | Après un vrai redémarrage, planificateur, bot, dashboard, Tailscale reviennent seuls | ✅ 22/11 | Tâches en S4U ; boot 12:03:46 → logs/maint.log `2026-11-22T12:06:41 startup: {"bot": true, "dashboard": true, "tailscale": true, "planificateur": true}` ; /api/health ok, serve :8445 actif. |
 | 5 | Heartbeat healthchecks.io vert | ✅ 22/11 | `maint.py heartbeat` → HTTP 200 « OK » (22/11 ~09:25) ; tâche MFYM-heartbeat toutes les 5 min. |
@@ -15,5 +15,7 @@ Tant qu'une case reste ouverte, chaque run avance le kickoff avant le business (
 | 9 | pipeline.json : 30+ pistes notées avec sources | ✅ 22/11 | 35 pistes, 14 catégories, 5 types de sources ; `python scripts/validate.py` → OK. |
 | 10 | Premiers tests lancés ou prêts, avec kill dates | ✅ 22/11 | exp-01 clipping (kill 06/12, attend T-02), exp-02 ComeUp (kill 20/12, attend T-01), exp-03 skills Gumroad (en cours, kill 20/12). |
 | 11 | Tâches de Baptiste en une liste groupée avec temps estimés | ✅ 22/11 | memory/tasks.json : T-01 (15 min), T-02 (5 min/sem), T-03 (45 min). |
+
+**Kickoff terminé le 22/11/2026 à 13:20 (11/11).** Les runs passent en mode business normal.
 
 Quand tout est coché : message Telegram final (ce qui marche, lien dashboard, ce qui attend Baptiste), puis runs business normaux.

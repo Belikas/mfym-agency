@@ -9,7 +9,7 @@
 1. exp-03 Gumroad logistique : page de pré-vente prête (livrables/gumroad/presell-logistique.md), critique 4-5/5 sur les 8 critères (2 passes). **Approbation A-03 envoyée** : publier = créer la micro-entreprise maintenant (le moment "indispensable"). 4 communautés de diffusion trouvées (chartes vérifiées) : forum.gestconseil.com (seule à toucher le persona logistique, activité à vérifier), cc-france.org, devw.ai, rucheia.fr (ces 3 dernières = audience dev/Claude Code, pas logistique — bon pour feedback produit, pas pour le persona cible).
 2. exp-02 ComeUp : 3 fiches prêtes (livrables/comeup/, critique passe 3 min 3/5 = preuve vidéo). Publication = même décision micro-entreprise + T-04 vidéos.
 3. exp-01 clipping : mesure seulement (le projet SixShots vit dans `Desktop/CLAUDE CODE/CLIPPING MONEY`, on n'y touche pas).
-4. Kickoff : 10/11 cochés. Point #2 (run planifié autonome sans supervision) se vérifie par le lanceur après la fin du run 20261122-1300 — à cocher au prochain run si logs/runs.jsonl confirme.
+4. Kickoff terminé (11/11, 22/11 13:20) : runs en mode business normal.
 
 ## Tests (max 3)
 | id | statut | kill date | bloqué par |
