@@ -8,3 +8,6 @@ node_modules/
 dashboard/node_modules/
 dashboard/dist/
 memory/inbox_files/
+**/.n8n-home/
+**/node_modules/
+livrables/**/out/*.log

@@ -3,7 +3,7 @@ facture-01.pdf,Atelier Bois Lumière SARL,512 345 678 00019,F-2026-0412,03/11/20
 facture-02.pdf,Papeterie du Marais SAS,498 765 432 00027,2026/0187,05/11/2026,163.2,32.64,195.84,163.2,
 facture-03.pdf,Nordik Emballages SARL,823 456 789 00011,NE-77120,06/11/2026,208.4,41.68,250.08,208.4,
 facture-04.pdf,Ferme des Trois Chênes EARL,401 234 567 00035,FT-0931,08/11/2026,398.0,79.6,477.6,398.0,
-facture-05.pdf,Studio Cadrage SAS,790 123 456 00042,SC-2026-064,10/11/2026,540.0,108.0,612.0,540.0,HT+TVA = 648.00 ≠ TTC 612.00
-facture-06.pdf,Mécano Services SARL,355 666 777 00058,MS-5520,12/11/2026,250.0,46.9,281.4,234.5,somme des lignes 234.50 ≠ Total HT 250.00 ; TVA ≠ 20 % du HT ; HT+TVA = 296.90 ≠ TTC 281.40
+facture-05.pdf,Studio Cadrage SAS,790 123 456 00042,SC-2026-064,10/11/2026,540.0,108.0,612.0,540.0,"HT+TVA = 648,00 € ≠ TTC 612,00 €"
+facture-06.pdf,Mécano Services SARL,355 666 777 00058,MS-5520,12/11/2026,250.0,46.9,281.4,234.5,"somme des lignes 234,50 € ≠ Total HT 250,00 € ; TVA ≠ 20 % du HT ; HT+TVA = 296,90 € ≠ TTC 281,40 €"
 facture-07.pdf,Atelier Bois Lumière SARL,512 345 678 00019,F-2026-0412,14/11/2026,192.0,38.4,230.4,192.0,numéro de facture en doublon
 facture-08.pdf,Verre & Fils SAS,612 987 654 00063,VF-3308,17/11/2026,110.4,22.08,132.48,110.4,

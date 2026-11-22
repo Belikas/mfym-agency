@@ -1,0 +1,189 @@
+{
+ "id": "colisRetard01Standard",
+ "name": "Détection des colis en retard + étape IA (palier Standard, démo)",
+ "nodes": [
+  {
+   "parameters": {},
+   "name": "Démarrer",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    0
+   ],
+   "id": "démarrer"
+  },
+  {
+   "parameters": {
+    "fileSelector": "C:/Users/Baptiste/Desktop/CLAUDE CODE/MAKE FUCK YOU MONEY INC/livrables/comeup/demos/S1/orders.csv"
+   },
+   "name": "Fichier orders",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    220,
+    0
+   ],
+   "id": "fichier-orders"
+  },
+  {
+   "parameters": {
+    "operation": "csv"
+   },
+   "name": "Lire orders",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    440,
+    0
+   ],
+   "id": "lire-orders"
+  },
+  {
+   "parameters": {
+    "fileSelector": "C:/Users/Baptiste/Desktop/CLAUDE CODE/MAKE FUCK YOU MONEY INC/livrables/comeup/demos/S1/tracking.csv"
+   },
+   "name": "Fichier tracking",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    660,
+    0
+   ],
+   "id": "fichier-tracking",
+   "executeOnce": true
+  },
+  {
+   "parameters": {
+    "operation": "csv"
+   },
+   "name": "Lire tracking",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    880,
+    0
+   ],
+   "id": "lire-tracking"
+  },
+  {
+   "parameters": {
+    "jsCode": "\nconst TODAY = new Date('2026-11-20'), STALE = 3, day = 86400000;\nconst track = Object.fromEntries($input.all().map(i => [i.json.tracking, i.json]));\nconst out = [];\nfor (const {json: o} of $('Lire orders').all()) {\n  const t = track[o.tracking]; let reason = null;\n  const late = Math.round((TODAY - new Date(o.promised)) / day);\n  if (!t) reason = 'aucun statut de suivi';\n  else if (t.status === 'delivered') continue;\n  else if (t.status === 'exception') reason = 'incident transporteur';\n  else if (late > 0) reason = `${late} j de retard sur la date promise`;\n  else if ((TODAY - new Date(t.last_scan)) / day >= STALE) reason = `aucun scan depuis ${Math.round((TODAY - new Date(t.last_scan)) / day)} j`;\n  if (reason) out.push({json: {...o, reason}});\n}\nreturn out;\n"
+   },
+   "name": "Détecter les retards",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1100,
+    0
+   ],
+   "id": "détecter-les-retards"
+  },
+  {
+   "parameters": {
+    "jsCode": "const { execFileSync } = require('child_process');\nreturn $input.all().map(({json: o}) => {\n  const urgence = execFileSync('python', [\"C:\\\\Users\\\\Baptiste\\\\Desktop\\\\CLAUDE CODE\\\\MAKE FUCK YOU MONEY INC\\\\livrables\\\\comeup\\\\demos\\\\S1\\\\n8n\\\\classify_ai.py\"], {input: JSON.stringify({order: o.order_id, reason: o.reason}), encoding: 'utf8', timeout: 60000}).trim();\n  return {json: {...o, urgence}};\n});\n"
+   },
+   "name": "Classer l'urgence (IA)",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1320,
+    0
+   ],
+   "id": "classer-lurgence-(ia)"
+  },
+  {
+   "parameters": {
+    "jsCode": "\nreturn $input.all().map(({json: o}) => {\n  const [y, m, d] = o.promised.split('-');\n  return {json: {to: o.email, order: o.order_id, reason: o.reason,\n    subject: `Votre commande ${o.order_id} – point sur la livraison`,\n    body: `Bonjour ${o.customer.split(' ')[0]},\\nvotre colis (${o.carrier}, suivi ${o.tracking}) devait arriver le ${d}/${m}. Il connaît un retard (${o.reason}). Nous suivons le dossier auprès du transporteur et revenons vers vous sous 24 h.\\nL'équipe boutique`}};\n});\n"
+   },
+   "name": "Rédiger les messages",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1540,
+    0
+   ],
+   "id": "rédiger-les-messages"
+  }
+ ],
+ "connections": {
+  "Démarrer": {
+   "main": [
+    [
+     {
+      "node": "Fichier orders",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fichier orders": {
+   "main": [
+    [
+     {
+      "node": "Lire orders",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Lire orders": {
+   "main": [
+    [
+     {
+      "node": "Fichier tracking",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fichier tracking": {
+   "main": [
+    [
+     {
+      "node": "Lire tracking",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Lire tracking": {
+   "main": [
+    [
+     {
+      "node": "Détecter les retards",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Détecter les retards": {
+   "main": [
+    [
+     {
+      "node": "Classer l'urgence (IA)",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Classer l'urgence (IA)": {
+   "main": [
+    [
+     {
+      "node": "Rédiger les messages",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {}
+}

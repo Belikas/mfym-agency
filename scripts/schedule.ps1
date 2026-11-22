@@ -3,6 +3,13 @@
 # -NoAdmin : tourne seulement quand Baptiste a une session ouverte ; services lancés à l'ouverture de session.
 param([switch]$NoAdmin)
 $ErrorActionPreference = "Stop"
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $NoAdmin -and -not $isAdmin) {
+  # Relance élevée (fenêtre UAC « Oui »), et garde la fenêtre ouverte pour lire le résultat.
+  Start-Process powershell.exe -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -NoExit -File `"$PSCommandPath`""
+  "Fenêtre administrateur ouverte : clique Oui, puis lis le résultat dans la nouvelle fenêtre."
+  return
+}
 $Root  = "C:\Users\Baptiste\Desktop\CLAUDE CODE\MAKE FUCK YOU MONEY INC"
 $Py     = "C:\Users\Baptiste\miniconda3\pythonw.exe"
 $PS     = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
@@ -20,7 +27,7 @@ function Set-AgencyTask($Name, $Trigger, $Exe, $Arguments, [int]$LimitMin = 60, 
   if ($Service) { $settings.ExecutionTimeLimit = "PT0S" }
   # Pas de -TaskPath : un sous-dossier exige l'admin.
   Register-ScheduledTask -TaskName $Name -Action $action -Trigger $Trigger `
-    -Principal $Principal -Settings $settings -Force | Out-Null
+    -Principal $Principal -Settings $settings -Force -ErrorAction Stop | Out-Null
   "OK $Name"
 }
 

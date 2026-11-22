@@ -4,9 +4,9 @@ Les blocs entre les lignes ==== sont à coller tels quels dans ComeUp : texte br
 Prix = prix affiché acheteur (benchmark). À la création, saisir le prix vendeur qui donne ce prix affiché (~ prix / 1,102) et contrôler au checkout. Limite de titre ComeUp non vérifiée : titre gardé nettement sous 80 caractères.
 À confirmer par Baptiste avant publication : la niche (recherche ComeUp "saisie de factures" / "extraction de données") et la catégorie Saisie/Data si elle existe.
 
-## Titre (73 caractères)
-Je vais créer votre automatisation factures PDF vers Excel avec n8n et IA
-(ComeUp impose "Je vais" : saisir "créer votre automatisation factures PDF vers Excel avec n8n et IA")
+## Titre (62 caractères)
+Je vais transformer vos factures et bons de livraison en Excel
+(ComeUp impose "Je vais" : saisir "transformer vos factures et bons de livraison en Excel")
 
 ## Catégorie
 Programmation & Tech > Automatisation (à confirmer à la création ; alternative : Saisie / Data si la catégorie existe)
@@ -25,7 +25,7 @@ Programmation & Tech > Automatisation (à confirmer à la création ; alternativ
 | Révisions | 1 | 2 | 3 + 14 jours de support |
 | Types de documents | 1 | 3 | jusqu'à 5 |
 | Destination | 1 (Google Sheets, Excel ou CSV) | 1 | Google Sheets/Excel + base Supabase + export |
-| Test sur vos documents | 10 documents | 20 par type | 20 par type |
+| Test sur vos documents | 10 documents | 20 par type | jusqu'à 60 au total, répartis entre vos types |
 | Taux de lecture mesuré et communiqué | oui | oui | oui |
 | Contrôles de cohérence (totaux, doublons) | non | oui | oui |
 | Alerte sur les cas douteux | non (champs manquants seulement signalés) | oui | oui |
@@ -43,6 +43,7 @@ Logique de prix : Essentiel à 49 €, dans la médiane marché (33-55 €), ave
 - Contrôles de cohérence et alerte sur les cas douteux (Essentiel) : +59 €
 - Écran de validation humaine (Standard) : +69 €
 - Photos et scans de mauvaise qualité (prétraitement) : +29 €
+- Installation de n8n à votre nom, cloud ou serveur : +49 €
 - Visio 30 min : +35 €
 - Livraison express 48 h (Essentiel) : +39 €
 - Support 30 jours après livraison : +69 €
@@ -56,18 +57,18 @@ Standard (169 € / 7 jours) :
 3 types de documents, contrôles de cohérence (totaux, doublons), alerte sur les cas douteux, test sur 20 documents par type, documentation de 2 à 3 pages. 2 corrections.
 ====
 Premium (429 € / 14 jours) :
-Flux complet : boîte mail ou dossier surveillé, extraction, base Supabase, export. Jusqu'à 5 types de documents, écran de validation humaine, test sur 20 documents par type, 14 jours de support. 3 corrections.
+Flux complet : boîte mail ou dossier surveillé, extraction, base Supabase, export. Jusqu'à 5 types de documents, écran de validation humaine, test sur 60 documents au total (répartis entre vos types), 14 jours de support. 3 corrections.
 ====
 
 ## Description (à coller)
 ====
 Vous retapez à la main des factures, des bons de livraison ou des CMR dans un tableur : c'est long, ennuyeux et une faute de frappe passe vite. J'automatise cette saisie de factures et de documents PDF vers Excel ou Google Sheets avec n8n et l'IA, avec vos règles de contrôle.
 
-Je suis développeur avec une expérience professionnelle de la logistique : je connais ces documents (références, quantités, dates, numéros de commande, totaux) et leurs pièges. Je mets en place un flux n8n + IA qui lit vos PDF et photos, en extrait les champs utiles et les range dans Google Sheets, Excel ou une base de données.
+Je suis développeur avec une expérience professionnelle de la logistique : je connais ces documents (références, quantités, dates, numéros de commande, totaux) et leurs pièges. Je mets en place un flux n8n + IA qui lit vos PDF (texte en priorité ; scans et photos nettes possibles, selon le taux de lecture mesuré sur vos documents de test), en extrait les champs utiles et les range dans Google Sheets, Excel ou une base de données.
 
 CE QUE VOUS RECEVEZ
 - Un workflow n8n prêt à l'emploi pour le ou les types de document du palier. Un type = une famille de documents aux mêmes champs (par exemple "factures fournisseurs"), quel que soit le fournisseur.
-- Un test sur vos vrais documents (10 en Essentiel, 20 par type en Standard et Premium), avec le taux de lecture correcte mesuré champ par champ et communiqué : vous voyez ce qui marche et ce qui ne marche pas.
+- Un test sur vos vrais documents (10 en Essentiel, 20 par type en Standard, jusqu'à 60 au total en Premium), avec le taux de lecture correcte mesuré champ par champ et communiqué : vous voyez ce qui marche et ce qui ne marche pas.
 - Selon le palier : contrôles de cohérence (le total correspond-il aux lignes ? doublon ?), alerte sur les cas douteux, base Supabase, écran de validation humaine.
 - Une documentation et vos accès à votre nom.
 
@@ -94,13 +95,13 @@ CE QUI N'EST PAS INCLUS
 
 FAQ
 Quels documents sont lus ?
-Factures, bons de livraison, bons de commande, CMR, tickets, relevés, PDF texte ou scannés, photos nettes.
+Factures, bons de livraison, bons de commande, CMR, tickets, relevés, en PDF texte. Les PDF scannés et les photos nettes sont possibles mais non garantis d'avance : le taux de lecture se mesure sur vos documents de test (voir "Quelle précision ?"), et un prétraitement est proposé en option si la qualité est faible.
 
 Quelle précision ?
 Elle dépend de vos documents. On mesure ensemble le taux de lecture sur vos documents de test avant de valider ; pas de promesse chiffrée avant ce test. À l'issue du test, vous décidez de continuer ou non.
 
 Que se passe-t-il quand l'IA hésite ?
-Le document est marqué "à relire" (voir la définition des cas douteux plus haut) et vous êtes alerté, plutôt que d'écrire une valeur douteuse sans le dire.
+Voir la définition de "cas douteux" plus haut dans cette page : vous êtes alerté, rien n'est corrigé en silence.
 
 Mes documents sont-ils confidentiels ?
 Ils sont envoyés à l'API de l'IA pour être lus, selon les conditions de son fournisseur. Pour des documents sensibles (données de santé, bancaires), dites-le avant de commander : je vous indique si je peux m'en charger.
@@ -109,7 +110,7 @@ Combien coûte la lecture ?
 Chaque document consomme un peu de crédit API, à votre charge. Je vous donne une estimation chiffrée sur vos documents avant la commande.
 
 Faut-il avoir n8n ?
-Non, je vous guide pour l'installation (cloud ou serveur) ; le flux vous appartient.
+Non. Si vous n'en avez pas, je peux l'installer à votre nom (cloud ou serveur) en option, +49 € (même tarif que pour mon service d'automatisation logistique) ; sinon je vous guide pour le faire vous-même. Le flux vous appartient dans tous les cas.
 
 Et si le résultat ne me convient pas ?
 Je corrige dans les révisions du palier jusqu'à ce que le flux fonctionne conformément au périmètre écrit. Si, à l'issue du test, le taux de lecture n'est pas acceptable pour vous, nous arrêtons là d'un commun accord : l'annulation passe par la procédure d'annulation de commande de ComeUp.

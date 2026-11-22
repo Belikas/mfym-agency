@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T10:30:00+01:00",
+ "updated": "2026-11-22T09:50:00+01:00",
  "agents": [
   {
    "id": "directeur",
@@ -19,7 +19,9 @@
    "schedule": "07:30, 13:00, 19:00 + hebdo dim. 10:00",
    "status": "active",
    "hired": "2026-11-22",
-   "file": "CLAUDE.md"
+   "file": "CLAUDE.md",
+   "current_task": "Run reponses 20261122-0945 : traiter A-02, avancer exp-02 passe 3",
+   "last_run": "2026-11-22T09:50:00+01:00"
   },
   {
    "id": "chercheur",
@@ -76,7 +78,9 @@
    "schedule": "à la demande",
    "status": "active",
    "hired": "2026-11-22",
-   "file": ".claude/agents/redacteur.md"
+   "file": ".claude/agents/redacteur.md",
+   "current_task": "Passe 3 des 3 fiches ComeUp : corriger les ecarts du critique (texte)",
+   "last_run": "2026-11-22T09:50:00+01:00"
   },
   {
    "id": "atelier",
@@ -94,7 +98,9 @@
    "schedule": "à la demande",
    "status": "active",
    "hired": "2026-11-22",
-   "file": ".claude/agents/atelier.md"
+   "file": ".claude/agents/atelier.md",
+   "current_task": "Passe 3 preuves ComeUp : captures n8n reelles, reponse IA reelle, recadrages, formats FR",
+   "last_run": "2026-11-22T09:50:00+01:00"
   }
  ]
 }

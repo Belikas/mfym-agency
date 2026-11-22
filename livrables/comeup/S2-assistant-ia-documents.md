@@ -4,9 +4,9 @@ Les blocs entre les lignes ==== sont à coller tels quels dans ComeUp : texte br
 Prix = prix affiché acheteur (benchmark). À la création, saisir le prix vendeur qui donne ce prix affiché (~ prix / 1,102) et contrôler au checkout. Limite de titre ComeUp non vérifiée : titre gardé nettement sous 80 caractères.
 À confirmer par Baptiste avant publication : les ordres de grandeur de coûts tiers (n8n, serveur, Supabase, API IA) sont à revérifier sur les sites des fournisseurs ; le délai de réponse "sous 48 h ouvrées".
 
-## Titre (73 caractères)
-Je vais créer un chatbot IA qui répond à vos clients depuis vos documents
-(ComeUp impose "Je vais" : saisir "créer un chatbot IA qui répond à vos clients depuis vos documents")
+## Titre (78 caractères)
+Je vais créer un chatbot IA pour votre boutique en ligne, depuis vos documents
+(ComeUp impose "Je vais" : saisir "créer un chatbot IA pour votre boutique en ligne, depuis vos documents")
 
 ## Catégorie
 Programmation & Tech > Automatisation (alternative : Chatbot / IA si une catégorie dédiée existe, à voir à la création)
@@ -15,26 +15,23 @@ Programmation & Tech > Automatisation (alternative : Chatbot / IA si une catégo
 
 | | Essentiel | Standard | Premium |
 |---|---|---|---|
-| Prix | 59 € | 249 € | 549 € |
-| Délai | 4 jours | 10 jours | 18 jours |
+| Prix | 55 € | 249 € | 549 € |
+| Délai | 5 jours | 10 jours | 18 jours |
 | Révisions | 1 | 2 | 3 + 14 jours de réglages |
 | Chatbot sur votre site (widget) | 1 | 1 | 1 |
-| Documents / FAQ intégrés | jusqu'à 10 | jusqu'à 50 | jusqu'à 100 |
+| Documents / FAQ intégrés (1 document = 1 PDF ou page de 20 pages maximum) | jusqu'à 10 | jusqu'à 50 | jusqu'à 100 |
 | Règles de ton et de contenu | oui | oui | oui |
 | Test avec 20 questions | oui | oui | oui |
 | "Je ne sais pas" paramétré | oui | oui | oui |
 | Transfert à un humain par email | non (option +49 €) | oui | oui |
-| Historique des conversations | non (option +39 €) | oui | oui |
-| Limite de coût API réglée | non | oui | oui |
-| 1 intégration (agenda ou CRM) | non | non | oui |
+| Historique des conversations (nécessite une base Supabase) | non (option +39 €) | oui | oui |
+| Limite de coût API réglée (plafond mensuel : alerte ou coupure au-delà du montant choisi) | non | oui | oui |
+| 1 intégration au choix (Google Calendar/Calendly pour un agenda, ou un CRM avec API comme HubSpot) | non | non | oui |
 | Tableau des questions sans réponse | non | non | oui |
 | Documentation | 1 page | doc d'exploitation + guide de mise à jour | doc d'exploitation + guide de mise à jour |
-| Hébergement | voir bloc "Où tourne votre chatbot" | idem | idem |
+| Hébergement et coûts tiers | voir description | idem | idem |
 
-Où tourne votre chatbot (identique à tous les paliers) : le widget se colle sur votre site (une ligne de code). Le "cerveau" du chatbot tourne sur un compte n8n (cloud ou petit serveur) et une base Supabase, tous deux ouverts à votre nom ; l'IA est appelée via un compte API à votre nom. Je ne vous héberge rien et ne garde aucun accès après livraison.
-Coûts mensuels payés par vous directement aux fournisseurs (ordre de grandeur pour une petite boutique, estimation chiffrée avant commande) : n8n cloud ou serveur environ 5 à 25 € / mois, Supabase 0 € à l'offre gratuite, API IA quelques euros selon le nombre de conversations. Total courant : environ 5 à 30 € / mois.
-
-Logique de prix : l'Essentiel à 59 € (10 documents) se place en haut de la médiane marché d'un nouveau vendeur (33-55 €) pour obtenir les premiers avis ; les chatbots déjà notés démarrent à 110-220 €, donc 59 € reste très accessible tout en couvrant un vrai travail (base de connaissances, widget, test de 20 questions). Standard et Premium portent le panier. Options alignées sur l'écart de palier : transfert humain (49) + historique (39) + 40 documents (58) + guide de mise à jour ≈ écart Essentiel-Standard (190 €). WhatsApp n'est pas dans les paliers : voir exclusions. Tarif de lancement à relever après les premiers avis (Baptiste décide).
+Logique de prix : l'Essentiel à 55 € (10 documents, sans base Supabase) reste dans la médiane marché d'un nouveau vendeur (33-55 €) pour obtenir les premiers avis ; les chatbots déjà notés démarrent à 110-220 €. Standard et Premium portent le panier. Les options (transfert humain 49 € + historique 39 € + 40 documents 58 € + guide de mise à jour 25 €, soit 171 €) couvrent l'essentiel de l'écart Essentiel-Standard (194 €) ; le reste correspond au temps de mise en place plus complexe du Standard (base Supabase, limite de coût API). WhatsApp n'est pas dans les paliers : voir exclusions. Tarif de lancement à relever après les premiers avis (Baptiste décide).
 
 ## Options (extras)
 - 20 documents supplémentaires : +29 €
@@ -51,14 +48,14 @@ Logique de prix : l'Essentiel à 59 € (10 documents) se place en haut de la m�
 
 ## Texte à coller par palier
 ====
-Essentiel (59 € / 4 jours) :
-1 chatbot IA en widget sur votre site, basé sur jusqu'à 10 de vos documents ou FAQ, avec règles de ton, réponse "je ne sais pas" quand l'information manque, test avec 20 questions, documentation d'1 page. 1 correction.
+Essentiel (55 € / 5 jours) :
+1 chatbot IA en widget sur votre site, basé sur jusqu'à 10 de vos documents ou FAQ (1 document = 1 PDF ou page de 20 pages maximum), avec règles de ton, réponse "je ne sais pas" quand l'information manque, test avec 20 questions, documentation d'1 page. 1 correction.
 ====
 Standard (249 € / 10 jours) :
-Essentiel + jusqu'à 50 documents, transfert à un humain par email, historique des conversations, limite de coût API réglée, documentation d'exploitation + guide de mise à jour de vos documents. 2 corrections.
+Essentiel + jusqu'à 50 documents, transfert à un humain par email, historique des conversations (base Supabase à votre nom), un plafond mensuel de dépense API réglé pour vous, documentation d'exploitation + guide de mise à jour de vos documents. 2 corrections.
 ====
 Premium (549 € / 18 jours) :
-Standard + jusqu'à 100 documents, 1 intégration (agenda ou CRM), tableau des questions sans réponse, 14 jours de réglages. 3 corrections.
+Standard + jusqu'à 100 documents, 1 intégration au choix (Google Calendar/Calendly pour un agenda, ou un CRM avec API comme HubSpot), tableau des questions sans réponse, 14 jours de réglages. 3 corrections.
 ====
 
 ## Description (à coller)
@@ -69,12 +66,12 @@ Je suis développeur avec une expérience professionnelle de la logistique, donc
 
 CE QUE VOUS RECEVEZ
 - Un chatbot en widget à intégrer sur votre site (une ligne de code à coller).
-- Une base de connaissances construite à partir de vos documents (FAQ, CGV, fiches produits, procédures).
+- Une base de connaissances construite à partir de vos documents (FAQ, CGV, fiches produits, procédures) : un document compte pour 1 PDF ou 1 page de 20 pages maximum ; au-delà, il compte pour plusieurs, au prorata.
 - Un ton réglé selon vos consignes (vouvoiement, style, ce qu'il ne doit jamais dire).
 - Un test avec 20 questions réelles, avec les réponses relues ensemble.
-- Selon le palier : transfert à un humain par email, historique des conversations, limite de coût, tableau des questions sans réponse, guide de mise à jour.
+- Selon le palier : transfert à un humain par email, historique des conversations, plafond de dépense API réglé, tableau des questions sans réponse, guide de mise à jour.
 
-Les captures de la galerie montrent la logique (réponse sourcée, "je ne sais pas", journal des questions) sur un prototype avec une FAQ fictive ; chez vous, elle est construite dans n8n avec une étape IA.
+Les captures de la galerie montrent la logique (réponse sourcée, "je ne sais pas", journal des questions) sur un prototype qui fait une recherche par mots-clés dans une FAQ fictive, sans IA générative ; chez vous, le chatbot est construit dans n8n avec l'IA (API Claude) qui rédige la réponse à partir de vos documents.
 
 EXEMPLE (illustratif, pas un résultat client)
 Une cliente écrit sur votre boutique : "Je peux retourner une robe achetée il y a trois semaines ?" Le chatbot retrouve la règle dans vos conditions de retour et répond avec cette règle, en citant votre politique. Si la réponse n'est pas dans vos documents, il répond "Je n'ai pas cette information" et vous envoie la question par email, avec les coordonnées laissées par la cliente (palier Standard et au-dessus).
@@ -82,8 +79,8 @@ Côté technique, pour les curieux : n8n, base Supabase et API Claude (Anthropic
 
 OÙ TOURNE VOTRE CHATBOT ET CE QUE ÇA COÛTE
 - Le widget se colle sur votre site (WordPress, Shopify, Wix, site sur mesure).
-- Le chatbot tourne sur un compte n8n (cloud ou petit serveur) et une base Supabase, ouverts à votre nom. L'IA est appelée via un compte API à votre nom. Je ne vous héberge rien et ne conserve aucun accès après la livraison.
-- Coûts payés directement aux fournisseurs, ordre de grandeur pour une petite boutique : n8n cloud ou serveur environ 5 à 25 € par mois, Supabase 0 € à l'offre gratuite, API IA quelques euros selon le nombre de conversations. Soit environ 5 à 30 € par mois. Je vous donne une estimation chiffrée avant que vous commandiez.
+- Le chatbot tourne sur un compte n8n (cloud ou petit serveur), ouvert à votre nom. L'IA est appelée via un compte API à votre nom. À partir du Standard, une base Supabase à votre nom stocke l'historique des conversations et facilite la mise à jour de vos documents ; en Essentiel, la base de connaissances reste directement dans n8n. Je ne vous héberge rien et ne conserve aucun accès après la livraison.
+- Coûts payés directement aux fournisseurs, ordre de grandeur pour une petite boutique : n8n cloud ou serveur environ 5 à 25 € par mois, Supabase 0 € à l'offre gratuite (à partir du Standard), API IA quelques euros selon le nombre de conversations. Soit environ 5 à 30 € par mois. Je vous donne une estimation chiffrée avant que vous commandiez.
 
 COMMENT ÇA SE PASSE
 1. Vous répondez aux questions de commande et m'envoyez vos documents.
@@ -124,7 +121,7 @@ Vous : code, base et clés API à votre nom.
 Et si ça ne me convient pas ?
 Je corrige jusqu'à ce que le chatbot fonctionne conformément au périmètre écrit, dans les révisions du palier. Un changement de périmètre passe par une option.
 
-Écrivez-moi avant de commander avec l'adresse de votre site et 3 questions que vos clients posent souvent : je vous dis si c'est adapté et quel palier choisir (réponse sous 48 h ouvrées).
+Écrivez-moi avant de commander avec l'adresse de votre site et une question que vos clients posent souvent : je vous dis si c'est adapté et quel palier choisir (réponse sous 48 h ouvrées).
 ====
 
 ## Consignes à l'acheteur (questions à la commande)
@@ -137,7 +134,7 @@ Je corrige jusqu'à ce que le chatbot fonctionne conformément au périmètre é
 7. Langue(s) de réponse ?
 
 ## Tags (5)
-chatbot IA, chatbot site web, assistant IA, base de connaissances, service client
+chatbot IA, chatbot site web, assistant IA, e-commerce, service client
 
 ## Brief image de couverture
 - Format : paysage 16:9, vignette claire type YouTube, même gabarit que S1 et S3.

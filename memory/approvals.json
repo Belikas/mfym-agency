@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T09:34:29+01:00",
+ "updated": "2026-11-22T09:45:02+01:00",
  "approvals": [
   {
    "id": "A-01",
@@ -13,6 +13,19 @@
    "answered_at": "2026-11-22T09:34:29+01:00",
    "acted_on": true,
    "acted_note": "Reporté par Baptiste (terminal, 22/11) : on crée la micro-entreprise quand elle devient indispensable (1re vente prête). On prépare tout le reste d'ici là."
+  },
+  {
+   "id": "A-02",
+   "question": "Les runs planifiés partagent ton forfait Claude avec ton usage perso. Je garde Opus pour le run de 7h30 (meilleures décisions) et Sonnet pour 13h et 19h ?",
+   "recommendation": "yes",
+   "reason": "Opus le matin pour les décisions du jour ; Sonnet ailleurs pour ménager le quota hebdo. Si tu touches ta limite, je repasse tout en Sonnet.",
+   "cost_eur": 0,
+   "status": "yes",
+   "created": "2026-11-22T09:44:18+01:00",
+   "telegram_message_id": 11,
+   "answered_at": "2026-11-22T09:45:02+01:00",
+   "acted_on": true,
+   "acted_note": "Vérifié dans scripts/schedule.ps1 : 07:30 opus, 13:00 et 19:00 sonnet, hebdo dim. opus. Rien à changer. Si quota atteint, run.ps1 journalise 'quota' et je repasse tout en sonnet."
   }
  ]
 }

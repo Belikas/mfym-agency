@@ -28,7 +28,7 @@ def shot_fit(html_path, png, w, pad=0):
     """Capture à la hauteur exacte du contenu (ni coupée, ni à moitié vide)."""
     import re
     p = pathlib.Path(html_path); src = p.read_text(encoding="utf-8")
-    p.write_text(src + "<script>document.documentElement.dataset.h=document.documentElement.scrollHeight</script>", encoding="utf-8")
+    p.write_text(src + "<script>addEventListener('load',()=>document.documentElement.dataset.h=document.documentElement.scrollHeight)</script>", encoding="utf-8")
     dom = subprocess.run([CHROME, "--headless=new", "--disable-gpu", f"--window-size={w},400", "--virtual-time-budget=3000", "--dump-dom", p.resolve().as_uri()],
                          check=True, capture_output=True, text=True, encoding="utf-8").stdout
     h = int(re.search(r'data-h="(\d+)"', dom).group(1)) + pad

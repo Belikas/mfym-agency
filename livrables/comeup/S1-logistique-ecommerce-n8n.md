@@ -2,7 +2,7 @@
 
 Les blocs entre les lignes ==== sont à coller tels quels dans ComeUp : texte brut, sans Markdown (pas de ** ni de ->), listes avec "- " et numéros "1.".
 Prix = prix affiché acheteur (benchmark). À la création, saisir le prix vendeur qui donne ce prix affiché (~ prix / 1,102) et contrôler au checkout. Limite de titre ComeUp non vérifiée : titre gardé nettement sous 80 caractères.
-À confirmer par Baptiste avant publication : (1) le délai de réponse "sous 48 h ouvrées" est tenable avec son emploi ; (2) la charge réelle du Premium (4 workflows + Supabase + installation en 14 jours).
+À confirmer par Baptiste avant publication : (1) le délai de réponse "sous 48 h ouvrées" est tenable avec son emploi ; (2) la charge réelle du Premium (3 workflows + Supabase + installation en 14 jours).
 
 ## Titre (71 caractères)
 Je vais automatiser vos flux logistiques et e-commerce avec n8n et l'IA
@@ -18,9 +18,9 @@ Programmation & Tech > Automatisation (à confirmer dans le menu à la création
 | Prix | 49 € | 149 € | 349 € |
 | Délai | 3 jours | 7 jours | 14 jours |
 | Révisions | 1 | 2 | 3 + 7 jours de support |
-| Workflows | 1 (1 déclencheur, 2 outils, 5 nœuds max) | 2 | jusqu'à 4, liés entre eux |
+| Workflows | 1 (ex. : une commande reçue déclenche un message, 2 outils connectés) | 2 | jusqu'à 3, liés entre eux |
 | Canaux de notification | 1 au choix (mail, Slack ou Telegram) | 2 au choix (mail, Slack, Telegram) | les 3 (mail, Slack, Telegram) |
-| Étape IA (classement, résumé, rédaction du message) | non | 1 | 2 |
+| Étape IA (1 = classe les messages entrants par type ; 2 = classe + rédige un brouillon de réponse) | non | 1 | 2 |
 | Journal des erreurs | non | oui | oui |
 | Base Supabase + tableau de suivi | non | non | oui |
 | Installation de n8n à votre nom (cloud ou serveur) | non (option +49 €) | non (option +49 €) | oui, comprise |
@@ -28,7 +28,7 @@ Programmation & Tech > Automatisation (à confirmer dans le menu à la création
 | Documentation | 1 page | 2 à 3 pages | complète + schéma des flux |
 | Vidéo de démonstration (écran) | option | incluse | incluse |
 
-Logique de prix : Essentiel sous la médiane marché (33-55 €) pour obtenir les premiers avis ; Standard = palier visé ; Premium = vrai petit projet. Les options sont alignées sur l'écart Standard-Premium (200 €) : 2 workflows en plus (78 €) + Supabase (59 €) + installation (49 €) + 1 étape IA (29 €) = 215 €. Tarif de lancement à relever après les premiers avis (Baptiste décide).
+Logique de prix : Essentiel sous la médiane marché (33-55 €) pour obtenir les premiers avis ; Standard = palier visé ; Premium = vrai petit projet, plafonné à 3 workflows pour rester tenable sur 14 jours. Les options couvrent l'essentiel de l'écart Standard-Premium (200 €) : 1 workflow en plus (39 €) + Supabase (59 €) + installation (49 €) + 1 étape IA (29 €) = 176 €, le reste correspondant au temps de liaison entre workflows et au support de 7 jours. Tarif de lancement à relever après les premiers avis (Baptiste décide).
 
 ## Options (extras)
 - Workflow supplémentaire : +39 € (+2 jours)
@@ -44,22 +44,22 @@ Logique de prix : Essentiel sous la médiane marché (33-55 €) pour obtenir le
 ## Texte à coller par palier
 ====
 Essentiel (49 € / 3 jours) :
-1 workflow n8n sur mesure (1 déclencheur, 2 outils connectés, 5 nœuds maximum), 1 canal de notification au choix (mail, Slack ou Telegram), testé sur vos données (3 exécutions réussies de suite), livré en fichier JSON importable + 1 page de documentation. 1 correction incluse.
+1 workflow n8n sur mesure (par exemple : une commande reçue déclenche automatiquement un message), connecté à 2 de vos outils, 1 canal de notification au choix (mail, Slack ou Telegram), testé sur vos données (3 exécutions réussies de suite), livré en fichier JSON importable + 1 page de documentation. 1 correction incluse.
 ====
 Standard (149 € / 7 jours) :
-2 workflows, notifications sur 2 canaux au choix (mail, Slack, Telegram), journal des erreurs, 1 étape IA (classement ou résumé), documentation de 2 à 3 pages, vidéo de démonstration. 2 corrections incluses.
+2 workflows, notifications sur 2 canaux au choix (mail, Slack, Telegram), journal des erreurs, 1 étape IA (par exemple : elle classe chaque message entrant en urgent, question simple ou à transmettre), documentation de 2 à 3 pages, vidéo de démonstration. 2 corrections incluses.
 ====
 Premium (349 € / 14 jours) :
-Jusqu'à 4 workflows liés, notifications mail + Slack + Telegram, base Supabase et tableau de suivi, installation de n8n à votre nom (cloud ou serveur), 2 étapes IA, documentation complète avec schéma, 7 jours de support après livraison. 3 corrections incluses.
+Jusqu'à 3 workflows liés, notifications mail + Slack + Telegram, base Supabase et tableau de suivi, installation de n8n à votre nom (cloud ou serveur), 2 étapes IA (par exemple : une qui classe les messages entrants, une qui rédige un brouillon de réponse que vous validez), documentation complète avec schéma, 7 jours de support après livraison. 3 corrections incluses.
 ====
 
 ## Description (à coller)
 ====
-Un colis en retard, un client qui écrit "Où est ma commande ?", et vous qui recopiez des numéros de suivi dans un tableur. Avec n8n, une alerte Telegram peut vous prévenir dès qu'un colis reste 48 h sans mouvement : ces tâches de suivi de colis se font toutes seules.
+Un colis en retard, un client qui écrit "Où est ma commande ?", et vous qui recopiez des numéros de suivi dans un tableur. Avec n8n (un outil d'automatisation sans code), une alerte Telegram peut vous prévenir dès qu'un colis reste 48 h sans mouvement : ces tâches de suivi de colis se font toutes seules.
 
-Je suis développeur et je connais la logistique de l'intérieur (préparation, expéditions, retards, litiges). Je construis des automatisations n8n qui font ce travail répétitif à votre place : vous êtes prévenu quand un colis est bloqué, le client reçoit son suivi sans que vous touchiez à rien, et vos commandes arrivent dans un tableau propre.
+Je suis développeur et je connais la logistique de l'intérieur (préparation, expéditions, retards, litiges). Je construis des automatisations n8n pour votre boutique Shopify ou WooCommerce (et vos autres outils) qui font ce travail répétitif à votre place : vous êtes prévenu quand un colis est bloqué, le client reçoit son suivi sans que vous touchiez à rien, et vos commandes arrivent dans un tableau propre.
 
-Les captures de la galerie montrent la logique sur un prototype avec des données fictives ; chez vous, elle est construite dans n8n, avec une étape IA selon le palier.
+Les captures de la galerie montrent d'abord la logique sur un script Python avec des données fictives, puis le même scénario rejoué comme un vrai workflow n8n (exécuté réellement, pas une simulation) ; chez vous, le workflow est adapté à vos outils, avec une étape IA selon le palier.
 
 CE QUE VOUS RECEVEZ
 - Des workflows n8n prêts à importer (fichier JSON), connectés à vos outils, testés sur vos données (3 exécutions réussies de suite).
@@ -82,7 +82,7 @@ COMMENT ÇA SE PASSE
 
 CE QUI N'EST PAS INCLUS
 - Les abonnements tiers : n8n cloud ou serveur, outils connectés, transporteurs. Ils restent à votre charge.
-- Les crédits d'API IA : le coût est faible mais réel ; je vous donne une estimation avant de commencer.
+- Les crédits d'API IA : de l'ordre de quelques centimes à 2-3 € par mois pour un usage courant (classement ou rédaction de messages) ; montant exact estimé sur votre volume avant que vous ne commandiez.
 - L'accès à l'API d'un transporteur si votre contrat ne l'ouvre pas : dans ce cas je passe par votre outil de suivi existant ou un export mail, et je vous le dis avant.
 - Le développement d'une application ou d'un site complet, la formation de votre équipe.
 - Aucune promesse de gain de temps ou d'argent chiffré : cela dépend de vos volumes.
@@ -107,7 +107,7 @@ Et si ça ne marche pas ?
 Je corrige jusqu'à ce que le workflow fonctionne conformément au périmètre écrit, dans les révisions du palier. Un changement de périmètre fait l'objet d'une option.
 
 Je ne suis pas sûr de mon besoin, que faire ?
-Écrivez-moi avant de commander : je réponds sous 48 h ouvrées et je vous dis honnêtement si je suis la bonne personne.
+Décrivez votre situation en message : je réponds sous 48 h ouvrées et je vous dis honnêtement si je suis la bonne personne.
 
 Écrivez-moi avant de commander en décrivant votre flux en 3 lignes : je vous dis le palier adapté et ce qui est faisable.
 ====
@@ -134,9 +134,10 @@ n8n, automatisation logistique, e-commerce, suivi colis, alerte retard colis
 - À tester à 200 px de large avant publication.
 
 ## Preuves (à joindre)
-Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - données fictives". Les captures montrent la logique sur un prototype en Python local (code réel, données fictives) : elles ne montrent ni n8n ni IA générative. Chez le client, la logique est construite dans n8n avec, selon le palier, une étape IA. Ne jamais présenter ces captures comme un workflow n8n livré.
+Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - données fictives". Le prototype existe en deux versions sur les mêmes données fictives : d'abord un script Python (logique de détection), puis le même scénario rejoué comme un vrai workflow n8n (exécuté avec la CLI n8n, pas une simulation). S1-1 et S1-3 montrent la version script ; S1-2 et S1-4 montrent l'exécution réelle et le schéma de ce workflow n8n. Ne jamais présenter ces captures comme un workflow livré chez un client précis : c'est une démo sur données fictives.
 - livrables/comeup/assets/S1-couverture.png : couverture 1280x720 (le texte "n8n" désigne l'offre, pas la démo).
 - livrables/comeup/assets/S1-1-donnees-entree.png. Légende : "Entrée : export commandes et statuts transporteur (données fictives)."
-- livrables/comeup/assets/S1-2-execution.png. Légende : "Le script lit les deux fichiers et détecte 4 expéditions à risque sur 10."
+- livrables/comeup/assets/S1-2-execution.png. Légende : "Exécution réelle du workflow n8n (CLI n8n) : 4 expéditions à risque détectées sur 10."
 - livrables/comeup/assets/S1-3-sorties.png. Légende : "Sortie : messages clients prêts à envoyer et résumé d'alerte (retard, incident, absence de scan)."
-- Vidéo de démo 60-90 s (workflow n8n réel sur données fictives) : à enregistrer par Baptiste, hors atelier. Seule cette vidéo pourra montrer n8n.
+- livrables/comeup/assets/S1-4-workflow-n8n.png. Légende : "Schéma du workflow n8n réel utilisé pour la démo (nœuds et connexions)."
+- Vidéo de démo 60-90 s (workflow n8n réel sur données fictives) : à enregistrer par Baptiste, hors atelier.

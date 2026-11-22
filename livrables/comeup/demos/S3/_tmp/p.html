@@ -1,0 +1,12 @@
+<!doctype html><meta charset=utf-8><style>:root{--a:#0F766E}
+*{box-sizing:border-box}body{margin:0;font:16px/1.45 'Segoe UI',Arial,sans-serif;background:#f1f5f9;color:#0f172a}
+.bar{background:#0f172a;color:#fff;padding:10px 24px;display:flex;justify-content:space-between;font-size:15px}
+.tag{background:#facc15;color:#0f172a;font-weight:700;padding:2px 10px;border-radius:4px}
+main{padding:22px 28px}h1{font-size:24px;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:14px}
+th{background:var(--a);color:#fff;text-align:left;padding:7px 9px}td{padding:6px 9px;border-bottom:1px solid #e2e8f0}
+.bad{background:#fee2e2;color:#991b1b;font-weight:600}.ok{color:#166534}.warn{background:#fef9c3}
+pre{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:8px;font:14px/1.5 Consolas,monospace;white-space:pre-wrap}
+.card{background:#fff;border-left:6px solid var(--a);border-radius:6px;padding:10px 14px;margin:0 0 10px;font-size:14px}
+</style>
+<div class=bar><span>Extraction de documents – incohérence signalée</span><span class=tag>Exemple – données fictives</span></div><main><div style='display:grid;grid-template-columns:1fr 1fr;gap:24px'><div><h1>Facture facture-05.pdf</h1><img src=f5.png style='width:100%;border:1px solid #cbd5e1;box-shadow:0 2px 8px #0003'></div><div><h1>Signalement automatique</h1><div class=card style='border-color:#b91c1c'><b>SC-2026-064</b> – Studio Cadrage SAS<br><br>Total HT 540,00 € + TVA 108,00 € = <b>648,00 €</b><br>Total TTC écrit sur la facture : <b>612,00 €</b><br><br><span class=bad>HT+TVA = 648,00 € ≠ TTC 612,00 €</span></div><p>Le script ne corrige pas : il marque la ligne pour relecture humaine.</p></div></div></main>
