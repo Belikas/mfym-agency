@@ -1,6 +1,6 @@
 import sys, csv, html, subprocess, pathlib, os
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from common import page, shot, ASSETS
+from common import page, shot, shot_fit, ASSETS
 A = "#1D4ED8"; here = pathlib.Path(__file__).parent
 log = subprocess.run([sys.executable, str(here/"run.py")], capture_output=True, text=True, encoding="utf-8",
                      env={**os.environ, "PYTHONIOENCODING": "utf-8"}).stdout
@@ -10,7 +10,7 @@ def table(path, bad=lambda r: False):
     return f"<table><tr>{h}</tr>" + "".join(f"<tr class='{'warn' if bad(r) else ''}'>" + "".join(f"<td>{html.escape(v)}</td>" for v in r.values()) + "</tr>" for r in rows) + "</table>"
 tmp = here/"_tmp.html"
 def make(name, title, body, h):
-    tmp.write_text(page(title, body, A), encoding="utf-8"); shot(tmp, ASSETS/name, 1280, h)
+    tmp.write_text(page(title, body, A), encoding="utf-8"); shot_fit(tmp, ASSETS/name, 1280, 12)
 make("S1-1-donnees-entree.png", "Automatisation logistique – données d'entrée",
      "<h1>1. Commandes (orders.csv)</h1>" + table(here/"orders.csv") + "<h1 style='margin-top:20px'>2. Statuts transporteur (tracking.csv)</h1>" + table(here/"tracking.csv"), 800)
 make("S1-2-execution.png", "Automatisation logistique – exécution du script",
