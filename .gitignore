@@ -11,3 +11,6 @@ memory/inbox_files/
 **/.n8n-home/
 **/node_modules/
 livrables/**/out/*.log
+
+# Dossiers temporaires des agents (cas limites, bancs d essai)
+_*_tmp/

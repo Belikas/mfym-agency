@@ -1,4 +1,0 @@
-Erreur : colonne(s) manquante(s) : reference, designation, emplacement, stock_theorique, stock_physique_inventaire, date_inventaire, stock_mini, stock_maxi, sorties_30j, delai_reappro_jours, fournisseur.
-Colonnes attendues : reference, designation, emplacement, stock_theorique, stock_physique_inventaire, date_inventaire, stock_mini, stock_maxi, sorties_30j, delai_reappro_jours, fournisseur.
-Colonnes trouvées dans votre fichier : sku, desc, loc, qty_theo, qty_phys, date_inv, mini, maxi, sorties, delai, fourn.
-Renommez les en-têtes de votre export pour qu'ils correspondent (espaces, majuscules et accents sont tolérés, pas le nom lui-même), voir SKILL.md.
