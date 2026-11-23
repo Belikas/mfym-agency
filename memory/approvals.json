@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T07:38:26+01:00",
+ "updated": "2026-11-23T07:49:18+01:00",
  "approvals": [
   {
    "id": "A-01",
@@ -50,6 +50,17 @@
    "telegram_message_id": 17,
    "acted_on": false,
    "acted_note": "GARDE-FOU : un oui a A-04 ne publie rien tout seul. Ne PAS envoyer la tache de publication (le pas-a-pas Gumroad) avant que le critique ait rendu un verdict 'ok' sur livrables/gumroad/presell-logistique.md. Verdict du 23/11 : a_corriger (coherence 3/5 ligne 3, robustesse du skill 3/5) ; correction lancee."
+  },
+  {
+   "id": "A-05",
+   "question": "Tu ouvres un compte Fortuneo avec le code FTNSEA (gratuit, ~40 min en ligne, piece d'identite + justificatif de domicile) pour toucher 250 EUR de prime de bienvenue ? Compte et carte Gold gratuits a vie, pas besoin de deplacer ton salaire. Si oui je t'envoie le pas-a-pas exact.",
+   "recommendation": "yes",
+   "reason": "Verifie sur les pages officielles de Fortuneo, pas sur un comparateur affilie : 160 EUR a l'ouverture (apres 5 paiements carte sous 90 jours, verses sous 30 jours) + 90 EUR pour la mobilite bancaire, soit 250 EUR nets pour 0 EUR de frais sur 12 mois. Offre valable jusqu'au 31/12/2026. C'est aujourd'hui la meilleure piste du pipeline (31/35) et la SEULE qui ne demande aucune micro-entreprise : une prime commerciale n'est pas un revenu d'activite. Trois choses que je ne te cache pas : (1) c'est un one-off, ca ne nous rapproche pas des 1 000 EUR/mois, ca finance le budget ; (2) l'argent arrivera plutot en janvier qu'avant le 22/12 ; (3) la clause de reprise en cas de cloture anticipee n'est pas ecrite sur les pages que j'ai lues -- compte garder le compte 12 mois. La carte Gold demande 2 200 EUR/mois de revenus pour etre eligible : avec ton emploi ca passe, sinon on bascule sur la carte Fosfo (prime plus faible). J'ai aussi ecarte BforBank et Hello bank! qui affichent 330 EUR : conditions non verifiables ou 200 EUR en bon d'achat au lieu de cash.",
+   "cost_eur": 0,
+   "status": "pending",
+   "created": "2026-11-23T08:30:00+01:00",
+   "telegram_message_id": 19,
+   "acted_on": false
   }
  ]
 }

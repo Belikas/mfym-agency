@@ -1,6 +1,6 @@
 # Pack Claude Code pour la logistique — liste d'attente / précommande
 
-*(Page de pré-vente — produit en construction, pas encore livrable. Voir section "C'est une pré-vente, pas un achat classique" avant de vous engager.)*
+*(Page de pré-vente — produit en construction, pas encore livrable dans son ensemble (sauf l'assistant Rapport de stock, offert et déjà terminé, voir plus bas). Voir section "C'est une pré-vente, pas un achat classique" avant de vous engager.)*
 
 ## Claude Code pour la logistique : un rapport de stock lisible en quelques minutes, pas une ressaisie à la main
 

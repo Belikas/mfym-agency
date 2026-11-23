@@ -1,0 +1,23 @@
+{
+ "id": "exp-04-primes-bancaires",
+ "lead_id": "primes-bancaires",
+ "title": "Primes de bienvenue bancaires (Fortuneo)",
+ "hypothesis": "L'offre Fortuneo FTNSEA (160 EUR a l'ouverture + 90 EUR mobilite, compte et carte Gold gratuits) verse au moins 160 EUR nets sous 60 jours pour ~40 min de Baptiste et 0 EUR de frais.",
+ "metric": "EUR reellement credites sur le compte",
+ "threshold": ">=160 EUR credites au 31/01/2027 ; sinon on ne refait pas l'operation sur une autre banque",
+ "cost_eur": 0,
+ "hours_budget": 1,
+ "start": "2026-11-23",
+ "kill_date": "2027-01-31",
+ "status": "blocked",
+ "blocked_on": [
+  "A-05 : ouverture du compte (engagement contractuel au nom de Baptiste)"
+ ],
+ "results": [
+  {
+   "date": "2026-11-23",
+   "note": "Lance sur la base de memory/benchmarks/primes-bancaires.md (verification en source primaire, pages officielles reellement ouvertes). Fortuneo retenu plutot que les montants plus eleves : BforBank 330 EUR ferme le 09/12 avec une clause de reprise du compte courant non documentee, et Hello bank! 330 EUR est invérifiable (403 sur tout le domaine) avec 200 EUR en bon d'achat plutot qu'en cash. BoursoBank (180 EUR) garde en 2e et cumulable. Offres mortes retirees du radar : Orange Bank (licence retiree 15/12/2025), N26 (aucune offre FR en 2026), Ma French Bank (absorbee 07/2025), Helios (pas de prime, compte payant). CADRAGE HONNETE : c'est un one-off d'environ 250 EUR, pas un revenu recurrent -- ca ne rapproche pas de l'objectif de 1 000 EUR/mois, ca finance le budget et ca prouve que l'agence produit de l'argent. Zone grise assumee : la clause de reprise en cas de cloture anticipee n'est pas documentee sur les pages Fortuneo lues ; la pratique du secteur est 12 mois, donc on part du principe qu'il faut garder le compte un an. Fiscalite : imposable au bareme au-dela d'un abattement de 305 EUR de gains divers (abattement converge sur plusieurs sources mais non retrouve mot pour mot au BOFIP) -- a verifier avant declaration."
+  }
+ ],
+ "owner_agent": "directeur"
+}

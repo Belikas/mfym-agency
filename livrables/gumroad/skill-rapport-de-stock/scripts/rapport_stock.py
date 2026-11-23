@@ -11,9 +11,38 @@ from __future__ import annotations
 
 import csv
 import sys
+import unicodedata
 from dataclasses import dataclass, field
 
 ECART_SIGNIFICATIF_UNITES = 10  # ponytail: seuil fixe, affiner par métier si besoin
+
+COLONNES_ATTENDUES = [
+    "reference", "designation", "emplacement", "stock_theorique",
+    "stock_physique_inventaire", "date_inventaire", "stock_mini", "stock_maxi",
+    "sorties_30j", "delai_reappro_jours", "fournisseur",
+]
+
+
+class ColonnesManquantes(Exception):
+    """Levée quand l'export n'a pas (au nom près) les colonnes attendues."""
+
+    def __init__(self, attendues: list[str], trouvees: list[str]):
+        manquantes = [c for c in attendues if c not in trouvees]
+        super().__init__(
+            "colonne(s) manquante(s) : " + ", ".join(manquantes) + ".\n"
+            "Colonnes attendues : " + ", ".join(attendues) + ".\n"
+            "Colonnes trouvées dans votre fichier : " + ", ".join(trouvees) + ".\n"
+            "Renommez les en-têtes de votre export pour qu'ils correspondent "
+            "(espaces, majuscules et accents sont tolérés, pas le nom lui-même), "
+            "voir SKILL.md."
+        )
+
+
+def _normaliser_entete(entete: str) -> str:
+    """Tolère espaces, majuscules et accents dans les en-têtes de colonnes."""
+    sans_accents = unicodedata.normalize("NFKD", entete.strip().lower())
+    sans_accents = "".join(c for c in sans_accents if not unicodedata.combining(c))
+    return sans_accents.replace(" ", "_")
 
 
 @dataclass
@@ -34,22 +63,35 @@ class LigneAnalysee:
     ecart: int = 0
 
 
-def _to_int(value: str) -> int:
-    return int(float(str(value).strip().replace(",", ".")))
+def _to_int(value: str, colonne: str) -> int:
+    try:
+        return int(float(str(value).strip().replace(",", ".")))
+    except ValueError:
+        raise ValueError(f"colonne {colonne} invalide : valeur '{value}' n'est pas un nombre") from None
 
 
 def charger_lignes(chemin_csv: str) -> list[dict]:
     with open(chemin_csv, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+        reader = csv.DictReader(f)
+        entetes_brutes = reader.fieldnames or []
+        mapping = {}
+        for brute in entetes_brutes:
+            normalisee = _normaliser_entete(brute)
+            if normalisee in COLONNES_ATTENDUES:
+                mapping[brute] = normalisee
+        trouvees = sorted(set(mapping.values()))
+        if any(c not in trouvees for c in COLONNES_ATTENDUES):
+            raise ColonnesManquantes(COLONNES_ATTENDUES, entetes_brutes)
+        return [{mapping[k]: v for k, v in row.items() if k in mapping} for row in reader]
 
 
 def analyser_ligne(row: dict) -> LigneAnalysee:
-    stock_theo = _to_int(row["stock_theorique"])
-    stock_phys = _to_int(row["stock_physique_inventaire"])
-    mini = _to_int(row["stock_mini"])
-    maxi = _to_int(row["stock_maxi"])
-    sorties = _to_int(row["sorties_30j"])
-    delai = _to_int(row["delai_reappro_jours"])
+    stock_theo = _to_int(row["stock_theorique"], "stock_theorique")
+    stock_phys = _to_int(row["stock_physique_inventaire"], "stock_physique_inventaire")
+    mini = _to_int(row["stock_mini"], "stock_mini")
+    maxi = _to_int(row["stock_maxi"], "stock_maxi")
+    sorties = _to_int(row["sorties_30j"], "sorties_30j")
+    delai = _to_int(row["delai_reappro_jours"], "delai_reappro_jours")
 
     ligne = LigneAnalysee(
         reference=row["reference"],
@@ -85,8 +127,22 @@ def analyser_ligne(row: dict) -> LigneAnalysee:
     return ligne
 
 
-def analyser_export(chemin_csv: str) -> list[LigneAnalysee]:
-    return [analyser_ligne(row) for row in charger_lignes(chemin_csv)]
+def analyser_export(chemin_csv: str) -> tuple[list[LigneAnalysee], list[dict]]:
+    """Retourne (lignes valides, lignes ignorées). Une ligne invalide (cellule
+    vide ou non numérique) est ignorée et signalée, elle ne fait pas planter
+    le reste du rapport."""
+    lignes: list[LigneAnalysee] = []
+    ignorees: list[dict] = []
+    for numero, row in enumerate(charger_lignes(chemin_csv), start=2):
+        try:
+            lignes.append(analyser_ligne(row))
+        except ValueError as e:
+            ignorees.append({
+                "ligne": numero,
+                "reference": row.get("reference", "?"),
+                "raison": str(e),
+            })
+    return lignes, ignorees
 
 
 def _par_flag(lignes: list[LigneAnalysee], flag: str) -> list[LigneAnalysee]:
@@ -105,7 +161,12 @@ def resume_compact(lignes: list[LigneAnalysee]) -> str:
     return " · ".join(parts)
 
 
-def generer_rapport_markdown(lignes: list[LigneAnalysee], nom_fichier: str, date_generation: str) -> str:
+def generer_rapport_markdown(
+    lignes: list[LigneAnalysee],
+    nom_fichier: str,
+    date_generation: str,
+    lignes_ignorees: list[dict] | None = None,
+) -> str:
     ruptures = _par_flag(lignes, "rupture")
     sous_seuil = _par_flag(lignes, "sous_seuil")
     a_surveiller = _par_flag(lignes, "a_surveiller")
@@ -174,6 +235,14 @@ def generer_rapport_markdown(lignes: list[LigneAnalysee], nom_fichier: str, date
         out.append("- Aucun.")
     out.append("")
 
+    out.append("## Lignes ignorées (cellule vide ou valeur non numérique)")
+    if lignes_ignorees:
+        for ign in lignes_ignorees:
+            out.append(f"- Ligne {ign['ligne']} (réf. {ign['reference']}) — {ign['raison']}")
+    else:
+        out.append("- Aucune.")
+    out.append("")
+
     return "\n".join(out)
 
 
@@ -223,7 +292,67 @@ def _demo_autotest() -> None:
     })
     assert ligne_ok.flags == []
 
-    print("Auto-test OK : les 6 scénarios de classification sont corrects.")
+    import tempfile
+    from pathlib import Path
+
+    entetes = (
+        "reference,designation,emplacement,stock_theorique,"
+        "stock_physique_inventaire,date_inventaire,stock_mini,stock_maxi,"
+        "sorties_30j,delai_reappro_jours,fournisseur\n"
+    )
+
+    with tempfile.TemporaryDirectory() as tmp:
+        # Cas limite 1 : cellule vide -> ligne ignorée, pas de plantage.
+        chemin = Path(tmp) / "vide.csv"
+        chemin.write_text(
+            entetes
+            + "T-7,x,A,,0,01/01/2026,10,50,20,7,F\n"
+            + "T-8,x,A,40,40,01/01/2026,10,80,10,7,F\n",
+            encoding="utf-8",
+        )
+        lignes_v, ignorees_v = analyser_export(str(chemin))
+        assert [l.reference for l in lignes_v] == ["T-8"]
+        assert [i["reference"] for i in ignorees_v] == ["T-7"]
+
+        # Cas limite 2 : valeur non numérique -> ligne ignorée, pas de plantage.
+        chemin = Path(tmp) / "nonnum.csv"
+        chemin.write_text(
+            entetes
+            + "T-9,x,A,abc,40,01/01/2026,10,50,20,7,F\n"
+            + "T-10,x,A,40,40,01/01/2026,10,80,10,7,F\n",
+            encoding="utf-8",
+        )
+        lignes_n, ignorees_n = analyser_export(str(chemin))
+        assert [l.reference for l in lignes_n] == ["T-10"]
+        assert [i["reference"] for i in ignorees_n] == ["T-9"]
+
+        # Cas limite 3 : en-têtes différents du client -> erreur claire
+        # (ColonnesManquantes), pas de trace Python.
+        chemin = Path(tmp) / "entetes.csv"
+        chemin.write_text(
+            "sku,desc,loc,qty_theo,qty_phys,date_inv,mini,maxi,sorties,delai,fourn\n"
+            "T-11,x,A,40,40,01/01/2026,10,80,10,7,F\n",
+            encoding="utf-8",
+        )
+        try:
+            analyser_export(str(chemin))
+            raise AssertionError("ColonnesManquantes attendue, pas levée")
+        except ColonnesManquantes as e:
+            assert "reference" in str(e)
+
+        # Variantes d'écriture tolérées (espaces, majuscules, accents).
+        chemin = Path(tmp) / "variantes.csv"
+        chemin.write_text(
+            " Reference ,Designation,Emplacement,Stock Théorique,"
+            "Stock Physique Inventaire,Date Inventaire,Stock Mini,Stock Maxi,"
+            "Sorties_30J,Delai_Reappro_Jours,Fournisseur\n"
+            "T-12,x,A,40,40,01/01/2026,10,80,10,7,F\n",
+            encoding="utf-8",
+        )
+        lignes_var, ignorees_var = analyser_export(str(chemin))
+        assert [l.reference for l in lignes_var] == ["T-12"] and not ignorees_var
+
+    print("Auto-test OK : 6 scénarios de classification + 4 cas limites corrects.")
 
 
 if __name__ == "__main__":

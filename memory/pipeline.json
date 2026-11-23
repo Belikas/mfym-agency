@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T10:00:00+01:00",
+ "updated": "2026-11-23T00:00:00+01:00",
  "scoring": "total = 2×délai + 2×preuve + revenu + coût + heures + automatisation + risque (max 45)",
  "leads": [
   {
@@ -353,47 +353,71 @@
    "id": "primes-bancaires",
    "name": "Primes de bienvenue bancaires (one-off)",
    "category": "primes",
-   "description": "Monabanq, Fortuneo, Hello bank! : 80-330 € chacune sous conditions.",
-   "edge": "Aucun ; légal, plafonné",
+   "description": "Fortuneo 250 €, BoursoBank 180 €, Monabanq 280 €, BforBank 330 € (fenêtre courte au 09/12), Hello bank! 330 € (dont 200 € en bon d'achat, non vérifié en primaire). N26 et Orange Bank : offres mortes.",
+   "edge": "Aucun ; légal, plafonné ; compte et carte gratuits chez Fortuneo/BoursoBank donc coût réel ≈ 0",
    "sources": [
     {
-     "url": "https://banque.meilleurtaux.com/banque-en-ligne/meilleures-primes-bienvenue-ouverture-compte-bancaire.html",
-     "kind": "article",
+     "url": "https://www.fortuneo.fr/compte-bancaire/offre-exclusive-mobilite-sea",
+     "kind": "official",
      "financial_interest": true,
-     "finding": "Monabanq 280 € sans condition de revenu, Hello bank! 330 €"
+     "finding": "250 € (code FTNSEA, carte Gold + mobilité), valable 01/07-31/12/2026, compte et carte gratuits"
     },
     {
-     "url": "https://culture-financiere.com/primes-parrainage-cashback-cache-generosite-banques-en-ligne/",
+     "url": "https://www.boursobank.com/banque/compte-bancaire",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "180 € (code BBKOPE180) ; EasyMove exige seulement 'au moins un' prélèvement/virement récurrent, pas le salaire ; compte et carte Welcome gratuits"
+    },
+    {
+     "url": "https://www.monabanq.com/fr/ma-prime.html",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "280 € en 5 tranches dont 60 € au 13ᵉ mois ; reprise intégrale si clôture <12 mois ; carte Pratiq+ 3,90 €/mois"
+    },
+    {
+     "url": "https://www.bforbank.com/",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "330 € (80+250 €) mais fenêtre 12/11-09/12/2026 ; carte 5 €/mois ; clause de reprise trouvée seulement pour l'assurance-vie, pas le compte courant"
+    },
+    {
+     "url": "https://www.moneyvox.fr/banque-en-ligne/actualites/111128/hello-bank-jusqua-330-euros-avantages-pour-ouvrir-un-compte-au-plus-tard-le-8-decembre",
      "kind": "article",
-     "financial_interest": false,
-     "finding": "Offres 80-150 € typiques, conditions durcies"
+     "financial_interest": true,
+     "finding": "330 € dont 200 € en bon d'achat ; site officiel hellobank.fr inaccessible (403 systématique) donc non vérifié en primaire"
     },
     {
      "url": "https://www.plus.transformation.gouv.fr/experiences/6146287_impossible-davoir-une-reponse-du-service-des-impots",
      "kind": "official",
      "financial_interest": false,
-     "finding": "SIP : primes à déclarer"
+     "finding": "SIP : ces gains doivent être déclarés dans la plupart des cas comme revenu imposable"
+    },
+    {
+     "url": "https://www.banque-france.fr/fr/a-votre-service/particuliers/connaitre-pratiques-bancaires-assurance/compte-frais/mobilite-bancaire",
+     "kind": "official",
+     "financial_interest": false,
+     "finding": "Aucune limite légale au nombre de comptes ; fichage FICP lié aux incidents de paiement, pas au nombre d'ouvertures"
     }
    ],
-   "confidence": "med",
+   "confidence": "high",
    "evidenced": true,
    "scores": {
     "time_to_first_euro": 3,
-    "evidence": 3,
+    "evidence": 4,
     "monthly_revenue": 2,
     "startup_cost": 5,
-    "baptiste_hours": 4,
+    "baptiste_hours": 5,
     "automation": 1,
     "risk": 4
    },
-   "total": 28,
-   "est_monthly_eur": 170,
+   "total": 31,
+   "est_monthly_eur": 55,
    "startup_cost_eur": 0,
-   "first_euro_days": 30,
-   "legal_notes": "Imposable (~70 % net) ; reprise si clôture <12 mois ; Hello bank! expire 08/12",
-   "first_test": "1 compte Monabanq ; seuil ≥80 € crédités sous 60 j",
+   "first_euro_days": 20,
+   "legal_notes": "Imposable au barème IR au-delà de 305 €/an de gains divers (abattement), pas de retenue automatique ; mobilité bancaire n'exige généralement pas le salaire principal (texte exact confirmé chez BoursoBank) ; reprise si clôture <12 mois chez Monabanq (confirmé), zone grise ailleurs ; Hello bank! et BforBank à valider avant le 08/12 et 09/12/2026 respectivement. Détail complet : memory/benchmarks/primes-bancaires.md",
+   "first_test": "Ouvrir un compte Fortuneo (code FTNSEA, carte Gold CB Mastercard) : 5 paiements carte en 90 j + mobilité bancaire sur un prélèvement non-salarial ; seuil ≥160 € crédités sous 90 j",
    "status": "scored",
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "id": "cashback",

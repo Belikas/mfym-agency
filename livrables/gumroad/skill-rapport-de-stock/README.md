@@ -31,6 +31,15 @@ le skill se déclenche automatiquement.
 
 - `ModuleNotFoundError` : vous utilisez une version de Python trop ancienne
   ou incomplète — réinstallez depuis python.org.
+- Le script affiche `Erreur : colonne(s) manquante(s) : ...` et s'arrête :
+  une colonne attendue est absente de votre export. Le message liste les
+  colonnes attendues et celles trouvées dans votre fichier — renommez vos
+  en-têtes pour qu'ils correspondent (espaces, majuscules et accents sont
+  tolérés, pas le nom lui-même, voir `SKILL.md`).
+- Une référence a une case vide ou une valeur non numérique (stock, mini,
+  maxi, sorties, délai…) : cette ligne est ignorée, pas le reste du rapport.
+  Elle apparaît dans la section « Lignes ignorées » du rapport généré, avec
+  la raison.
 - Le rapport est vide ou faux : vérifiez que les en-têtes de colonnes de
-  votre CSV correspondent exactement à ceux listés dans `SKILL.md`.
+  votre CSV correspondent à ceux listés dans `SKILL.md`.
 - Tout autre souci : contact direct indiqué sur la page de précommande.

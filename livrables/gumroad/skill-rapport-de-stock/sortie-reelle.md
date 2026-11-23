@@ -59,3 +59,6 @@
 - **REF-1096** — théorique 58 vs physique 38 (écart +20) au 18/11/2026
 - **REF-1099** — théorique 94 vs physique 79 (écart +15) au 19/11/2026
 - **REF-1098** — théorique 65 vs physique 77 (écart -12) au 17/11/2026
+
+## Lignes ignorées (cellule vide ou valeur non numérique)
+- Aucune.

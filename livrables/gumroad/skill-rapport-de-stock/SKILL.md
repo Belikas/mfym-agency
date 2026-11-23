@@ -23,9 +23,15 @@ réapprovisionnement en jours. Il demande un résumé, un état des stocks, ou
 stock_physique_inventaire, date_inventaire, stock_mini, stock_maxi,
 sorties_30j, delai_reappro_jours, fournisseur`
 
-Si le fichier fourni a des colonnes différentes, les renommer (ou adapter
-`scripts/rapport_stock.py`) avant de lancer le script — ne pas deviner le
-mapping silencieusement.
+Les espaces, majuscules et accents dans les en-têtes sont tolérés (ex.
+`Stock Théorique` est reconnu comme `stock_theorique`), mais pas un nom de
+colonne différent : si le fichier fourni a des colonnes différentes, les
+renommer (ou adapter `scripts/rapport_stock.py`) avant de lancer le script —
+ne pas deviner le mapping silencieusement. Une colonne manquante arrête le
+script avec un message clair listant les colonnes attendues et trouvées,
+pas une trace Python. Une cellule vide ou non numérique fait ignorer la
+seule ligne concernée (listée dans la section « Lignes ignorées » du
+rapport), pas planter tout le rapport.
 
 ## Utilisation
 

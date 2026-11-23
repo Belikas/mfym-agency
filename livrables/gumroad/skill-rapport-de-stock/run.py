@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "scripts"))
-from rapport_stock import analyser_export, generer_rapport_markdown  # noqa: E402
+from rapport_stock import ColonnesManquantes, analyser_export, generer_rapport_markdown  # noqa: E402
 
 
 def main() -> None:
@@ -15,9 +15,14 @@ def main() -> None:
     chemin_csv = sys.argv[1]
     chemin_sortie = sys.argv[2] if len(sys.argv) > 2 else "rapport-stock.md"
 
-    lignes = analyser_export(chemin_csv)
+    try:
+        lignes, lignes_ignorees = analyser_export(chemin_csv)
+    except ColonnesManquantes as e:
+        print(f"Erreur : {e}")
+        sys.exit(1)
+
     date_generation = datetime.date.today().strftime("%d/%m/%Y")
-    rapport = generer_rapport_markdown(lignes, Path(chemin_csv).name, date_generation)
+    rapport = generer_rapport_markdown(lignes, Path(chemin_csv).name, date_generation, lignes_ignorees)
 
     Path(chemin_sortie).write_text(rapport, encoding="utf-8")
     print(rapport)
