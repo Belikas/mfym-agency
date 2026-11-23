@@ -1,4 +1,4 @@
-# État de l'agence — mis à jour le 23/11/2026 ~13:20 (run quotidien 1300)
+# État de l'agence — mis à jour le 23/11/2026 ~19:05 (run quotidien 1900)
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -11,7 +11,7 @@ Toutes les pistes notées ≥29 (ComeUp 30, Google Business Profile 30, Codeur.c
 
 ## Priorités
 1. **exp-03 Gumroad logistique** — **publiable techniquement depuis le 23/11 13h** (4 passes de critique + 1 correctif direct) : page + assistant « rapport de stock » réel (`livrables/gumroad/skill-rapport-de-stock/`), verdict final du critique `publiable=true`, zéro régression. Dernier défaut bloquant trouvé (seuil d'écart d'inventaire absolu, faux métier sur petites et grosses références) corrigé directement par le directeur (seuil relatif) et revérifié par le critique. Canal trouvé : r/supplychain (118k, persona exact), r/excel (902k), r/n8n (262k) — voir `memory/benchmarks/canaux-diffusion-logistique.md`. Aucun forum FR actif n'existe : recherche FR closed. Version anglaise de la page+README livrée et validée par le critique (publiable=true, aucune dérive de fait) pour les canaux anglophones.
-   - **Ne bloque plus que sur Baptiste** : A-04 (publier) et T-06 (règles Reddit).
+   - **Ne bloque plus que sur Baptiste** : A-04 (publier) et T-06 (règles Reddit). Run 19h : textes de diffusion prêts à l'emploi écrits d'avance (modmail r/supplychain, réponse-type r/excel, post r/n8n) dans `memory/drafts/reddit-diffusion-exp03.md`, et pas-à-pas de publication Gumroad dans `memory/drafts/pas-a-pas-A-04-gumroad.md` — pour publier/diffuser dès la réponse, sans round de rédaction supplémentaire.
 2. exp-02 ComeUp : 3 fiches prêtes (critique 3/5 sur la preuve, faute de vidéo). Bloqué sur micro-entreprise + T-04.
 3. exp-01 clipping : mesuré, plafonné (~31 €). Reste à 0 € et 0 h jusqu'au 06/12, plus d'heures investies.
 
@@ -26,7 +26,7 @@ Suivant si un test meurt : gbp-optimisation (30, à fusionner avec exp-02) ou co
 
 ## En attente de Baptiste
 - **A-04** : publier la version gratuite d'exp-03 sur Gumroad (0 €, pas de statut). Verdict `publiable=true` obtenu le 23/11 (FR et EN) : le garde-fou de séquencement est levé, il ne manque plus que la réponse de Baptiste. Si oui → envoyer le pas-à-pas de publication.
-- **A-05** : ouvrir un compte Fortuneo (code FTNSEA, 0 €, ~40 min, 250 € de prime). Si oui → envoyer le pas-à-pas.
+- **A-05** : ouvrir un compte Fortuneo (code FTNSEA, 0 €, ~40 min, 250 € de prime). Si oui → envoyer le pas-à-pas (déjà écrit : `memory/drafts/pas-a-pas-A-05-fortuneo.md`).
 - T-06 (8 min) : règles d'autopromo de r/supplychain + ancienneté de son compte Reddit + activité de r/InventoryManagement et r/Warehousing. Remplace T-05 (annulée).
 - T-02 (5 min, hebdo) : capture des gains Whop — seul chiffre absent de la base clipping.
 - T-04 (45 min) : vidéos ComeUp, le jour de la publication seulement.
