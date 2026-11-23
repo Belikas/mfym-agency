@@ -42,4 +42,8 @@ le skill se déclenche automatiquement.
   la raison.
 - Le rapport est vide ou faux : vérifiez que les en-têtes de colonnes de
   votre CSV correspondent à ceux listés dans `SKILL.md`.
+- Le script affiche « ce fichier est un classeur Excel, pas un CSV » ou une
+  erreur d'encodage : votre fichier n'est pas un CSV texte standard (souvent
+  un fichier Excel renommé en `.csv` sans réexport) — dans Excel, faites
+  Fichier > Enregistrer sous > CSV UTF-8, puis relancez.
 - Tout autre souci : contact direct indiqué sur la page de précommande.

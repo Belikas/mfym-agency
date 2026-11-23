@@ -10,6 +10,7 @@ sorties_30j, delai_reappro_jours, fournisseur
 from __future__ import annotations
 
 import csv
+import io
 import sys
 import unicodedata
 from dataclasses import dataclass, field
@@ -36,6 +37,43 @@ class ColonnesManquantes(Exception):
             "(espaces, majuscules et accents sont tolérés, pas le nom lui-même), "
             "voir SKILL.md."
         )
+
+
+class FichierIllisible(Exception):
+    """Levée quand le fichier n'est pas un CSV texte exploitable (mauvais
+    format ou encodage non reconnu)."""
+
+
+# ponytail: 2 signatures binaires couvrent le cas le plus courant (Excel
+# renommé en .csv), pas une détection générale de type de fichier.
+_SIGNATURES_BINAIRES = {
+    b"PK": "un classeur Excel (.xlsx)",
+    b"\xd0\xcf": "un classeur Excel (.xls)",
+}
+
+_ENCODAGES_ESSAYES = ("utf-8-sig", "utf-8", "cp1252")
+
+
+def _lire_texte(chemin_csv: str) -> str:
+    """Lit le fichier en tolérant les encodages Windows FR courants et en
+    détectant un fichier binaire renommé en .csv, pour qu'aucune lecture ne
+    puisse faire remonter une trace Python brute à l'utilisateur."""
+    donnees = open(chemin_csv, "rb").read()
+    for signature, nom in _SIGNATURES_BINAIRES.items():
+        if donnees.startswith(signature):
+            raise FichierIllisible(
+                f"ce fichier est {nom}, pas un CSV ; dans Excel, "
+                "Fichier > Enregistrer sous > CSV UTF-8."
+            )
+    for encodage in _ENCODAGES_ESSAYES:
+        try:
+            return donnees.decode(encodage)
+        except UnicodeDecodeError:
+            continue
+    raise FichierIllisible(
+        "l'encodage de ce fichier n'est pas reconnu (ni UTF-8 ni Windows "
+        "cp1252) ; réexportez-le en CSV UTF-8."
+    )
 
 
 def _normaliser_entete(entete: str) -> str:
@@ -71,18 +109,21 @@ def _to_int(value: str, colonne: str) -> int:
 
 
 def charger_lignes(chemin_csv: str) -> list[dict]:
-    with open(chemin_csv, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        entetes_brutes = reader.fieldnames or []
-        mapping = {}
-        for brute in entetes_brutes:
-            normalisee = _normaliser_entete(brute)
-            if normalisee in COLONNES_ATTENDUES:
-                mapping[brute] = normalisee
-        trouvees = sorted(set(mapping.values()))
-        if any(c not in trouvees for c in COLONNES_ATTENDUES):
-            raise ColonnesManquantes(COLONNES_ATTENDUES, entetes_brutes)
-        return [{mapping[k]: v for k, v in row.items() if k in mapping} for row in reader]
+    texte = _lire_texte(chemin_csv)
+    premiere_ligne = texte.split("\n", 1)[0]
+    delimiteur = ";" if premiere_ligne.count(";") > premiere_ligne.count(",") else ","
+
+    reader = csv.DictReader(io.StringIO(texte), delimiter=delimiteur)
+    entetes_brutes = reader.fieldnames or []
+    mapping = {}
+    for brute in entetes_brutes:
+        normalisee = _normaliser_entete(brute)
+        if normalisee in COLONNES_ATTENDUES:
+            mapping[brute] = normalisee
+    trouvees = sorted(set(mapping.values()))
+    if any(c not in trouvees for c in COLONNES_ATTENDUES):
+        raise ColonnesManquantes(COLONNES_ATTENDUES, entetes_brutes)
+    return [{mapping[k]: v for k, v in row.items() if k in mapping} for row in reader]
 
 
 def analyser_ligne(row: dict) -> LigneAnalysee:
@@ -352,7 +393,36 @@ def _demo_autotest() -> None:
         lignes_var, ignorees_var = analyser_export(str(chemin))
         assert [l.reference for l in lignes_var] == ["T-12"] and not ignorees_var
 
-    print("Auto-test OK : 6 scénarios de classification + 4 cas limites corrects.")
+        # Cas limite 5 : CSV encodé en cp1252 avec accents FR -> lu normalement.
+        chemin = Path(tmp) / "cp1252.csv"
+        chemin.write_bytes(
+            (entetes + "T-13,Écran,Réserve,40,40,01/01/2026,10,80,10,7,F\n").encode("cp1252")
+        )
+        lignes_cp, ignorees_cp = analyser_export(str(chemin))
+        assert [l.reference for l in lignes_cp] == ["T-13"] and not ignorees_cp
+        assert lignes_cp[0].designation == "Écran"
+
+        # Cas limite 6 : fichier Excel binaire renommé .csv -> erreur claire,
+        # pas de trace Python.
+        chemin = Path(tmp) / "classeur.csv"
+        chemin.write_bytes(b"PK\x03\x04binaire-pas-du-csv")
+        try:
+            analyser_export(str(chemin))
+            raise AssertionError("FichierIllisible attendue, pas levée")
+        except FichierIllisible as e:
+            assert "classeur Excel" in str(e)
+
+        # Cas limite 7 : séparateur point-virgule (export Excel FR) -> lu
+        # normalement, pas de message "colonne manquante" trompeur.
+        chemin = Path(tmp) / "pointvirgule.csv"
+        chemin.write_text(
+            entetes.replace(",", ";") + "T-14,x,A,40,40,01/01/2026,10,80,10,7,F\n".replace(",", ";"),
+            encoding="utf-8",
+        )
+        lignes_pv, ignorees_pv = analyser_export(str(chemin))
+        assert [l.reference for l in lignes_pv] == ["T-14"] and not ignorees_pv
+
+    print("Auto-test OK : 6 scénarios de classification + 7 cas limites corrects.")
 
 
 if __name__ == "__main__":

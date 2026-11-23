@@ -4,7 +4,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "scripts"))
-from rapport_stock import ColonnesManquantes, analyser_export, generer_rapport_markdown  # noqa: E402
+from rapport_stock import (  # noqa: E402
+    ColonnesManquantes,
+    FichierIllisible,
+    analyser_export,
+    generer_rapport_markdown,
+)
 
 
 def main() -> None:
@@ -17,8 +22,13 @@ def main() -> None:
 
     try:
         lignes, lignes_ignorees = analyser_export(chemin_csv)
-    except ColonnesManquantes as e:
+    except (ColonnesManquantes, FichierIllisible) as e:
         print(f"Erreur : {e}")
+        sys.exit(1)
+    except Exception as e:
+        print("Erreur : ce fichier n'a pas pu être traité. Contact direct "
+              "indiqué sur la page de précommande si le problème persiste.")
+        print(f"(détail technique : {type(e).__name__}: {e})")
         sys.exit(1)
 
     date_generation = datetime.date.today().strftime("%d/%m/%Y")

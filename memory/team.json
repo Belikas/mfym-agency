@@ -62,7 +62,7 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
-   "current_task": "aucune (disponible)",
+   "current_task": "Passe 3 exp-03 : notation finale + champ 'publiable', et trancher sur la colonne dupliquee",
    "last_run": "2026-11-23T08:20:00+01:00",
    "last_result": "23/11 passe 2 : a_corriger. A trouve ce que la passe 2 avait manque en inventant ses propres cas limites : cp1252 et Excel renomme .csv replantent, cause racine (aucun garde-fou generique sur la lecture) non traitee. A aussi note que la correction de la ligne 3 l'avait rendue illisible. Deux passes de suite ou il trouve un defaut reel que la grille seule ne voit pas."
   },
@@ -103,9 +103,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "Passe 3 exp-03 : garde-fou unique sur la lecture de fichier + reecriture de la ligne 3",
+   "current_task": "aucune (disponible) ; prochain chantier : version anglaise de la page et du README",
    "last_run": "2026-11-23T08:20:00+01:00",
-   "last_result": "23/11 passe 2 : les 2 blocages du critique leves (cadrage ligne 3, robustesse du skill sur en-tetes inconnus et lignes illisibles), auto-test etendu a 4 cas limites, sortie reelle regeneree."
+   "last_result": "23/11 passe 3 : cause racine traitee (garde-fou unique a la lecture : binaire, encodage, separateur ; filet dans run.py), ligne 3 reecrite, 4 ecarts importants corriges, 7 cas limites a l'auto-test. 3 mineurs signales et laisses."
   }
  ]
 }

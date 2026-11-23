@@ -1,6 +1,6 @@
 # Pack Claude Code pour la logistique — liste d'attente / précommande
 
-*(Page de pré-vente — produit en construction, pas encore livrable dans son ensemble (sauf l'assistant Rapport de stock, offert et déjà terminé, voir plus bas). Voir section "C'est une pré-vente, pas un achat classique" avant de vous engager.)*
+*(Page de pré-vente. Le pack complet n'est pas encore livrable — mais l'assistant Rapport de stock, lui, l'est : il est offert immédiatement à l'inscription, voir plus bas. Voir section "C'est une pré-vente, pas un achat classique" avant de vous engager.)*
 
 ## Claude Code pour la logistique : un rapport de stock lisible en quelques minutes, pas une ressaisie à la main
 
@@ -44,7 +44,7 @@ Ces exemples orientent le travail à venir ; ils ne constituent pas une liste de
 
 ## Comment ça marchera, une fois livré
 
-1. Vous recevez un fichier ZIP + une notice d'installation en français.
+1. Vous recevez un fichier ZIP + une notice d'installation pas à pas.
 2. Vous l'installez dans Claude Code en suivant 4 étapes maximum (copie des fichiers, une commande à lancer, vérification).
 3. Vous ouvrez un de vos fichiers réels (export, mail) et vous testez un cas d'usage.
 4. Vous gardez un contact direct avec moi (email) pour signaler un bug ou demander un ajustement : réponse sous 48h ouvrées, mises à jour gratuites incluses pendant 6 mois après la livraison.
