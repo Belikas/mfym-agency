@@ -1,0 +1,97 @@
+{
+  "scores": {
+    "precision_de_niche": {
+      "note": 5,
+      "justification": "Inchangé depuis les passes 1-2 : public nommé en une phrase, un seul problème — toujours au niveau 5 de la grille, rien dans cette passe ne remet ce point en cause."
+    },
+    "utilite_immediate": {
+      "note": 4,
+      "justification": "Inchangé : le seul assistant livré reste testable en <5 min sur un cas réel, mais 4 à 6 assistants sont visés et un seul existe — toujours pas le niveau 5."
+    },
+    "qualite_technique": {
+      "note": 2,
+      "justification": "Régression confirmée par exécution : le garde-fou de lecture (encodage, binaire, séparateur) corrige bien les cas de la passe 2, mais j'ai trouvé en creusant plus loin un bug de corruption silencieuse de données sur la logique de classification elle-même (colonne dupliquée écrasée, voir points spécifiques) et le 'filet générique' demandé pour run.py ne couvre pas l'écriture du rapport — une sortie en lecture seule fait encore remonter une trace Python brute. La cause racine (aucune validation de l'intégrité ligne/colonnes à la frontière de lecture) n'est toujours pas traitée, juste déplacée vers des symptômes plus rares."
+    },
+    "differenciation_vs_gratuit": {
+      "note": 4,
+      "justification": "Inchangé : comparaison nommée à 2 packs gratuits, raison claire, gain de temps toujours qualifié 'non vérifié' — rien de nouveau testé sur ce critère."
+    },
+    "preuve": {
+      "note": 4,
+      "justification": "Revérifié : `python run.py exemple-export-wms.csv` produit un fichier strictement identique (diff vide) à sortie-reelle.md. Toujours aucune capture d'écran/GIF, donc pas le niveau 5."
+    },
+    "clarte_de_la_page": {
+      "note": 4,
+      "justification": "La ligne 3 n'a plus de parenthèse imbriquée (lu phrase par phrase, net progrès sur la passe 2) mais reste 3 phrases dont une à deux clauses (tiret + deux-points) — pas les 'deux phrases courtes' demandées ; un lecteur qui survole doit encore ralentir sur la 2e phrase. Progression réelle depuis la passe 2 (note 3), mais pas encore le niveau 5 (lisible en une passe sans effort)."
+    },
+    "honnetete_confiance": {
+      "note": 5,
+      "justification": "Inchangé et toujours vérifié : aucune affirmation technique de la page de vente elle-même n'est mise en défaut par les bugs trouvés dans cette passe (ils concernent des promesses du README/SKILL.md sur la robustesse du script, pas les affirmations de la page de précommande). Remboursement daté, kill-date, 'aucun chiffre inventé' : toujours au-dessus des références du benchmark."
+    },
+    "installation_et_support": {
+      "note": 4,
+      "justification": "Inchangé : README en 4 étapes vérifié sous Windows, section 'En cas de problème' enrichie (encodage/binaire) mais toujours incomplète face aux nouveaux cas trouvés dans cette passe (sortie en lecture seule, colonne manquante en fin de ligne)."
+    }
+  },
+  "points_specifiques_demandes": {
+    "coherence": {
+      "note": 5,
+      "justification": "Inchangé : la ligne 3 est cohérente avec les lignes 20, 66, 73-74, plus de contradiction logique repérée dans la page. Les bugs trouvés dans le script ne créent pas d'incohérence textuelle dans la page elle-même."
+    },
+    "honnetete_de_la_preuve": {
+      "note": 5,
+      "justification": "Revérifié indépendamment une 3e fois : `python run.py exemple-export-wms.csv` écrit un fichier identique octet pour octet à sortie-reelle.md (diff vide) et à la citation en ligne 34 de la page. Aucune confusion possible avec un export client réel (disclosure ligne 33 intacte)."
+    },
+    "skill_tient_la_promesse": {
+      "note": 1,
+      "justification": "Avis indépendant demandé sur la colonne dupliquée : testé concrètement, la réponse est oui, et c'est pire qu'un plantage. Avec deux colonnes 'stock_theorique' valant respectivement 999 (sain) et 0 (rupture), le script écrase silencieusement la 1ère valeur, n'affiche aucune erreur, exit 0, et le rapport annonce une fausse rupture de stock avec la même mise en forme qu'un rapport correct — rien ne distingue ce rapport faux d'un rapport vrai. J'ai aussi trouvé qu'une ligne avec une colonne manquante en fin de ligne produit un 'None' littéral non signalé comme ligne ignorée, et que le filet anti-trace-Python demandé pour cette passe ne couvre pas l'écriture du fichier de sortie (sortie en lecture seule = trace Python brute, à nouveau). Trois passes de correction ciblées sur exactement ce point ('pas une trace Python', 'rapport fiable') et le mode de défaillance le plus grave — une donnée fausse qui se présente comme vraie — n'a toujours pas de garde-fou, alors qu'il est plus facile à provoquer qu'un encodage cp1252 (déjà corrigé)."
+    }
+  },
+  "gaps": [
+    {
+      "severite": "bloquant",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 126,
+      "probleme": "Vérifié par exécution : si l'export a deux colonnes qui désignent la même donnée après normalisation (même nom exact en double, ou deux en-têtes différents qui se normalisent pareil, ex. 'stock_theorique' et 'Stock Théorique'), la fonction charger_lignes() construit le dictionnaire de ligne via `{mapping[k]: v for k, v in row.items() if k in mapping}` : la 2e colonne rencontrée écrase silencieusement la 1ère, sans erreur, sans ligne ignorée, exit 0. Test concret : stock_theorique=999 (sain) écrasé par une 2e colonne stock_theorique=0 → le rapport généré annonce 'T-1 en rupture', visuellement identique à un rapport correct. C'est pire qu'un plantage : un plantage se voit, ce chiffre faux se croit.",
+      "correction_qui_ferait_gagner_1_point": "Dans charger_lignes(), détecter les en-têtes bruts qui se normalisent vers le même nom cible et lever une erreur claire ('colonne dupliquée : stock_theorique apparaît 2 fois dans votre export, supprimez le doublon avant de relancer') au lieu de laisser le dernier remplacer silencieusement le premier."
+    },
+    {
+      "severite": "bloquant",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/run.py",
+      "ligne": 37,
+      "probleme": "Vérifié par exécution : le filet générique ajouté dans run.py (except Exception, lignes 28-32) ne couvre que l'appel à analyser_export. L'écriture du rapport (`Path(chemin_sortie).write_text(...)`, hors du bloc try) n'est pas protégée : un fichier de sortie en lecture seule (ou un dossier non accessible en écriture, disque plein) fait remonter une trace Python brute complète (PermissionError), exactement le défaut que cette passe de correction devait éliminer partout.",
+      "correction_qui_ferait_gagner_1_point": "Englober aussi l'écriture du fichier de sortie dans le même bloc try/except générique, avec un message en français ('impossible d'écrire le rapport dans <chemin> : vérifiez qu'il n'est pas en lecture seule ou ouvert ailleurs') et sys.exit(1), sans jamais laisser passer la trace Python."
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 116,
+      "probleme": "Vérifié par exécution : une ligne de données avec une colonne manquante en fin de ligne (ex. 'fournisseur' absent sur une ligne, un cas réaliste si une virgule finale manque à l'export) donne une valeur None pour ce champ, affichée littéralement 'fournisseur None' dans le rapport final — sans que la ligne soit comptée dans 'Lignes ignorées', contrairement à la promesse du README/SKILL.md ('une cellule vide... fait ignorer la ligne'). Moins grave que la colonne dupliquée (le 'None' est visible, pas crédible) mais c'est un 3e mode de défaillance non couvert par la correction de cette passe.",
+      "correction_qui_ferait_gagner_1_point": "Après lecture de chaque ligne, vérifier qu'aucune valeur attendue n'est None (ligne plus courte que l'en-tête) et traiter ce cas comme une ligne invalide ignorée avec raison, au même titre qu'une cellule vide ou non numérique."
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/presell-logistique.md",
+      "ligne": 3,
+      "probleme": "La réécriture a bien supprimé la parenthèse imbriquée (progrès net), mais la phrase reste en 3 segments dont un à deux clauses (tiret + deux-points : 'mais l'assistant Rapport de stock, lui, l'est : il est offert immédiatement à l'inscription, voir plus bas') — pas les 'deux phrases courtes' demandées pour un lecteur qui survole en arrivant de Reddit.",
+      "correction_qui_ferait_gagner_1_point": "Couper en deux phrases simples sans tiret ni deux-points intermédiaire, ex. : '*(Page de pré-vente : le pack complet n'est pas encore livrable. Un assistant — Rapport de stock — l'est déjà et vous est offert dès l'inscription, voir plus bas.)*'"
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/run.py",
+      "ligne": 38,
+      "probleme": "Revérifié : print(rapport) affiche toujours des caractères accentués corrompus sur un terminal non-UTF8 (reconfirmé dans cette passe). Le fichier .md écrit sur disque reste lui exact. Classement confirmé mineur par l'exécution : aucune perte de données, affichage uniquement, et uniquement sur certains terminaux.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter en tête de run.py : sys.stdout.reconfigure(encoding='utf-8') pour garantir un affichage correct quel que soit le terminal Windows utilisé."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 106,
+      "probleme": "Revérifié concrètement : '1 234,50' (format français avec espace de séparation des milliers) n'est pas reconnu comme un nombre — mais la ligne est ignorée proprement avec une raison explicite affichée dans le rapport ('valeur ... n'est pas un nombre'), pas une lecture silencieusement fausse. Classement confirmé mineur par l'exécution, contrairement à la colonne dupliquée : ici l'échec est honnête et visible, pas trompeur. Testé aussi avec l'espace insécable (NBSP) qu'Excel produit parfois : même comportement correct.",
+      "correction_qui_ferait_gagner_1_point": "Dans _to_int, retirer aussi les espaces normaux et insécables avant conversion pour accepter nativement '1 234,50' plutôt que de l'ignorer."
+    }
+  ],
+  "verdict": "a_corriger",
+  "publiable": false,
+  "publiable_justification": "Non publiable en l'état sous l'identité de son auteur. Deux défauts bloquants confirmés par exécution : (1) une colonne dupliquée dans l'export du client peut produire un rapport faux sans aucun signe visible — exactement le scénario que la page vend comme résolu ('vous gardez la décision', rapport fiable) ; (2) une sortie en lecture seule fait encore apparaître une trace Python brute, alors que c'est le point explicitement ciblé par cette 3e passe de correction. Publier maintenant expose à ce qu'un client prenne une décision de réapprovisionnement sur un chiffre faux sans le savoir — le risque le plus coûteux pour la réputation du vendeur, plus coûteux qu'un simple plantage visible."
+}
