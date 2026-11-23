@@ -1,0 +1,121 @@
+{
+  "scores": {
+    "precision_de_niche": {
+      "note": 5,
+      "justification": "Inchangé depuis la passe 1 : public nommé en une phrase, un seul problème — toujours au niveau 5 de la grille."
+    },
+    "utilite_immediate": {
+      "note": 4,
+      "justification": "Inchangé : le seul assistant livré est testable en <5 min sur un cas réel, mais 4 à 6 assistants sont visés et un seul existe — pas encore 5."
+    },
+    "qualite_technique": {
+      "note": 3,
+      "justification": "Régression par rapport à la passe 1 : les 3 cas de la notation précédente sont bien corrigés (vérifié par exécution), mais 2 de mes 3 nouveaux cas limites plantent encore avec une trace Python brute (CSV encodé en cp1252/accents français, fichier Excel binaire renommé .csv) — la correction a patché les symptômes nommés, pas la cause racine (aucun garde-fou générique autour de la lecture du fichier)."
+    },
+    "differenciation_vs_gratuit": {
+      "note": 4,
+      "justification": "Inchangé : comparaison nommée à 2 packs gratuits, raison claire, mais le gain de temps chiffré reste explicitement 'non vérifié'."
+    },
+    "preuve": {
+      "note": 4,
+      "justification": "Revérifié moi-même : `python run.py exemple-export-wms.csv` produit un fichier strictement identique (diff vide) à sortie-reelle.md. Toujours aucune capture d'écran/GIF, donc pas le niveau 5."
+    },
+    "clarte_de_la_page": {
+      "note": 3,
+      "justification": "La correction de la ligne 3 a réglé la contradiction mais au prix de la clarté : la phrase d'ouverture est maintenant une parenthèse à double imbrication ('(... (sauf ... voir plus bas) ...)'), difficile à parser en une lecture rapide pour un lecteur qui arrive de Reddit — c'est justement la phrase la plus lue de toute la page. Recul par rapport à la passe 1 sur ce point précis."
+    },
+    "honnetete_confiance": {
+      "note": 5,
+      "justification": "La contradiction de la ligne 3 est résolue (vérifié), ce qui lève le seul doute qui retenait la note à 4. Remboursement 14 j sans question, kill-date daté avec remboursement automatique sans délai de carence, 'aucun chiffre n'est inventé' explicite : va au-delà de toutes les références du benchmark (qui ont des compteurs non vérifiés ou des incohérences internes, ex. Claude Code Mastery 16 vs 108 extensions)."
+    },
+    "installation_et_support": {
+      "note": 4,
+      "justification": "Inchangé : README en 4 étapes vérifié sous Windows, mais toujours pas de script d'installation, et la section 'En cas de problème' ne couvre toujours pas les plantages réellement observés (voir qualité technique)."
+    }
+  },
+  "points_specifiques_demandes": {
+    "coherence": {
+      "note": 5,
+      "justification": "Vérifié : la ligne 3 contient maintenant explicitement l'exception ('sauf l'assistant Rapport de stock, offert et déjà terminé'), cohérente avec les lignes 20, 66, 73-74. Plus aucune contradiction logique. Le coût de cette correction porte sur la clarté (voir critère 6), pas sur la cohérence elle-même."
+    },
+    "honnetete_de_la_preuve": {
+      "note": 5,
+      "justification": "Revérifié indépendamment : `python run.py exemple-export-wms.csv` écrit un fichier identique octet pour octet à sortie-reelle.md (diff vide) et à la citation en ligne 34 de la page. Toujours aucune confusion possible avec un export client réel (disclosure ligne 33 intacte)."
+    },
+    "skill_tient_la_promesse": {
+      "note": 2,
+      "justification": "Les 3 cas limites de la passe 1 (cellule vide, valeur non numérique, en-têtes différents) sont désormais gérés proprement — vérifié par exécution directe, message clair, pas de trace Python. Mais j'ai testé 3 nouveaux cas limites qu'un vrai export WMS français produirait plausiblement, et le script replante avec une trace Python brute sur 2 d'entre eux : un CSV encodé en cp1252 (accents français, cas très courant sur Windows/Excel FR) et un fichier Excel binaire renommé .csv (erreur utilisateur courante). La promesse du SKILL.md et du README ('pas une trace Python') reste donc fausse en pratique, sur des cas au moins aussi probables que ceux déjà corrigés — la correction a traité les symptômes nommés, pas la cause (absence de garde-fou générique à la frontière de lecture du fichier).",
+      "cas_limites_testes": [
+        {"cas": "cellule vide (repris de la passe 1)", "resultat": "Corrigé : ligne ignorée, message propre dans le rapport, exit 0"},
+        {"cas": "valeur non numérique (repris de la passe 1)", "resultat": "Corrigé : ligne ignorée, message propre, exit 0"},
+        {"cas": "en-têtes différents (repris de la passe 1)", "resultat": "Corrigé : 'Erreur : colonne(s) manquante(s)...', exit 1, pas de trace"},
+        {"cas": "séparateur point-virgule au lieu de la virgule (CSV export Excel FR classique)", "resultat": "Pas de plantage, mais message trompeur : le script annonce 'colonnes manquantes' et affiche une seule 'colonne trouvée' qui est en fait toute la ligne d'en-tête collée avec des points-virgules — ne dit jamais à l'utilisateur que le séparateur est le problème"},
+        {"cas": "encodage Windows cp1252 avec accents français (très courant pour un export WMS/Excel FR, cas le plus probable des 3 nouveaux)", "resultat": "PLANTE : UnicodeDecodeError, trace Python brute affichée, exit 1 — exactement le défaut censé être corrigé"},
+        {"cas": "nombres au format français ('1 234,50')", "resultat": "Pas de plantage : ligne ignorée avec raison explicite ('n'est pas un nombre') — comportement correct, aurait pu parser le format FR mais ce n'est pas un bug"},
+        {"cas": "fichier Excel renommé en .csv (contenu binaire réel)", "resultat": "PLANTE : UnicodeDecodeError, trace Python brute affichée, exit 1 — même cause racine que le cas cp1252"},
+        {"cas": "colonne en double dans l'en-tête", "resultat": "Pas de plantage, mais écrasement silencieux : la valeur de la 2e colonne 'reference' remplace la 1ère sans avertissement"},
+        {"cas": "fichier totalement vide (0 octet)", "resultat": "Pas de plantage : message 'colonnes manquantes' (un peu imprécis pour ce cas précis mais pas de trace), exit 1"},
+        {"cas": "fichier avec en-têtes seules, aucune ligne de données", "resultat": "Pas de plantage : rapport vide généré correctement, exit 0"}
+      ]
+    }
+  },
+  "gaps": [
+    {
+      "severite": "bloquant",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 74,
+      "probleme": "`open(chemin_csv, newline=\"\", encoding=\"utf-8\")` est codé en dur sans aucun garde-fou autour de la lecture du fichier dans run.py (seule ColonnesManquantes est interceptée). Vérifié par exécution directe : un CSV encodé en cp1252 (accents français — cas extrêmement courant pour un export WMS/Excel sur Windows FR, plus probable en pratique que les 3 cas déjà corrigés) et un fichier Excel binaire simplement renommé en .csv (erreur utilisateur courante pour le public non-codeur visé) font tous les deux planter le script avec une UnicodeDecodeError et une trace Python brute affichée à l'écran — exactement le défaut que la correction précédente était censée éliminer.",
+      "correction_qui_ferait_gagner_1_point": "Entourer l'appel à analyser_export dans run.py d'un except Exception générique (en plus du except ColonnesManquantes déjà présent) qui affiche un message en français ('fichier illisible : vérifiez qu'il s'agit bien d'un export CSV, pas d'un fichier Excel renommé, et qu'il est enregistré en UTF-8 ou en texte Windows standard') puis sys.exit(1), sans jamais laisser passer une trace Python brute à l'écran."
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/presell-logistique.md",
+      "ligne": 3,
+      "probleme": "La correction de la contradiction a transformé la phrase d'ouverture en parenthèse à double imbrication ('(... (sauf l'assistant Rapport de stock, offert et déjà terminé, voir plus bas) ...)'). C'est désormais exact, mais lourd à parser pour un lecteur qui arrive de Reddit et skimme — un lecteur qui s'arrête à 'pas encore livrable dans son ensemble' avant d'atteindre la parenthèse imbriquée retombe dans la même confusion que la version précédente, juste repoussée de quelques mots.",
+      "correction_qui_ferait_gagner_1_point": "Scinder en deux phrases séparées sans parenthèse imbriquée, ex. : '*(Page de pré-vente. Le pack complet n'est pas encore livrable — mais l'assistant Rapport de stock, lui, l'est : il est offert immédiatement à l'inscription, voir plus bas. Voir \"C'est une pré-vente, pas un achat classique\" avant de vous engager.)*'"
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 73,
+      "probleme": "charger_lignes() utilise csv.DictReader avec le délimiteur par défaut (virgule). Testé : un export avec séparateur point-virgule (standard pour un CSV généré par Excel en locale française) ne plante pas, mais produit un message 'colonne(s) manquante(s)' trompeur qui liste toute la ligne d'en-tête comme une seule 'colonne trouvée' — ne mentionne jamais que le séparateur est en cause, ce qui laissera un utilisateur non-codeur perplexe.",
+      "correction_qui_ferait_gagner_1_point": "Détecter ce cas précis (une seule colonne trouvée contenant des points-virgules) et ajouter une ligne dédiée au message d'erreur : 'Votre fichier semble utiliser le point-virgule comme séparateur — réexportez-le avec la virgule, ou voir SKILL.md.'"
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/README.md",
+      "ligne": 30,
+      "probleme": "La section 'En cas de problème' ne couvre toujours pas le scénario de plantage réellement observé (UnicodeDecodeError sur fichier non-UTF8 ou binaire) — seulement ModuleNotFoundError, colonnes manquantes, cellule invalide et rapport vide/faux. Ne correspond pas aux défaillances réelles du script confirmées par exécution.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter une puce : 'Le script affiche une erreur UnicodeDecodeError et s'arrête : votre fichier n'est pas un CSV texte standard (encodage non-UTF8, ou fichier Excel renommé en .csv) — réexportez-le en CSV UTF-8 depuis Excel/votre WMS.'"
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/presell-logistique.md",
+      "ligne": 47,
+      "probleme": "'Vous recevez un fichier ZIP + une notice d'installation en français' est une promesse figée en français. Les canaux de diffusion retenus sont anglophones (r/supplychain, r/excel, r/n8n) et une version anglaise est la prochaine étape prévue — cette phrase ne survivra pas telle quelle à la traduction : elle promet explicitement un livrable en français à un lecteur qui lit la page en anglais, ce qui ne fait pas sens et devra être réécrite, pas simplement traduite mot à mot.",
+      "correction_qui_ferait_gagner_1_point": "Remplacer 'en français' par une formulation neutre sur la langue ('une notice d'installation pas à pas') dans la version FR, pour que la version anglaise à venir n'ait qu'à traduire le reste sans devoir changer le sens de cette phrase."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/run.py",
+      "ligne": 28,
+      "probleme": "print(rapport) affiche toujours des caractères accentués corrompus sur un terminal en page de code non-UTF8 (reconfirmé lors de cette vérification sur un terminal bash Windows) ; le fichier .md écrit sur disque reste lui exact (diff vide contre sortie-reelle.md). Inchangé depuis la passe 1, non corrigé dans cette passe.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter en tête de run.py : sys.stdout.reconfigure(encoding='utf-8') pour garantir un affichage correct quel que soit le terminal Windows utilisé."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 85,
+      "probleme": "Testé : un en-tête CSV avec une colonne 'reference' en double fait silencieusement écraser la première valeur par la seconde (comportement du dict sous-jacent), sans avertissement ni ligne ignorée — l'utilisateur ne sait pas que des données ont été substituées.",
+      "correction_qui_ferait_gagner_1_point": "Détecter les doublons dans entetes_brutes après normalisation et lever une erreur claire ('colonne dupliquée : stock_theorique apparaît 2 fois') plutôt que de laisser le dernier remplacer silencieusement le premier."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 66,
+      "probleme": "Testé : une valeur au format numérique français ('1 234,50') n'est pas reconnue comme un nombre valide (seule la virgule décimale simple est gérée via .replace(',', '.'), pas l'espace de séparation des milliers) — la ligne est ignorée avec une raison correcte, donc pas un plantage, mais un vrai export WMS français avec des volumes à 4 chiffres perdrait régulièrement des lignes pour un format pourtant courant en France.",
+      "correction_qui_ferait_gagner_1_point": "Dans _to_int, retirer aussi les espaces normaux et insécables avant la conversion (str(value).strip().replace(' ', '').replace('\\xa0', '').replace(',', '.')) pour accepter nativement '1 234,50'."
+    }
+  ],
+  "verdict": "a_corriger"
+}

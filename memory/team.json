@@ -62,9 +62,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
-   "current_task": "Passe 2 exp-03 : renoter page + skill, avec ses propres cas limites a inventer",
+   "current_task": "aucune (disponible)",
    "last_run": "2026-11-23T08:20:00+01:00",
-   "last_result": "23/11 : page + skill exp-03 notes, verdict a_corriger. A trouve 2 blocages que la grille seule ne voyait pas (contradiction du cadrage ligne 3, plantages sur en-tetes differents) en executant vraiment le code et 3 cas limites. Preuve de sortie verifiee honnete (diff vide)."
+   "last_result": "23/11 passe 2 : a_corriger. A trouve ce que la passe 2 avait manque en inventant ses propres cas limites : cp1252 et Excel renomme .csv replantent, cause racine (aucun garde-fou generique sur la lecture) non traitee. A aussi note que la correction de la ligne 3 l'avait rendue illisible. Deux passes de suite ou il trouve un defaut reel que la grille seule ne voit pas."
   },
   {
    "id": "redacteur",
@@ -103,7 +103,7 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "aucune (disponible) ; prochain chantier : version anglaise de la page et du README",
+   "current_task": "Passe 3 exp-03 : garde-fou unique sur la lecture de fichier + reecriture de la ligne 3",
    "last_run": "2026-11-23T08:20:00+01:00",
    "last_result": "23/11 passe 2 : les 2 blocages du critique leves (cadrage ligne 3, robustesse du skill sur en-tetes inconnus et lignes illisibles), auto-test etendu a 4 cas limites, sortie reelle regeneree."
   }
