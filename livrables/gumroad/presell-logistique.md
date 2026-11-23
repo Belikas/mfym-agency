@@ -17,7 +17,7 @@ Gestionnaires d'entrepôt et responsables stocks qui traitent un export Excel/CS
 ## Pas pour qui
 
 - Vous cherchez un WMS ou un ERP complet : ce pack ne remplace pas votre logiciel métier, il travaille à côté (exports, mails, synthèses).
-- Vous voulez un produit livré aujourd'hui : il n'existe pas encore, voir plus bas.
+- Vous voulez le pack complet livré aujourd'hui : il n'existe pas encore, voir plus bas (seul l'assistant Rapport de stock, offert à l'inscription, est déjà terminé).
 - Vous n'avez jamais ouvert Claude Code et ne voulez pas installer un outil en ligne de commande (même simple) : ce pack ne sera pas pour vous dans cette première version.
 
 ## Pourquoi pas un pack gratuit ?
@@ -30,8 +30,10 @@ Le contenu exact n'est pas arrêté, il sera construit avec les premiers inscrit
 
 **Rapport de stock** : à partir d'un export Excel/CSV de votre WMS, produire un résumé lisible (ruptures, surstocks, références à surveiller) sans reconstruire un tableau croisé à la main.
 
-À quoi ça pourrait ressembler (extrait fictif, à titre d'illustration — le pack n'existe pas encore, aucune sortie réelle n'a été générée) :
-> Stock au 20/11 : 3 réf. en rupture (REF-1042, REF-2210, REF-3387) · 2 surstocks à écouler (REF-5501, REF-5598) · 1 écart à vérifier (REF-4120, -40 unités vs dernier inventaire).
+Cet assistant existe déjà réellement (c'est le seul du pack à ce stade) : voici sa vraie sortie sur un export d'exemple de 100 références que j'ai construit pour le tester (pas un export d'un client réel — aucun n'a encore été fourni) :
+> 8 réf. en rupture (REF-1064, REF-1065, REF-1067…) · 8 surstocks à écouler (REF-1092, REF-1091…) · 6 écart(s) d'inventaire à vérifier (REF-1097, REF-1095…)
+
+Le rapport complet (ruptures, sous seuil mini, à surveiller, surstocks dormants, écarts d'inventaire) fait une page ; cette ligne n'en est que le résumé.
 
 **Et aussi**, dans la même logique :
 - **Relance transporteur** : mail de relance clair et factuel à partir d'un numéro de colis et d'un motif de retard.
@@ -61,15 +63,15 @@ Dites-le-vous clairement avant de vous engager :
 
 ## Deux façons de manifester votre intérêt
 
-- **Liste d'attente gratuite** : laissez votre email, vous êtes prévenu dès que la décision est prise (construction ou abandon), sans engagement.
-- **Précommande à tarif de lancement** : 19 € au lieu des 29 € prévus au tarif normal une fois le pack livré. Vous ne payez que si vous choisissez de précommander maintenant ; remboursement intégral automatique si le projet ne se fait pas.
+- **Liste d'attente gratuite** : laissez votre email, vous recevez immédiatement l'assistant **Rapport de stock** décrit plus haut — celui-là est déjà terminé, pas une promesse — et vous êtes prévenu dès que la décision sur le reste du pack est prise (construction ou abandon), sans engagement.
+- **Précommande à tarif de lancement** : 19 € au lieu des 29 € prévus au tarif normal une fois le pack livré. Vous ne payez que si vous choisissez de précommander maintenant ; remboursement intégral automatique si le projet ne se fait pas. L'assistant Rapport de stock est inclus immédiatement, comme pour la liste d'attente.
 
 [Je m'inscris à la liste d'attente] — [Je précommande à 19 €]
 
 ## FAQ
 
 **Le pack existe déjà, je peux l'avoir tout de suite ?**
-Non. C'est une pré-vente : rien n'est livré aujourd'hui. Si vous avez besoin d'un outil immédiatement, attendez la décision du 20 décembre ou ne précommandez pas.
+Non, le pack complet est en pré-vente : il n'est pas livré aujourd'hui. Seul l'assistant Rapport de stock est terminé et vous est envoyé immédiatement à l'inscription. Si vous avez besoin du pack complet immédiatement, attendez la décision du 20 décembre ou ne précommandez pas.
 
 **Qu'est-ce qui se passe si le projet est abandonné ?**
 Vous êtes remboursé intégralement, automatiquement, sans démarche de votre part si vous avez précommandé. Si vous étiez seulement inscrit sur la liste d'attente, vous êtes simplement informé.

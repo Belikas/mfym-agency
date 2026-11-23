@@ -1,0 +1,2 @@
+reference,designation,emplacement,stock_theorique,stock_physique_inventaire,date_inventaire,stock_mini,stock_maxi,sorties_30j,delai_reappro_jours,fournisseur
+REF-B,Test,A01,abc,10,01/01/2026,5,50,3,7,FournA

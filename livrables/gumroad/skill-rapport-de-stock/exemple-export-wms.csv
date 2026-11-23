@@ -1,0 +1,101 @@
+reference,designation,emplacement,stock_theorique,stock_physique_inventaire,date_inventaire,stock_mini,stock_maxi,sorties_30j,delai_reappro_jours,fournisseur
+REF-1006,Gants nitrile taille L,A07-02-07,55,56,11/11/2026,20,100,6,10,EPI Services Nord
+REF-1072,Gaine plastique transparente,A01-03-01,7,7,19/11/2026,15,75,28,5,Manutan Collectivités
+REF-1033,Étui carton renforcé,A10-04-02,33,32,23/10/2026,10,40,8,7,Cora Emballage
+REF-1022,Gaine plastique transparente,A11-03-07,40,41,18/11/2026,15,60,7,14,Manutan Collectivités
+REF-1004,Film étirable 500mm,A05-05-05,70,70,01/11/2026,20,80,10,10,Distripack France
+REF-1012,Housse plastique palette,A01-03-05,135,135,29/10/2026,50,200,8,5,Manutan Collectivités
+REF-1077,Housse de protection moto,A06-03-06,18,18,30/10/2026,30,150,14,5,Logistipack SARL
+REF-1092,Essuie-tout industriel,A09-03-05,83,83,06/11/2026,15,60,7,5,Manutan Collectivités
+REF-1057,Casque anti-bruit SNR 30,A10-03-02,47,47,16/11/2026,10,50,6,10,Logistipack SARL
+REF-1014,Bac plastique 400x300,A03-05-07,145,145,02/11/2026,30,150,25,10,Distripack France
+REF-1018,Rouleau papier bulle 1m,A07-04-03,36,37,02/11/2026,10,50,9,10,Palettes de France
+REF-1009,Ruban adhésif PP 50mm,A10-05-02,41,41,08/11/2026,15,60,9,10,Protec Industrie
+REF-1076,Diable pliant alu,A05-02-05,22,22,29/10/2026,30,150,23,7,EPI Services Nord
+REF-1079,Boucle cerclage métal,A08-05-08,21,21,16/11/2026,20,100,42,14,Protec Industrie
+REF-1056,Gants nitrile taille L,A09-02-01,34,34,15/10/2026,30,180,8,3,EPI Services Nord
+REF-1097,Barrière de sécurité pliable,A02-03-02,97,109,15/11/2026,30,150,18,5,Logistipack SARL
+REF-1023,Scotch emballage transparent,A12-04-08,177,177,30/10/2026,50,250,6,3,Cora Emballage
+REF-1032,Carton déménagement standard,A09-03-01,173,172,06/11/2026,50,300,20,10,Manutan Collectivités
+REF-1050,Carton ondulé 40x30x20,A03-01-03,50,51,18/11/2026,20,80,14,14,Raja SAS
+REF-1087,Chaussures sécurité S3 T42,A04-03-08,136,136,08/10/2026,15,60,0,10,Logistipack SARL
+REF-1040,Masque FFP2,A05-01-01,93,93,31/10/2026,20,100,20,5,Raja SAS
+REF-1058,Lunettes de protection EPI,A11-04-03,27,27,07/10/2026,20,100,16,5,Palettes de France
+REF-1017,Étiquette thermique 60x40,A06-03-02,15,14,11/10/2026,10,40,6,5,Logistipack SARL
+REF-1078,Cerclage polypropylène,A07-04-07,31,31,11/11/2026,15,75,53,21,Palettes de France
+REF-1015,Caisse plastique pliable,A04-01-08,52,53,22/10/2026,15,60,13,7,RAJA Pro
+REF-1082,Carton déménagement standard,A11-03-03,22,22,16/11/2026,15,75,35,21,Manutan Collectivités
+REF-1030,Mousse calage 10mm,A07-01-07,14,14,17/10/2026,10,40,5,7,Raja SAS
+REF-1035,Film thermorétractable,A12-01-04,37,38,21/10/2026,20,80,11,5,RAJA Pro
+REF-1086,Gants cuir manutention,A03-02-07,119,119,15/10/2026,15,60,0,5,EPI Services Nord
+REF-1031,Papier kraft 70g rouleau,A08-02-08,59,60,10/11/2026,15,75,12,5,Antalis Emballage
+REF-1047,Barrière de sécurité pliable,A12-03-08,55,55,18/11/2026,15,90,12,7,Logistipack SARL
+REF-1064,Bac plastique 400x300,A05-05-01,0,0,13/11/2026,10,50,37,14,Distripack France
+REF-1021,Sac poubelle industriel 110L,A10-02-06,44,45,11/10/2026,20,120,8,7,Antalis Emballage
+REF-1080,Mousse calage 10mm,A09-01-01,16,16,13/11/2026,15,75,43,10,Raja SAS
+REF-1044,Ficelle sisal 100m,A09-05-05,24,25,11/10/2026,15,75,14,5,Distripack France
+REF-1013,Bac plastique 600x400,A02-04-06,40,40,05/11/2026,30,150,11,14,Cora Emballage
+REF-1020,Sac kraft 25kg,A09-01-05,40,39,18/11/2026,20,80,18,5,Raja SAS
+REF-1024,Chariot manutention 2 roues,A01-05-01,32,32,18/10/2026,15,60,14,3,Distripack France
+REF-1016,Étiquette thermique 100x150,A05-02-01,144,145,18/10/2026,50,250,19,5,EPI Services Nord
+REF-1065,Caisse plastique pliable,A06-01-02,0,0,09/11/2026,10,50,36,14,RAJA Pro
+REF-1011,Sangle arrimage 5m,A12-02-04,48,47,01/11/2026,15,90,7,10,Antalis Emballage
+REF-1067,Étiquette thermique 60x40,A08-03-04,0,0,08/11/2026,10,50,31,7,Logistipack SARL
+REF-1054,Film étirable 500mm,A07-05-07,27,27,18/11/2026,20,80,18,7,Distripack France
+REF-1095,Agrafes pour cercleuse,A12-01-08,95,75,15/11/2026,20,100,15,5,RAJA Pro
+REF-1041,Flacon gel hydroalcoolique 500ml,A06-02-02,54,54,15/11/2026,15,60,13,3,Antalis Emballage
+REF-1005,Gants nitrile taille M,A06-01-06,38,37,12/11/2026,15,60,6,3,RAJA Pro
+REF-1060,Ruban adhésif PVC 50mm,A01-01-05,0,0,07/11/2026,10,50,35,7,Raja SAS
+REF-1066,Étiquette thermique 100x150,A07-02-03,0,0,13/11/2026,15,75,36,7,EPI Services Nord
+REF-1036,Gants cuir manutention,A01-02-05,28,28,14/11/2026,15,75,9,10,EPI Services Nord
+REF-1037,Chaussures sécurité S3 T42,A02-03-06,57,57,13/11/2026,30,180,6,14,Logistipack SARL
+REF-1089,Gilet haute visibilité,A06-05-02,105,105,04/11/2026,15,60,0,5,Protec Industrie
+REF-1001,Carton ondulé 60x40x40,A02-02-02,46,45,16/11/2026,10,60,5,14,Antalis Emballage
+REF-1081,Papier kraft 70g rouleau,A10-02-02,18,18,12/11/2026,15,75,51,14,Antalis Emballage
+REF-1039,Gilet haute visibilité,A04-05-08,24,24,20/10/2026,10,40,5,10,Protec Industrie
+REF-1094,Ficelle sisal 100m,A11-05-07,111,141,14/11/2026,30,150,13,7,Distripack France
+REF-1029,Boucle cerclage métal,A06-05-06,110,110,14/11/2026,50,300,42,5,Protec Industrie
+REF-1083,Étui carton renforcé,A12-04-04,28,28,19/11/2026,20,100,50,21,Cora Emballage
+REF-1010,Ruban adhésif PVC 50mm,A11-01-03,48,49,09/10/2026,20,100,13,3,Raja SAS
+REF-1046,Ruban signalétique sol,A11-02-07,48,48,24/10/2026,20,100,15,5,EPI Services Nord
+REF-1025,Transpalette manuel 2T,A02-01-02,20,21,08/11/2026,10,60,6,10,RAJA Pro
+REF-1051,Carton ondulé 60x40x40,A04-02-04,221,221,11/11/2026,50,250,11,5,Antalis Emballage
+REF-1063,Bac plastique 600x400,A04-04-08,0,0,08/11/2026,10,50,35,5,Cora Emballage
+REF-1091,Flacon gel hydroalcoolique 500ml,A08-02-04,94,94,11/10/2026,15,60,4,10,Antalis Emballage
+REF-1043,Sac à gravats 50L,A08-04-04,99,99,06/10/2026,50,200,9,14,Cora Emballage
+REF-1075,Transpalette manuel 2T,A04-01-04,22,22,04/11/2026,30,150,13,10,RAJA Pro
+REF-1003,Film étirable 450mm,A04-04-04,191,190,12/10/2026,50,200,31,5,Cora Emballage
+REF-1070,Sac kraft 25kg,A11-01-07,19,19,01/11/2026,20,100,18,5,Raja SAS
+REF-1055,Gants nitrile taille M,A08-01-08,62,61,14/10/2026,20,80,13,5,RAJA Pro
+REF-1034,Palette plastique 100x120,A11-05-03,45,45,24/10/2026,30,180,26,3,Distripack France
+REF-1071,Sac poubelle industriel 110L,A12-02-08,23,23,01/11/2026,40,200,33,7,Antalis Emballage
+REF-1062,Housse plastique palette,A03-03-07,0,0,12/11/2026,20,100,37,7,Manutan Collectivités
+REF-1028,Cerclage polypropylène,A05-04-05,63,63,17/11/2026,30,120,12,3,Palettes de France
+REF-1096,Ruban signalétique sol,A01-02-01,58,38,18/11/2026,20,100,20,5,EPI Services Nord
+REF-1068,Rouleau papier bulle 1m,A09-04-05,9,9,31/10/2026,30,150,12,7,Palettes de France
+REF-1085,Film thermorétractable,A02-01-06,11,11,17/11/2026,10,50,30,10,RAJA Pro
+REF-1084,Palette plastique 100x120,A01-05-05,23,23,08/11/2026,10,50,39,21,Distripack France
+REF-1038,Chaussures sécurité S3 T43,A03-04-07,43,43,24/10/2026,15,60,12,10,Palettes de France
+REF-1045,Agrafes pour cercleuse,A10-01-06,17,18,16/10/2026,10,60,8,14,RAJA Pro
+REF-1000,Carton ondulé 40x30x20,A01-01-01,35,35,10/11/2026,10,40,7,5,Raja SAS
+REF-1061,Sangle arrimage 5m,A02-02-06,0,0,07/11/2026,10,50,15,10,Antalis Emballage
+REF-1048,Extincteur poudre 6kg,A01-04-01,176,177,05/11/2026,30,180,8,3,Palettes de France
+REF-1073,Scotch emballage transparent,A02-04-02,1,0,28/10/2026,40,200,26,10,Cora Emballage
+REF-1002,Palette bois EPAL 120x80,A03-03-03,18,19,17/11/2026,10,40,6,14,Manutan Collectivités
+REF-1074,Chariot manutention 2 roues,A03-05-03,12,11,10/11/2026,20,100,23,5,Distripack France
+REF-1099,Trousse premiers secours,A04-05-04,94,79,19/11/2026,20,100,9,5,Protec Industrie
+REF-1098,Extincteur poudre 6kg,A03-04-03,65,77,17/11/2026,15,75,12,5,Palettes de France
+REF-1026,Diable pliant alu,A03-02-03,99,100,05/10/2026,20,120,18,5,EPI Services Nord
+REF-1007,Casque anti-bruit SNR 30,A08-03-08,102,102,13/10/2026,30,120,14,14,Logistipack SARL
+REF-1093,Sac à gravats 50L,A10-04-06,88,88,11/10/2026,15,60,6,10,Cora Emballage
+REF-1059,Ruban adhésif PP 50mm,A12-05-04,47,47,03/11/2026,10,50,8,14,Protec Industrie
+REF-1069,Coin de protection carton,A10-05-06,35,35,12/11/2026,40,200,20,5,Protec Industrie
+REF-1042,Essuie-tout industriel,A07-03-03,42,42,15/11/2026,10,60,9,14,Manutan Collectivités
+REF-1052,Palette bois EPAL 120x80,A05-03-05,47,47,11/10/2026,10,60,6,7,Manutan Collectivités
+REF-1053,Film étirable 450mm,A06-04-06,60,61,18/10/2026,15,90,8,7,Cora Emballage
+REF-1008,Lunettes de protection EPI,A09-04-01,25,25,13/11/2026,15,90,5,5,Palettes de France
+REF-1027,Housse de protection moto,A04-03-04,56,55,16/10/2026,15,90,11,7,Logistipack SARL
+REF-1090,Masque FFP2,A07-01-03,144,144,25/09/2026,20,80,3,5,Raja SAS
+REF-1019,Coin de protection carton,A08-05-04,81,81,08/10/2026,50,200,48,14,Protec Industrie
+REF-1088,Chaussures sécurité S3 T43,A05-04-01,105,105,20/10/2026,10,40,0,10,Palettes de France
+REF-1049,Trousse premiers secours,A02-05-02,85,85,26/10/2026,50,250,27,3,Protec Industrie

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T19:05:25+01:00",
+ "updated": "2026-11-23T07:39:16+01:00",
  "tasks": [
   {
    "id": "T-01",
@@ -21,10 +21,10 @@
   {
    "id": "T-02",
    "title": "Capture des gains Whop (clipping)",
-   "purpose": "Mesure exp-01 : on ne garde le clipping que s'il paie vraiment.",
+   "purpose": "Mesure exp-01. J'ai deja sorti les vues de ta base clipping tout seul (99 clips, 39 482 vues, 9 seulement au-dessus de 1 000 vues). Il ne me manque que ce qui n'existe pas dans la base : les euros reellement payes et le taux d'approbation.",
    "steps": [
-    "Whop > Content Rewards > gains",
-    "Capture d'écran des gains et des clips approuvés/refusés"
+    "Whop > Content Rewards > gains : capture de l'ecran des gains",
+    "Capture du nombre de clips approuves / refuses"
    ],
    "est_minutes": 5,
    "deliverable": "une capture d'écran chaque dimanche jusqu'au 06/12",
@@ -68,12 +68,15 @@
    ],
    "est_minutes": 10,
    "deliverable": "verdict actif/mort pour chaque groupe regardé, en réponse à ce message",
-   "status": "open",
+   "status": "done",
    "created": "2026-11-22T19:10:00+01:00",
    "telegram_message_id": 15,
    "blocks": [
     "exp-03-skills-gumroad"
-   ]
+   ],
+   "done_at": "2026-11-23T08:10:00+01:00",
+   "reply": "Annulee par le directeur le 23/11 avant reponse : la recherche a trouve mieux que les groupes LinkedIn/Facebook FR. r/supplychain (118k membres, persona exact), r/excel (902k) et r/n8n (262k) sont verifies actifs. Ne cherche pas les groupes FR, voir T-06.",
+   "hours_spent": 0
   },
   {
    "id": "T-04",
@@ -90,6 +93,24 @@
    "telegram_message_id": 12,
    "blocks": [
     "exp-02-comeup-gigs"
+   ]
+  },
+  {
+   "id": "T-06",
+   "title": "Reddit : 3 verifications rapides (diffusion exp-03)",
+   "purpose": "Diffusion exp-03. J'ai trouve les bons canaux (r/supplychain 118k membres au persona exact, r/excel 902k, r/n8n 262k) mais reddit.com bloque mes outils : je ne peux lire ni les regles ni ton compte. Sans ca, un post part a la poubelle en 10 minutes et le test n'est pas mesurable. Ca remplace T-05 (laisse tomber les groupes LinkedIn/Facebook, j'ai trouve mieux).",
+   "steps": [
+    "As-tu un compte Reddit ? Si oui, depuis combien de temps et combien de karma environ (visible sur ton profil) ? Si non, dis-le : on ne cree pas un compte neuf pour poster, ca se fait supprimer.",
+    "Ouvre https://www.reddit.com/r/supplychain/about/rules (et le wiki s'il y en a un) : copie-moi la regle sur l'autopromotion / le partage d'outils, mot pour mot.",
+    "Ouvre r/InventoryManagement et r/Warehousing : date du dernier post et nombre de commentaires sur les 3 derniers. Actif ou mort ?"
+   ],
+   "est_minutes": 8,
+   "deliverable": "3 reponses courtes en reponse a ce message (dont la regle copiee-collee)",
+   "status": "open",
+   "created": "2026-11-23T08:10:00+01:00",
+   "telegram_message_id": 18,
+   "blocks": [
+    "exp-03-skills-gumroad"
    ]
   }
  ]

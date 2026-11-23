@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T13:09:48+01:00",
+ "updated": "2026-11-23T07:38:26+01:00",
  "approvals": [
   {
    "id": "A-01",
@@ -36,6 +36,18 @@
    "status": "pending",
    "created": "2026-11-22T13:20:00+01:00",
    "telegram_message_id": 13,
+   "acted_on": true,
+   "acted_note": "23/11 : question mal posee, remplacee par A-04. Seule la precommande payante exige la micro-entreprise ; la liste d'attente gratuite n'exige ni paiement ni statut. A-03 n'est pas renvoyee sur Telegram (le bot ne renvoie pas un message deja envoye) ; si Baptiste y repond oui, c'est pris en compte et ca debloque aussi exp-02."
+  },
+  {
+   "id": "A-04",
+   "question": "Oublie ma question d'hier (A-03), je l'avais mal posee. Version sans engagement : je publie sur ton Gumroad un produit GRATUIT a 0 EUR -- l'assistant \"Rapport de stock\" que je viens de construire pour de vrai (il tourne, j'ai la sortie), offert contre un email, avec la page qui annonce le pack complet pour plus tard. Aucun paiement encaisse, donc aucune micro-entreprise necessaire. Tu as juste a creer le produit et coller mon texte (~15 min, je te donne le pas-a-pas). On y va ?",
+   "recommendation": "yes",
+   "reason": "Ca mesure la demande sans engager ton nom sur une vente ni creer de statut : c'est exactement ta regle du 22/11 (le statut quand il devient indispensable). Seuil exp-03 : 30 inscrits avant le 20/12, sinon on tue le test. Pour information, sans rien te demander de plus : mes 3 meilleures pistes (ComeUp 30/35, Google Business Profile 30/35, Codeur.com 29/35) exigent toutes la micro-entreprise pour facturer, et la seule route sans statut que j'ai mesuree ce matin (le clipping) plafonne a ~31 EUR -- il faudrait x30 le volume. Le statut sera donc la vraie decision quand cette page aura prouve de la demande.",
+   "cost_eur": 0,
+   "status": "pending",
+   "created": "2026-11-23T08:05:00+01:00",
+   "telegram_message_id": 17,
    "acted_on": false
   }
  ]

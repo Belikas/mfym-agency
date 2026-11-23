@@ -1,0 +1,2 @@
+sku,desc,loc,qty_theo,qty_physical,inv_date,min_qty,max_qty,sales_30d,lead_time,supplier
+REF-C,Test,A01,5,5,01/01/2026,10,50,3,7,FournA

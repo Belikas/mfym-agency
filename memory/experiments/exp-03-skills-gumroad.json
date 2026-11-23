@@ -2,7 +2,7 @@
  "id": "exp-03-skills-gumroad",
  "lead_id": "claude-skills-bundle",
  "title": "Gumroad : pré-vente d'un pack de skills Claude Code de niche",
- "hypothesis": "Une page de pré-vente (pack n8n métier FR ou logistique, 29 €) postée dans 3 communautés obtient ≥3 précommandes ou ≥30 inscrits en 14 jours ; sinon on ne construit pas.",
+ "hypothesis": "Une page offrant gratuitement un assistant « rapport de stock » reellement fonctionnel, postee dans r/supplychain / r/excel / r/n8n, obtient >=30 inscrits (ou >=3 precommandes a 19 EUR) avant le 20/12 ; sinon on ne construit pas le reste du pack.",
  "metric": "précommandes + inscrits",
  "threshold": "≥3 précommandes ou ≥30 inscrits en 14 jours après publication ; tuer sous ce seuil",
  "cost_eur": 0,
@@ -10,7 +10,11 @@
  "start": "2026-11-22",
  "kill_date": "2026-12-20",
  "status": "running",
- "blocked_on": [],
+ "blocked_on": [
+  "A-04 : publier la version gratuite sur Gumroad",
+  "T-06 : regles Reddit + compte de Baptiste",
+  "version anglaise de la page et du README (faisable sans Baptiste)"
+ ],
  "results": [
   {
    "date": "2026-11-22",
@@ -27,6 +31,10 @@
   {
    "date": "2026-11-22",
    "note": "Vérification forum.gestconseil.com (run 19h) : mort — le miroir gestconseil.forumactif.com montre 19 membres, 4 messages au total (le site vitrine affichait de faux 'sujets récents'). C'était la seule communauté candidate à viser vraiment le persona logistique : elle ne vaut pas la diffusion. Alternatives cherchées : forum.logistiqueconseil.org (erreur serveur, abandonné), FNTR (syndicat, pas un forum ouvert), groupes LinkedIn/Facebook transport FR repérés mais invérifiables sans compte (auth bloque le scraping). Conséquence : aucun canal prouvé qui touche le persona cible pour l'instant ; cc-france.org/devw.ai/rucheia.fr restent les seuls canaux dispo mais ne touchent que des devs, pas des logisticiens. Tâche T-05 envoyée à Baptiste pour vérifier manuellement 2-3 groupes LinkedIn/Facebook transport FR."
+  },
+  {
+   "date": "2026-11-23",
+   "note": "Run 07:30. (1) PIVOT DE L'OFFRE : le 1er assistant du pack (« rapport de stock ») est construit POUR DE VRAI -> livrables/gumroad/skill-rapport-de-stock/ (SKILL.md au format standard, scripts/rapport_stock.py stdlib avec auto-test, exemple-export-wms.csv de 100 lignes, sortie-reelle.md reellement generee, README 4 etapes). La page ne montre plus un exemple fictif mais la sortie reelle, et l'inscription gratuite donne l'assistant immediatement. L'offre passe de « precommande un produit qui n'existe pas » a « prends le 1er assistant gratuitement, precommande le pack ». Critique page+skill lancee (livrables/gumroad/critique-page-et-skill-1.json). (2) CANAL TROUVE : memory/benchmarks/canaux-diffusion-logistique.md, 30+ candidats dans 8+ categories. r/supplychain 118k membres (persona 5/5, actif, autopromo possible apres accord modmail), r/excel 902k (angle « j'ai automatise mon suivi de stock »), r/n8n 262k (partage gratuit tolere via le flair « Workflow - GitHub Included »). r/logistics = canal d'ecoute (anti-pub + faible engagement). AUCUN forum francophone actif n'existe (faq-logistique.com n'a pas de forum, actu-transport-logistique.fr seulement des commentaires d'articles) : la recherche de canaux FR est closed, T-05 annulee. Limite assumee du rapport : reddit.com bloque les outils web de l'agence, verification faite via l'agregateur tiers reddapi.dev -> T-06 envoyee a Baptiste (regles r/supplychain + anciennete de son compte, 8 min). (3) CONSEQUENCE NON RESOLUE : les 3 canaux utilisables sont anglophones alors que la page et le skill sont en francais. Regle du manuel : livrer dans la langue du marche cible. Il faut une version anglaise de la page et du README avant de diffuser -> premiere tache du prochain run. (4) A-03 remplacee par A-04 : publier la version gratuite ne demande ni paiement ni micro-entreprise."
   }
  ],
  "owner_agent": "atelier"
