@@ -62,7 +62,7 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
-   "current_task": "aucune (disponible)",
+   "current_task": "Notation finale exp-03 : publiable ou non, justesse metier, ecarts restants",
    "last_run": "2026-11-23T08:20:00+01:00",
    "last_result": "23/11 passe 3 : a_corriger, publiable=false. Troisieme passe de suite ou il trouve un defaut reel invisible dans la grille, en inventant ses propres cas. A tranche par test la question que je lui ai soumise : colonne dupliquee = bloquant (rapport faux en silence), format des milliers FR = mineur a juste titre. Agent le plus utile de la journee."
   },
@@ -103,9 +103,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "Passe 4 (derniere) exp-03 : colonne dupliquee, filet d'ecriture, ligne manquante, ligne 3",
+   "current_task": "aucune (disponible) ; prochain chantier : version anglaise de la page et du README",
    "last_run": "2026-11-23T08:20:00+01:00",
-   "last_result": "23/11 passe 3 : cause racine traitee (garde-fou unique a la lecture : binaire, encodage, separateur ; filet dans run.py), ligne 3 reecrite, 4 ecarts importants corriges, 7 cas limites a l'auto-test. 3 mineurs signales et laisses."
+   "last_result": "23/11 passe 4 : les 2 bloquants traites a la source (en-tetes en double detectes avant construction, bloc d'erreur dedie a l'ecriture), 9 cas limites a l'auto-test, aucune regression. A signale de lui-meme ce qu'il laissait de cote et pourquoi -- dont un trou reel dans le README que j'ai comble moi-meme."
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Pack Claude Code pour la logistique — liste d'attente / précommande
 
-*(Page de pré-vente. Le pack complet n'est pas encore livrable — mais l'assistant Rapport de stock, lui, l'est : il est offert immédiatement à l'inscription, voir plus bas. Voir section "C'est une pré-vente, pas un achat classique" avant de vous engager.)*
+*(L'assistant Rapport de stock est déjà terminé et offert dès l'inscription, voir plus bas. Le reste du pack est en pré-vente, décision le 20 décembre 2026.)*
 
 ## Claude Code pour la logistique : un rapport de stock lisible en quelques minutes, pas une ressaisie à la main
 

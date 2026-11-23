@@ -3,8 +3,11 @@ import datetime
 import sys
 from pathlib import Path
 
+sys.stdout.reconfigure(encoding="utf-8")
+
 sys.path.insert(0, str(Path(__file__).parent / "scripts"))
 from rapport_stock import (  # noqa: E402
+    ColonneDupliquee,
     ColonnesManquantes,
     FichierIllisible,
     analyser_export,
@@ -22,7 +25,7 @@ def main() -> None:
 
     try:
         lignes, lignes_ignorees = analyser_export(chemin_csv)
-    except (ColonnesManquantes, FichierIllisible) as e:
+    except (ColonnesManquantes, FichierIllisible, ColonneDupliquee) as e:
         print(f"Erreur : {e}")
         sys.exit(1)
     except Exception as e:
@@ -34,7 +37,15 @@ def main() -> None:
     date_generation = datetime.date.today().strftime("%d/%m/%Y")
     rapport = generer_rapport_markdown(lignes, Path(chemin_csv).name, date_generation, lignes_ignorees)
 
-    Path(chemin_sortie).write_text(rapport, encoding="utf-8")
+    try:
+        Path(chemin_sortie).write_text(rapport, encoding="utf-8")
+    except Exception as e:
+        print(f"Erreur : impossible d'écrire le rapport dans {chemin_sortie}. "
+              "Vérifiez qu'il n'est pas ouvert dans Excel, que le dossier "
+              "existe et n'est pas en lecture seule.")
+        print(f"(détail technique : {type(e).__name__}: {e})")
+        sys.exit(1)
+
     print(rapport)
     print(f"\n--- Rapport écrit dans {chemin_sortie} ---")
 

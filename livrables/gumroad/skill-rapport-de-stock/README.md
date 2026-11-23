@@ -42,6 +42,14 @@ le skill se déclenche automatiquement.
   la raison.
 - Le rapport est vide ou faux : vérifiez que les en-têtes de colonnes de
   votre CSV correspondent à ceux listés dans `SKILL.md`.
+- Le script affiche `Erreur : colonne en double : ...` et s'arrête : votre
+  export contient deux fois la même colonne. Le script refuse le fichier au
+  lieu de choisir pour vous, parce qu'il ne peut pas savoir laquelle des deux
+  contient la bonne valeur — et une mauvaise valeur produirait un rapport
+  faux sans le dire. Supprimez la colonne en trop dans Excel, puis relancez.
+- Le script affiche une erreur d'écriture du rapport : le fichier de sortie
+  est probablement encore ouvert dans Excel, ou le dossier est en lecture
+  seule. Fermez le fichier, ou indiquez un autre dossier de sortie.
 - Le script affiche « ce fichier est un classeur Excel, pas un CSV » ou une
   erreur d'encodage : votre fichier n'est pas un CSV texte standard (souvent
   un fichier Excel renommé en `.csv` sans réexport) — dans Excel, faites

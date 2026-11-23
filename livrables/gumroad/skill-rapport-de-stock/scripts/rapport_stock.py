@@ -44,6 +44,19 @@ class FichierIllisible(Exception):
     format ou encodage non reconnu)."""
 
 
+class ColonneDupliquee(Exception):
+    """Levée quand plusieurs en-têtes de l'export désignent la même colonne
+    attendue (même nom en double, ou deux en-têtes qui se normalisent pareil)."""
+
+    def __init__(self, colonne: str, entetes_brutes: list[str]):
+        super().__init__(
+            f"la colonne '{colonne}' apparaît {len(entetes_brutes)} fois dans "
+            f"votre export (en-têtes : {', '.join(entetes_brutes)}).\n"
+            "Impossible de savoir laquelle des deux est la bonne : ouvrez le "
+            "fichier dans Excel, supprimez la colonne en trop, puis relancez."
+        )
+
+
 # ponytail: 2 signatures binaires couvrent le cas le plus courant (Excel
 # renommé en .csv), pas une détection générale de type de fichier.
 _SIGNATURES_BINAIRES = {
@@ -116,10 +129,15 @@ def charger_lignes(chemin_csv: str) -> list[dict]:
     reader = csv.DictReader(io.StringIO(texte), delimiter=delimiteur)
     entetes_brutes = reader.fieldnames or []
     mapping = {}
+    brutes_par_cible: dict[str, list[str]] = {}
     for brute in entetes_brutes:
         normalisee = _normaliser_entete(brute)
         if normalisee in COLONNES_ATTENDUES:
             mapping[brute] = normalisee
+            brutes_par_cible.setdefault(normalisee, []).append(brute)
+    for cible, brutes in brutes_par_cible.items():
+        if len(brutes) > 1:
+            raise ColonneDupliquee(cible, brutes)
     trouvees = sorted(set(mapping.values()))
     if any(c not in trouvees for c in COLONNES_ATTENDUES):
         raise ColonnesManquantes(COLONNES_ATTENDUES, entetes_brutes)
@@ -127,6 +145,12 @@ def charger_lignes(chemin_csv: str) -> list[dict]:
 
 
 def analyser_ligne(row: dict) -> LigneAnalysee:
+    manquantes = [col for col in COLONNES_ATTENDUES if row.get(col) is None]
+    if manquantes:
+        raise ValueError(
+            "colonne(s) manquante(s) en fin de ligne (ligne plus courte que "
+            f"l'en-tête) : {', '.join(manquantes)}"
+        )
     stock_theo = _to_int(row["stock_theorique"], "stock_theorique")
     stock_phys = _to_int(row["stock_physique_inventaire"], "stock_physique_inventaire")
     mini = _to_int(row["stock_mini"], "stock_mini")
@@ -422,7 +446,46 @@ def _demo_autotest() -> None:
         lignes_pv, ignorees_pv = analyser_export(str(chemin))
         assert [l.reference for l in lignes_pv] == ["T-14"] and not ignorees_pv
 
-    print("Auto-test OK : 6 scénarios de classification + 7 cas limites corrects.")
+        # Cas limite 8 : colonne dupliquée après normalisation (même nom, ou
+        # deux en-têtes qui se normalisent pareil) -> erreur claire nommant
+        # la colonne, pas d'écrasement silencieux de la bonne valeur.
+        chemin = Path(tmp) / "doublon.csv"
+        chemin.write_text(
+            "reference,designation,emplacement,stock_theorique,"
+            "stock_physique_inventaire,date_inventaire,stock_mini,stock_maxi,"
+            "sorties_30j,delai_reappro_jours,fournisseur,Stock Théorique\n"
+            "T-15,x,A,999,40,01/01/2026,10,80,10,7,F,0\n",
+            encoding="utf-8",
+        )
+        try:
+            analyser_export(str(chemin))
+            raise AssertionError("ColonneDupliquee attendue, pas levée")
+        except ColonneDupliquee as e:
+            assert "stock_theorique" in str(e)
+
+        # Cas limite 9 : sortie en lecture seule -> run.py doit afficher un
+        # message en français et sortir en code 1, jamais une trace Python.
+        import stat
+        import subprocess
+
+        chemin_entree = Path(tmp) / "ok.csv"
+        chemin_entree.write_text(entetes + "T-16,x,A,40,40,01/01/2026,10,80,10,7,F\n", encoding="utf-8")
+        chemin_sortie = Path(tmp) / "verrouille.md"
+        chemin_sortie.write_text("placeholder", encoding="utf-8")
+        chemin_sortie.chmod(stat.S_IREAD)
+        racine_skill = Path(__file__).resolve().parent.parent
+        try:
+            resultat = subprocess.run(
+                [sys.executable, str(racine_skill / "run.py"), str(chemin_entree), str(chemin_sortie)],
+                capture_output=True, text=True, encoding="utf-8",
+            )
+            assert resultat.returncode == 1
+            assert "Traceback" not in resultat.stdout and "Traceback" not in resultat.stderr
+            assert "impossible d'écrire le rapport" in resultat.stdout
+        finally:
+            chemin_sortie.chmod(stat.S_IWRITE | stat.S_IREAD)
+
+    print("Auto-test OK : 6 scénarios de classification + 9 cas limites corrects.")
 
 
 if __name__ == "__main__":
