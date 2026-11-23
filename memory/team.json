@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T08:20:00+01:00",
+ "updated": "2026-11-23T08:35:00+01:00",
  "agents": [
   {
    "id": "directeur",
@@ -20,7 +20,7 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": "CLAUDE.md",
-   "current_task": "Run 23/11 : A-03 jugée mal posée (la liste d'attente gratuite ne nécessite aucun statut) ; on construit le 1er assistant pour de vrai + on cherche un canal vérifiable",
+   "current_task": "Run 23/11 07:30 termine. Prochain : verdict critique passe 2, puis version anglaise de la page et du README exp-03.",
    "last_run": "2026-11-23T07:38:00+01:00"
   },
   {
@@ -41,8 +41,8 @@
    "hired": "2026-11-22",
    "file": ".claude/agents/chercheur.md",
    "last_run": "2026-11-23T07:38:00+01:00",
-   "last_result": "forum.gestconseil.com confirmé mort (19 membres, 4 messages) ; aucune alternative forum FR transport trouvée avec volume prouvé ; T-05 envoyée à Baptiste pour vérifier LinkedIn/Facebook",
-   "current_task": "2 missions en parallele : (1) canaux de diffusion logistique/supply chain verifiables -> memory/benchmarks/canaux-diffusion-logistique.md ; (2) verification en source primaire des primes bancaires (seule route sans statut juridique) -> memory/benchmarks/primes-bancaires.md"
+   "last_result": "23/11 : 2 missions rendues. Canaux de diffusion (r/supplychain 118k persona 5/5, r/excel 902k, r/n8n 262k ; aucun forum FR actif) et primes bancaires en source primaire (piste 28/med -> 31/high, 4 offres mortes retirees, 2 erreurs du pipeline corrigees). A signale ses propres limites : reddit.com et hellobank.fr bloquent ses outils, verifications faites via tiers et annoncees comme telles.",
+   "current_task": "aucune (disponible)"
   },
   {
    "id": "critique",
@@ -62,7 +62,7 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
-   "current_task": "aucune (disponible)",
+   "current_task": "Passe 2 exp-03 : renoter page + skill, avec ses propres cas limites a inventer",
    "last_run": "2026-11-23T08:20:00+01:00",
    "last_result": "23/11 : page + skill exp-03 notes, verdict a_corriger. A trouve 2 blocages que la grille seule ne voyait pas (contradiction du cadrage ligne 3, plantages sur en-tetes differents) en executant vraiment le code et 3 cas limites. Preuve de sortie verifiee honnete (diff vide)."
   },
@@ -103,9 +103,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "Passe 2 exp-03 : lever les 2 blocages du critique (coherence ligne 3, robustesse du skill)",
+   "current_task": "aucune (disponible) ; prochain chantier : version anglaise de la page et du README",
    "last_run": "2026-11-23T08:20:00+01:00",
-   "last_result": "23/11 : skill rapport-de-stock construit et execute pour de vrai (auto-test OK, sortie generee sur 100 lignes) ; page passee de l'exemple fictif a la sortie reelle. Note 4-5/5 sur la grille mais 3/5 en robustesse : les cas limites n'etaient pas geres."
+   "last_result": "23/11 passe 2 : les 2 blocages du critique leves (cadrage ligne 3, robustesse du skill sur en-tetes inconnus et lignes illisibles), auto-test etendu a 4 cas limites, sortie reelle regeneree."
   }
  ]
 }
