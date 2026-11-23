@@ -58,8 +58,9 @@ défaut) et l'affiche aussi à l'écran.
 - **Surstock** : stock théorique > stock maxi. Sous-catégorie « dormant » si
   0 sortie sur les 30 derniers jours (rotation nulle).
 - **Écart d'inventaire** : écart entre stock théorique et stock physique du
-  dernier inventaire ≥ 10 unités (seuil fixe, à ajuster dans le code si le
-  métier du client a des volumes très différents).
+  dernier inventaire ≥ 10 % du stock théorique (plancher 5 unités pour les
+  petites quantités), pour éviter une fausse alerte sur une référence à forte
+  rotation et un silence sur une référence critique à faible stock.
 
 ## Vérifier que la logique n'a pas régressé
 

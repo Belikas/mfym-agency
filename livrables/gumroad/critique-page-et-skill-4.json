@@ -1,0 +1,92 @@
+{
+  "scores": {
+    "precision_de_niche": {
+      "note": 5,
+      "justification": "Inchangé depuis les passes 1-3 : public nommé en une phrase, un seul problème — toujours au niveau 5, rien dans cette passe ne le remet en cause."
+    },
+    "utilite_immediate": {
+      "note": 4,
+      "justification": "Inchangé : un seul assistant sur 4-6 visés existe réellement, testable en <5 min sur un cas réel — toujours pas le niveau 5 tant que le reste du pack n'existe pas."
+    },
+    "qualite_technique": {
+      "note": 4,
+      "justification": "Les 2 bloquants de la passe 3 sont corrigés à la source et vérifiés par moi avec des cas que j'ai inventés (colonne dupliquée sur 'sorties_30j' via 2 orthographes différentes, et 3e cas avec une colonne non mappée dupliquée qui ne déclenche pas de faux positif ; écriture dans un dossier inexistant → message FR propre, exit 1, aucune trace Python). La ligne tronquée en fin de ligne (gap important passe 3) est aussi corrigée : ignorée avec raison explicite, plus de 'None' littéral. Pas 5/5 : j'ai trouvé un défaut neuf (voir gaps) — le seuil d'écart d'inventaire est une constante globale en unités absolues alors que mini/maxi sont par référence, ce qui casse la cohérence de conception du reste du script ; et le mineur des espaces milliers ('1 234') reste non traité (mais toujours ignoré honnêtement, pas de régression)."
+    },
+    "differenciation_vs_gratuit": {
+      "note": 4,
+      "justification": "Inchangé : comparaison nommée à 2 packs gratuits, raison claire, gain de temps toujours qualifié 'non vérifié' — rien de nouveau testé sur ce critère dans cette passe."
+    },
+    "preuve": {
+      "note": 4,
+      "justification": "Revérifié une 4e fois : `python run.py exemple-export-wms.csv` produit un fichier identique (diff vide) à sortie-reelle.md. Toujours aucune capture d'écran/GIF, donc pas le niveau 5."
+    },
+    "clarte_de_la_page": {
+      "note": 4,
+      "justification": "La phrase d'ouverture (ligne 3), signalée en passe 3 comme trop chargée, est maintenant coupée en deux phrases simples sans tiret ni deux-points — corrigé, vérifié par lecture. Tous les éléments explicites de la grille sont présents (pour qui/pas pour qui, liste chiffrée, installation en 4 étapes, 5 questions de FAQ, remboursement daté 14 j, licence). Reste au niveau des meilleures références (4/5) et pas au-dessus : le paragraphe 'Pourquoi pas un pack gratuit ?' (ligne 25) est une phrase unique à plusieurs clauses, dense, qui ralentit un lecteur qui scanne — aucune des 2 meilleures pages du benchmark (Mastery, Power User) n'a un paragraphe aussi long d'un seul bloc à cet endroit stratégique."
+    },
+    "honnetete_confiance": {
+      "note": 5,
+      "justification": "Inchangé et toujours vérifié : aucun chiffre inventé, kill-date et remboursement datés, limites dites. Le défaut de seuil métier trouvé dans cette passe (voir gaps) est documenté dans SKILL.md comme un paramètre ajustable, pas caché comme un fait acquis — ça reste de l'honnêteté, pas une promesse non tenue. Toujours au-dessus des références du benchmark sur ce point."
+    },
+    "installation_et_support": {
+      "note": 5,
+      "justification": "Progrès vérifié depuis la passe 3 : le README documente maintenant explicitement l'erreur de colonne en double et l'erreur d'écriture du rapport (lecture seule / dossier verrouillé), en plus des cas déjà couverts (encodage, binaire, colonne manquante). Testé par moi sur un cas neuf (dossier de sortie inexistant) : message clair, pas de trace Python. Aucune des 10 références du benchmark ne documente un niveau de cas d'erreur comparable (la plupart n'ont qu'un INSTALL.md simple) : au-dessus des références sur ce critère précis."
+    }
+  },
+  "points_specifiques_demandes": {
+    "bloquant_1_colonne_dupliquee_corrige_a_la_source": {
+      "note": 5,
+      "verifie": true,
+      "justification": "Vérifié par exécution avec 2 cas inventés, différents de ceux de la passe 3 (qui testait 'stock_theorique' en double) : (a) 'sorties_30j' dupliqué sous 2 orthographes ('Sorties_30j' / 'sorties_30J') → erreur ColonneDupliquee nommant la colonne en cause, refus du fichier, exit 1 ; (b) 'stock_mini' dupliqué ('stock_mini' / 'STOCK MINI') en même temps qu'une colonne NON mappée ('Commentaire') dupliquée deux fois → seule la colonne mappée dupliquée déclenche l'erreur (pas de faux positif sur une colonne hors grille). La correction est bien à la source (détection dans charger_lignes() avant construction des lignes), pas un contournement du cas précis de la passe 3."
+    },
+    "bloquant_2_ecriture_sortie_corrige_a_la_source": {
+      "note": 5,
+      "verifie": true,
+      "justification": "Vérifié par exécution avec un cas neuf, différent du test de lecture-seule déjà écrit par l'atelier : écriture vers un dossier inexistant (_critique4_tmp/dossier_inexistant/out.md). Résultat : message français propre ('impossible d'écrire le rapport dans ... vérifiez que le dossier existe et n'est pas en lecture seule'), détail technique en 2e ligne, exit code 1, aucune trace Python dans stdout/stderr. L'écriture est maintenant dans son propre bloc try/except séparé de la lecture, comme demandé — correction à la source confirmée, pas seulement le cas exact déjà testé par l'atelier."
+    },
+    "justesse_metier_des_seuils": {
+      "note": 2,
+      "justification": "Rupture (stock théorique ≤ 0) et sous-seuil (≤ stock_mini, champ fourni par le client) sont des règles standard correctes. Mais le seuil d'écart d'inventaire (10 unités absolues, fixe) est démontré faux par exécution sur 2 cas que j'ai construits dans le même fichier : une référence à forte rotation (théorique 5000, physique 4990, écart de 10 unités = 0,2 % du stock) est signalée comme 'écart significatif à vérifier' — fausse alerte sur un cas normal (bruit de comptage) — tandis qu'une référence à faible stock et délai long (théorique 20, physique 11, écart de 9 unités = 45 % du stock, délai réappro 20 j) n'est signalée NULLE PART (ni écart, ni sous-seuil, ni à surveiller) — silence sur un cas grave. C'est exactement l'inversion de gravité décrite dans la consigne : le seuil devrait être relatif (% du stock théorique ou de la rotation), pas une constante absolue en unités, alors que mini/maxi sont eux bien pensés par référence. Deuxième défaut annexe trouvé : 'surstock_dormant' (0 sortie sur 30 jours) qualifie de 'dormant' une référence à peine au-dessus du maxi dès le 1er mois sans vente — les règles usuelles de stock mort/obsolète demandent généralement 60-90 j+ sans mouvement avant ce qualificatif, pas 30 j."
+    }
+  },
+  "gaps": [
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 18,
+      "probleme": "Vérifié par exécution (cas inventés pour cette passe, hors des tests déjà écrits par l'atelier) : ECART_SIGNIFICATIF_UNITES = 10 est une constante absolue globale, alors que stock_mini/stock_maxi sont lus par référence depuis l'export du client. Résultat démontré : théorique 5000 / physique 4990 (écart 10, soit 0,2 %) est signalé comme écart significatif (fausse alerte) ; théorique 20 / physique 11 (écart 9, soit 45 %, sur une référence à délai réappro de 20 j) n'est signalé dans AUCUNE section du rapport (silence sur un cas grave). Un gestionnaire de stock qui suit ce rapport ira vérifier une référence sans problème et ignorera une vraie anomalie sur une pièce critique.",
+      "correction_qui_ferait_gagner_1_point": "Remplacer le seuil absolu par un seuil relatif (ex. abs(ecart) >= max(5, round(0.05 * stock_theorique)) ou un pourcentage simple du stock théorique), cohérent avec le fait que mini/maxi sont déjà par référence."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 187,
+      "probleme": "Vérifié par exécution : une référence juste au-dessus du maxi (ex. stock 101 / maxi 100) avec 0 sortie sur les 30 derniers jours est classée 'surstock_dormant', un terme qui évoque un stock mort/obsolète alors qu'un seul mois sans vente (ex. réassort récent sur un produit à rotation lente) ne suffit pas à l'établir selon les pratiques usuelles de gestion de stock (généralement 60-90 j+).",
+      "correction_qui_ferait_gagner_1_point": "Renommer la catégorie en quelque chose de moins définitif ('surstock sans sortie récente') ou exiger une fenêtre de rotation plus longue (ex. un champ sorties_90j) avant de qualifier 'dormant'."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/presell-logistique.md",
+      "ligne": 25,
+      "probleme": "Revérifié : le paragraphe 'Pourquoi pas un pack gratuit ?' est une phrase unique très longue à plusieurs clauses (liste de ce que les packs gratuits n'ont pas, suivie d'une comparaison de prix, suivie d'une estimation de temps) — ralentit un lecteur qui scanne, contrairement au reste de la page qui a été nettoyé passe après passe.",
+      "correction_qui_ferait_gagner_1_point": "Couper ce paragraphe en 2-3 phrases courtes : ce que le gratuit couvre, ce qu'il n'a pas, puis l'estimation de gain de temps à part."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 117,
+      "probleme": "Revérifié, inchangé depuis la passe 3 : '1 234' (séparateur de milliers français, espace normale) n'est pas reconnu comme nombre et fait ignorer la ligne proprement (raison affichée dans le rapport), pas une lecture silencieusement fausse. Toujours mineur car l'échec reste honnête et visible.",
+      "correction_qui_ferait_gagner_1_point": "Dans _to_int, retirer aussi les espaces normales et insécables avant conversion."
+    }
+  ],
+  "verdict": "a_corriger",
+  "publiable": false,
+  "publiable_justification": "C'est la dernière passe possible, donc ce verdict est définitif pour cette version : il n'y a plus de bloquant technique (les 2 défauts de corruption silencieuse et de trace Python de la passe 3 sont corrigés à la source et vérifiés par moi avec des cas neufs, pas de simple rejouage). Mais la justesse métier demandée explicitement pour cette notation finale révèle un défaut réel et démontré du même type que ceux déjà corrigés : un rapport qui se présente comme fiable peut, sur un cas que j'ai reproduit, déclencher une fausse alerte sur une référence saine à forte rotation et rester totalement silencieux sur une référence critique à 45 % d'écart avec un délai de réappro de 20 jours. C'est exactement le risque que la page vend comme résolu ('vous gardez la décision', rapport exploitable sans ressaisie). Comme il n'y aura pas de passe 5, je recommande de publier uniquement si Baptiste accepte explicitement ce compromis en connaissance de cause (ex. ajuster le seuil en 10 minutes avant publication serait la correction la plus rentable, ou a minima documenter la limite dans la page de vente elle-même et pas seulement dans SKILL.md) — sinon le verdict reste a_corriger/non publiable en l'état.",
+  "ecarts_restants": [
+    "Seuil d'écart d'inventaire absolu (10 unités) et non relatif au volume de la référence : fausse alerte démontrée sur une référence à forte rotation (5000/4990), silence démontré sur une référence critique à 45 % d'écart (20/11, délai 20 j). Non corrigé dans cette passe car hors du périmètre des 2 bloquants de la passe 3 ; disclosure existante seulement dans SKILL.md ('seuil fixe, à ajuster'), pas dans la page de vente.",
+    "'surstock_dormant' qualifie de dormant une référence dès 30 jours sans sortie, plus strict que les pratiques usuelles (60-90 j+) : risque de faire traiter comme stock mort une référence simplement en rotation lente ou récemment réapprovisionnée.",
+    "Format français des milliers ('1 234') toujours ignoré (ligne honnêtement signalée, pas de données fausses) plutôt qu'accepté — connu depuis la passe 3, non corrigé.",
+    "Le paragraphe 'Pourquoi pas un pack gratuit ?' de la page de précommande reste une phrase dense à plusieurs clauses, en dessous du niveau de concision déjà atteint ailleurs sur la page après 3 passes de correction.",
+    "Aucune capture d'écran ni démo visuelle du rapport sur la page de précommande (uniquement la ligne de résumé citée en texte) — toutes les meilleures références du benchmark à ce niveau de qualité en ont une."
+  ]
+}

@@ -62,8 +62,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
-   "current_task": "Notation finale exp-03 : publiable ou non, justesse metier, ecarts restants",
-   "last_run": "2026-11-23T08:20:00+01:00",
+   "current_task": "aucune (disponible)",
+   "last_run": "2026-11-23T13:19:00+01:00",
+   "last_result": "23/11 : traduction EN notee ok/publiable=true, aucune derive de fait (prix, dates, delais identiques). 1 gap important non bloquant : la limite 'sortie en francais' manquait dans 'Who it's not for' -- ajoutee directement par le directeur (1 ligne, pas une nouvelle passe). exp-03 (FR+EN) est maintenant entierement publiable techniquement.",
    "last_result": "23/11 passe 3 : a_corriger, publiable=false. Troisieme passe de suite ou il trouve un defaut reel invisible dans la grille, en inventant ses propres cas. A tranche par test la question que je lui ai soumise : colonne dupliquee = bloquant (rapport faux en silence), format des milliers FR = mineur a juste titre. Agent le plus utile de la journee."
   },
   {
@@ -83,8 +84,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/redacteur.md",
-   "current_task": "exp-03 : page de pré-vente niche logistique (livrables/gumroad/presell-logistique.md)",
-   "last_run": "2026-11-22T13:05:00+01:00"
+   "current_task": "aucune (disponible)",
+   "last_run": "2026-11-23T13:20:00+01:00",
+   "last_result": "23/11 : traductions anglaises de la page et du README exp-03 livrees (presell-logistique-en.md, README-en.md), faits/prix/dates preserves. A signale de lui-meme une limite reelle a rendre visible : l'interface du skill (messages d'erreur, en-tetes) reste en francais alors que le public cible est anglophone -- ajoute une note explicite plutot que de la cacher."
   },
   {
    "id": "atelier",

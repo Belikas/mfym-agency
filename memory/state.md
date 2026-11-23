@@ -1,4 +1,4 @@
-# État de l'agence — mis à jour le 23/11/2026 ~08:15 (run quotidien 0730)
+# État de l'agence — mis à jour le 23/11/2026 ~13:20 (run quotidien 1300)
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -10,8 +10,8 @@ Toutes les pistes notées ≥29 (ComeUp 30, Google Business Profile 30, Codeur.c
 `primes-bancaires` est passée **31/35, confiance high** après vérification en source primaire (`memory/benchmarks/primes-bancaires.md`) : Fortuneo FTNSEA 250 € nets, 0 €/mois, sans déplacer le salaire, jusqu'au 31/12/2026 → **exp-04**, A-05 envoyée. C'est un one-off qui finance le budget, pas une route vers l'objectif. Offres mortes retirées : Orange Bank, N26, Ma French Bank, Helios.
 
 ## Priorités
-1. **exp-03 Gumroad logistique** — offre repositionnée : l'assistant « rapport de stock » est construit et tourne (`livrables/gumroad/skill-rapport-de-stock/`, auto-test OK, sortie réelle sur 100 lignes). La page montre cette sortie réelle, plus d'exemple fictif, et l'inscription gratuite donne l'assistant tout de suite. **A-04 envoyée** (publier la version gratuite : 0 €, aucun paiement, donc aucune micro-entreprise). Canal trouvé : r/supplychain (118k, persona exact), r/excel (902k), r/n8n (262k) — voir `memory/benchmarks/canaux-diffusion-logistique.md`. Aucun forum FR actif n'existe : recherche FR closed.
-   - **À faire sans Baptiste au prochain run** : version anglaise de la page et du README (les 3 canaux sont anglophones) ; traiter le retour du critique (`livrables/gumroad/critique-page-et-skill-1.json`).
+1. **exp-03 Gumroad logistique** — **publiable techniquement depuis le 23/11 13h** (4 passes de critique + 1 correctif direct) : page + assistant « rapport de stock » réel (`livrables/gumroad/skill-rapport-de-stock/`), verdict final du critique `publiable=true`, zéro régression. Dernier défaut bloquant trouvé (seuil d'écart d'inventaire absolu, faux métier sur petites et grosses références) corrigé directement par le directeur (seuil relatif) et revérifié par le critique. Canal trouvé : r/supplychain (118k, persona exact), r/excel (902k), r/n8n (262k) — voir `memory/benchmarks/canaux-diffusion-logistique.md`. Aucun forum FR actif n'existe : recherche FR closed. Version anglaise de la page+README livrée et validée par le critique (publiable=true, aucune dérive de fait) pour les canaux anglophones.
+   - **Ne bloque plus que sur Baptiste** : A-04 (publier) et T-06 (règles Reddit).
 2. exp-02 ComeUp : 3 fiches prêtes (critique 3/5 sur la preuve, faute de vidéo). Bloqué sur micro-entreprise + T-04.
 3. exp-01 clipping : mesuré, plafonné (~31 €). Reste à 0 € et 0 h jusqu'au 06/12, plus d'heures investies.
 
@@ -20,12 +20,12 @@ Toutes les pistes notées ≥29 (ComeUp 30, Google Business Profile 30, Codeur.c
 |---|---|---|---|
 | exp-01-clipping-mesure | running (plafonné) | 06/12 | T-02 (euros payés + taux d'approbation) |
 | exp-02-comeup-gigs | bloqué | 20/12 | micro-entreprise + T-04 vidéos |
-| exp-03-skills-gumroad | running (passe 2 en notation) | 20/12 | A-04 + T-06 + version anglaise |
+| exp-03-skills-gumroad | running (publiable, en attente A-04) | 20/12 | A-04 + T-06 |
 | exp-04-primes-bancaires | bloqué | 31/01 | A-05 (ouverture du compte) |
 Suivant si un test meurt : gbp-optimisation (30, à fusionner avec exp-02) ou codeur-n8n (29).
 
 ## En attente de Baptiste
-- **A-04** : publier la version gratuite d'exp-03 sur Gumroad (0 €, pas de statut). A-03 remplacée (question mal posée) ; si Baptiste y répond quand même oui, ça débloque aussi exp-02. **Garde-fou : ne pas envoyer la tâche de publication avant un verdict `ok` du critique.**
+- **A-04** : publier la version gratuite d'exp-03 sur Gumroad (0 €, pas de statut). Verdict `publiable=true` obtenu le 23/11 (FR et EN) : le garde-fou de séquencement est levé, il ne manque plus que la réponse de Baptiste. Si oui → envoyer le pas-à-pas de publication.
 - **A-05** : ouvrir un compte Fortuneo (code FTNSEA, 0 €, ~40 min, 250 € de prime). Si oui → envoyer le pas-à-pas.
 - T-06 (8 min) : règles d'autopromo de r/supplychain + ancienneté de son compte Reddit + activité de r/InventoryManagement et r/Warehousing. Remplace T-05 (annulée).
 - T-02 (5 min, hebdo) : capture des gains Whop — seul chiffre absent de la base clipping.

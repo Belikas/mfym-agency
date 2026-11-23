@@ -1,0 +1,64 @@
+{
+  "scores": {
+    "precision_de_niche": {
+      "note": 5,
+      "justification": "Public et problème unique traduits sans perte ni ajout ('Warehouse managers and inventory leads who process an Excel/CSV export... every day') : fidèle à l'original validé."
+    },
+    "utilite_immediate": {
+      "note": 4,
+      "justification": "Limite déjà connue (1 seul assistant sur 4-6 visés) correctement reportée sans l'atténuer ni l'aggraver en traduisant ; pas 5/5 car la limite elle-même n'a pas changé."
+    },
+    "qualite_technique": {
+      "note": 4,
+      "justification": "N'est pas touchée par la traduction (le script reste en français par design, documenté) ; hérite du 4/5 déjà validé côté français, rien à corriger ici."
+    },
+    "differenciation_vs_gratuit": {
+      "note": 4,
+      "justification": "Comparaison à mattpocock/skills et anthropics/skills traduite avec les mêmes chiffres exacts (centaines de milliers d'installs), aucune perte de précision."
+    },
+    "preuve": {
+      "note": 4,
+      "justification": "La citation réelle est gardée verbatim en français (bon choix, c'est une preuve d'exécution, pas du texte à traduire) et une ligne ajoutée clarifie immédiatement que c'est la sortie réelle en français — la preuve reste aussi forte qu'en français, pas de dilution en traduisant."
+    },
+    "clarte_de_la_page": {
+      "note": 4,
+      "justification": "Structure et éléments de la grille tous présents (pour qui/pas pour qui, chiffres, FAQ, remboursement) ; mais la limite de langue (sortie en français) n'apparaît que comme une parenthèse accolée à la citation, pas dans la section 'Who it's not for' où un lecteur anglophone pressé irait naturellement chercher les motifs de non-achat — gap de placement propre à cette traduction, absent en français car non pertinent dans ce sens-là."
+    },
+    "honnetete_confiance": {
+      "note": 4,
+      "justification": "Le fait est dit, exact, non caché, et rencontré avant les boutons d'action (ligne ~36 avant les CTA ligne ~71) : rien n'est trompeur. Mais pour ce public précis (anglophone, sortie du produit en français), le manuel exige plus qu'une mention honnête isolée : ce devrait être un critère disqualifiant explicite dans 'Who it's not for', au même rang que 'vous n'avez jamais ouvert Claude Code'. Tel quel, un lecteur qui scanne la page (plutôt que de la lire ligne à ligne) peut rater l'info et être surpris en installant — risque réel mais atténué par le remboursement 14 jours et la gratuité de l'inscription."
+    },
+    "installation_et_support": {
+      "note": 5,
+      "justification": "Le README traite systématiquement chaque message d'erreur du script en gardant le texte français exact entre backticks avec une glose anglaise entre parenthèses ('Erreur : colonne(s) manquante(s) : ...' (\"missing column(s)\")) : un utilisateur anglophone voit exactement ce que le script affichera vraiment, pas une traduction qui ne correspondrait plus à l'écran réel. Plus rigoureux qu'aucune des 10 références du benchmark, qui n'ont pas ce problème de langue à gérer — au-dessus des références sur ce point précis."
+    }
+  },
+  "verification_faits": {
+    "prix_19_29_eur": "identique (€19 / €29)",
+    "kill_date_20_decembre_2026": "identique, répétée 3 fois, cohérente",
+    "remboursement_14_jours": "identique ('14-day money-back guarantee')",
+    "delai_reponse_48h": "identique et nuance préservée : '48 business hours' traduit bien '48h ouvrées' (pas 48h calendaires)",
+    "4_a_6_assistants": "identique ('between 4 and 6 assistants')",
+    "4_etapes_installation": "identique dans la page et le README (4 étapes numérotées dans les deux langues)",
+    "conclusion": "aucune divergence de fait trouvée après relecture ligne à ligne des deux documents contre leurs originaux validés."
+  },
+  "gaps": [
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/presell-logistique-en.md",
+      "ligne": 17,
+      "probleme": "La limite 'les rapports générés sont en français' n'apparaît nulle part dans la section 'Who it's not for' (lignes 17-21), alors que c'est le point précis que le manuel (honnêteté/confiance) demande de vérifier en priorité pour cette traduction. Elle n'existe que comme une parenthèse accolée à la citation du rapport (ligne 36), que le lecteur rencontre déjà engagé dans la lecture détaillée — pas au moment où il évalue rapidement s'il est le bon public.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter une 4e puce à 'Who it's not for' : quelque chose comme 'You need the reports, error messages, and column headers in English: this first version's Stock Report assistant runs fully in French.'"
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/README-en.md",
+      "ligne": 27,
+      "probleme": "Le nom d'exemple 'mon-export.csv' dans la commande d'exemple reste en français alors que c'est un nom de fichier générique (pas un fichier réel du dépôt, contrairement à exemple-export-wms.csv) : légère incohérence de registre dans un README par ailleurs bien localisé.",
+      "correction_qui_ferait_gagner_1_point": "Remplacer par 'my-export.csv' dans la commande d'exemple de l'étape 4."
+    }
+  ],
+  "verdict": "ok",
+  "publiable": true,
+  "publiable_justification": "Aucune divergence factuelle (prix, dates, délais, nombre d'assistants, étapes) entre les versions française validée et anglaise. Les 2 ajouts du traducteur (citation en français glosée, note de tête du README) sont honnêtes, exacts, et rencontrés avant tout engagement (inscription gratuite ou précommande remboursable 14 jours) : rien n'est caché. Le seul vrai défaut — la limite de langue n'est pas dans la liste 'Who it's not for', qui est l'endroit naturel pour un lecteur qui scanne — est un problème de placement, pas de dissimulation ni de fait faussé : il ne bloque pas la publication mais devrait être corrigé dès la prochaine itération de la page, pas seulement signalé une fois en aparté."
+}

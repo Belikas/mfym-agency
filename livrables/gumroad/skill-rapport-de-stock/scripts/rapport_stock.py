@@ -15,7 +15,11 @@ import sys
 import unicodedata
 from dataclasses import dataclass, field
 
-ECART_SIGNIFICATIF_UNITES = 10  # ponytail: seuil fixe, affiner par métier si besoin
+ECART_SIGNIFICATIF_RATIO = 0.1  # 10 % du stock théorique
+# ponytail: plancher absolu anti-bruit ; sous stock_theorique=50 il domine le ratio
+# et remonte le seuil effectif jusqu'à ~40-50 % pour les très petites références.
+# Upgrade si ça pose problème : plancher plus bas (2-3) ou calé sur stock_mini du client.
+ECART_SIGNIFICATIF_PLANCHER_UNITES = 5
 
 COLONNES_ATTENDUES = [
     "reference", "designation", "emplacement", "stock_theorique",
@@ -186,7 +190,8 @@ def analyser_ligne(row: dict) -> LigneAnalysee:
     if stock_theo > maxi:
         ligne.flags.append("surstock_dormant" if sorties == 0 else "surstock")
 
-    if abs(ligne.ecart) >= ECART_SIGNIFICATIF_UNITES:
+    seuil_ecart = max(ECART_SIGNIFICATIF_PLANCHER_UNITES, round(ECART_SIGNIFICATIF_RATIO * stock_theo))
+    if abs(ligne.ecart) >= seuil_ecart:
         ligne.flags.append("ecart_inventaire")
 
     return ligne
