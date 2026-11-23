@@ -1,0 +1,118 @@
+{
+  "scores": {
+    "precision_de_niche": {
+      "note": 5,
+      "justification": "Public nommé en une phrase (gestionnaires d'entrepôt / responsables stocks), un seul problème (export WMS à résumer) — correspond au niveau 5 de la grille."
+    },
+    "utilite_immediate": {
+      "note": 4,
+      "justification": "Le seul assistant livré (Rapport de stock) est testable en <5 min sur un cas réel, mais la grille demande 'chaque skill testé' et 4 à 6 sont visés : un seul existe pour l'instant, le reste n'est pas vérifiable."
+    },
+    "qualite_technique": {
+      "note": 4,
+      "justification": "SKILL.md au format standard, 0 chemin en dur, auto-test présent et vert — mais 3 cas limites réalistes (cellule vide, valeur non numérique, en-têtes différents) font planter le script avec une trace Python brute au lieu d'une erreur propre."
+    },
+    "differenciation_vs_gratuit": {
+      "note": 4,
+      "justification": "Comparaison explicite nommée à 2 packs gratuits avec raison claire (vocabulaire métier logistique absent du gratuit) — mais le gain de temps chiffré est explicitement qualifié de 'non vérifié', donc pas encore un chiffre validé comme l'exige le niveau 5."
+    },
+    "preuve": {
+      "note": 4,
+      "justification": "Sortie réelle citée et vérifiée identique au script qui tourne, avec disclosure honnête que ce n'est pas un export client réel — mais aucune capture d'écran ni GIF du terminal en action, seulement du texte cité."
+    },
+    "clarte_de_la_page": {
+      "note": 4,
+      "justification": "Titre-promesse, pour qui/pas pour qui, FAQ de 5 questions, remboursement daté (14 j), licence explicite — très complet, mais dense et long, pas lisible en 60 s, et le nombre d'assistants reste une fourchette (4-6) plutôt qu'un chiffre fixe."
+    },
+    "honnetete_confiance": {
+      "note": 4,
+      "justification": "Limites dites, disclaimer non-affilié, aucun chiffre de vente inventé, estimations explicitement marquées non vérifiées — mais la phrase d'ouverture (ligne 3) crée une ambiguïté sur ce qui est réellement livrable dès aujourd'hui, à corriger."
+    },
+    "installation_et_support": {
+      "note": 4,
+      "justification": "README en 4 étapes vérifié par moi-même sous Windows (python run.py exemple-export-wms.csv fonctionne et produit exactement sortie-reelle.md), contact et mises à jour promis — mais pas de script d'installation (install.py), copie manuelle seulement, et macOS non testé réellement à ce stade (promesse pour le pack futur, pas vérifiable aujourd'hui)."
+    }
+  },
+  "points_specifiques_demandes": {
+    "coherence": {
+      "note": 3,
+      "justification": "La page se contredit potentiellement dès la ligne 3 avant toute nuance : 'produit en construction, pas encore livrable' alors qu'un assistant (Rapport de stock) est livré immédiatement — contredit par les lignes 20, 66, 73-74 qui clarifient, mais un lecteur qui ne va pas plus loin que la ligne 3 retient une affirmation fausse.",
+      "phrases_contradictoires": [
+        {
+          "fichier": "livrables/gumroad/presell-logistique.md",
+          "ligne": 3,
+          "citation": "Page de pré-vente — produit en construction, pas encore livrable.",
+          "probleme": "Affirme que rien n'est livrable alors que l'assistant Rapport de stock l'est, immédiatement, dès l'inscription à la liste d'attente — contredit par les lignes 20, 66, 73-74."
+        }
+      ],
+      "verification_des_autres_occurrences": "Lignes 20, 58, 66, 73-74 utilisent systématiquement 'le pack' (et non 'produit') pour désigner ce qui n'existe pas encore, et scopent correctement l'exception Rapport de stock — cohérentes entre elles. Seule la ligne 3 utilise le mot générique 'produit' sans cette précision, en tout premier contact avec le lecteur."
+    },
+    "honnetete_de_la_preuve": {
+      "note": 5,
+      "justification": "Vérifié moi-même : `python run.py exemple-export-wms.csv` produit un fichier strictement identique (diff vide, 0 ligne de différence) à sortie-reelle.md et à l'extrait cité en ligne 34 de la page. La page dit explicitement que l'export est un fichier construit pour le test, pas un export d'un client réel (ligne 33) : aucune confusion possible avec une preuve client."
+    },
+    "skill_tient_la_promesse": {
+      "note": 3,
+      "justification": "Logique métier correcte et couverte par l'auto-test (rupture, sous seuil mini, à surveiller via couverture/délai réappro, surstock dormant, écart d'inventaire — tous vérifiés manuellement sur le code et cohérents). SKILL.md au format standard, 0 chemin en dur. Mais le parcours réel d'un gestionnaire d'entrepôt non-codeur casse dès qu'il utilise son propre export (quasi certain en pratique, chaque WMS a ses propres en-têtes) : KeyError ou ValueError avec trace Python brute, non anticipée par la section 'En cas de problème' du README qui ne décrit que le cas 'rapport vide ou faux', pas le cas 'le script plante'.",
+      "cas_limites_testes": [
+        {
+          "cas": "colonne stock_theorique vide",
+          "resultat": "Trace Python brute (ValueError: could not convert string to float: ''), pas de message utilisateur"
+        },
+        {
+          "cas": "valeur non numérique ('abc') dans stock_theorique",
+          "resultat": "Trace Python brute (ValueError), pas de message utilisateur"
+        },
+        {
+          "cas": "fichier avec en-têtes différents (sku, desc, loc, qty_theo...)",
+          "resultat": "Trace Python brute (KeyError: 'stock_theorique'), pas de message utilisateur — comportement volontaire selon SKILL.md ('ne pas deviner le mapping silencieusement') mais l'échec lui-même n'est pas traité proprement"
+        }
+      ]
+    }
+  },
+  "gaps": [
+    {
+      "severite": "bloquant",
+      "fichier": "livrables/gumroad/presell-logistique.md",
+      "ligne": 3,
+      "probleme": "La phrase d'ouverture affirme 'produit en construction, pas encore livrable' alors qu'un assistant est livré immédiatement à l'inscription — contradiction de premier contact avec le lecteur, exactement le type de phrase que la consigne de notation signale comme destructrice de confiance.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter la même précision qu'à la ligne 20 directement dans la parenthèse d'ouverture : 'produit en construction, pas encore livrable dans son ensemble (sauf l'assistant Rapport de stock, offert et déjà terminé, voir plus bas)'."
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/scripts/rapport_stock.py",
+      "ligne": 38,
+      "probleme": "_to_int() ne capture aucune exception : une cellule vide, une valeur non numérique ou un en-tête de colonne manquant font planter run.py avec une trace Python brute, pas un message en français compréhensible par le public non-codeur visé. Vérifié par exécution directe (3 cas testés, 3 plantages).",
+      "correction_qui_ferait_gagner_1_point": "Entourer l'appel à analyser_export dans run.py d'un try/except qui affiche un message en français ('colonne manquante : stock_theorique — vérifiez les en-têtes de votre export, voir SKILL.md' / 'valeur invalide ligne N, colonne X') puis sys.exit(1), sans trace Python affichée à l'utilisateur final."
+    },
+    {
+      "severite": "important",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/README.md",
+      "ligne": 30,
+      "probleme": "La section 'En cas de problème' ne couvre pas le scénario de plantage (trace Python), seulement le cas 'rapport vide ou faux' — ne correspond pas au comportement réel observé.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter une puce : 'Le script affiche une erreur et s'arrête (KeyError/ValueError) : une colonne attendue est absente ou une valeur n'est pas un nombre — comparez vos en-têtes à ceux de SKILL.md avant de relancer.'"
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/skill-rapport-de-stock/run.py",
+      "ligne": 23,
+      "probleme": "print(rapport) peut afficher des caractères accentués corrompus sur un terminal Windows en page de code historique (cmd.exe classique, codepage 437/850) ; confirmé correct sous PowerShell Windows 11 par défaut et dans le fichier .md écrit sur disque (toujours exact). Risque limité mais réel selon le terminal utilisé par le client.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter en tête de run.py la réassignation de l'encodage stdout (ex. sys.stdout.reconfigure(encoding='utf-8')) pour garantir un affichage correct quel que soit le terminal Windows."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/presell-logistique.md",
+      "ligne": 25,
+      "probleme": "Le gain de temps mis en avant (20-30 min → quelques minutes) est explicitement qualifié de 'non vérifié, à confirmer' — honnête, mais empêche d'atteindre le niveau 5 du critère Différenciation qui demande un gain chiffré validé.",
+      "correction_qui_ferait_gagner_1_point": "Chronométrer soi-même une fois le temps de rédaction manuelle d'un rapport équivalent à partir de l'export d'exemple, et remplacer 'non vérifié' par un chiffre mesuré sur ce cas précis."
+    },
+    {
+      "severite": "mineur",
+      "fichier": "livrables/gumroad/presell-logistique.md",
+      "ligne": 34,
+      "probleme": "La preuve de fonctionnement est uniquement une citation de texte, pas une capture d'écran ni un GIF du terminal en train de tourner — le niveau 5 du critère Preuve de la grille demande une démo visuelle.",
+      "correction_qui_ferait_gagner_1_point": "Ajouter une capture d'écran du terminal exécutant python run.py exemple-export-wms.csv avec la sortie visible, insérée sous la citation actuelle."
+    }
+  ],
+  "verdict": "a_corriger"
+}

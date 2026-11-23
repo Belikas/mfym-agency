@@ -48,7 +48,8 @@
    "status": "pending",
    "created": "2026-11-23T08:05:00+01:00",
    "telegram_message_id": 17,
-   "acted_on": false
+   "acted_on": false,
+   "acted_note": "GARDE-FOU : un oui a A-04 ne publie rien tout seul. Ne PAS envoyer la tache de publication (le pas-a-pas Gumroad) avant que le critique ait rendu un verdict 'ok' sur livrables/gumroad/presell-logistique.md. Verdict du 23/11 : a_corriger (coherence 3/5 ligne 3, robustesse du skill 3/5) ; correction lancee."
   }
  ]
 }

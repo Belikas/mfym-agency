@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T07:38:00+01:00",
+ "updated": "2026-11-23T08:20:00+01:00",
  "agents": [
   {
    "id": "directeur",
@@ -62,8 +62,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
-   "current_task": "Note livrables/gumroad/presell-logistique.md (exp-03) contre memory/benchmarks/skills-gumroad.md",
-   "last_run": "2026-11-22T13:08:00+01:00"
+   "current_task": "aucune (disponible)",
+   "last_run": "2026-11-23T08:20:00+01:00",
+   "last_result": "23/11 : page + skill exp-03 notes, verdict a_corriger. A trouve 2 blocages que la grille seule ne voyait pas (contradiction du cadrage ligne 3, plantages sur en-tetes differents) en executant vraiment le code et 3 cas limites. Preuve de sortie verifiee honnete (diff vide)."
   },
   {
    "id": "redacteur",
@@ -102,8 +103,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "Construire pour de vrai le skill 'rapport de stock' (preuve réelle sur la page + cadeau aux inscrits) -> livrables/gumroad/skill-rapport-de-stock/",
-   "last_run": "2026-11-23T07:38:00+01:00"
+   "current_task": "Passe 2 exp-03 : lever les 2 blocages du critique (coherence ligne 3, robustesse du skill)",
+   "last_run": "2026-11-23T08:20:00+01:00",
+   "last_result": "23/11 : skill rapport-de-stock construit et execute pour de vrai (auto-test OK, sortie generee sur 100 lignes) ; page passee de l'exemple fictif a la sortie reelle. Note 4-5/5 sur la grille mais 3/5 en robustesse : les cas limites n'etaient pas geres."
   }
  ]
 }
