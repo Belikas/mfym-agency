@@ -12,7 +12,8 @@
  "status": "running",
  "blocked_on": [
   "A-04 : publier la version gratuite sur Gumroad",
-  "T-06 : regles Reddit + compte de Baptiste"
+  "compte community.n8n.io a creer par Baptiste (email + Discourse, gratuit) pour diffuser",
+  "T-06 : regles Reddit (devenu secondaire, un canal hors Reddit existe)"
  ],
  "results": [
   {
@@ -62,7 +63,24 @@
   {
    "date": "2026-11-23",
    "note": "Version anglaise livree (presell-logistique-en.md, README-en.md) : faits/prix/dates identiques a l'original FR (verifie par le critique, aucune derive). Le redacteur a signale de lui-meme une limite reelle a rendre visible plutot qu'a cacher : l'interface du skill (messages d'erreur, en-tetes attendus) reste en francais alors que le public cible (r/supplychain, r/excel, r/n8n) est anglophone -- note ajoutee en tete du README + citation du vrai rapport laissee en francais avec clarification. Critique de la traduction (critique-traduction-en-1.json) : ok/publiable=true, seul gap (important, non bloquant) : cette limite de langue n'etait visible qu'en parenthese pres de la citation, pas dans la section 'Who it's not for' ou un lecteur presse la chercherait avant d'acheter -- corrige directement (1 ligne ajoutee a la section, pas une nouvelle passe formelle). DECISION FINALE : exp-03 (FR + EN) est entierement publiable techniquement. Reste bloque uniquement sur A-04 (accord de Baptiste pour publier, 0 EUR, aucun statut requis) et T-06 (regles Reddit + anciennete du compte de Baptiste, necessaire pour choisir le bon canal de diffusion sans se faire supprimer)."
+  },
+  {
+   "date": "2026-11-24",
+   "note": "Plan de mesure ecrit (le seuil n'est pas mesurable sans une capture hebdo de Baptiste, a greffer sur T-02 au moment de la publication). Recherche lancee sur des canaux de diffusion hors Reddit, pour que la diffusion ne depende plus de T-06."
+  },
+  {
+   "date": "2026-11-24",
+   "note": "Diffusion : la dependance a Reddit est levee. Canaux verifies hors Reddit (memory/benchmarks/canaux-hors-reddit-exp03.md, 13 candidats notes) : community.n8n.io categorie 'Built with n8n' 8,6/10 (2134 sujets, 'This is a category for showing off the projects that you've built with n8n', compte Discourse gratuit sans ancienneté lourde) et Show HN 8,6/10 ('Show HN is for something you've made that other people can play with', et il demande justement un essai sans inscription). Le repertoire officiel des skills Claude (7,1) est un canal passif durable mais passe par le compte Max de Baptiste et une revue manuelle de delai inconnu. Ecartes avec preuve : Lobste.rs (invite-only), awesome-claude-code (seuil 100 stars), awesome-n8n-templates (mauvais format), BetaList (devenu payant 29-39 $), Product Hunt et AlternativeTo (compte de 7 jours minimum), Stack Overflow (pages bloquees). Toujours aucun forum francophone logistique actif, apres deux recherches independantes. Consequence : T-06 n'est plus bloquant, il ne reste qu'un compte de forum gratuit a creer."
+  },
+  {
+   "date": "2026-11-24",
+   "note": "Run 13:00. Redacteur a livre le post pour community.n8n.io (memory/drafts/post-n8n-community-exp03.md). Critique passe 1 : corriger/publiable=false -- defaut reel, pas une pinaillerie : le post vise la categorie 'Built with n8n' (showcase d'un projet CONSTRUIT avec n8n) mais le skill est un script Python autonome jamais integre a n8n (le post le dit lui-meme : 'I haven't wired it into n8n myself yet'). Un moderateur appliquant la regle a la lettre peut legitimement le deplacer/flaguer. Preuve 4/5, clarte 4/5 (une puce trop dense), honnetete 5/5 (code verifie contre le texte, aucun fait invente). Correction confiee au redacteur : reformuler la categorie/l'angle plutot que de construire une fausse integration n8n pour forcer la regle (disproportionne pour un canal pas encore teste)."
+  },
+  {
+   "date": "2026-11-24",
+   "note": "Post community.n8n.io termine (3 passes, le maximum du manuel) : passe 1 a recadre la categorie vers 'Help me Build my Workflow' (verifiee sur community.n8n.io/categories) et reformule en vraie question d'integration -- 'Built with n8n' exigeait un projet deja construit AVEC n8n, ce qui n'est pas le cas. Passe 2 du critique a trouve un nouveau defaut (invente, pas rejoue) : pitch produit trop long (16 lignes) vs question trop vague, lisible comme promo deguisee ; citation de sortie reelle en francais non traduite dans un post anglais. Passe 3 (correction) : pitch reduit a 1 lien + 1 phrase, question rendue concrete (Execute Command vs Code node/sous-workflow), citation traduite. Verdict final du critique : ok/publiable=true, adequation_au_canal 4/5, clarte 4/5, honnetete 5/5 ; 2 ecarts mineurs restants (justification du choix par defaut absente, guillemets au lieu d'italique) acceptes tels quels, 4e passe = limite du manuel. Le post est PRET mais reste bloque sur A-04 (accord de publication) et la creation par Baptiste d'un compte community.n8n.io (gratuit, email + Discourse)."
   }
  ],
- "owner_agent": "atelier"
+ "owner_agent": "atelier",
+ "measurement": "Gumroad n'expose aucun chiffre public et son API exige un jeton du compte de Baptiste : le seuil (>=30 inscrits ou >=3 precommandes) ne sera donc pas mesurable par l'agence seule. Des que A-04 est acceptee et le produit publie, la capture hebdomadaire du tableau de bord Gumroad (vues, inscrits, ventes) est a ajouter a T-02 (capture Whop, deja hebdomadaire) plutot que de creer une tache separee. Lecon exp-01 : prevoir la collecte du chiffre AVANT la kill date, sinon la decision du 20/12 se prend sans donnees."
 }

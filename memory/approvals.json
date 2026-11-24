@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T07:49:18+01:00",
+ "updated": "2026-11-24T07:49:00+01:00",
  "approvals": [
   {
    "id": "A-01",
@@ -61,6 +61,30 @@
    "created": "2026-11-23T08:30:00+01:00",
    "telegram_message_id": 19,
    "acted_on": false
+  },
+  {
+   "id": "A-06",
+   "question": "On lance ComeUp sans attendre la micro-entreprise. J'ai verifie dans les CGU et la FAQ de ComeUp : un vendeur PARTICULIER sans aucun statut est explicitement autorise ('aucun statut n'est impose'), et c'est ComeUp qui edite le document de vente a ta place - tu n'as rien a facturer. Tu crees le compte ComeUp (gratuit, ~10 min) et je publie les 3 fiches d'automatisation IA. Tu declares les revenus aux impots, normalement. C'est oui ou non ?",
+   "recommendation": "yes",
+   "reason": "J'avais bloque ce test le 22/11 sur une supposition fausse : 'il faut un SIRET pour vendre'. Verifie en source primaire aujourd'hui, c'est faux pour ComeUp. Cette piste est la mieux notee de mes 35 (30/35), elle dormait pour rien. Cout 0 EUR, aucun engagement, aucune formalite. Deux choses a savoir avant de dire oui : (1) si oui, la tache T-04 (3 videos de demo, 45 min) devient a faire - oublie ce qu'elle dit sur la micro-entreprise, c'etait lie a cette erreur ; sans ces videos la fiche plafonne a 3/5 sur la preuve et je ne la publie pas. (2) la seule zone grise qui reste : vendre une fois ou deux en particulier est prevu par ComeUp, mais une activite qui se repete demande une immatriculation. Donc des la 2e vente je te redemande la micro-entreprise - et j'ai aussi verifie ca aujourd'hui : creation gratuite en ligne, 0 EUR de cotisations si le chiffre d'affaires est nul, CFE exoneree la 1re annee, fermeture en 30 jours, et compatible avec ton CDI. Autrement dit ton 'on la cree quand ce sera indispensable' ne coute presque rien le jour ou ca le devient.",
+   "cost_eur": 0,
+   "status": "pending",
+   "created": "2026-11-24T07:55:00+01:00",
+   "telegram_message_id": 22,
+   "acted_on": true,
+   "acted_note": "Mal posee, remplacee par A-07 le 24/11 a 07:50. Elle proposait de vendre en tant que particulier en presentant la frontiere occasionnel/habituel comme une simple zone grise. Verification faite ensuite sur source officielle : il n'existe AUCUNE exoneration ni seuil chiffre pour la vente occasionnelle de prestations, et exercer sans immatriculation au RNE est un delit (7 500 EUR, C. com. L123-38-1), requalifiable en travail dissimule. ComeUp leve la barriere de la plateforme, pas celle de la loi. A-06 n'est pas renvoyee (le bot ne renvoie pas un message deja envoye, msgid 22) : A-07 dit explicitement de l'oublier."
+  },
+  {
+   "id": "A-07",
+   "question": "Oublie A-06 de ce matin, je l'avais mal posee : j'ai verifie apres l'avoir envoyee et vendre 'en tant que particulier' n'est pas une option legale, meme pour une seule vente. Version corrigee : **tu crees la micro-entreprise maintenant** (en ligne, gratuit, ~30 min). Ca debloque d'un coup mes 3 meilleures pistes (ComeUp 30/35, Google Business Profile 30/35, Codeur.com 29/35), qui sont toutes a l'arret pour cette seule raison. C'est oui ou non ?",
+   "recommendation": "yes",
+   "reason": "Tu m'avais dit : 'pas maintenant, on la cree quand ce sera indispensable. D'abord tout le reste.' J'ai fait tout le reste, et j'ai verifie les alternatives une par une aujourd'hui : coop d'activite (CAE) fermee aux salaries a temps plein, portage salarial inutilisable sous ~2 800 EUR/mois de facturation, Codeur.com exige un statut, et surtout il n'existe aucun seuil ni aucune tolerance officielle pour une prestation vendue sans immatriculation : c'est un delit puni de 7 500 EUR, requalifiable en travail dissimule. Donc oui, c'est devenu indispensable. Et le prix de 'indispensable' est bien plus bas que ce que je croyais, verifie sur service-public : creation gratuite, **0 EUR de cotisations si tu ne vends rien** (il faut juste faire la declaration trimestrielle en mettant 'neant' - 60,10 EUR de penalite par oubli, c'est le seul vrai risque), cotisation fonciere exoneree la premiere annee puis due seulement au-dela de 5 000 EUR de chiffre d'affaires, cumul avec ton CDI autorise (tu m'as confirme que ton contrat ne t'interdit rien), ta paie et ta couverture sante inchangees, et fermeture en 30 jours si on se trompe. Le seul revenu que ca ne couvre pas, ce sont tes droits d'auteur (romans) : la loi les exclut de la micro-entreprise, ils relevent du regime artiste-auteur - sujet separe, je te le poserai apres T-07. Si c'est non, dis-le franchement : j'arrete d'investir des heures dans les 3 pistes qui en dependent et je les enterre au lieu de les laisser dormir. C'est une information utile, pas un echec.",
+   "cost_eur": 0,
+   "status": "pending",
+   "created": "2026-11-24T07:52:00+01:00",
+   "telegram_message_id": 23,
+   "acted_on": false,
+   "acted_note": "Remplace A-06 (mal posee). Si oui -> T-04 (3 videos ComeUp, 45 min) devient actif et les fiches partent apres notation du critique >=4/5. Si non -> parker exp-02, gbp-optimisation et codeur-n8n, et recentrer sur exp-03, exp-04 et les droits d'auteur."
   }
  ]
 }

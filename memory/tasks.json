@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T07:39:16+01:00",
+ "updated": "2026-11-24T07:36:28+01:00",
  "tasks": [
   {
    "id": "T-01",
@@ -111,6 +111,27 @@
    "telegram_message_id": 18,
    "blocks": [
     "exp-03-skills-gumroad"
+   ]
+  },
+  {
+   "id": "T-07",
+   "title": "Inventaire de tes 2 actifs existants (romans + compte manga)",
+   "purpose": "Tes romans auto-edites et ton compte manga IA + Patreon ne sont dans aucune de mes 35 pistes notees : je les ai traites comme inexistants parce que je n'ai aucun chiffre dessus. Or ce sont les deux seules choses que tu as deja en ligne, et les revenus d'auteur sont peut-etre la seule famille de routes qui ne demande pas de micro-entreprise (je verifie ca en ce moment). Avec ces chiffres je peux les noter comme n'importe quelle autre piste et soit les relancer, soit les enterrer pour de bon. Sans eux, je ne peux faire ni l'un ni l'autre.",
+   "steps": [
+    "ROMANS - envoie le lien Amazon de chaque titre publie (ou ton nom de plume, je trouverai), et le lien Gumroad s'il y en a un.",
+    "ROMANS - KDP > Rapports > 'Ventes et redevances' : capture des ventes des 12 derniers mois (total suffit, pas besoin du detail par titre).",
+    "ROMANS - as-tu deja encaisse des redevances KDP sur ton compte bancaire, oui/non ? Et les as-tu deja declarees aux impots (ou es-tu affilie URSSAF artistes-auteurs) ? Reponds juste oui/non/je ne sais pas.",
+    "MANGA - lien du compte Instagram + nombre d'abonnes affiche aujourd'hui, et date de ta derniere publication.",
+    "MANGA - lien Patreon + nombre de mecenes payants et euros/mois actuels (capture du tableau de bord createur). Si c'est 0, dis 0, c'est une information utile.",
+    "En une phrase chacun : pourquoi tu penses que ca n'a pas vendu, et as-tu envie de continuer ces deux projets ou pas ? Ton envie compte dans la note."
+   ],
+   "est_minutes": 12,
+   "deliverable": "Les liens + 2 captures (ventes KDP 12 mois, tableau de bord Patreon) + les reponses courtes, en reponse a ce message",
+   "status": "open",
+   "created": "2026-11-24T07:50:00+01:00",
+   "telegram_message_id": 21,
+   "blocks": [
+    "pipeline-actifs-existants"
    ]
   }
  ]

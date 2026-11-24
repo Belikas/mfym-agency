@@ -17,6 +17,10 @@
   {
    "date": "2026-11-23",
    "note": "Mesure directe (sans Baptiste) : scripts/clipping_stats.py lit en seule lecture CLIPPING MONEY/data/clipping.db. 99 clips, 39 482 vues cumulees, vue mediane 144, max 14 225. Seuls 9 clips sur 99 depassent 1 000 vues (seuil pratique de declenchement : min_payout 2-35 $ pour un CPM de 0,5-2,5 $/1k). Vues eligibles 27 259 -> plafond de gain ~32,7 $ (~31 EUR) au CPM median des campagnes actives (1,2 $/1k), et seulement si tout est approuve. posts.earnings n'est jamais rempli et aucun statut 'approved'/'rejected' n'existe : les euros et le taux d'approbation ne sont pas lisibles en base, T-02 reste necessaire pour eux seuls. Vues en chute : 20 698 le 18/11, 13 803 le 19/11, puis 1 000-2 500/jour. Consequence de decision : meme en atteignant le seuil (15 EUR), le plafond structurel est ~30 EUR par quinzaine au volume actuel -- il faudrait x30 le volume pour viser 1 000 EUR/mois. exp-01 reste un revenu d'appoint, pas une route vers l'objectif. On le laisse tourner jusqu'au 06/12 (cout 0) mais il ne recevra pas d'heures supplementaires."
+  },
+  {
+   "date": "2026-11-24",
+   "note": "Remesure (run 13:00, scripts/clipping_stats.py, 0 EUR/0 h) : 111 clips (+12), 40 525 vues cumulees (+1 043), toujours 9 clips au-dessus de 1 000 vues -- la croissance vient de petits clips, pas de nouveaux gros. CPM median des campagnes actives passe a 1,5 $/1k (vs 1,2 $ hier) -> plafond de gain ~41,0 $ (~39 EUR), mais toujours sans statut approved/rejected ni earnings rempli en base : les euros reels restent invisibles sans T-02. Conclusion inchangee, pas de nouvelle heure investie avant le 06/12."
   }
  ],
  "owner_agent": "directeur"

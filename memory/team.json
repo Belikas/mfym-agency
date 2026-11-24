@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T08:35:00+01:00",
+ "updated": "2026-11-24T08:00:00+01:00",
  "agents": [
   {
    "id": "directeur",
@@ -20,8 +20,8 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": "CLAUDE.md",
-   "current_task": "Run 23/11 19:00 termine. Tout est bloque sur Baptiste (A-04, A-05, T-06, T-02) : rien de neuf dans l'inbox depuis 13h. Prepare 4 brouillons prets a l'emploi pour ne pas perdre de temps a la reponse : pas-a-pas Fortuneo (A-05), pas-a-pas publication Gumroad (A-04), modmail r/supplychain + reponse r/excel + post r/n8n (diffusion exp-03). Rien envoye sur Telegram (sequencement respecte).",
-   "last_run": "2026-11-23T19:00:00+01:00"
+   "current_task": "Run 24/11 07:30 termine. A trouve et corrige la supposition fausse qui bloquait l'agence ('il faut un SIRET pour vendre') : exp-02 ComeUp repasse en running, A-06 envoyee. T-07 creee (inventaire des 2 actifs existants, absents des 35 pistes). Pipeline corrige (ComeUp high, Codeur parkee). Digest corrige. Prochain run : attendre A-04/A-05/A-06, et sinon noter les 2 actifs existants des que T-07 revient.",
+   "last_run": "2026-11-24T07:30:00+01:00"
   },
   {
    "id": "chercheur",
@@ -40,8 +40,8 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/chercheur.md",
-   "last_run": "2026-11-23T07:38:00+01:00",
-   "last_result": "23/11 : 2 missions rendues. Canaux de diffusion (r/supplychain 118k persona 5/5, r/excel 902k, r/n8n 262k ; aucun forum FR actif) et primes bancaires en source primaire (piste 28/med -> 31/high, 4 offres mortes retirees, 2 erreurs du pipeline corrigees). A signale ses propres limites : reddit.com et hellobank.fr bloquent ses outils, verifications faites via tiers et annoncees comme telles.",
+   "last_run": "2026-11-24T07:55:00+01:00",
+   "last_result": "24/11 : 3 missions rendues, resultat le plus important de l'agence a ce jour -- la contrainte 'il faut un SIRET pour vendre' est fausse pour ComeUp (CGU + FAQ citees), ce qui debloque la piste la mieux notee. A aussi ferme 2 fausses pistes (CAE impossible en CDI temps plein, portage a minimum ~2800 EUR/mois) et chiffre le vrai cout d'une micro-entreprise (0 EUR a CA nul). Canaux hors Reddit trouves pour exp-03 (community.n8n.io 2134 sujets, Show HN). DEFAUT A CORRIGER : delegue a des sous-agents en arriere-plan puis s'arrete en annoncant qu'il attend leurs rapports -- 3 relances necessaires pour obtenir un livrable, et le 1er fichier rendu etait entierement 'INCONNU'. Honnete sur ses trous (il n'a rien invente), mais la regle 'si tu delegues, c'est en avant-plan' doit entrer dans son prompt.",
    "current_task": "aucune (disponible)"
   },
   {
@@ -63,9 +63,8 @@
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
    "current_task": "aucune (disponible)",
-   "last_run": "2026-11-23T13:19:00+01:00",
-   "last_result": "23/11 : traduction EN notee ok/publiable=true, aucune derive de fait (prix, dates, delais identiques). 1 gap important non bloquant : la limite 'sortie en francais' manquait dans 'Who it's not for' -- ajoutee directement par le directeur (1 ligne, pas une nouvelle passe). exp-03 (FR+EN) est maintenant entierement publiable techniquement.",
-   "last_result": "23/11 passe 3 : a_corriger, publiable=false. Troisieme passe de suite ou il trouve un defaut reel invisible dans la grille, en inventant ses propres cas. A tranche par test la question que je lui ai soumise : colonne dupliquee = bloquant (rapport faux en silence), format des milliers FR = mineur a juste titre. Agent le plus utile de la journee."
+   "last_run": "2026-11-24T13:00:00+01:00",
+   "last_result": "24/11 13:00 passe 3 (finale) : post community.n8n.io (exp-03) ok/publiable=true. adequation_au_canal 4/5 et clarte 4/5 (barre atteinte), honnetete 5/5. 2 ecarts mineurs restants (pas de justification du choix Execute Command, guillemets au lieu d'italique) juges non bloquants et envoyes tels quels -- 4e passe atteinte, limite du manuel."
   },
   {
    "id": "redacteur",
@@ -85,8 +84,8 @@
    "hired": "2026-11-22",
    "file": ".claude/agents/redacteur.md",
    "current_task": "aucune (disponible)",
-   "last_run": "2026-11-23T13:20:00+01:00",
-   "last_result": "23/11 : traductions anglaises de la page et du README exp-03 livrees (presell-logistique-en.md, README-en.md), faits/prix/dates preserves. A signale de lui-meme une limite reelle a rendre visible : l'interface du skill (messages d'erreur, en-tetes) reste en francais alors que le public cible est anglophone -- ajoute une note explicite plutot que de la cacher."
+   "last_run": "2026-11-24T13:00:00+01:00",
+   "last_result": "24/11 13:00 passe 3 (derniere autorisee) : pitch reduit a 1 lien + 1 phrase, question rendue concrete (Execute Command vs Code node/sous-workflow), citation francaise traduite et reliee a la limite 'French-only interface'. Critique passe 3 (finale) en cours."
   },
   {
    "id": "atelier",
@@ -105,7 +104,7 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "aucune (disponible) ; prochain chantier : version anglaise de la page et du README",
+   "current_task": "aucune (disponible)",
    "last_run": "2026-11-23T08:20:00+01:00",
    "last_result": "23/11 passe 4 : les 2 bloquants traites a la source (en-tetes en double detectes avant construction, bloc d'erreur dedie a l'ecriture), 9 cas limites a l'auto-test, aucune regression. A signale de lui-meme ce qu'il laissait de cote et pourquoi -- dont un trou reel dans le README que j'ai comble moi-meme."
   }

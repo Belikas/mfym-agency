@@ -79,12 +79,14 @@ def digest() -> str:
     net = sum(e["net_eur"] for e in rev if e["date"].startswith(month))
     exps = [json.loads(p.read_text(encoding="utf-8")) for p in (M / "experiments").glob("*.json")]
     running = [x for x in exps if x["status"] in ("running", "blocked", "ready")]
-    appr = [a for a in load("approvals.json")["approvals"] if a["status"] == "pending"]
+    appr = [a for a in load("approvals.json")["approvals"]
+            if a["status"] == "pending" and not a.get("acted_on")]
     tasks = [t for t in load("tasks.json")["tasks"] if t["status"] == "open"]
     h = sum(t["est_minutes"] for t in tasks) / 60
     lines = [f"Revenu net {month} : {net:.0f} € / 1000 €",
              f"Tests : " + (", ".join(f"{x['title']} ({x['status']}, kill {x['kill_date']})" for x in running[:3]) or "aucun")]
-    lines.append(f"Pour toi : {len(appr)} approbation(s), {len(tasks)} tâche(s) (~{h:.1f} h)" if appr or tasks
+    ids = ", ".join([a["id"] for a in appr] + [t["id"] for t in tasks])
+    lines.append(f"Pour toi : {len(appr)} approbation(s), {len(tasks)} tâche(s) (~{h:.1f} h) — {ids}" if appr or tasks
                  else "Rien n'attend ta réponse.")
     return "\n".join(lines)
 

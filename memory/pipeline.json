@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T00:00:00+01:00",
+ "updated": "2026-11-24",
  "scoring": "total = 2×délai + 2×preuve + revenu + coût + heures + automatisation + risque (max 45)",
  "leads": [
   {
@@ -66,9 +66,27 @@
      "kind": "marketplace",
      "financial_interest": true,
      "finding": "~20 services n8n/Make par page, entrées 20-40 $, plusieurs à 0 vente"
+    },
+    {
+     "url": "https://comeup.com/fr/terms-of-use",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "CGU art. 7.12.1 'Cas d'un Vendeur particulier' : le site edite les documents au nom et pour le compte du vendeur ; pour un particulier c'est un recepissé, pas une facture. Art. 3 : service 'professionnel ou non professionnel'."
+    },
+    {
+     "url": "https://support-fr.comeup.com/article/1609-comment-devenir-vendeur",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "'Etre particulier ou professionnel (aucun statut n'est impose)', 'tout le monde peut vendre'"
+    },
+    {
+     "url": "https://support-fr.comeup.com/article/1605-est-ce-que-jai-besoin-de-declarer-mes-gains",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "'tous les revenus percus sur ComeUp doivent etre declares, sans exception', transmission au fisc 'des le premier euro'"
     }
    ],
-   "confidence": "med",
+   "confidence": "high",
    "evidenced": true,
    "scores": {
     "time_to_first_euro": 3,
@@ -83,10 +101,10 @@
    "est_monthly_eur": 350,
    "startup_cost_eur": 0,
    "first_euro_days": 14,
-   "legal_notes": "Micro-entreprise avant 1er paiement ; compte à son nom = approbation",
+   "legal_notes": "CORRIGE le 24/11 : aucun statut n'est exige par la plateforme. CGU art. 7.12.1 'Cas d'un Vendeur particulier' ; art. 3 : prestation 'qu'elle soit professionnelle ou non professionnelle' ; FAQ officielle 'Etre particulier ou professionnel (aucun statut n'est impose)'. ComeUp edite le document de vente au nom du vendeur (recepissé, pas facture, pour un particulier) : rien a facturer. Revenus integralement declarables (BNC, 2042) et transmis au fisc des le premier euro. Commission 20 % HT (offre gratuite) ou 1 EUR/commande avec ComeUp Plus ; prix 15-5000 EUR ; retrait 3-5 jours ouvres via Hyperwallet. Zone grise restante : la frontiere vente occasionnelle / activite habituelle est un critere qualitatif sans seuil chiffre officiel (confiance med) - elle concerne la repetition des ventes, donc la micro-entreprise redevient necessaire des que ca vend regulierement. Detail : memory/benchmarks/facturer-sans-statut.md",
    "first_test": "3 gigs (60/150/300 €) ; seuil ≥1 vente et ≥3 contacts en 21 j",
    "status": "testing",
-   "updated": "2026-11-22",
+   "updated": "2026-11-24",
    "experiment_id": "exp-02-comeup-gigs"
   },
   {
@@ -257,10 +275,10 @@
    "est_monthly_eur": 500,
    "startup_cost_eur": 0,
    "first_euro_days": 21,
-   "legal_notes": "Micro-entreprise ; commission Codeur",
+   "legal_notes": "Verifie le 24/11 : les CGU de Codeur.com exigent explicitement un statut legal pour prester (CERTAIN). Contrairement a ComeUp, cette voie reste fermee jusqu'a la creation de la micro-entreprise. Parkee jusque-la. Detail : memory/benchmarks/facturer-sans-statut.md",
    "first_test": "15 devis <1000 € en 2 sem ; seuil ≥2 shortlists, ≥1 mission",
-   "status": "scored",
-   "updated": "2026-11-22"
+   "status": "parked",
+   "updated": "2026-11-24"
   },
   {
    "id": "claude-skills-bundle",

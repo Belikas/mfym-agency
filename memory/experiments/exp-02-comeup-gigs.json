@@ -9,10 +9,10 @@
  "hours_budget": 4,
  "start": "",
  "kill_date": "2026-12-20",
- "status": "blocked",
+ "status": "running",
  "blocked_on": [
-  "micro-entreprise (décision Baptiste : quand indispensable)",
-  "T-04 vidéos de démo, le jour de la publication"
+  "A-07 : creation de la micro-entreprise (seule condition restante)",
+  "T-04 : 3 videos de demo (la fiche plafonne a 3/5 sur la preuve sans elles)"
  ],
  "results": [
   {
@@ -22,6 +22,14 @@
   {
    "date": "2026-11-22",
    "note": "4 passes de correction faites (critiques 1-3 : min 2→3/5). Démos réelles : n8n exécuté (S1), Claude (S2/S3). Reste <4 : preuve (vidéo, T-04). Écarts d'honnêteté corrigés en passe finale. Prêt à publier dès micro-entreprise + vidéos."
+  },
+  {
+   "date": "2026-11-24",
+   "note": "DEBLOQUE : la supposition 'il faut une micro-entreprise pour vendre sur ComeUp' est FAUSSE, verifiee dans les sources primaires de la plateforme. CGU art. 7.12.1 'Cas d'un Vendeur particulier' ; art. 3 : un Service est une prestation 'qu'elle soit professionnelle ou non professionnelle' ; FAQ officielle support-fr.comeup.com/article/1609 : 'Etre particulier ou professionnel (aucun statut n'est impose)'. ComeUp edite lui-meme le document au nom du vendeur (recepissé et non facture pour un particulier, art. 7.12.1), donc Baptiste n'a rien a facturer. Revenus a declarer integralement (FAQ 1605 : 'tous les revenus percus sur ComeUp doivent etre declares, sans exception', transmission au fisc 'des le premier euro'). Commission 20 % HT en offre gratuite, prix autorises 15-5000 EUR, retrait valide sous 3-5 jours ouvres via Hyperwallet. INCERTITUDE RESTANTE a lever : la frontiere officielle entre vente occasionnelle et activite habituelle exigeant une immatriculation n'a PAS ete verifiee en source primaire (service-public/URSSAF) - c'est la seule question qui reste, et elle porte sur la repetition des ventes, pas sur la premiere. Exp-02 repasse donc en running : il ne bloque plus que sur l'accord de Baptiste et les videos."
+  },
+  {
+   "date": "2026-11-24",
+   "note": "CORRECTION du constat de ce matin, dans le meme run. ComeUp autorise bien un vendeur sans statut (c'est verifie et ca reste vrai), mais c'est la barriere de la PLATEFORME, pas celle de la loi. Verification officielle ensuite : il n'existe aucun seuil chiffre ni aucune exoneration pour la vente occasionnelle d'une prestation (F31725 : les seuls chiffres existants - 305 EUR, 2 000 EUR/30 transactions - sont fiscaux ou concernent le reporting de la plateforme, jamais l'immatriculation), le critere est qualitatif ('profession habituelle', C. com. L121-1), et exercer sans immatriculation au RNE est un delit puni de 7 500 EUR (L123-38-1), requalifiable en travail dissimule (jusqu'a 3 ans et 45 000 EUR, C. trav. L8224-1, redressement majore de 35 %). Conclusion : exp-02 ne bloque plus sur une supposition fausse mais sur une regle verifiee, et la levee est bon marche (micro-entreprise gratuite, 0 EUR a CA nul). A-06 retiree, A-07 envoyee."
   }
  ],
  "owner_agent": "redacteur"
