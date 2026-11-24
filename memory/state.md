@@ -1,4 +1,4 @@
-# État de l'agence — mis à jour le 24/11/2026 ~08:05 (run quotidien 0730)
+# État de l'agence — mis à jour le 24/11/2026 ~19:05 (run quotidien 1900)
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -15,7 +15,7 @@ Tout vérifié en source primaire aujourd'hui. Les 3 voies de contournement sont
 - Détails : `memory/benchmarks/facturer-sans-statut.md`, `statut-artiste-auteur.md`, `canaux-hors-reddit-exp03.md`.
 
 ## Priorités
-1. **exp-02 ComeUp** — la mieux notée (30/35, confiance high). 3 fiches prêtes mais plafonnées à 3/5 sur la preuve sans vidéos. Bloque sur **A-07** (micro-entreprise — remplace A-06, mal posée) puis **T-04** (3 vidéos, 45 min).
+1. **exp-02 ComeUp** — la mieux notée (30/35, confiance high). 3 fiches prêtes mais plafonnées à 3/5 sur la preuve sans vidéos. Bloque sur **A-07** (micro-entreprise — remplace A-06, mal posée) puis **T-04** (3 vidéos, 45 min, script exact prêt dans `memory/drafts/script-video-T-04-comeup.md`).
 2. **exp-03 Gumroad logistique** — publiable techniquement depuis le 23/11 (FR + EN, critique `publiable=true`). Diffusion prête : post pour community.n8n.io (« Help me Build my Workflow ») validé par le critique en 3 passes le 24/11 (`memory/drafts/post-n8n-community-exp03.md`). Bloque sur **A-04** et la création par Baptiste d'un compte community.n8n.io (gratuit). T-06 (règles Reddit) devenu secondaire. Plan de mesure : le seuil (≥30 inscrits) n'est pas mesurable sans une capture hebdo du tableau de bord Gumroad → à greffer sur T-02 le jour de la publication.
 3. **exp-04 primes bancaires** — bloqué sur A-05. One-off qui finance le budget, pas une route vers l'objectif.
 4. exp-01 clipping : remesuré 24/11 (111 clips, plafond ~39 €, inchangé). 0 € et 0 h jusqu'au 06/12.
@@ -35,7 +35,7 @@ Suivant si un test meurt : gbp-optimisation (30, à fusionner avec exp-02). code
 - **A-05** (23/11) : ouvrir un compte Fortuneo (FTNSEA, 250 €). Pas-à-pas prêt : `memory/drafts/pas-a-pas-A-05-fortuneo.md`.
 - **T-07** (12 min) : inventaire des romans KDP/Gumroad et du compte manga+Patreon — ils ne sont dans aucune des 35 pistes, donc invisibles.
 - T-06 (8 min) : règles Reddit + ancienneté du compte. **Secondaire** depuis qu'un canal hors Reddit existe.
-- T-04 (45 min) : 3 vidéos ComeUp, le jour où A-07 passe.
+- T-04 (45 min, script prêt) : 3 vidéos ComeUp, le jour où A-07 passe.
 - T-02 (5 min, hebdo) : capture des gains Whop. T-01 : place de parking oui/non (1 min).
 - Total ouvert : ~1,2 h.
 

@@ -20,8 +20,8 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": "CLAUDE.md",
-   "current_task": "Run 24/11 07:30 termine. A trouve et corrige la supposition fausse qui bloquait l'agence ('il faut un SIRET pour vendre') : exp-02 ComeUp repasse en running, A-06 envoyee. T-07 creee (inventaire des 2 actifs existants, absents des 35 pistes). Pipeline corrige (ComeUp high, Codeur parkee). Digest corrige. Prochain run : attendre A-04/A-05/A-06, et sinon noter les 2 actifs existants des que T-07 revient.",
-   "last_run": "2026-11-24T07:30:00+01:00"
+   "current_task": "Run 24/11 19:00 termine. Rien de neuf de Baptiste (A-04/A-05/A-07/T-06/T-07 toujours sans reponse). Prepare le script exact des 3 videos T-04 (memory/drafts/script-video-T-04-comeup.md) pour que la tache parte prete des que A-07 recoit un oui. Verifie qu'aucune piste du pipeline ne permet un 4e test (plafond de 3 deja atteint). Prochain run : attendre une reponse de Baptiste ou la revue hebdo de dimanche 29/11.",
+   "last_run": "2026-11-24T19:00:00+01:00"
   },
   {
    "id": "chercheur",

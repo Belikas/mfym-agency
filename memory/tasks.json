@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T07:36:28+01:00",
+ "updated": "2026-11-24T19:05:00+01:00",
  "tasks": [
   {
    "id": "T-01",
@@ -84,7 +84,7 @@
    "purpose": "Les fiches ComeUp plafonnent à 3/5 en preuve sans vidéo (critique passe 3) ; à faire seulement quand on publie (exp-02).",
    "steps": [
     "Ne rien faire avant que je te dise « on publie »",
-    "Ce jour-là : je te prépare les démos prêtes à lancer, tu enregistres 3 vidéos de 60-90 s de ton écran (Win+Alt+R) en suivant mon script"
+    "Ce jour-là : script prêt dans memory/drafts/script-video-T-04-comeup.md (3 démos déjà construites et testées, commandes exactes dedans), tu enregistres 3 vidéos de 60-90 s de ton écran (Win+Alt+R) en le suivant"
    ],
    "est_minutes": 45,
    "deliverable": "3 fichiers vidéo envoyés au bot",
