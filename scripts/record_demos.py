@@ -92,6 +92,8 @@ def s1(page):
     t.add(f"workflow « {wf['name']} » — {len(wf['nodes'])} nœuds :\n")
     for n in wf["nodes"]: t.add(f"  - {n['name']}  ({n['type'].split('.')[-1]})\n"); page.wait_for_timeout(250)
     page.wait_for_timeout(1500); t.clear()
+    t.cap("Les données d'entrée : commandes et suivi transporteur (fictifs)."); t.type("cat orders.csv tracking.csv")
+    t.show_file(d / "orders.csv", per_line=0.15); t.show_file(d / "tracking.csv", per_line=0.15); page.wait_for_timeout(3000); t.clear()
     t.cap("Exécution réelle avec la CLI n8n 2.48.7 (sortie rejouée, attentes abrégées)."); t.type("sh n8n/run_n8n.sh")
     for off, l in n8n_out[0]:  # replay des lignes reelles, attentes plafonnees a 0,25 s
         t.add(l); page.wait_for_timeout(int(min(max(off - prev, 0.03), 0.25) * 1000)); prev = off
