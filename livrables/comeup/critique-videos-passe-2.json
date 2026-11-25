@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-25",
+  "methode": "S1.mp4 (68,9 s, 1280x720 h264) : 3 images cles + 8 images extraites du MP4 (t=3,8,14,22,30,40,52,64 s). S2/S3 non modifiees depuis passe 1 : notes reprises.",
+  "videos": {
+    "S1": {
+      "preuve": 4,
+      "lisibilite": 3,
+      "duree_ok": true,
+      "gaps": [
+        "Corrige depuis passe 1 : liste des noeuds du vrai workflow.json (7 noeuds), puis entree orders.csv/tracking.csv affichee, puis execution, puis alerte 4 colis + messages. Avant/apres present ; recoupement par run.py (memes 4 colis) = bonne preuve de coherence ; mentions 'sortie rejouee' et 'aucun e-mail envoye' honnetes.",
+        "Lisibilite 3 : ~20 s de dump JSON brut (startTime, executionIndex, previousNodeOutput, paired Item) au milieu ; un acheteur non technique decroche. Correction pour 4 : couper ou accelerer le dump a 5 s max et laisser plus de temps a l'entree et a la sortie.",
+        "Entree : cat de orders.csv/tracking.csv montre seulement 4 des 10 lignes et rien n'indique lesquelles sont en retard. Correction : surligner les 4 lignes a risque (ou legende 'dont 4 colis a risque') avant l'execution.",
+        "Toujours pas de canvas n8n (noeuds relies visuellement) : texte en liste a la place ; acceptable, mais pour 5 ajouter 3 s de capture du canvas.",
+        "Image 1 (t=0) : ecran quasi vide avec seulement les bandeaux ; raccourcir."
+      ]
+    },
+    "S2": { "preuve": 4, "lisibilite": 4, "inchangee": true },
+    "S3": { "preuve": 4, "lisibilite": 3, "inchangee": true, "note": "gaps passe 1 (colonne IA cryptique, pas de PDF d'entree) toujours ouverts, non bloquants" }
+  },
+  "publiable_avec_videos": true,
+  "verdict": "ok",
+  "condition": "Oui, les 3 videos sont publiables (preuve >= 4 partout, honnetete explicite). Lisibilite S1 et S3 a 3 : ameliorations recommandees, non bloquantes."
+}
