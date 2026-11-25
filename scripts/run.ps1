@@ -28,6 +28,17 @@ function Send-Alert($text) {
 }
 
 # 1. Verrou : un seul run à la fois. Verrou d'un processus mort ou de plus de 2 h = périmé.
+# La revue hebdo n'a pas de rattrapage : elle attend jusqu'à 30 min que le verrou se libère
+# (puis raccourcit son timeout d'autant pour rester sous la limite du planificateur, 70 min).
+if ($Goal -eq "hebdo") {
+  $waited = 0
+  while ((Test-Path $Lock) -and $waited -lt 30) {
+    $lockPid = [int](Get-Content $Lock -ErrorAction SilentlyContinue)
+    if (-not ($lockPid -and (Get-Process -Id $lockPid -ErrorAction SilentlyContinue))) { break }
+    Start-Sleep 60; $waited++
+  }
+  if ($waited) { $TimeoutMin = [Math]::Max(20, $TimeoutMin - $waited) }
+}
 if (Test-Path $Lock) {
   $age = (Get-Date) - (Get-Item $Lock).LastWriteTime
   $lockPid = [int](Get-Content $Lock -ErrorAction SilentlyContinue)

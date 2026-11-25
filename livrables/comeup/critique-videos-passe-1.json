@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-25",
+  "methode": "9 images cles ouvertes (3 par video), durees ffprobe 60.6 s / 62.9 s / 64.2 s (cible grille 60-90 s : ok). MP4 non lus.",
+  "videos": {
+    "S1": {
+      "preuve": 3,
+      "lisibilite": 2,
+      "gaps": [
+        "Images 1 et 2 : dump JSON brut de la CLI n8n (startTime, executionIndex, previousNodeOutput). Un acheteur non technique ne voit ni workflow, ni noeuds, ni declencheur : la preuve 'un workflow tourne' n'est pas lisible. Correction la plus rentable : ouvrir la video sur une capture du canvas n8n (noeuds Fichier orders > Lire orders > Filtre retard > Message) puis montrer l'entree (tableau de commandes, lignes en retard surlignees) avant la sortie.",
+        "Aucun avant/apres visible : le tableau d'entree (CMD-1004, 1005, 1008...) n'apparait pas, seul le resultat. Ajouter 5 s d'entree annotee 'ces 3 commandes ont du retard' puis 'ces 3 mails sont generes'.",
+        "Ecran final (image 3) correct et lisible (mails CMD-1004/1005 avec motif du retard), a garder ; mentions 'sortie rejouee, attentes abregees' et 'aucun e-mail envoye' honnetes : a conserver.",
+        "Preuve du fait que S1 est rejouee et non live : honnete, mais plafonne la note a 3-4 ; la fiche doit dire la meme chose dans sa description."
+      ]
+    },
+    "S2": {
+      "preuve": 4,
+      "lisibilite": 4,
+      "gaps": [
+        "Preuve solide : vraie page de chat, reponses citant la source ('FAQ Boutique Demo > Livraison'), cas hors perimetre ('magasin a Lyon') journalise dans unanswered.log avec horodatage reel. Le refus de repondre est la meilleure preuve de garde-fou.",
+        "Pour atteindre 5 : montrer dans la video la reponse 'je ne sais pas' dans le chat avant le cat unanswered.log (image 2 montre seulement la question saisie), et indiquer a l'ecran le nombre de passages de FAQ utilises (ex. 'base : 12 passages fictifs').",
+        "Legere perte de lisibilite sur le terminal final (log brut) : la legende bleue compense, acceptable."
+      ]
+    },
+    "S3": {
+      "preuve": 4,
+      "lisibilite": 3,
+      "gaps": [
+        "Preuve solide : 8 factures fictives, sortie CSV reelle avec 4 types d'alertes (doublon F-2026-0412 sur 01 et 07, HT+TVA != TTC sur 05, somme des lignes != Total HT sur 06). Mention honnete '8/8 identiques aux regles (ne mesure pas la precision reelle)'.",
+        "Lisibilite : colonne 'IA' avec 'OK' partout est cryptique ; ecran terminal dense. Correction : renommer la colonne 'Relu par Claude' ou la retirer, et ajouter une legende 'ligne rouge = a verifier par un humain'.",
+        "Il manque l'entree : montrer 1 PDF de facture fictive (2 s) avant le CSV pour que l'acheteur voie 'PDF -> tableau'. Pour 5 : ajouter un compteur 'x factures, y alertes' annote.",
+        "Image 1 ('python extract.py --ai' puis '.....') n'apporte rien a un non technique : raccourcir."
+      ]
+    }
+  },
+  "publiable_avec_videos": false,
+  "condition": "S2 et S3 publiables en l'etat (note preuve 4). S1 a refaire en ouverture visuelle (canvas n8n + entree/sortie) : le JSON brut ne prouve rien a un acheteur non technique."
+}

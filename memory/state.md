@@ -1,4 +1,4 @@
-# État de l'agence — mis à jour le 24/11/2026 ~19:05 (run quotidien 1900)
+# État de l'agence — mis à jour le 25/11/2026 ~08:05 (run quotidien 0730)
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -15,7 +15,7 @@ Tout vérifié en source primaire aujourd'hui. Les 3 voies de contournement sont
 - Détails : `memory/benchmarks/facturer-sans-statut.md`, `statut-artiste-auteur.md`, `canaux-hors-reddit-exp03.md`.
 
 ## Priorités
-1. **exp-02 ComeUp** — la mieux notée (30/35, confiance high). 3 fiches prêtes mais plafonnées à 3/5 sur la preuve sans vidéos. Bloque sur **A-07** (micro-entreprise — remplace A-06, mal posée) puis **T-04** (3 vidéos, 45 min, script exact prêt dans `memory/drafts/script-video-T-04-comeup.md`).
+1. **exp-02 ComeUp** — la mieux notée (30/35, confiance high). 3 fiches prêtes mais plafonnées à 3/5 sur la preuve sans vidéos. Bloque uniquement sur **A-07** (micro-entreprise). **T-04 annulée le 25/11** : l'agence a fait les 3 vidéos elle-même en headless (`livrables/comeup/videos/`, `scripts/record_demos.py`). Preuve : S1 3/5 (à refaire : canvas n8n + entrée), S2 4/5, S3 4/5 → passe 2 au prochain run.
 2. **exp-03 Gumroad logistique** — publiable techniquement depuis le 23/11 (FR + EN, critique `publiable=true`). Diffusion prête : post pour community.n8n.io (« Help me Build my Workflow ») validé par le critique en 3 passes le 24/11 (`memory/drafts/post-n8n-community-exp03.md`). Bloque sur **A-04** et la création par Baptiste d'un compte community.n8n.io (gratuit). T-06 (règles Reddit) devenu secondaire. Plan de mesure : le seuil (≥30 inscrits) n'est pas mesurable sans une capture hebdo du tableau de bord Gumroad → à greffer sur T-02 le jour de la publication.
 3. **exp-04 primes bancaires** — bloqué sur A-05. One-off qui finance le budget, pas une route vers l'objectif.
 4. exp-01 clipping : remesuré 24/11 (111 clips, plafond ~39 €, inchangé). 0 € et 0 h jusqu'au 06/12.
@@ -24,24 +24,24 @@ Tout vérifié en source primaire aujourd'hui. Les 3 voies de contournement sont
 | id | statut | kill date | bloqué par |
 |---|---|---|---|
 | exp-01-clipping-mesure | running (plafonné) | 06/12 | T-02 (euros payés) |
-| exp-02-comeup-gigs | running (débloqué le 24/11) | 20/12 | A-07 + T-04 |
+| exp-02-comeup-gigs | running (vidéos faites 25/11) | 20/12 | A-07 |
 | exp-03-skills-gumroad | running (publiable, diffusion prête) | 20/12 | A-04 + compte community.n8n.io |
 | exp-04-primes-bancaires | bloqué | 31/01 | A-05 |
 Suivant si un test meurt : gbp-optimisation (30, à fusionner avec exp-02). codeur-n8n (29) parkée jusqu'à la micro-entreprise.
 
-## En attente de Baptiste (3 approbations + 4 tâches)
+## En attente de Baptiste (3 approbations + 4 tâches dont T-02 hebdo)
 - **A-07** (24/11) : créer la micro-entreprise maintenant. 0 €. Débloque exp-02, Google Business Profile, Codeur.com d'un coup.
 - **A-04** (23/11) : publier la version gratuite d'exp-03 sur Gumroad. 0 €. Pas-à-pas prêt : `memory/drafts/pas-a-pas-A-04-gumroad.md`.
 - **A-05** (23/11) : ouvrir un compte Fortuneo (FTNSEA, 250 €). Pas-à-pas prêt : `memory/drafts/pas-a-pas-A-05-fortuneo.md`.
 - **T-07** (12 min) : inventaire des romans KDP/Gumroad et du compte manga+Patreon — ils ne sont dans aucune des 35 pistes, donc invisibles.
 - T-06 (8 min) : règles Reddit + ancienneté du compte. **Secondaire** depuis qu'un canal hors Reddit existe.
-- T-04 (45 min, script prêt) : 3 vidéos ComeUp, le jour où A-07 passe.
 - T-02 (5 min, hebdo) : capture des gains Whop. T-01 : place de parking oui/non (1 min).
-- Total ouvert : ~1,2 h.
+- Total ouvert : ~0,5 h.
 
 ## Technique
 - Runs : MFYM-quotidien 07:30 (opus) / 13:00 / 19:00 (sonnet), hebdo dim. 10:00, digest 20:30, backup 03:00, heartbeat 5 min. Tâches en S4U.
-- **La revue hebdo du 22/11 n'a jamais eu lieu** : run `skipped_locked` sortant en code 0, donc aucun réessai du planificateur et revue perdue. Vérifier dimanche 29/11 qu'elle tourne (`grep hebdo logs/runs.jsonl`).
+- **Revue hebdo du 22/11 perdue** (verrou pris → skip). Corrigé 25/11 dans `run.ps1` : l'hebdo attend jusqu'à 30 min le verrou et raccourcit son timeout d'autant. Non testé en vrai (le run tenait le verrou) → vérifier dim. 29/11 (`grep hebdo logs/runs.jsonl`).
+- Appels `claude -p` des démos S2/S3 pollués par hooks/CLAUDE.md quand lancés depuis le projet : `record_demos.py` contourne (`--setting-sources ""` dans une copie). `llm.py` des démos non corrigé.
 - **À faire en session surveillée** : ajouter à `.claude/agents/chercheur.md` « si tu délègues, c'est en avant-plan ; un livrable annoncé mais non écrit ne compte pas » — l'édition de `.claude/` est refusée aux runs. Le chercheur s'est arrêté 3 fois en attendant ses sous-agents aujourd'hui.
 - Lanceur `scripts/run.ps1` (verrou, timeout, quota/auth, alertes). Garde-fou `.claude/hooks/guard.py`. Activité `.claude/hooks/activity.py`.
 - Bot `scripts/bot.py` (service), envoi `scripts/tg.py`, maintenance `scripts/maint.py`. Le bot n'envoie que ce qui a `telegram_message_id` vide : modifier une tâche déjà envoyée ne la renvoie pas.

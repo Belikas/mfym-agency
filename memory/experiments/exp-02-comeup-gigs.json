@@ -11,8 +11,7 @@
  "kill_date": "2026-12-20",
  "status": "running",
  "blocked_on": [
-  "A-07 : creation de la micro-entreprise (seule condition restante)",
-  "T-04 : 3 videos de demo (la fiche plafonne a 3/5 sur la preuve sans elles)"
+  "A-07 : creation de la micro-entreprise (seule condition restante)"
  ],
  "results": [
   {
@@ -30,6 +29,10 @@
   {
    "date": "2026-11-24",
    "note": "CORRECTION du constat de ce matin, dans le meme run. ComeUp autorise bien un vendeur sans statut (c'est verifie et ca reste vrai), mais c'est la barriere de la PLATEFORME, pas celle de la loi. Verification officielle ensuite : il n'existe aucun seuil chiffre ni aucune exoneration pour la vente occasionnelle d'une prestation (F31725 : les seuls chiffres existants - 305 EUR, 2 000 EUR/30 transactions - sont fiscaux ou concernent le reporting de la plateforme, jamais l'immatriculation), le critere est qualitatif ('profession habituelle', C. com. L121-1), et exercer sans immatriculation au RNE est un delit puni de 7 500 EUR (L123-38-1), requalifiable en travail dissimule (jusqu'a 3 ans et 45 000 EUR, C. trav. L8224-1, redressement majore de 35 %). Conclusion : exp-02 ne bloque plus sur une supposition fausse mais sur une regle verifiee, et la levee est bon marche (micro-entreprise gratuite, 0 EUR a CA nul). A-06 retiree, A-07 envoyee."
+  },
+  {
+   "date": "2026-11-25",
+   "note": "T-04 supprimee : l'agence a produit elle-meme les 3 videos de demo en headless (livrables/comeup/videos/S1-S3.mp4, scripts/record_demos.py). Critique preuve sur images cles : S1 3/5 (JSON brut n8n, a refaire avec canvas + donnees d'entree), S2 4/5, S3 4/5 (renommer colonne 'ia', montrer une facture en entree). Prochain : passe 2 sur S1 et S3, puis re-notation preuve des fiches. Seul bloquant restant : A-07."
   }
  ],
  "owner_agent": "redacteur"

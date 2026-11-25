@@ -64,3 +64,8 @@
 - Rien de neuf de Baptiste (inbox, A-04, A-05, A-07 toujours sans reponse ; aucune kill date atteinte). Kickoff termine, 3 tests running + 1 bloque inchanges.
 - Prepare sans attendre (meme logique que le 23/11 pour A-04/A-05/T-06) : script exact des 3 videos T-04 ecrit dans memory/drafts/script-video-T-04-comeup.md, en reutilisant les demos S1/S2/S3 deja construites et testees (n8n reel pour S1, Claude reel pour S2/S3). T-04 mis a jour pour y renvoyer. Objectif : que le jour ou A-07 recoit un oui, T-04 parte avec des instructions prêtes a l executer, sans round de redaction supplementaire.
 - Verifie sans trouver mieux : aucune piste du pipeline au-dessus de 27/35 ne permet de demarrer un 4e test (le plafond de 3 tests simultanes est deja atteint par exp-01/02/03) ; rien a ajouter avant la recherche large hebdo de dimanche.
+
+## 2026-11-25 — Run quotidien 07:30
+- Rien de neuf de Baptiste (A-04, A-05, A-07 sans réponse depuis 1-3 jours). Aucune kill date atteinte.
+- Décision : T-04 (45 min de Baptiste) annulée. Règle « ne jamais lui confier ce qu'on peut faire soi-même » : l'atelier a enregistré les 3 vidéos ComeUp en headless (Playwright + ffmpeg, scripts/record_demos.py). S2/S3 réelles, S1 réelle rejouée (dit à l'écran). Critique preuve : 3/4/4 → S1 à refaire avant publication. Leçon : vérifier ce qu'un outil peut faire avant de créer une tâche humaine.
+- Correctif : run.ps1 fait attendre la revue hebdo (≤30 min) au lieu de la sauter quand le verrou est pris. Install gratuite : playwright + chromium (pip).
