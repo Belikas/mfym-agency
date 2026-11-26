@@ -30,7 +30,7 @@ def ask(q):
     return {"answer": b, "source": f"FAQ Boutique Démo > {t}", "score": round(best[0], 2), "gen": gen}
 def unknown(q, score):
     with open(here/"unanswered.log", "a", encoding="utf-8") as f: f.write(f"{datetime.datetime.now():%Y-%m-%d %H:%M}\t{q}\n")
-    return {"answer": "Je ne sais pas : cette information n'est pas dans la FAQ. Je transmets votre question à l'équipe, qui vous répondra par e-mail sous 24 h ouvrées.", "source": None, "score": round(score, 2)}
+    return {"answer": "Je ne sais pas : cette information n'est pas dans la FAQ. Je transmets votre question à l'équipe.", "source": None, "score": round(score, 2)}
 PAGE = (here/"widget.html").read_text(encoding="utf-8")
 class H(BaseHTTPRequestHandler):
     def log_message(self, *a): pass

@@ -86,23 +86,27 @@ def copy_llm(tmp):
 
 def s1(page):
     d = DEMOS / "S1"; wf = json.loads((d / "n8n/workflow.json").read_text(encoding="utf-8"))
-    n8n_out = N8N; prev = 0
+    n8n_out = N8N
+    risk = re.findall(r"^- (CMD-\d+)", (d / "out/alerte.txt").read_text(encoding="utf-8"), re.M)  # les colis a risque, lus dans la sortie reelle de run.py
+    trk = {r["tracking"] for r in csv.DictReader(open(d / "orders.csv", encoding="utf-8")) if r["order_id"] in risk}
     t = Term(page, "S1 — Logistique : workflow n8n")
     t.cap("Un vrai fichier de workflow n8n, pas une maquette."); t.type("cat n8n/workflow.json | nœuds")
     t.add(f"workflow « {wf['name']} » — {len(wf['nodes'])} nœuds :\n")
     for n in wf["nodes"]: t.add(f"  - {n['name']}  ({n['type'].split('.')[-1]})\n"); page.wait_for_timeout(250)
-    page.wait_for_timeout(1500); t.clear()
-    t.cap("Les données d'entrée : commandes et suivi transporteur (fictifs)."); t.type("cat orders.csv tracking.csv")
-    t.show_file(d / "orders.csv", per_line=0.15); t.show_file(d / "tracking.csv", per_line=0.15); page.wait_for_timeout(3000); t.clear()
-    t.cap("Exécution réelle avec la CLI n8n 2.48.7 (sortie rejouée, attentes abrégées)."); t.type("sh n8n/run_n8n.sh")
-    for off, l in n8n_out[0]:  # replay des lignes reelles, attentes plafonnees a 0,25 s
-        t.add(l); page.wait_for_timeout(int(min(max(off - prev, 0.03), 0.25) * 1000)); prev = off
-    t.add(f"\n[exécution réelle de {n8n_out[2]} : sortie {n8n_out[3]}, {n8n_out[1]:.0f} s ; attentes abrégées dans la vidéo]\n", "p"); page.wait_for_timeout(2500); t.clear()
-    t.cap("Détection + messages générés par le script de référence (mêmes 4 colis)."); t.type("python run.py")
+    page.wait_for_timeout(3000); t.clear()
+    t.cap(f"Les données d'entrée (fictives) : 10 commandes, dont {len(risk)} colis à risque (en rouge)."); t.type("cat orders.csv tracking.csv")
+    t.show_file(d / "orders.csv", lambda l: l.split(",")[0] in risk, per_line=0.25); t.show_file(d / "tracking.csv", lambda l: l.split(",")[0] in trk, per_line=0.25); page.wait_for_timeout(7000); t.clear()
+    t.cap("Exécution réelle avec la CLI n8n 2.48.7 (sortie rejouée, abrégée à l'écran)."); t.type("sh n8n/run_n8n.sh")
+    lines = [l for _, l in n8n_out[0]]
+    for l in lines[2:5]: t.add(l); page.wait_for_timeout(200)
+    t.add(f"[... {max(len(lines) - 9, 0)} lignes de journal n8n masquées ...]\n", "p"); page.wait_for_timeout(500)
+    for l in lines[-6:]: t.add(l); page.wait_for_timeout(200)
+    t.add(f"\n[exécution réelle de {n8n_out[2]} : sortie {n8n_out[3]}, {n8n_out[1]:.0f} s ; attentes et journal abrégés dans la vidéo]\n", "p"); page.wait_for_timeout(3500); t.clear()
+    t.cap(f"Détection + messages générés par le script de référence (mêmes {len(risk)} colis)."); t.type("python run.py")
     t.run([sys.executable, "run.py"], d); page.wait_for_timeout(1000); t.type("cat out/alerte.txt")
-    t.show_file(d / "out/alerte.txt", lambda l: l.startswith("- CMD"), 0.5); page.wait_for_timeout(5000); t.clear()
+    t.show_file(d / "out/alerte.txt", lambda l: l.startswith("- CMD"), 0.5); page.wait_for_timeout(7000); t.clear()
     t.cap("Messages clients prêts à envoyer (aucun e-mail envoyé dans la démo)."); t.type("cat out/messages.txt")
-    t.show_file(d / "out/messages.txt", lambda l: l.startswith("Objet"), 0.18); page.wait_for_timeout(2500)
+    t.show_file(d / "out/messages.txt", lambda l: l.startswith("Objet"), 0.18); page.wait_for_timeout(10000)
 
 
 def s2(page):
@@ -115,23 +119,27 @@ def s2(page):
         for q in ("Combien coûte la livraison express ?", "Quelle est la durée de la garantie ?", "Avez-vous un magasin à Lyon ?"):
             n = page.locator("#log .m").count(); page.click("#q"); page.keyboard.type(q, delay=60); page.wait_for_timeout(400); page.keyboard.press("Enter")
             page.wait_for_function(f"document.querySelectorAll('#log .m').length>={n+2}", timeout=90000)
-            page.wait_for_timeout(10000)
-        page.goto("http://127.0.0.1:8765/log"); page.evaluate(ban); page.wait_for_timeout(8000)
+            page.wait_for_timeout(5000)
+        page.goto("http://127.0.0.1:8765/log"); page.evaluate(ban); page.wait_for_timeout(4000)
         t = Term(page, "S2 — Assistant sur documents"); t.cap("Question hors périmètre : « je ne sais pas », journalisée pour l'équipe."); t.type("cat unanswered.log")
-        t.show_file(tmp / "S2/unanswered.log", per_line=0.4); page.wait_for_timeout(6000)
+        t.show_file(tmp / "S2/unanswered.log", per_line=0.4); page.wait_for_timeout(4000)
     finally: srv.terminate(); shutil.rmtree(tmp, ignore_errors=True)
 
 
 def s3(page):
     tmp = pathlib.Path(tempfile.mkdtemp()); shutil.copytree(DEMOS / "S3", tmp / "S3", ignore=shutil.ignore_patterns("_tmp")); copy_llm(tmp)
     try:
-        t = Term(page, "S3 — Extraction de factures : Claude vs règles"); t.cap("8 factures PDF fictives lues par des règles ET relues par Claude."); t.type("python extract.py --ai")
-        code, dur = t.run([sys.executable, "extract.py", "--ai"], tmp / "S3", pace=0.3); t.add(f"\n[sortie {code} — {dur:.0f} s, appels Claude réels]\n", "p"); page.wait_for_timeout(2500)
+        import base64, pymupdf
+        t = Term(page, "S3 — Extraction de factures : Claude vs règles")
+        png = base64.b64encode(pymupdf.open(tmp / "S3/invoices/facture-02.pdf")[0].get_pixmap(dpi=110).tobytes("png")).decode()
+        t.cap("Entrée : une des 8 factures PDF fictives (facture-02.pdf)."); t.html(f"<div style='font-size:20px'><span class=p>$ </span>ls invoices/  (8 PDF)</div><img src='data:image/png;base64,{png}' style='height:440px;margin-top:6px;border:2px solid #30363d'>"); page.wait_for_timeout(4000); t.clear()
+        t.cap("Des règles lisent les champs ET Claude relit chaque facture."); t.type("python extract.py --ai")
+        code, dur = t.run([sys.executable, "extract.py", "--ai"], tmp / "S3", pace=0.3); t.add(f"\n[sortie {code} — {dur:.0f} s, appels Claude réels]\n", "p"); page.wait_for_timeout(1500)
         rows = list(csv.DictReader(open(tmp / "S3/extraction.csv", encoding="utf-8"))); ok = sum(r["ia"] == "OK" for r in rows)
         def table(mark=None):
-            return ("<table><tr><th>fichier<th>numéro<th>HT<th>TVA<th>TTC<th>IA<th>alertes</tr>" + "".join(
+            return ("<table><tr><th>fichier<th>numéro<th>HT<th>TVA<th>TTC<th>Relu par Claude<th>alertes</tr>" + "".join(
                 f"<tr class='{'err' if r['fichier'] == mark else 'bad' if r['alertes'] else ''}'><td>{r['fichier']}<td>{html.escape(r['numero'])}<td>{r['ht']}<td>{r['tva']}<td>{r['ttc']}<td>{r['ia']}<td>{html.escape(r['alertes'])}</tr>" for r in rows) + "</table>")
-        t.clear(); t.add("$ ", "p"); t.add("cat extraction.csv   (colonne ia = relecture Claude)\n"); t.cap(f"Claude relit chaque facture : {ok}/{len(rows)} identiques aux règles (ne mesure pas la précision réelle).")
+        t.clear(); t.cap(f"Ligne orangée = à vérifier par un humain. Claude relit chaque facture : {ok}/{len(rows)} identiques aux règles (ne mesure pas la précision réelle).")
         t.html("<div style='font-size:20px;margin-bottom:8px'><span class=p>$ </span>cat extraction.csv</div>" + table()); page.wait_for_timeout(8000)
         bad = next(r for r in rows if "HT+TVA" in r["alertes"] and "somme" not in r["alertes"])["fichier"]
         t.cap("Incohérence détectée automatiquement : HT + TVA ≠ TTC. Aucune correction silencieuse.")

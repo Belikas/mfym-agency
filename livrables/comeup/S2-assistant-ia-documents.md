@@ -150,4 +150,4 @@ Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - 
 - livrables/comeup/assets/S2-1-reponse-sourcee.png. Légende : "Réponses rédigées par Claude à partir du passage de la FAQ, avec la source citée (données fictives)."
 - livrables/comeup/assets/S2-2-hors-perimetre.png. Légende : "Hors périmètre : il dit qu'il ne sait pas ; la question est enregistrée dans le journal de l'équipe (aucun e-mail envoyé dans cette démo). Le transfert à un humain par e-mail est inclus à partir du palier Standard, non démontré ici."
 - livrables/comeup/assets/S2-3-questions-sans-reponse.png. Légende : "Journal des questions sans réponse, pour compléter la FAQ."
-- Vidéo de démo 60-90 s : à enregistrer avant publication (avec un lien public vers une page de test du widget, par Baptiste, hors atelier).
+- Vidéo de démonstration (63 s) livrée avec la fiche : livrables/comeup/videos/S2.mp4 (prototype Python réel sur FAQ fictive, réponses rédigées par Claude, question hors périmètre journalisée, aucun e-mail envoyé). Démo sur données fictives, pas un résultat client.

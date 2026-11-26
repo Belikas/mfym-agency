@@ -1,4 +1,6 @@
-# État de l'agence — mis à jour le 25/11/2026 ~08:05 (run quotidien 0730)
+# État de l'agence — mis à jour le 26/11/2026 ~08:10 (run quotidien 0730)
+
+Baptiste n'a rien répondu depuis le 22/11 alors que le digest part bien chaque soir (MFYM-digest, code 0). Ne pas relancer : le digest liste déjà A-04, A-05, A-07, T-06 et T-07. Le 30/11, exp-03 et exp-04 seront bloqués depuis 7 jours → préparer le test suivant (règle du pipeline).
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -15,7 +17,7 @@ Tout vérifié en source primaire aujourd'hui. Les 3 voies de contournement sont
 - Détails : `memory/benchmarks/facturer-sans-statut.md`, `statut-artiste-auteur.md`, `canaux-hors-reddit-exp03.md`.
 
 ## Priorités
-1. **exp-02 ComeUp** — la mieux notée (30/35, confiance high). 3 fiches prêtes mais plafonnées à 3/5 sur la preuve sans vidéos. Bloque uniquement sur **A-07** (micro-entreprise). **T-04 annulée le 25/11** : l'agence a fait les 3 vidéos elle-même en headless (`livrables/comeup/videos/`, `scripts/record_demos.py`). Preuve : S1 3/5 (à refaire : canvas n8n + entrée), S2 4/5, S3 4/5 → passe 2 au prochain run.
+1. **exp-02 ComeUp** — la mieux notée (30/35, confiance high). Bloque uniquement sur **A-07** (micro-entreprise). Vidéos faites par l'agence (`livrables/comeup/videos/`, `scripts/record_demos.py`, T-04 annulée). **Critique passe 4 fiches+vidéos (26/11)** : S3 publiable (tout à 4) ; S1 et S2 à 3 en preuve (affirmations que la démo ne montre pas) → corrigées par l'atelier le 26/11, à faire renoter (passe 5) par le critique.
 2. **exp-03 Gumroad logistique** — publiable techniquement depuis le 23/11 (FR + EN, critique `publiable=true`). Diffusion prête : post pour community.n8n.io (« Help me Build my Workflow ») validé par le critique en 3 passes le 24/11 (`memory/drafts/post-n8n-community-exp03.md`). Bloque sur **A-04** et la création par Baptiste d'un compte community.n8n.io (gratuit). T-06 (règles Reddit) devenu secondaire. Plan de mesure : le seuil (≥30 inscrits) n'est pas mesurable sans une capture hebdo du tableau de bord Gumroad → à greffer sur T-02 le jour de la publication.
 3. **exp-04 primes bancaires** — bloqué sur A-05. One-off qui finance le budget, pas une route vers l'objectif.
 4. exp-01 clipping : remesuré 24/11 (111 clips, plafond ~39 €, inchangé). 0 € et 0 h jusqu'au 06/12.

@@ -8,7 +8,7 @@
 ## S1 – Logistique e-commerce
 - S1-couverture.png : couverture 1280x720 (le nom « n8n » y figure : cohérent, un workflow n8n réel existe).
 - S1-1-donnees-entree.png : « Entrée : export commandes et statuts transporteur (données fictives). »
-- S1-2-execution.png : « Exécution réelle du workflow avec n8n : 7 nœuds, 4 expéditions à risque sur 10 détectées. »
+- S1-2-execution.png : « Exécution réelle du workflow avec n8n : exécution réussie, 7 nœuds. Les 4 expéditions à risque sur 10 viennent du script de référence (même résultat). »
 - S1-3-sorties.png : « Sortie : messages clients prêts à envoyer et résumé d'alerte (retard, incident, absence de scan). » (généré par le script Python de référence, mêmes 4 colis que n8n)
 - S1-4-workflow-n8n.png : RETIRÉE de la galerie (elle montre un autre workflow, 8 nœuds dont une étape IA, jamais exécuté). Ne pas la publier ni la décrire comme la démo.
 - Badge « Exemple – données fictives » : présent sur la couverture, S1-1 et S1-3 ; absent de S1-2 (le titre du workflow indique « données fictives »).

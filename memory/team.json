@@ -63,8 +63,8 @@
    "hired": "2026-11-22",
    "file": ".claude/agents/critique.md",
    "current_task": "aucune (disponible)",
-   "last_run": "2026-11-25T08:00:00+01:00",
-   "last_result": "25/11 : critere preuve des videos ComeUp sur 9 images cles -> S1 3/5 (JSON brut, a refaire avec canvas n8n + entree), S2 4/5, S3 4/5. livrables/comeup/critique-videos-passe-1.json"
+   "last_run": "2026-11-26T07:55:00+01:00",
+   "last_result": "Fiches ComeUp passe 4 (avec vidéos) : S3 publiable (tout à 4), S1 et S2 min 3 en preuve (affirmations non montrées par la démo)."
   },
   {
    "id": "redacteur",
@@ -104,9 +104,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "aucune (disponible)",
-   "last_run": "2026-11-25T07:59:00+01:00",
-   "last_result": "25/11 : 3 videos de demo ComeUp produites en headless (Playwright+ffmpeg, 61-64 s, 1280x720), script scripts/record_demos.py reutilisable. S2/S3 executions reelles, S1 n8n reel rejoue (indique a l'ecran). A trouve que les hooks/CLAUDE.md pollent les appels claude -p des demos (contourne par --setting-sources \"\" dans une copie). 28 min pour 20 min de timebox. Critique : preuve S1 3, S2 4, S3 4."
+   "current_task": "exp-02 : corriger S1 (attribution des 4 colis) et S2 (réponse hors périmètre sans e-mail ni délai) après critique passe 4",
+   "last_run": "2026-11-26T07:55:00+01:00",
+   "last_result": "Vidéos S1 (62,8 s) et S3 (63,4 s) refaites : JSON n8n réduit, 4 colis à risque surlignés, PDF d'entrée S3, colonne renommée ; ligne vidéo ajoutée aux 3 fiches."
   }
  ]
 }

@@ -144,4 +144,4 @@ Galerie ComeUp, dans cet ordre. Toutes les images portent la mention "Exemple - 
 - livrables/comeup/assets/S3-1-pdf-entree.png. Légende : "Entrée : facture PDF fictive, champs lus par les règles et relus par Claude."
 - livrables/comeup/assets/S3-2-tableau-extrait.png. Légende : "Sortie : 8 factures fictives converties en tableau ; 4 contiennent volontairement une erreur ou un doublon pour montrer les contrôles (4 marquées à vérifier). Claude et les règles d'accord sur 8 sur 8, ce qui ne mesure pas la précision réelle."
 - livrables/comeup/assets/S3-3-incoherence.png. Légende : "Cas douteux signalé : HT + TVA (648,00 €) ne correspond pas au TTC (612,00 €). Aucune correction automatique."
-- Vidéo de démo 60-90 s : à enregistrer avant publication (flux n8n réel, facture fictive vers ligne Sheets, cas douteux marqué ; par Baptiste, hors atelier).
+- Vidéo de démonstration (63 s) livrée avec la fiche : livrables/comeup/videos/S3.mp4 (prototype Python réel sur 8 factures fictives dont 4 pièges volontaires, cas douteux signalés, pas un workflow n8n). Démo sur données fictives, pas un résultat client.

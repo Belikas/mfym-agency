@@ -33,6 +33,10 @@
   {
    "date": "2026-11-25",
    "note": "T-04 supprimee : l'agence a produit elle-meme les 3 videos de demo en headless (livrables/comeup/videos/S1-S3.mp4, scripts/record_demos.py). Critique preuve sur images cles : S1 3/5 (JSON brut n8n, a refaire avec canvas + donnees d'entree), S2 4/5, S3 4/5 (renommer colonne 'ia', montrer une facture en entree). Prochain : passe 2 sur S1 et S3, puis re-notation preuve des fiches. Seul bloquant restant : A-07."
+  },
+  {
+   "date": "2026-11-26",
+   "note": "Vidéos S1/S3 refaites (lisibilité). Critique passe 4 fiches + vidéos (livrables/comeup/critique-passe-4.json) : S3 PUBLIABLE (8 critères à 4). S1 preuve 3 (4 colis attribués à n8n alors qu'ils viennent de run.py) et S2 preuve 3 (réponse hors périmètre promet un e-mail sous 24 h non tenu) : corrections en cours par l'atelier. Seul bloquant externe : A-07."
   }
  ],
  "owner_agent": "redacteur"

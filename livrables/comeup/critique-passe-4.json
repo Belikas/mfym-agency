@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-26",
+  "methode": "Fiches lues en entier, 8 images extraites par video (ffmpeg fps=1/8, dossier videos/frames/critique-p4/), couvertures vues a 640 px et 200 px, 9 images de galerie vues, freezedetect sur les videos. Grille : memory/benchmarks/comeup-gigs.md section 5.",
+  "S1": {
+    "scores": {"clarte": 4, "livrables": 4, "preuve_demo": 3, "structure": 4, "honnetete": 4, "prix_paliers": 4, "visuels": 4, "seo_conversion": 4},
+    "justifications": {
+      "clarte": "Titre vertical logistique + n8n + IA, comprehensible en 5 s ; 'flux' reste un peu large.",
+      "livrables": "Tableau 3 paliers chiffre (workflows, canaux, IA, doc, test defini), options coherentes ; pas de zone floue.",
+      "preuve_demo": "Legende S1-2 et fiche affirment '4 expeditions a risque detectees sur 10' par l'execution n8n, mais la capture n8n montre seulement 'Succeeded' et la video montre le statut success puis les 4 colis issus du script Python run.py : l'attribution des 4 colis a n8n n'est pas visible.",
+      "structure": "827 mots, hook -> recus -> exemples -> processus -> exclusions -> FAQ 7 questions -> appel au contact.",
+      "honnetete": "Exclusions, cout IA, propriete des acces, demo marquee fictive ; 'sous 48 h ouvrees' non confirme par Baptiste.",
+      "prix_paliers": "Essentiel 49 euros dans la mediane 33-55, upsell logique, calcul d'ecart Standard-Premium explicite.",
+      "visuels": "Couverture lisible a 200 px, gabarit commun ; S1-2 sans badge fictif et capture n8n petite et sombre.",
+      "seo_conversion": "n8n, logistique, colis, e-commerce presents titre/debut/tags ; appel a ecrire avant commande."
+    },
+    "gaps": [
+      "[<4 preuve_demo] Corriger la legende S1-2 (fiche + captions.md) : 'Execution reelle du workflow n8n (CLI n8n) : statut Succeeded, 7 noeuds ; la detection des 4 colis a risque sur 10 est montree par le script de reference (image S1-3 et video)'. Alternative : re-capturer/montrer dans la video la sortie du noeud n8n 'Detecter les retards' avec les 4 colis.",
+      "[note] Video S1 : la 1re image liste 5 noeuds sur les 7 annonces ; les ~25 dernieres secondes repetent les memes 2 messages (image figee)."
+    ]
+  },
+  "S2": {
+    "scores": {"clarte": 4, "livrables": 4, "preuve_demo": 3, "structure": 4, "honnetete": 4, "prix_paliers": 4, "visuels": 4, "seo_conversion": 4},
+    "justifications": {
+      "clarte": "Titre chatbot IA + boutique en ligne + depuis vos documents ; clair, 78 caracteres proches d'une limite non verifiee.",
+      "livrables": "Documents, questions de test, options par palier chiffres, definition d'un 'document' ; coherent description/tableau.",
+      "preuve_demo": "La reponse hors perimetre visible dans video et S2-2 promet 'qui vous repondra par e-mail sous 24 h ouvrees' alors que la demo n'envoie aucun e-mail, que l'Essentiel n'a pas de transfert e-mail et que la fiche annonce 48 h : le texte montre une promesse non demontree et contradictoire avec l'offre.",
+      "structure": "1 040 mots (borne haute), sections completes, FAQ 8 questions ; un peu dense mais scannable.",
+      "honnetete": "Risque d'erreur IA, RGPD, couts tiers, WhatsApp exclu, prototype Python non n8n ; la couverture montre une reponse '30 jours' non demontree mais declaree dans le brief.",
+      "prix_paliers": "Essentiel 55 euros en haut de la mediane, justification chiffree, panier par options coherent.",
+      "visuels": "Couverture lisible a 200 px, coherente avec S1/S3 ; bulle '30 jours apres reception' = illustration non demontree.",
+      "seo_conversion": "chatbot IA, assistant IA, e-commerce, service client dans titre/tags/debut ; appel au contact present."
+    },
+    "gaps": [
+      "[<4 preuve_demo] Regenerer le prototype pour que la reponse hors perimetre dise 'Je ne sais pas : cette information n'est pas dans la FAQ. Votre question est enregistree pour l'equipe.' (sans e-mail ni delai), puis refaire S2-2, S2-3 si besoin et la video S2 ; ou a minima ajouter a l'ecran/legende que l'e-mail 24 h est du texte de demo non envoye et aligner 24 h/48 h.",
+      "[note] Video S2 : ~38 s sur 63 sont des images figees (reponses deja affichees) ; couper ou accelerer."
+    ]
+  },
+  "S3": {
+    "scores": {"clarte": 4, "livrables": 4, "preuve_demo": 4, "structure": 4, "honnetete": 4, "prix_paliers": 4, "visuels": 4, "seo_conversion": 4},
+    "justifications": {
+      "clarte": "Titre factures PDF vers Excel par IA, niche nommee ; BL/CMR clairement renvoyes au devis.",
+      "livrables": "Definitions (type de document, cas douteux, taux de lecture) + tableau 3 paliers sans zone floue.",
+      "preuve_demo": "Video, 3 captures et legendes correspondent au contenu reel (8 factures, 4 pieges, 612 vs 648 euros, accord 8/8 declare non mesurant la precision) ; defaut : ~17 s d'ecran quasi vide (points d'avancement) et colonne 'Relu par Claude' toujours OK.",
+      "structure": "1 024 mots, exemple de flux, FAQ 8 questions, definition de cas douteux ; bon.",
+      "honnetete": "Meilleure des trois : aucun pourcentage promis, scans non promis, confidentialite API, sortie d'un commun accord apres le test ; charge de 100 documents mesures en Premium a surveiller.",
+      "prix_paliers": "Essentiel 49 euros, test 10 documents tenable, ecart Standard-Premium decompose.",
+      "visuels": "Couverture lisible, tableau fictif coherent avec la demo ; mini 'n8n' illisible a 200 px (non essentiel).",
+      "seo_conversion": "extraction, factures, OCR IA, n8n en titre/tags ; appel avec exemple de document anonymise."
+    },
+    "gaps": []
+  },
+  "publiable": {"S1": false, "S2": false, "S3": true}
+}
