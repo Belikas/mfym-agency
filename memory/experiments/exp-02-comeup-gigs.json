@@ -37,6 +37,10 @@
   {
    "date": "2026-11-26",
    "note": "Vidéos S1/S3 refaites (lisibilité). Critique passe 4 fiches + vidéos (livrables/comeup/critique-passe-4.json) : S3 PUBLIABLE (8 critères à 4). S1 preuve 3 (4 colis attribués à n8n alors qu'ils viennent de run.py) et S2 preuve 3 (réponse hors périmètre promet un e-mail sous 24 h non tenu) : corrections en cours par l'atelier. Seul bloquant externe : A-07."
+  },
+  {
+   "date": "2026-11-26",
+   "note": "Corrections S1/S2 faites ; critique passe 5 (livrables/comeup/critique-passe-5.json) : S1 et S2 à 4/5 sur tous les critères. Les 3 fiches + 3 vidéos sont PUBLIABLES. Reste à confirmer par Baptiste le jour de la publication : délai 'sous 48 h ouvrées'. Seul bloquant : A-07."
   }
  ],
  "owner_agent": "redacteur"

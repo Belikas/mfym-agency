@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-26",
+  "methode": "Fiches S1/S2 lues, captions.md, couvertures et captures S1-2, S2-2 vues, 6 images par video extraites (ffmpeg, videos/frames/critique-p5/) et regardees ; durees mesurees par ffprobe : S1 62,80 s (fiche : 62 s), S2 42,84 s (fiche : 43 s). Grille : memory/benchmarks/comeup-gigs.md section 5.",
+  "S1": {
+    "scores": {"clarte": 4, "livrables": 4, "preuve_demo": 4, "structure": 4, "honnetete": 4, "prix_paliers": 4, "visuels": 4, "seo_conversion": 4},
+    "justifications": {
+      "clarte": "Titre vertical logistique + n8n + IA, compris en 5 s.",
+      "livrables": "Tableau 3 paliers chiffre, 'teste' defini (3 executions), options coherentes.",
+      "preuve_demo": "Legende S1-2 et video disent maintenant que les 4 colis viennent du script de reference ; capture n8n (7 noeuds, Succeeded) et video (workflow.json, execution CLI 2.48.7, status success) correspondent a la fiche ; etape IA non demontree, annoncee.",
+      "structure": "Hook, recus, exemples, processus, exclusions, FAQ, appel au contact.",
+      "honnetete": "Demo fictive, pas d'e-mail, IA non demontree, couts tiers ; 'sous 48 h ouvrees' reste a confirmer par Baptiste.",
+      "prix_paliers": "Essentiel 49 euros dans la mediane, ecart Standard-Premium decompose.",
+      "visuels": "Couverture lisible, gabarit commun ; S1-2 petite et sombre a 200 px.",
+      "seo_conversion": "n8n, logistique, colis, e-commerce en titre/debut/tags, appel avant commande."
+    },
+    "gaps": [
+      "[note] Video S1 : bandeau haut 'workflow n8n' sur les ecrans du script Python (run.py, messages) alors que les legendes bas d'ecran precisent 'script de reference' ; fiche indique '62 s' pour 62,8 s (ecart negligeable)."
+    ]
+  },
+  "S2": {
+    "scores": {"clarte": 4, "livrables": 4, "preuve_demo": 4, "structure": 4, "honnetete": 4, "prix_paliers": 4, "visuels": 4, "seo_conversion": 4},
+    "justifications": {
+      "clarte": "Titre assistant IA + clients + vos documents, clair.",
+      "livrables": "Documents, questions de test, options par palier chiffres.",
+      "preuve_demo": "Reponse hors perimetre corrigee (S2-2 et video : 'Je ne sais pas... Je transmets votre question a l'equipe', pas d'e-mail ni delai) ; video, S2-1/2/3 et legendes concordent ; prototype Python et FAQ fictive declares ; video 43 s sous les 60-90 s du 5/5.",
+      "structure": "Sections completes, FAQ 8 questions, dense mais scannable.",
+      "honnetete": "Risque d'erreur IA, RGPD, couts tiers, WhatsApp exclu, prototype non n8n, bulle '30 jours' declaree illustration.",
+      "prix_paliers": "Essentiel 55 euros haut de mediane, justification chiffree.",
+      "visuels": "Couverture lisible, coherente avec S1/S3 ; bulle '30 jours' absente des captures mais signalee comme illustration.",
+      "seo_conversion": "chatbot/assistant IA, e-commerce, service client en titre/tags/debut ; appel au contact."
+    },
+    "gaps": [
+      "[note] Fiche S2 : la mention 'reponse sous 48 h ouvrees' reste a confirmer par Baptiste ; video 43 s (cible 60-90 s) sans impact sur la note."
+    ]
+  },
+  "publiable": {"S1": true, "S2": true}
+}

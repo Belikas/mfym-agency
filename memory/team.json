@@ -64,7 +64,7 @@
    "file": ".claude/agents/critique.md",
    "current_task": "aucune (disponible)",
    "last_run": "2026-11-26T07:55:00+01:00",
-   "last_result": "Fiches ComeUp passe 4 (avec vidéos) : S3 publiable (tout à 4), S1 et S2 min 3 en preuve (affirmations non montrées par la démo)."
+   "last_result": "Passe 5 ComeUp : S1 et S2 à 4/5 partout. Avec S3 (passe 4), les 3 fiches sont publiables."
   },
   {
    "id": "redacteur",
@@ -104,9 +104,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/atelier.md",
-   "current_task": "exp-02 : corriger S1 (attribution des 4 colis) et S2 (réponse hors périmètre sans e-mail ni délai) après critique passe 4",
+   "current_task": "aucune (disponible)",
    "last_run": "2026-11-26T07:55:00+01:00",
-   "last_result": "Vidéos S1 (62,8 s) et S3 (63,4 s) refaites : JSON n8n réduit, 4 colis à risque surlignés, PDF d'entrée S3, colonne renommée ; ligne vidéo ajoutée aux 3 fiches."
+   "last_result": "S1 : 4 colis réattribués au script de référence. S2 : réponse hors périmètre sans e-mail ni délai, S2-2 et S2.mp4 (42,8 s) régénérés."
   }
  ]
 }
