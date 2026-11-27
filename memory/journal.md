@@ -69,3 +69,7 @@
 - Rien de neuf de Baptiste (A-04, A-05, A-07 sans réponse depuis 1-3 jours). Aucune kill date atteinte.
 - Décision : T-04 (45 min de Baptiste) annulée. Règle « ne jamais lui confier ce qu'on peut faire soi-même » : l'atelier a enregistré les 3 vidéos ComeUp en headless (Playwright + ffmpeg, scripts/record_demos.py). S2/S3 réelles, S1 réelle rejouée (dit à l'écran). Critique preuve : 3/4/4 → S1 à refaire avant publication. Leçon : vérifier ce qu'un outil peut faire avant de créer une tâche humaine.
 - Correctif : run.ps1 fait attendre la revue hebdo (≤30 min) au lieu de la sauter quand le verrou est pris. Install gratuite : playwright + chromium (pip).
+
+## 2026-11-27 — Test suivant préparé (règle des 7 jours du 30/11)
+- Re-notation par le chercheur des 3 pistes à 28 : les anciens scores ignoraient la micro-entreprise et la fin des paiements Chrome Web Store. cashback 26, notion-templates-fr 23, chrome-extension-niche 23 (confiance low).
+- Correction directeur : la règle prend le meilleur total parmi toutes les pistes `scored`. À 27 : superprof-code, n8n-productized (micro-entreprise requise) et prolific (non). Proposition pour le 30/11 : prolific, cashback en repli. Leçon : ne pas restreindre un départage aux ex aequo d'un ancien score.

@@ -1,6 +1,6 @@
-# État de l'agence — mis à jour le 26/11/2026 ~08:10 (run quotidien 0730)
+# État de l'agence — mis à jour le 27/11/2026 ~07:55 (run quotidien 0730)
 
-Baptiste n'a rien répondu depuis le 22/11 alors que le digest part bien chaque soir (MFYM-digest, code 0). Ne pas relancer : le digest liste déjà A-04, A-05, A-07, T-06 et T-07. Le 30/11, exp-03 et exp-04 seront bloqués depuis 7 jours → préparer le test suivant (règle du pipeline).
+Baptiste n'a rien répondu depuis le 22/11 alors que le digest part bien chaque soir (MFYM-digest, code 0 ; bot vérifié actif le 27/11, PC redémarré à 07:29). Ne pas relancer : le digest liste déjà A-04, A-05, A-07, T-06 et T-07. Le 30/11, exp-03 et exp-04 seront bloqués depuis 7 jours → préparer le test suivant (règle du pipeline).
 
 ## Chiffres
 - Revenu net novembre : 0 € / objectif 1 000 €/mois. Dépenses : 0 € / 60 €.
@@ -30,6 +30,7 @@ Tout vérifié en source primaire aujourd'hui. Les 3 voies de contournement sont
 | exp-03-skills-gumroad | running (publiable, diffusion prête) | 20/12 | A-04 + compte community.n8n.io |
 | exp-04-primes-bancaires | bloqué | 31/01 | A-05 |
 Suivant si un test meurt : gbp-optimisation (30, à fusionner avec exp-02). codeur-n8n (29) parkée jusqu'à la micro-entreprise.
+**Test suivant préparé le 27/11 (à décider le 30/11)** : **prolific** (27, 0 €, sans A-07 a priori, recrute à Paris) ; cashback (26) en repli. Re-notation : notion-templates-fr et chrome-extension-niche tombent à 23. Inconnue Prolific : gains déclarés en « self-employed » → vérifier qu'un BNC non pro sans RNE suffit. Détails : `memory/benchmarks/suivant-30-11.md`.
 
 ## En attente de Baptiste (3 approbations + 4 tâches dont T-02 hebdo)
 - **A-07** (24/11) : créer la micro-entreprise maintenant. 0 €. Débloque exp-02, Google Business Profile, Codeur.com d'un coup.

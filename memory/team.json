@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T08:05:00+01:00",
+ "updated": "2026-11-27T07:38:05+01:00",
  "agents": [
   {
    "id": "directeur",
@@ -20,8 +20,9 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": "CLAUDE.md",
-   "current_task": "Run 25/11 07:30 termine. Videos ComeUp faites par l'agence (T-04 n'est plus a faire par Baptiste). Prochain : passe 2 sur S1 (canvas n8n + entree), puis notation preuve des fiches avec videos.",
-   "last_run": "2026-11-25T08:05:00+01:00"
+   "current_task": "Run 27/11 07:32 terminé. Prochain : 29/11 vérifier la revue hebdo ; 30/11 décider du test suivant (prolific proposé).",
+   "last_run": "2026-11-27T07:38:05+01:00",
+   "last_result": "Test suivant préparé : prolific (27) proposé, cashback en repli. Bot vérifié actif."
   },
   {
    "id": "chercheur",
@@ -40,8 +41,8 @@
    "status": "active",
    "hired": "2026-11-22",
    "file": ".claude/agents/chercheur.md",
-   "last_run": "2026-11-24T07:55:00+01:00",
-   "last_result": "24/11 : 3 missions rendues, resultat le plus important de l'agence a ce jour -- la contrainte 'il faut un SIRET pour vendre' est fausse pour ComeUp (CGU + FAQ citees), ce qui debloque la piste la mieux notee. A aussi ferme 2 fausses pistes (CAE impossible en CDI temps plein, portage a minimum ~2800 EUR/mois) et chiffre le vrai cout d'une micro-entreprise (0 EUR a CA nul). Canaux hors Reddit trouves pour exp-03 (community.n8n.io 2134 sujets, Show HN). DEFAUT A CORRIGER : delegue a des sous-agents en arriere-plan puis s'arrete en annoncant qu'il attend leurs rapports -- 3 relances necessaires pour obtenir un livrable, et le 1er fichier rendu etait entierement 'INCONNU'. Honnete sur ses trous (il n'a rien invente), mais la regle 'si tu delegues, c'est en avant-plan' doit entrer dans son prompt.",
+   "last_run": "2026-11-27T07:38:05+01:00",
+   "last_result": "27/11 : 3 pistes à 28 re-notées (cashback 26, notion 23, chrome 23), memory/benchmarks/suivant-30-11.md. Travail en avant-plan, livrable écrit.",
    "current_task": "aucune (disponible)"
   },
   {

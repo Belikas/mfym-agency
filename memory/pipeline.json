@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24",
+ "updated": "2026-11-27",
  "scoring": "total = 2×délai + 2×preuve + revenu + coût + heures + automatisation + risque (max 45)",
  "leads": [
   {
@@ -338,34 +338,46 @@
      "url": "https://www.notion.com/fr/help/selling-on-marketplace",
      "kind": "official",
      "financial_interest": false,
-     "finding": "Liste d'attente + approbation Notion"
+     "finding": "Marketplace Notion : liste d'attente + approbation ; pas de compteur de ventes public vérifiable"
+    },
+    {
+     "url": "https://www.indiehackers.com/post/15000-from-selling-a-notion-template-the-process-and-results-ee64d3bf8f",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "Cas isolé 15 000 $ sur un template EN, audience préexistante ; non représentatif"
+    },
+    {
+     "url": "https://gumroad.com/discover?query=notion%20template%20fran%C3%A7ais",
+     "kind": "marketplace",
+     "financial_interest": false,
+     "finding": "Recherche FR Gumroad : aucun compteur ventes/avis lisible par fetch (page vide) ; marché FR non mesuré"
     },
     {
      "url": "https://kupkaike.com/blog/notion-templates-passive-income-how-much-can-you-earn",
      "kind": "article",
      "financial_interest": true,
-     "finding": "Médiane Gumroad ~72 $/mois"
+     "finding": "Médiane Gumroad ~72 $/mois ; Gumroad prend 10 % + 0,50 $ (30 % via Discover)"
     }
    ],
    "confidence": "low",
    "evidenced": false,
    "scores": {
-    "time_to_first_euro": 3,
+    "time_to_first_euro": 2,
     "evidence": 2,
     "monthly_revenue": 1,
     "startup_cost": 5,
-    "baptiste_hours": 4,
+    "baptiste_hours": 3,
     "automation": 3,
-    "risk": 5
+    "risk": 3
    },
-   "total": 28,
+   "total": 23,
    "est_monthly_eur": 80,
    "startup_cost_eur": 0,
-   "first_euro_days": 21,
-   "legal_notes": "Plateformes gèrent la TVA",
+   "first_euro_days": 30,
+   "legal_notes": "Vente répétée = activité habituelle : micro-entreprise requise (A-07). Gumroad/Notion gèrent la TVA.",
    "first_test": "5 templates ; seuil 3 ventes",
    "status": "scored",
-   "updated": "2026-11-22"
+   "updated": "2026-11-27"
   },
   {
    "id": "primes-bancaires",
@@ -448,34 +460,40 @@
      "url": "https://culture-financiere.com/primes-parrainage-cashback-cache-generosite-banques-en-ligne/",
      "kind": "article",
      "financial_interest": false,
-     "finding": "100-200 €/an"
+     "finding": "100-200 EUR/an, surtout primes bancaires (déjà exp-04), pas cashback pur"
     },
     {
-     "url": "https://www.plus.transformation.gouv.fr/experiences/6146287_impossible-davoir-une-reponse-du-service-des-impots",
-     "kind": "official",
+     "url": "https://www.previssima.fr/question-pratique/g%C3%A9rer-mon-argent-cashback-fonctionnement-avantages.html",
+     "kind": "article",
      "financial_interest": false,
-     "finding": "À déclarer"
+     "finding": "Cashback assimilé à une remise commerciale : non imposable en l'état ; risque de requalification si montants importants (source secondaire, à confirmer BOFiP)"
+    },
+    {
+     "url": "https://fr.igraal.com/faq/le-montant-de-mon-gain-cashback-est-incorrect",
+     "kind": "official",
+     "financial_interest": true,
+     "finding": "Cashback = part de la commission marchand, variable ; seuil de retrait et délais de validation"
     }
    ],
    "confidence": "low",
    "evidenced": false,
    "scores": {
     "time_to_first_euro": 4,
-    "evidence": 3,
+    "evidence": 2,
     "monthly_revenue": 1,
     "startup_cost": 5,
     "baptiste_hours": 3,
     "automation": 1,
     "risk": 4
    },
-   "total": 28,
+   "total": 26,
    "est_monthly_eur": 12,
    "startup_cost_eur": 0,
-   "first_euro_days": 15,
-   "legal_notes": "Négligeable",
+   "first_euro_days": 45,
+   "legal_notes": "Pas de micro-entreprise : remise de consommateur, non imposable selon source secondaire (BOFiP non trouvé). Plafonné par les achats réels.",
    "first_test": "1 achat prévu",
    "status": "scored",
-   "updated": "2026-11-22"
+   "updated": "2026-11-27"
   },
   {
    "id": "chrome-extension-niche",
@@ -491,31 +509,49 @@
      "finding": "36 $ MRR après 2 ans"
     },
     {
+     "url": "https://www.indiehackers.com/post/6-weeks-in-52-installs-0-revenue-heres-what-i-ve-learned-so-far-8bfcdad1b0",
+     "kind": "forum",
+     "financial_interest": false,
+     "finding": "52 installs, 0 revenu après 6 semaines"
+    },
+    {
+     "url": "https://9to5google.com/2020/03/12/chrome-web-store-fee/",
+     "kind": "article",
+     "financial_interest": false,
+     "finding": "Frais développeur 5 $ unique ; paiements natifs CWS supprimés : Stripe/ExtensionPay requis"
+    },
+    {
      "url": "https://bigideasdb.com/how-to-monetize-a-chrome-extension",
      "kind": "article",
      "financial_interest": true,
      "finding": "57 % à 0 $/mois, 6 % >1000 $"
+    },
+    {
+     "url": "https://www.exitbid.io/blog/monetize-chrome-extension-2026",
+     "kind": "article",
+     "financial_interest": true,
+     "finding": "Conversion free->payant 0,3-1 %"
     }
    ],
    "confidence": "low",
-   "evidenced": true,
+   "evidenced": false,
    "scores": {
     "time_to_first_euro": 2,
-    "evidence": 3,
-    "monthly_revenue": 3,
+    "evidence": 2,
+    "monthly_revenue": 2,
     "startup_cost": 4,
-    "baptiste_hours": 3,
+    "baptiste_hours": 2,
     "automation": 4,
-    "risk": 4
+    "risk": 3
    },
-   "total": 28,
+   "total": 23,
    "est_monthly_eur": 300,
    "startup_cost_eur": 5,
-   "first_euro_days": 45,
-   "legal_notes": "Merchant of record pour TVA",
+   "first_euro_days": 60,
+   "legal_notes": "Encaisser via Stripe de façon répétée exige micro-entreprise (A-07). 5 $ CWS + commissions Stripe.",
    "first_test": "≥100 installs et 1 payant en 14 j",
    "status": "scored",
-   "updated": "2026-11-22"
+   "updated": "2026-11-27"
   },
   {
    "id": "superprof-code",
@@ -575,6 +611,12 @@
      "kind": "article",
      "financial_interest": false,
      "finding": "Réaliste 30-85 $/mois"
+    },
+    {
+     "url": "https://job-boards.eu.greenhouse.io/prolificacademicltd/jobs/4862622101",
+     "kind": "job-board",
+     "financial_interest": true,
+     "finding": "27/11 : Prolific recrute activement des participants en France, par ville (Paris inclus) ; jusqu a 18 $/h (maximum, pas typique) ; paiement PayPal ; participant doit declarer ses gains comme independant ; screening 10-15 min."
     }
    ],
    "confidence": "med",
@@ -592,10 +634,10 @@
    "est_monthly_eur": 80,
    "startup_cost_eur": 0,
    "first_euro_days": 7,
-   "legal_notes": "Revenus à déclarer",
+   "legal_notes": "Revenus a declarer. A VERIFIER avant lancement : Prolific qualifie le participant de self-employed ; en France, BNC non professionnel declarable sans RNE ou activite habituelle exigeant la micro-entreprise ? (cf. benchmarks/facturer-sans-statut.md)",
    "first_test": "1 sem ; seuil ≥8 €/h",
    "status": "scored",
-   "updated": "2026-11-22"
+   "updated": "2026-11-27"
   },
   {
    "id": "n8n-productized-service",
